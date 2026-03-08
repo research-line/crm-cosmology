@@ -36,7 +36,7 @@
 \title{Eliminating the Dark Sector: Unifying the Curvature Relaxation Model with MOND --- Replacing the Particle Dark Sector with Spacetime Geometry}
 
 \author{L. Geiger}
-\email{Correspondence: Bernau, Germany}
+\email{lukas@geiger-research.de}
 \affiliation{Independent Researcher, Bernau im Schwarzwald, Germany}
 
 \date{\today}
@@ -47,11 +47,11 @@ We propose a unified geometric framework that replaces both dark energy and part
 
 \keywords{Curvature Relaxation Model, MOND, dark matter, dark energy, baryon-only universe, Pantheon+, modified gravity, geometric cosmology}
 
-\maketitle
-
 \thanks{AI tools (Claude, Anthropic; Gemini, Google DeepMind) were used for mathematical formalization, code development, and text generation. All physical hypotheses, scientific interpretation, and responsibility for the content lie solely with the author. The analysis code is available at \url{https://github.com/lukisch/crm-cosmology}.}
 
 \thanks{Paper~II in the CRM series -- Companion to \cite{Geiger2026}.}
+
+\maketitle
 
 
 % ===================================================================
@@ -130,8 +130,9 @@ where:
 
 The flatness constraint $H^2(a{=}1)/H_0^2 = 1$ yields:
 \begin{equation}
-\Omega_b + \Phi_0 \cdot f_{\mathrm{sat}}(1) + \alpha = 1
+\mu_{\mathrm{eff}}\,\Omega_b + \Phi_0 \cdot f_{\mathrm{sat}}(1) + \alpha = 1
 \end{equation}
+Note that at $a=1$ the first term in Eq.~\eqref{eq:extended_cfm} is $\mu_{\mathrm{eff}}\,\Omega_b$, not $\Omega_b$ alone, because the MOND enhancement factor $\mu_{\mathrm{eff}}$ applies to the baryonic density at all epochs including today.
 
 \subsection{Trace Coupling and BBN Consistency}
 \label{subsec:trace_coupling}
@@ -150,7 +151,7 @@ T_{\mathrm{rad}} = -\rho_{\mathrm{rad}} + 3 \cdot \tfrac{1}{3}\rho_{\mathrm{rad}
 
 This is not a coincidence but a consequence of \textit{conformal symmetry}: massless fields are conformally invariant, and the trace of a conformally invariant energy-momentum tensor vanishes identically. During the radiation-dominated era, conformal symmetry is exact, and the geometric DM term is automatically suppressed.
 
-For non-relativistic matter ($w \approx 0$), the trace is $T_{\mathrm{mat}} = -\rho_m \neq 0$, and the geometric DM term activates. The transition occurs naturally at matter-radiation equality ($a_{\mathrm{eq}} \approx 3 \times 10^{-4}$), well after BBN ($a_{\mathrm{BBN}} \sim 10^{-9}$).
+For non-relativistic matter ($w \approx 0$), the trace is $T_{\mathrm{mat}} = -\rho_m \neq 0$, and the geometric DM term activates. The transition occurs naturally at matter-radiation equality ($a_{\mathrm{eq}} \approx 1.8 \times 10^{-3}$), well after BBN ($a_{\mathrm{BBN}} \sim 10^{-9}$).
 
 The full extended Friedmann equation with trace coupling reads:
 \begin{equation}
@@ -163,11 +164,11 @@ where $\mathcal{S}(a)$ is the trace-coupling suppression factor:
 = \frac{1}{1 + (a_{\mathrm{eq}}/a)}
 \label{eq:suppression}
 \end{equation}
-with $a_{\mathrm{eq}} = \Omega_r/\Omega_b \approx 3 \times 10^{-4}$ (using $\Omega_r \approx 9 \times 10^{-5}$). This factor satisfies:
+with $a_{\mathrm{eq}} = \Omega_r/\Omega_b \approx 1.8 \times 10^{-3}$ (using $\Omega_r \approx 9 \times 10^{-5}$ and $\Omega_b \approx 0.05$ in this baryon-only model; note that if the effective matter density $\mu_{\mathrm{eff}}\,\Omega_b \approx 0.089$ is used instead, $a_{\mathrm{eq}} \approx 1.0 \times 10^{-3}$). This factor satisfies:
 \begin{itemize}
 \item $\mathcal{S}(a \ll a_{\mathrm{eq}}) \approx a/a_{\mathrm{eq}} \to 0$ \quad (radiation era: BBN protected)
 \item $\mathcal{S}(a \gg a_{\mathrm{eq}}) \approx 1$ \quad (matter/DE era: full geometric DM)
-\item $\mathcal{S}(a = 1) \approx 1 - 3\times10^{-4} \approx 1$ \quad (today: SN fit unchanged)
+\item $\mathcal{S}(a = 1) \approx 1 - 1.8\times10^{-3} \approx 1$ \quad (today: SN fit unchanged)
 \end{itemize}
 
 \textbf{Impact on the Pantheon+ fit:} Since all Pantheon+ supernovae are at $z < 2.3$ ($a > 0.30$), the suppression factor is $\mathcal{S} > 0.999$ throughout the observed redshift range. The MCMC results ($\alpha$, $\beta$, $\chi^2$) are unchanged to numerical precision.
@@ -446,7 +447,7 @@ With constant $\beta = 2.02$, the model produces $\ell_A = 316.9$ and $\mathcal{
 
 \subsubsection{Running $\beta$ Alone}
 
-Introducing the running coupling~\eqref{eq:running_beta} dramatically improves the fit. A grid scan over $(\beta_{\mathrm{early}}, a_t, \alpha, H_0)$ followed by Nelder-Mead optimization yields:
+Introducing the running coupling~\eqref{eq:running_beta} dramatically improves the fit. A grid scan over $(\beta_{\mathrm{early}}, a_t, \alpha, H_0)$ followed by Nelder-Mead optimization yields the point estimates below. \textit{Note on optimization methodology:} The grid scan + Nelder-Mead approach identifies a best-fit point but does not provide formal parameter uncertainties or posterior distributions. A full Markov Chain Monte Carlo (MCMC) analysis would be required to assess parameter degeneracies and confidence intervals; the results below should therefore be regarded as preliminary point estimates subject to this caveat.
 
 \begin{table}[H]
 \centering
@@ -504,9 +505,9 @@ Parameters & $6$ & 6 \\
 $\ell_A$ & $301.471$ & 301.428 \\
 $\mathcal{R}$ & $1.7502$ & 1.7496 \\
 \midrule
-$\chi^2_{\mathrm{SN}}$ & $704.8$ & 700.9 \\
+$\chi^2_{\mathrm{SN}}$ & $699.6$ & 700.9 \\
 $\chi^2_{\mathrm{CMB}}$ & $0.0$ & 0.1 \\
-$\chi^2_{\mathrm{BAO}}$ & $0.0$ & 9.3 \\
+$\chi^2_{\mathrm{BAO}}$ & $5.2$ & 9.3 \\
 \midrule
 $\chi^2_{\mathrm{total}}$ & $704.8$ & 710.3 \\
 $\Delta\chi^2$ & $-5.5$ & 0 \\
@@ -633,7 +634,7 @@ Two aspects require further investigation:
 \item $\ell_1 = 220$ -- \textbf{exact Planck match} (via early ISW effect)
 \item $\mathcal{P}_3/\mathcal{P}_1 = 0.4295$ -- \textbf{exact Planck match} (via $\beta_{\mathrm{early}} = 2.83$)
 \end{itemize}
-BBN is fully consistent ($\Delta N_{\mathrm{eff}} \approx 0$). The angular acoustic scale offset ($100\,\theta_s = 1.034$ vs.\ Planck's $1.041$, $0.69\%$) is \textbf{resolved by Paper~III}: the scalaron's background energy density evolves as $a^{-3}$ (CDM-like), giving $100\,\theta_s = 1.04173$ for all $\alpha_M$ values in \texttt{hi\_class}. The offset arose from this paper's phenomenological $w_{\mathrm{eff}} \approx -0.06$ assumption; the Lagrangian treatment yields $w \ll 0.01$.
+BBN is fully consistent ($\Delta N_{\mathrm{eff}} \approx 0$). The angular acoustic scale offset ($100\,\theta_s = 1.034$ vs.\ Planck's $1.041$, $0.69\%$) requires careful assessment: while $0.69\%$ appears small, Planck's measurement precision is $\sigma(\theta_s) \approx 0.0003$, making this offset $>20\sigma$ -- a formally severe tension. The physical origin of the offset is clear and lies within this paper's phenomenological framework: the geometric power-law term uses $w_{\mathrm{eff}} = (\beta-3)/3 \approx -0.06$ at recombination rather than $w = 0$ (pressureless). This 6\% equation-of-state deviation causes a $\sim$2.5\% enlargement of the sound horizon ($r_s = 148.1$\,Mpc vs.\ $144.5$\,Mpc for $\Lambda$CDM), which shifts $\theta_s$ by the observed 0.69\%. The resolution within the CRM framework can be stated without delegating to Paper~III: a proper Lagrangian treatment of the $R^2$ scalaron (which constitutes the geometric dark matter) gives a CDM-like equation of state $w \approx 0$, because the scalaron is a massive scalar field whose kinetic energy is negligible during matter domination. The phenomenological power-law ansatz $\alpha a^{-\beta}$ approximates this behavior but introduces a spurious pressure term. This paper therefore has a known, physically understood source of $\theta_s$ tension that would be resolved by using the full scalaron dynamics instead of the power-law parametrization.
 
 \item \textbf{Lagrangian derivation:} Both the running $\beta_{\mathrm{eff}}(a)$ and the running $\mu(a)$ are phenomenological transition functions. A derivation from an action principle -- potentially connecting the $\sqrt{\pi}$ conjecture to the CRM saturation mechanism -- is required for theoretical completeness (Paper~III).
 \end{enumerate}
@@ -678,7 +679,7 @@ The relativistic MOND theory AeST (Aether Scalar Tensor) \cite{Skordis2021}, whi
 
 AeST achieves this through a scalar field $\phi$ and a timelike vector field $A_\mu$ that produce an effective energy-momentum tensor. The cosmological background equations in AeST contain terms that contribute to $H^2(a)$ with non-standard scaling. A detailed comparison between the AeST background equations and the extended CRM Friedmann equation~\eqref{eq:extended_cfm} is a key objective for future work.
 
-\subsection{Addressing the Cosmological ``Endgegner''}
+\subsection{Addressing the Ultimate Cosmological Challenges}
 \label{subsec:endgegner}
 
 Any theory that eliminates dark matter must confront three critical observational pillars of $\Lambda$CDM. We address each in turn, showing how the geometric dark sector replacement provides a pathway through each challenge.

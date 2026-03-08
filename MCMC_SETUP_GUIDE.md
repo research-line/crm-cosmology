@@ -4,7 +4,7 @@
 
 **Projektordner:** Dieses Projekt liegt in OneDrive unter:
 ```
-C:\Users\User\OneDrive\Forschung\Natur&Technik\Spieltheorie Urknall\
+C:\Users\User\OneDrive\.RESEARCH\Natur&Technik\Spieltheorie Urknall\
 ```
 Alle relevanten Dateien synchronisieren sich automatisch.
 
@@ -54,7 +54,7 @@ cd /home/hi_class
 
 # Pfad zum Projekt (OneDrive in WSL mounten):
 # OneDrive ist typischerweise unter /mnt/c/Users/User/OneDrive/
-PROJ="/mnt/c/Users/User/OneDrive/Forschung/Natur&Technik/Spieltheorie Urknall"
+PROJ="/mnt/c/Users/User/OneDrive/.RESEARCH/Natur&Technik/Spieltheorie Urknall"
 
 python3 "$PROJ/scripts/patch_cfm.py"
 
@@ -69,7 +69,7 @@ cd /home/hi_class
 ### 1.4 Verifizieren dass cfm_fR funktioniert
 
 ```bash
-PROJ="/mnt/c/Users/User/OneDrive/Forschung/Natur&Technik/Spieltheorie Urknall"
+PROJ="/mnt/c/Users/User/OneDrive/.RESEARCH/Natur&Technik/Spieltheorie Urknall"
 python3 "$PROJ/scripts/test_cfm_fR_native.py"
 ```
 
@@ -249,11 +249,11 @@ np.savez(_local_path, **_save_args)
 
 Der `results/`-Ordner liegt unter:
 ```
-C:\Users\User\OneDrive\Forschung\Natur&Technik\Spieltheorie Urknall\results\
+C:\Users\User\OneDrive\.RESEARCH\Natur&Technik\Spieltheorie Urknall\results\
 ```
 In WSL:
 ```
-/mnt/c/Users/User/OneDrive/Forschung/Natur&Technik/Spieltheorie Urknall/results/
+/mnt/c/Users/User/OneDrive/.RESEARCH/Natur&Technik/Spieltheorie Urknall/results/
 ```
 
 ---
@@ -262,7 +262,7 @@ In WSL:
 
 ```bash
 # In WSL:
-PROJ="/mnt/c/Users/User/OneDrive/Forschung/Natur&Technik/Spieltheorie Urknall"
+PROJ="/mnt/c/Users/User/OneDrive/.RESEARCH/Natur&Technik/Spieltheorie Urknall"
 
 # Empfohlen: in screen/tmux laufen lassen (ueberlebt Terminal-Schliessung):
 tmux new -s mcmc

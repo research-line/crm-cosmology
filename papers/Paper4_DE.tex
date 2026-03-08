@@ -43,11 +43,11 @@ Die Arbeiten~I--III der Curvature Relaxation Model (CRM) Serie zeigten, dass ein
 
 \keywords{MOND, modifizierte Gravitation, Vektor-Tensor-Theorie, Radial Acceleration Relation, Kr\"ummungs-R\"uckgabe, Dunkle-Materie-Alternative, galaktische Dynamik}
 
-\maketitle
-
 \thanks{KI-Werkzeuge (Claude, Anthropic; Gemini, Google DeepMind) wurden fuer mathematische Formalisierung, Code-Entwicklung und Texterstellung verwendet. Alle physikalischen Hypothesen, wissenschaftliche Interpretation und Verantwortung fuer die Inhalte liegen vollstaendig bei dem Autor. Der Analysecode ist verfuegbar unter \url{https://github.com/lukisch/crm-cosmology}.}
 
 \thanks{Arbeit~IV in der CRM-Serie. Begleitarbeiten: \cite{Geiger2026,Geiger2026b,Geiger2026c}.}
+
+\maketitle
 
 
 % ===================================================================
@@ -69,9 +69,9 @@ Das Curvature Relaxation Model (CRM; dt.\ Kr\"ummungs-R\"uckgabemodell) bietet e
 
 Trotz dieses Erfolgs kann der Skalarsektor allein \textit{keine} flachen Rotationskurven erzeugen. Der Gravitationsmodifikationsfaktor $\mu \to 4/3$ entspricht einer $33\%$-Verst\"arkung der Newtonschen Gravitation -- weit unter dem Faktor $\sim 5$--$10$, der erforderlich ist, um galaktische Rotationsgeschwindigkeiten ohne Dunkle Materie zu erkl\"aren. Dies ist kein Versagen des Modells, sondern eine \textit{Vorhersage}: Die verschachtelte Hierarchie erfordert einen zweiten Freiheitsgrad.
 
-Das Argument ist thermodynamischer Natur: Das Skalarfeld (Tochter~1) treibt die kosmologische Dynamik an, kann aber allein keine stabilen dissipativen Strukturen (Galaxien) bilden. Effiziente Entropieproduktion -- die Gleichgewichtsbedingung des zugrunde liegenden Optimierungsprinzips (Arbeit~I, Abschnitt~2.5) -- erfordert lokalisierte, langlebige Materiekonzentrationen. Diese ben\"otigen zus\"atzliche Gravitationsunterst\"utzung, die die skalare $4/3$-Verst\"arkung \"ubersteigt.
+Das Argument ist thermodynamischer Natur: Das Skalarfeld (Tochter~1, Skalar-Sektor) treibt die kosmologische Dynamik an, kann aber allein keine stabilen dissipativen Strukturen (Galaxien) bilden. Effiziente Entropieproduktion -- die Gleichgewichtsbedingung des zugrunde liegenden Optimierungsprinzips (Arbeit~I, Abschnitt~2.5) -- erfordert lokalisierte, langlebige Materiekonzentrationen. Diese ben\"otigen zus\"atzliche Gravitationsunterst\"utzung, die die skalare $4/3$-Verst\"arkung \"ubersteigt.
 
-Die vorliegende Arbeit f\"uhrt Tochter~2 ein: ein zeitartiges Vektorfeld $A_\mu$, das diese Unterst\"utzung bereitstellt. Wir leiten seine Kopplung an den Skalarsektor und die Materie her und testen die resultierenden Vorhersagen anhand galaktischer Daten.
+Die vorliegende Arbeit f\"uhrt Tochter~2 (Vektor-Sektor) ein: ein zeitartiges Vektorfeld $A_\mu$, das diese Unterst\"utzung bereitstellt. Wir leiten seine Kopplung an den Skalarsektor und die Materie her und testen die resultierenden Vorhersagen anhand galaktischer Daten.
 
 \subsection{Beziehung zu existierenden Vektor-Tensor-Theorien}
 
@@ -154,7 +154,7 @@ S_{\mathrm{T1}} = \int d^4x\,\sqrt{-g}\,\bigg[&
   \frac{R}{16\pi G}
   + \gamma\,F\!\left(\frac{T}{\rho}\right) R^2
 \nonumber \\
-  &+ \frac{1}{2}\,\partial_\mu\phi\,\partial^\mu\phi
+  &- \frac{1}{2}\,\partial_\mu\phi\,\partial^\mu\phi
   - V_{\mathrm{PT}}(\phi)
 \bigg]
 \label{eq:S_T1}
@@ -266,7 +266,7 @@ Term & Physikalische Rolle & Status \\
 \hline
 $R/(16\pi G)$ & Einstein-Hilbert & Bestimmt \\
 $\gamma F(T/\rho)\,R^2$ & Starobinsky + Spur & Form ($\gamma$ frei) \\
-$\frac{1}{2}\partial_\mu\phi\,\partial^\mu\phi$ & Skalarfeld kinetisch & Bestimmt \\
+$-\frac{1}{2}\partial_\mu\phi\,\partial^\mu\phi$ & Skalarfeld kinetisch & Bestimmt \\
 $V_{\mathrm{PT}}(\phi)$ & S\"attigungs-Potential & Form ($V_0, \phi_0$ frei) \\
 $-\frac{K_B}{2}F_{\mu\nu}F^{\mu\nu}$ & Vektorfeld kinetisch & Form ($K_B$ frei) \\
 $\lambda(A_\mu A^\mu + 1)$ & Zeitartige Beschr\"ankung & Bestimmt \\
@@ -589,7 +589,7 @@ Wir verwenden die isotrope schwache Feld-Metrik:
 ds^2 = -(1 + 2\Phi)\,dt^2 + (1 - 2\Phi)(dr^2 + r^2\,d\Omega^2)
 \label{eq:metric_wf}
 \end{equation}
-mit $|\Phi| \ll 1$, unter der Annahme $\Phi = \Psi$ (kein anisotroper Stress). Dies ist eine N\"aherung: Der Vektorsektor k\"onnte prinzipiell $\Phi \neq \Psi$ erzeugen, was eine testbare Vorhersage (gravitativer Schlupf) darstellen w\"urde. Wir verschieben diese Analyse auf zuk\"unftige Arbeiten und merken an, dass $\Phi = \Psi$ in der ART mit idealer Fl\"ussigkeit exakt gilt und in bekannten gangbaren Vektor-Tensor-Theorien eine ausgezeichnete N\"aherung darstellt \cite{Skordis2021}.
+mit $|\Phi| \ll 1$, unter der Annahme $\Phi \approx \Psi$ (kein anisotroper Stress). In $f(R)$-Theorien gilt allgemein $\eta = \Phi/\Psi \neq 1$ (vgl.\ Arbeit~III). Die N\"aherung $\Phi \approx \Psi$ wird hier f\"ur das quasi-statische galaktische Regime verwendet, in dem der skalare Freiheitsgrad abgeschirmt ist. Der Vektorsektor k\"onnte prinzipiell $\Phi \neq \Psi$ erzeugen, was eine testbare Vorhersage (gravitativer Schlupf) darstellen w\"urde. Wir verschieben diese Analyse auf zuk\"unftige Arbeiten und merken an, dass $\Phi = \Psi$ in der ART mit idealer Fl\"ussigkeit exakt gilt und in bekannten gangbaren Vektor-Tensor-Theorien eine ausgezeichnete N\"aherung darstellt \cite{Skordis2021}.
 
 F\"ur das Skalarfeld zerlegen wir in kosmologischen Hintergrund und galaktische St\"orung:
 \begin{equation}
@@ -1049,6 +1049,15 @@ Das ontologische Bild ist: zwei Axiome (Null-Raum-Fluktuationen + thermodynamisc
 \begin{acknowledgments}
 Diese Arbeit wurde als unabh\"angige Forschung ohne institutionelle F\"orderung durchgef\"uhrt. Der Autor dankt den Open-Source-Gemeinschaften hinter \texttt{hi\_class} \cite{Zumalacarregui2017}, \texttt{CLASS} \cite{Blas2011}, \texttt{emcee} \cite{ForemanMackey2013}, \texttt{NumPy} \cite{Harris2020}, \texttt{SciPy} \cite{Virtanen2020} und \texttt{Matplotlib} \cite{Hunter2007}. Die SPARC-Datenbasis \cite{Lelli2016} bietet eine unsch\"atzbare \"offentliche Ressource zum Testen modifizierter Gravitationstheorien.
 \end{acknowledgments}
+
+\paragraph{F\"orderinformation.}
+Diese Forschung wurde ohne externe F\"orderung durchgef\"uhrt.
+
+\paragraph{Datenverf\"ugbarkeit.}
+Die SPARC-Datenbank \cite{Lelli2016} ist \"offentlich zug\"anglich.
+Alle Analysecodes und numerischen Ergebnisse sind verf\"ugbar unter
+\url{https://github.com/lukisch/crm-cosmology}
+(DOI: \href{https://doi.org/10.5281/zenodo.18728936}{10.5281/zenodo.18728936}).
 
 % ===================================================================
 % BIBLIOGRAPHY

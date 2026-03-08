@@ -15,7 +15,7 @@
 
 \usepackage{hyperref}
 \hypersetup{
-    pdftitle={The Galactic-Cosmological Nexus: Deriving MOND Dynamics from Curvature Saturation},
+    pdftitle={The Galactic-Cosmological Nexus: Connecting CRM to MOND Dynamics via Curvature Saturation},
     pdfauthor={Lukas Geiger},
     colorlinks=true,
     linkcolor=black,
@@ -29,7 +29,7 @@
 % TITELSEITE
 % ===================================================================
 
-\title{The Galactic--Cosmological Nexus: Deriving MOND Dynamics\\from Curvature Saturation}
+\title{The Galactic--Cosmological Nexus: Connecting CRM to MOND Dynamics\\via Curvature Saturation}
 
 \author{Lukas Geiger}
 \email{Correspondence: Bernau, Germany}
@@ -38,16 +38,16 @@
 \date{\today}
 
 \begin{abstract}
-Papers~I--III of the Curvature Relaxation Model (CRM) series demonstrated that a scalar sector ($R + \gamma R^2$ + P\"oschl-Teller saturation) reproduces the cosmological dark sector ($\Delta\chi^2 = -5.5$ vs.\ $\Lambda$CDM, zero EDE, $\alpha_T = 0$). However, the scalar sector alone cannot produce flat rotation curves: the Yukawa fifth force yields at most $\mu \to 4/3$, insufficient to replace dark matter halos. This paper introduces a second degree of freedom -- a timelike unit vector field $A_\mu$ -- derived from thermodynamic necessity (maximum entropy production, hierarchical dissipation). The teleodynamic coupling $\mathcal{F} = |T|/\rho_{\mathrm{crit}} \cdot \mathrm{sech}^2(\phi/\phi_0) \cdot A_\mu\partial^\mu\phi$ ensures BBN protection, links MOND strength to expansion dynamics, and couples local structure to the cosmological expansion rate. The model predicts $a_0 = cH_0/(2\pi)$ as an equilibrium condition -- not a fitted parameter -- and reproduces the Radial Acceleration Relation and flat rotation curves without dark matter particles. The $4/3$ convergence factor from $f(R)$ perturbation theory (Paper~III) coincides with the MOND phase-space ratio $V_3/V_2$ (Paper~II). The complete action contains 8 terms; 5 are uniquely determined by axioms, 4 parameters follow from data. No $\Lambda$, no dark matter particles -- only geometry.
+Papers~I--III of the Curvature Relaxation Model (CRM) series demonstrated that a scalar sector ($R + \gamma R^2$ + P\"oschl-Teller saturation) reproduces the cosmological dark sector ($\Delta\chi^2 = -5.5$ vs.\ $\Lambda$CDM, zero EDE, $\alpha_T = 0$). However, the scalar sector alone cannot produce flat rotation curves: the Yukawa fifth force yields at most $\mu \to 4/3$, insufficient to replace dark matter halos. This paper introduces a second degree of freedom -- a timelike unit vector field $A_\mu$ -- derived from thermodynamic necessity (maximum entropy production, hierarchical dissipation). The teleodynamic coupling $\mathcal{F} = |T|/\rho_{\mathrm{crit}} \cdot \mathrm{sech}^2(\phi/\phi_0) \cdot A_\mu\partial^\mu\phi$ ensures BBN protection, links MOND strength to expansion dynamics, and couples local structure to the cosmological expansion rate. The model yields $a_0 = cH_0/(2\pi)$ as a consistency relation -- linking local galactic dynamics to the cosmological expansion rate -- and reproduces the Radial Acceleration Relation and flat rotation curves without dark matter particles. We emphasise that this is not a parameter-free derivation: $a_0$ is fixed by matching the observed value, and the relation $a_0 = cH_0/(2\pi)$ constitutes a testable consistency check, not a proof. The $4/3$ convergence factor from $f(R)$ perturbation theory (Paper~III) coincides with the MOND phase-space ratio $V_3/V_2$ (Paper~II). The complete action contains 8 terms; 5 are uniquely determined by axioms, 4 parameters follow from data. No $\Lambda$, no dark matter particles -- only geometry.
 \end{abstract}
 
 \keywords{MOND, modified gravity, vector-tensor theory, radial acceleration relation, curvature relaxation, dark matter alternative, galactic dynamics}
 
-\maketitle
-
 \thanks{AI tools (Claude, Anthropic; Gemini, Google DeepMind) were used for mathematical formalization, code development, and text generation. All physical hypotheses, scientific interpretation, and responsibility for the content lie solely with the author. The analysis code is available at \url{https://github.com/lukisch/crm-cosmology}.}
 
 \thanks{Paper~IV in the CRM series. Companion papers: \cite{Geiger2026,Geiger2026b,Geiger2026c}.}
+
+\maketitle
 
 
 % ===================================================================
@@ -69,9 +69,9 @@ The Curvature Relaxation Model (CRM) offers a framework that may resolve this co
 
 Despite this success, the scalar sector alone \textit{cannot} produce flat rotation curves. The gravitational modification factor $\mu \to 4/3$ corresponds to a $33\%$ enhancement of Newtonian gravity -- far below the factor $\sim 5$--$10$ needed to explain galactic rotation velocities without dark matter. This is not a failure of the model but a \textit{prediction}: the nested hierarchy requires a second degree of freedom.
 
-The argument is thermodynamic: the scalaron (Daughter~1) drives cosmological dynamics but cannot form stable dissipative structures (galaxies) by itself. Efficient entropy production -- the equilibrium condition of the underlying optimization principle (Paper~I, Section~2.5) -- requires localized, long-lived matter concentrations. These require additional gravitational support that exceeds the $4/3$ scalar enhancement.
+The argument is thermodynamic: the scalaron (\textit{scalar sector}; termed ``Daughter~1'' in the nested hierarchy framework introduced in Paper~I, but equivalent to the standard f(R) scalar sector throughout) drives cosmological dynamics but cannot form stable dissipative structures (galaxies) by itself. Efficient entropy production -- the equilibrium condition of the underlying optimization principle (Paper~I, Section~2.5) -- requires localized, long-lived matter concentrations. These require additional gravitational support that exceeds the $4/3$ scalar enhancement.
 
-The present paper introduces Daughter~2: a timelike vector field $A_\mu$ that provides this support, derives its coupling to the scalar sector and matter, and tests the resulting predictions against galactic data.
+The present paper introduces the \textit{vector sector} (termed ``Daughter~2'' in the nested hierarchy framework, but equivalent to the timelike vector field $A_\mu$ of vector-tensor theories): it provides this gravitational support, its coupling to the scalar sector and matter is derived, and its predictions are tested against galactic data.
 
 \subsection{Relation to existing vector-tensor theories}
 
@@ -92,7 +92,7 @@ The vector field introduced here shares structural features with Bekenstein's Te
 \subsection{Why a second degree of freedom is necessary}
 \label{sec:why_vector}
 
-The scalaron (Daughter~1) modifies gravity on cosmological scales through the $f(R) = R + \gamma R^2$ extension. On galactic scales, Chameleon screening suppresses this modification: the effective scalaron mass rises by a factor $\sim 4 \times 10^{14}$ in the Solar System \cite{Geiger2026c}, confining the fifth force to Compton wavelengths of $\sim 20$\,m.
+The scalaron (scalar sector) modifies gravity on cosmological scales through the $f(R) = R + \gamma R^2$ extension. On galactic scales, Chameleon screening suppresses this modification: the effective scalaron mass rises by a factor $\sim 4 \times 10^{14}$ in the Solar System \cite{Geiger2026c}, confining the fifth force to Compton wavelengths of $\sim 20$\,m.
 
 In galactic outskirts, where $\rho \sim 100\,\rho_{\mathrm{crit}}$, the screening is weaker and the scalar fifth force yields $\mu \to 4/3$. But flat rotation curves require $v \propto \mathrm{const}$, implying an effective gravitational potential $\Phi \propto \ln(r)$ -- a logarithmic divergence that no Yukawa-type scalar field can produce.
 
@@ -107,8 +107,8 @@ From the thermodynamic perspective of Paper~I:
 The thermodynamic hierarchy is:
 \begin{equation}
 \begin{split}
-\underbrace{\text{Null space}}_{\text{Mother}} &\to \underbrace{\phi \text{ (scalaron)}}_{\text{Daughter 1}} \\
-&\to \underbrace{A_\mu \text{ (vector)}}_{\text{Daughter 2}} \to \underbrace{\text{Standard physics}}_{\text{Termination}}
+\underbrace{\text{Null space}}_{\text{Source}} &\to \underbrace{\phi \text{ (scalaron)}}_{\text{Scalar sector}} \\
+&\to \underbrace{A_\mu \text{ (vector)}}_{\text{Vector sector}} \to \underbrace{\text{Standard physics}}_{\text{Termination}}
 \end{split}
 \label{eq:hierarchy}
 \end{equation}
@@ -125,15 +125,15 @@ The next-simplest degree of freedom after a scalar is a vector. A second scalar 
 \item Not naturally couple to the expansion direction (time)
 \end{itemize}
 
-A vector field $A_\mu$, constrained to be timelike ($A_\mu A^\mu = -1$), naturally selects the time direction as the dissolution axis -- consistent with the thermodynamic interpretation that Daughter~2 dissolves ``back toward'' Daughter~1 in the time direction.
+A vector field $A_\mu$, constrained to be timelike ($A_\mu A^\mu = -1$), naturally selects the time direction as the dissolution axis -- consistent with the thermodynamic interpretation that the vector sector dissolves ``back toward'' the scalar sector in the time direction.
 
 \subsection{The Principal-Agent structure}
 \label{sec:principal_agent}
 
-The relationship between Daughter~1 and Daughter~2 is a principal-agent problem:
+The relationship between scalar and vector sectors is a principal-agent problem:
 \begin{itemize}
-\item \textbf{Principal} (Daughter~1 / scalaron): Needs stable galaxies for efficient entropy production, but cannot create them alone.
-\item \textbf{Agent} (Daughter~2 / vector field): Provides the additional gravitational support that stabilizes galactic structures, but ``wants'' to dissolve (thermodynamic arrow toward equilibrium).
+\item \textbf{Principal} (scalar sector / scalaron): Needs stable galaxies for efficient entropy production, but cannot create them alone.
+\item \textbf{Agent} (vector sector / timelike vector field): Provides the additional gravitational support that stabilizes galactic structures, but ``wants'' to dissolve (thermodynamic arrow toward equilibrium).
 \item \textbf{Equilibrium:} MOND -- the balance point where galaxies are stable enough for efficient entropy production but the agent is not permanently locked.
 \end{itemize}
 
@@ -146,7 +146,7 @@ This predicts that MOND effects should \textit{weaken over cosmic time} as the u
 \section{The Complete Action}
 \label{sec:action}
 
-\subsection{Daughter~1: The scalar sector (Papers~I--III)}
+\subsection{Scalar sector (Papers~I--III)} % formerly ``Daughter~1'' -- standard terminology adopted per reviewer
 
 The scalar sector action, established in Paper~III, is:
 \begin{align}
@@ -154,7 +154,7 @@ S_{\mathrm{T1}} = \int d^4x\,\sqrt{-g}\,\bigg[&
   \frac{R}{16\pi G}
   + \gamma\,F\!\left(\frac{T}{\rho}\right) R^2
 \nonumber \\
-  &+ \frac{1}{2}\,\partial_\mu\phi\,\partial^\mu\phi
+  &- \frac{1}{2}\,\partial_\mu\phi\,\partial^\mu\phi
   - V_{\mathrm{PT}}(\phi)
 \bigg]
 \label{eq:S_T1}
@@ -171,7 +171,7 @@ T \equiv g^{\mu\nu}T_{\mu\nu} = -\rho + 3p
 \end{equation}
 For dust ($p \approx 0$): $T = -\rho$, so $|T| = \rho$. For radiation ($p = \rho/3$): $T = 0$ exactly. This is the basis of the BBN protection mechanism: the coupling $\mathcal{F} \propto |T|$ vanishes identically during radiation domination by conformal symmetry, without any tuning. The ratio $|T|/\rho_{\mathrm{crit}}$ with $\rho_{\mathrm{crit}} = 3H_0^2/(8\pi G)$ is dimensionless.
 
-\subsection{Daughter~2: The vector sector}
+\subsection{Vector sector} % formerly ``Daughter~2'' -- standard terminology adopted per reviewer
 \label{sec:vector_action}
 
 The vector sector action is:
@@ -266,7 +266,7 @@ Term & Physical role & Status \\
 \hline
 $R/(16\pi G)$ & Einstein-Hilbert & Determined \\
 $\gamma F(T/\rho)\,R^2$ & Starobinsky + trace & Form ($\gamma$ free) \\
-$\frac{1}{2}\partial_\mu\phi\,\partial^\mu\phi$ & Scalaron kinetic & Determined \\
+$-\frac{1}{2}\partial_\mu\phi\,\partial^\mu\phi$ & Scalaron kinetic & Determined \\
 $V_{\mathrm{PT}}(\phi)$ & Saturation potential & Form ($V_0, \phi_0$ free) \\
 $-\frac{K_B}{2}F_{\mu\nu}F^{\mu\nu}$ & Vector kinetic & Form ($K_B$ free) \\
 $\lambda(A_\mu A^\mu + 1)$ & Timelike constraint & Determined \\
@@ -334,7 +334,7 @@ This function mirrors the P\"oschl-Teller potential of the scalar sector:
 \item MOND is thus a \textit{phenomenon of the relaxation phase} -- it exists because the curvature has not yet fully returned to the null state.
 \end{itemize}
 
-The choice of $\mathrm{sech}^2$ is motivated by consistency with the P\"oschl-Teller dynamics of Daughter~1. The saturation ODE $d\Omega_\Phi/da = k[1 - (\Omega_\Phi/\Phi_0)^2]$ yields $\phi \propto \tanh$ solutions, making $\mathcal{B} = \mathrm{sech}^2$ the natural modulation envelope. We note, however, that other saturation profiles (e.g., Fermi-type functions) are not excluded by the current constraints; the $\mathrm{sech}^2$ form is the \textit{minimal-assumption} choice given the existing scalar dynamics.
+The choice of $\mathrm{sech}^2$ is motivated by consistency with the P\"oschl-Teller dynamics of the scalar sector (scalaron). The saturation ODE $d\Omega_\Phi/da = k[1 - (\Omega_\Phi/\Phi_0)^2]$ yields $\phi \propto \tanh$ solutions, making $\mathcal{B} = \mathrm{sech}^2$ the natural modulation envelope. We note, however, that other saturation profiles (e.g., Fermi-type functions) are not excluded by the current constraints; the $\mathrm{sech}^2$ form is the \textit{minimal-assumption} choice given the existing scalar dynamics.
 
 \subsubsection{Factor 3: Vector projection}
 
@@ -381,13 +381,15 @@ a_0 = c \cdot \frac{k_0}{2\pi} = \frac{c\,H_0}{2\pi}
 \end{equation}
 where the factor $2\pi$ converts between angular frequency and ordinary frequency: the scalar dynamics operates at angular frequency $\omega_H = H_0$, but the spatial gravitational response is periodic with wavelength $\lambda = 2\pi/k_0 = 2\pi\,c/H_0$, and the acceleration scale is $c/\lambda = H_0/(2\pi)$ times $c$. This is analogous to the relationship $E = \hbar\omega$ vs.\ $E = h\nu$ in quantum mechanics, where the $2\pi$ appears or not depending on whether one uses $\omega$ or $\nu$. In the CRM, the gravitational potential $\Phi(r)$ responds to $\nu = H_0/(2\pi)$, not to $\omega = H_0$, because the spatial Fourier transform of the static Green's function introduces the $2\pi$ denominator.
 
-This identification is confirmed by three independent analyses:
+This identification is supported by three related perspectives (which share the CRM saturation framework as a common premise and should not be counted as fully independent derivations):
 \begin{enumerate}
 \item \textit{Saturation ODE attractor:} The quasi-static scalar dynamics admits a unique fixed point at $\bar{x} = 0$ ($\mathcal{B}_0 = \mathrm{sech}^2(0) = 1$), yielding $a_0/(cH_0) = 1/(2\pi)$ exactly.
 \item \textit{Fourier frequency:} $H_0 = 2.183 \times 10^{-18}$\,rad/s is an angular rate; the physical Hubble frequency is $f_H = H_0/(2\pi) = 3.474 \times 10^{-19}$\,Hz, giving $a_0 = c \cdot f_H$.
 \item \textit{Dimensional fixed point:} The ratio $a_0/(cH_0) = 1/(2\pi) = 0.15915$ is the unique attractor; no other value of $2\pi$ produces consistency within $1\sigma$ of $a_0^{\mathrm{obs}}$.
 \end{enumerate}
 The $15.2\%$ discrepancy with the observed $a_0 = 1.2 \times 10^{-10}$\,m/s$^2$ ($0.66\sigma$) is reduced to $0.29\sigma$ when using the SH0ES value $H_0 = 73$\,km/s/Mpc ($a_0^{\mathrm{SH0ES}} = 1.13 \times 10^{-10}$\,m/s$^2$). For the SPARC test (Sec.~\ref{sec:mcmc}), we treat $a_0 = cH_0/(2\pi)$ as the model prediction and test whether the data are consistent with this value.
+
+\textit{Epistemic caveat:} The relation $a_0 = cH_0/(2\pi)$ is a \emph{consistency relation}, not an independent derivation. The CRM framework is constructed to be consistent with the observed $a_0$; the three perspectives above demonstrate internal coherence, not parameter-free prediction. Whether this relation reflects a deep physical connection or a numerical coincidence can only be decided by improved measurements of $H_0$ and $a_0$ from independent observations.
 
 
 % ===================================================================
@@ -512,10 +514,10 @@ This estimate is conservative: the linearized Yukawa profile overestimates $\par
 Table~\ref{tab:termination} summarizes the activity of both daughters across scales.
 
 \begin{table*}[tbp]
-\caption{\label{tab:termination}Termination hierarchy. Each daughter is active only where its contribution is needed for entropy production or structural stability.}
+\caption{\label{tab:termination}Termination hierarchy. Each sector is active only where its contribution is needed for entropy production or structural stability.}
 \begin{ruledtabular}
 \begin{tabular}{llll}
-Scale & Daughter~1 & Daughter~2 & Effect \\
+Scale & Scalar sector & Vector sector & Effect \\
 \hline
 Cosmos ($\rho \sim \rho_c$) & Active & Inactive & Dark energy \\
 Galaxy ($\rho \sim 10^2\rho_c$) & Partially active & Active & MOND \\
@@ -524,7 +526,7 @@ Solar System ($\rho \gg \rho_c$) & Screened & Decoupled & Pure GR \\
 \end{ruledtabular}
 \end{table*}
 
-Below galactic scales, no ``dark'' problem exists: stars, planets, and atoms are fully described by GR and the Standard Model. No Daughter~3 is required because the cost (new degree of freedom) exceeds the benefit (no new phenomenology to explain). This is the \textit{termination condition} of the nested hierarchy.
+Below galactic scales, no ``dark'' problem exists: stars, planets, and atoms are fully described by GR and the Standard Model. No third sector (``Daughter~3'') is required because the cost (new degree of freedom) exceeds the benefit (no new phenomenology to explain). This is the \textit{termination condition} of the nested hierarchy.
 
 \subsection{Gravitational wave speed: $\alpha_T = 0$}
 \label{sec:alpha_T}
@@ -577,7 +579,7 @@ The constraint dynamics force $\lambda$ to track $\mathcal{F}_{\mathrm{bg}}$ suc
 \label{eq:rho_A_zero}
 \end{equation}
 
-This result, known from Einstein-Aether theories with timelike unit vector fields \cite{JacobsonMattingly2001}, has a profound physical consequence: Daughter~2 is a \textit{pure perturbation degree of freedom}. It stabilizes local dissipative structures (galaxies) through its spatial gradients but is completely invisible to the homogeneous cosmological background. The supernova, CMB, and BAO fits from Papers~I--III are not affected by the introduction of the vector sector.
+This result, known from Einstein-Aether theories with timelike unit vector fields \cite{JacobsonMattingly2001}, has a profound physical consequence: The vector sector is a \textit{pure perturbation degree of freedom}. It stabilizes local dissipative structures (galaxies) through its spatial gradients but is completely invisible to the homogeneous cosmological background. The supernova, CMB, and BAO fits from Papers~I--III are not affected by the introduction of the vector sector.
 
 
 % ===================================================================
@@ -596,7 +598,7 @@ We adopt the isotropic weak-field metric:
 ds^2 = -(1 + 2\Phi)\,dt^2 + (1 - 2\Phi)(dr^2 + r^2\,d\Omega^2)
 \label{eq:metric_wf}
 \end{equation}
-with $|\Phi| \ll 1$, assuming $\Phi = \Psi$ (no anisotropic stress). This is an approximation: the vector sector could in principle generate $\Phi \neq \Psi$, which would constitute a testable prediction (gravitational slip). We defer this analysis to future work and note that $\Phi = \Psi$ is exact in GR with perfect-fluid matter and is an excellent approximation in known viable vector-tensor theories \cite{Skordis2021}.
+with $|\Phi| \ll 1$, assuming $\Phi = \Psi$ (no anisotropic stress). Note that in $f(R)$ theories, the gravitational slip $\eta = \Phi/\Psi \neq 1$ in general (cf.\ Paper~III). The approximation $\Phi \approx \Psi$ is adopted here for the quasi-static galactic regime where the scalar degree of freedom is screened. This is an approximation: the vector sector could in principle generate $\Phi \neq \Psi$, which would constitute a testable prediction (gravitational slip). We defer this analysis to future work and note that $\Phi = \Psi$ is exact in GR with perfect-fluid matter and is an excellent approximation in known viable vector-tensor theories \cite{Skordis2021}.
 
 For the scalar field, we decompose into cosmological background and galactic perturbation:
 \begin{equation}
@@ -1010,7 +1012,7 @@ This is comparable to the status of the Starobinsky model: the $R^2$ term is the
 \begin{enumerate}
 \item \textbf{RAR interpolation function from field equations:} The BVP extraction across 19 galaxies ($10^8$--$10^{12.5}\,M_\odot$) yields a CRM-native interpolation function $\mu_{\mathrm{CRM}}(x) = [1 - \exp(-x^\alpha)]^{-1}$ with $\alpha = 0.310 \pm 0.001$ (Eq.~\ref{eq:mu_crm}). This differs from the McGaugh form ($\alpha = 0.5$) and provides an $11\times$ better fit to the BVP data ($\chi^2_{\mathrm{red}} = 1{,}467$ vs.\ $16{,}519$). The remaining task is a full SPARC reanalysis using $\mu_{\mathrm{CRM}}$ instead of the McGaugh proxy, which may improve the $\chi^2/\mathrm{dof}$ of Run~B.
 
-\item \textbf{Rigorous $2\pi$ derivation:} The factor $2\pi$ in $a_0 = cH_0/(2\pi)$ has been confirmed by three independent methods (Sec.~\ref{sec:a0_derivation}): the saturation ODE attractor at $\mathcal{B}_0 = 1$, the Fourier angular-to-linear frequency conversion ($f_H = H_0/(2\pi)$), and the uniqueness of the dimensional fixed point $a_0/(cH_0) = 1/(2\pi)$. The $15.2\%$ discrepancy with $a_0^{\mathrm{obs}}$ is $0.66\sigma$ (Planck $H_0$) or $0.29\sigma$ (SH0ES $H_0$). The $2\pi$ factor is thus the standard angular-to-linear frequency conversion, not a free parameter or heuristic.
+\item \textbf{Rigorous $2\pi$ derivation:} The factor $2\pi$ in $a_0 = cH_0/(2\pi)$ has been confirmed by three related perspectives (Sec.~\ref{sec:a0_derivation}): the saturation ODE attractor at $\mathcal{B}_0 = 1$, the Fourier angular-to-linear frequency conversion ($f_H = H_0/(2\pi)$), and the uniqueness of the dimensional fixed point $a_0/(cH_0) = 1/(2\pi)$. \textit{Note: these perspectives share common premises (the CRM saturation framework) and should not be counted as fully independent derivations of $a_0$.} The $15.2\%$ discrepancy with $a_0^{\mathrm{obs}}$ is $0.66\sigma$ (Planck $H_0$) or $0.29\sigma$ (SH0ES $H_0$). The $2\pi$ factor is thus the standard angular-to-linear frequency conversion, not a free parameter or heuristic.
 
 \item \textbf{Uniqueness of $\mathcal{B}(\phi)$:} The $\mathrm{sech}^2$ form is motivated by P\"oschl-Teller consistency but not proven unique. An exclusion argument (analogous to the $R + \gamma R^2$ uniqueness in Paper~III) is desirable.
 
@@ -1035,7 +1037,7 @@ We have presented the complete Curvature Relaxation Model action $S_{\mathrm{CRM
 
 \item The coupling function $\mathcal{F} = |T|/\rho_{\mathrm{crit}} \cdot \mathrm{sech}^2(\phi/\phi_0) \cdot A_\mu\partial^\mu\phi$ satisfies all six constraints (BBN, MOND limit, screening, $a_0 \sim cH_0$, ghost freedom, $\alpha_T = 0$).
 
-\item The MOND scale $a_0 = cH_0/(2\pi)$ emerges as an order-of-magnitude prediction (within $\sim 13\%$, or $0.66\sigma$, of the observed value), not a fitted parameter. Galaxies ``know'' the expansion rate because the vector field couples to the scalar field that drives the expansion. Three independent analyses confirm the $2\pi$ factor: the saturation ODE attractor, the Fourier angular-to-linear frequency conversion, and the dimensional fixed point uniqueness (Sec.~\ref{sec:a0_derivation}).
+\item The MOND scale $a_0 = cH_0/(2\pi)$ emerges as an order-of-magnitude prediction (within $\sim 13\%$, or $0.66\sigma$, of the observed value), not a fitted parameter. Galaxies ``know'' the expansion rate because the vector field couples to the scalar field that drives the expansion. Three related perspectives (sharing common CRM premises) support the $2\pi$ factor: the saturation ODE attractor, the Fourier angular-to-linear frequency conversion, and the dimensional fixed point uniqueness (Sec.~\ref{sec:a0_derivation}); see note in that section regarding their shared foundations.
 
 \item Three rigorous consistency proofs are established: (i)~$\alpha_T = 0$ exactly, preserving $c_T = c$ (Sec.~\ref{sec:alpha_T}); (ii)~parasitic screening suppresses the vector source in the Solar System by a factor $\sim 10^{-3 \times 10^9}$ (Sec.~\ref{sec:parasitic}); (iii)~$\rho_A = 0$ on FLRW, ensuring the vector sector does not affect cosmological background fits (Sec.~\ref{sec:rho_A}).
 
@@ -1055,6 +1057,15 @@ The ontological picture is: two axioms (null-space fluctuation + thermodynamic o
 \begin{acknowledgments}
 This work was conducted as independent research without institutional funding. The author thanks the open-source communities behind \texttt{hi\_class} \cite{Zumalacarregui2017}, \texttt{CLASS} \cite{Blas2011}, \texttt{emcee} \cite{ForemanMackey2013}, \texttt{NumPy} \cite{Harris2020}, \texttt{SciPy} \cite{Virtanen2020}, and \texttt{Matplotlib} \cite{Hunter2007}. The SPARC database \cite{Lelli2016} provides an invaluable public resource for testing modified gravity theories.
 \end{acknowledgments}
+
+\paragraph{Funding information.}
+This research received no external funding.
+
+\paragraph{Data availability.}
+The SPARC database \cite{Lelli2016} is publicly available.
+All analysis code and numerical results are available at
+\url{https://github.com/lukisch/crm-cosmology}
+(DOI: \href{https://doi.org/10.5281/zenodo.18728936}{10.5281/zenodo.18728936}).
 
 % ===================================================================
 % BIBLIOGRAPHY

@@ -100,7 +100,7 @@ Weiter heisst es aber auch:
 
 ### 1.6 MINOR: chi^2_total und chi^2_SN Diskrepanz
 
-**Paper II** (bevorzugte Variante): $\chi^2_{\text{SN}} = 704.8$, $\chi^2_{\text{total}} = 704.8$ (mit $\chi^2_{\text{CMB}} = 0.0$, $\chi^2_{\text{BAO}} = 0.0$).
+**Paper II** (bevorzugte Variante): $\chi^2_{\text{SN}} = 699.6$, $\chi^2_{\text{CMB}} = 0.0$, $\chi^2_{\text{BAO}} = 5.2$, $\chi^2_{\text{total}} = 704.8$. (Korrigiert: Vorherige Version hatte faelschlicherweise $\chi^2_{\text{SN}} = 704.8$ und $\chi^2_{\text{BAO}} = 0.0$, da das Generierungs-Script die Einzelkomponenten nicht ausgab und chi2_total als chi2_SN misinterpretiert wurde.)
 
 **Paper I**: $\chi^2_{\text{SN}} = 716.8$ (flat CFM, diagonal).
 

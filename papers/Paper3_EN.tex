@@ -19,7 +19,7 @@
 \usepackage{hyperref}
 \hypersetup{
     pdftitle={Microscopic Foundations of the Curvature Relaxation Model: From Quantum Geometry to Macroscopic Saturation},
-    pdfauthor={L. Geiger},
+    pdfauthor={Lukas Geiger},
     colorlinks=true,
     linkcolor=black,
     urlcolor=blue,
@@ -34,23 +34,23 @@
 
 \title{Microscopic Foundations of the Curvature Relaxation Model: From Quantum Geometry to Macroscopic Saturation}
 
-\author{L. Geiger}
-\email{Correspondence: Bernau, Germany}
+\author{Lukas Geiger}
+\email{lukas@geiger-research.de}
 \affiliation{Independent Researcher, Bernau im Schwarzwald, Germany}
 
 \date{\today}
 
 \begin{abstract}
-Papers~I and~II established the Curvature Relaxation Model (CRM) as a phenomenologically successful alternative to $\Lambda$CDM, eliminating the dark sector through geometric curvature return ($\Delta\chi^2 = -5.5$ vs.\ $\Lambda$CDM, joint SN+CMB+BAO, 6 parameters, zero EDE). This paper addresses the microscopic foundations: \textit{What quantum system yields the saturation ODE $d\Omega_\Phi/da = k[1-(\Omega_\Phi/\Phi_0)^2]$ and the running coupling $\beta_{\mathrm{eff}}(a)$?} We derive the effective Lagrangian $\mathcal{L}_{\mathrm{CRM}} = R/(16\pi G) + \gamma R^2 + \frac{1}{2}(\partial\phi)^2 - V_{\mathrm{PT}}(\phi)$, where the $R^2$ term generates the geometric ``dark matter'' contribution and a P\"oschl-Teller scalar provides saturation dynamics. The trace coupling $\mathcal{F}(T/\rho)$ ensures BBN protection as a rigorous consequence of conformal symmetry. We explore four UV-completion candidates (scalar double-well, Loop Quantum Gravity, Finsler geometry, information-theoretic spacetime), all producing saturation dynamics of the required form. The running $\beta$ is interpreted as a second order parameter in a geometric phase transition. Ghost freedom, tachyonic stability, and solar system compatibility (chameleon screening, $\lambda_C^{\mathrm{solar}} \sim 20$\,m) are verified. Testable predictions -- scalaron Compton wavelength, gravitational wave speed $c_T = c$, lensing parameter, and CMB power spectrum modifications -- are independent of the UV completion. The ontological picture reduces to spacetime curvature in three phases plus baryonic matter.
+Papers~I and~II established the Curvature Relaxation Model (CRM) as a phenomenologically successful alternative to $\Lambda$CDM, eliminating the dark sector through geometric curvature return ($\Delta\chi^2 = -5.5$ vs.\ $\Lambda$CDM, joint SN+CMB+BAO, 6 parameters, zero EDE; note: $\chi^2$ computed with diagonal covariance approximation, neglecting off-diagonal correlations). This paper addresses the microscopic foundations: \textit{What quantum system yields the saturation ODE $d\Omega_\Phi/da = k[1-(\Omega_\Phi/\Phi_0)^2]$ and the running coupling $\beta_{\mathrm{eff}}(a)$?} We derive the effective Lagrangian $\mathcal{L}_{\mathrm{CRM}} = R/(16\pi G) + \gamma R^2 + \frac{1}{2}(\partial\phi)^2 - V_{\mathrm{PT}}(\phi)$, where the $R^2$ term generates the geometric ``dark matter'' contribution and a P\"oschl-Teller scalar provides saturation dynamics. The trace coupling $\mathcal{F}(T/\rho)$ ensures BBN protection as a rigorous consequence of conformal symmetry. We explore four UV-completion candidates (scalar double-well, Loop Quantum Gravity, Finsler geometry, information-theoretic spacetime), all producing saturation dynamics of the required form. The running $\beta$ is interpreted as a second order parameter in a geometric phase transition. Ghost freedom, tachyonic stability, and solar system compatibility (chameleon screening, $\lambda_C^{\mathrm{solar}} \sim 20$\,m) are verified. Testable predictions -- scalaron Compton wavelength, gravitational wave speed $c_T = c$, lensing parameter, and CMB power spectrum modifications -- are independent of the UV completion. The ontological picture reduces to spacetime curvature in three phases plus baryonic matter.
 \end{abstract}
 
 \keywords{Curvature Relaxation Model, quantum gravity, Lagrangian formulation, Loop Quantum Gravity, Finsler geometry, saturation mechanism, modified gravity}
 
-\maketitle
-
 \thanks{AI tools (Claude, Anthropic; Gemini, Google DeepMind) were used for mathematical formalization, code development, and text generation. All physical hypotheses, scientific interpretation, and responsibility for the content lie solely with the author. The analysis code is available at \url{https://github.com/lukisch/crm-cosmology}.}
 
 \thanks{Paper~III in the CRM series.}
+
+\maketitle
 
 
 % ===================================================================
@@ -430,9 +430,9 @@ Gravitational lensing in the cfm\_fR model is \textit{identical} to GR at all sc
 
 \textbf{Gravitational slip.} The ratio $\eta = \Phi/\Psi$ deviates from unity in the quasi-static limit:
 \begin{equation}
-\eta(k,a) = \frac{1 + \frac{2}{3}\frac{k^2}{k^2 + a^2 m_{\mathrm{eff}}^2}}{1 + \frac{1}{3}\frac{k^2}{k^2 + a^2 m_{\mathrm{eff}}^2}} = \frac{\mu + 1}{2\mu - 1 + 2}
+\eta(k,a) = \frac{1 + \frac{2}{3}\frac{k^2}{k^2 + a^2 m_{\mathrm{eff}}^2}}{1 + \frac{1}{3}\frac{k^2}{k^2 + a^2 m_{\mathrm{eff}}^2}} = \frac{2\mu - 1}{\mu}
 \end{equation}
-For $k \gg a\,m_{\mathrm{eff}}$: $\eta \to 1/2$; for $k \ll a\,m_{\mathrm{eff}}$: $\eta \to 1$ (GR limit). This scale-dependent gravitational slip is a unique signature of $f(R)$ gravity and can be probed by comparing weak lensing (sensitive to $\Phi + \Psi$) with galaxy clustering (sensitive to $\Psi$).
+For $k \gg a\,m_{\mathrm{eff}}$: $\eta \to 5/4$; for $k \ll a\,m_{\mathrm{eff}}$: $\eta \to 1$ (GR limit). This scale-dependent gravitational slip is a unique signature of $f(R)$ gravity and can be probed by comparing weak lensing (sensitive to $\Phi + \Psi$) with galaxy clustering (sensitive to $\Psi$).
 
 \textbf{Structure formation mechanism.} An essential clarification: in the cfm\_fR model, structure formation proceeds through the \textit{modified Poisson equation} (Eq.~\ref{eq:modified_poisson}), \textit{not} through scalaron clustering. The scalaron has $c_s^2 = 1$ and does not cluster below its Compton wavelength $\lambda_C = 2\pi/m_{\mathrm{eff}}$. Instead, it modifies the relationship between matter overdensities and gravitational potentials: the same baryon overdensity $\delta_b$ produces a $33\%$ deeper potential well ($\mu = 4/3$) at sub-Compton scales. This enhanced gravitational coupling accelerates baryon collapse and structure growth, explaining the elevated $\sigma_8$ values found in Section~\ref{sec:numerical}.
 
@@ -459,7 +459,7 @@ The $R^2$ term modifies the gravitational wave propagation equation:
 where $\Gamma_{\mathrm{GW}}$ and $m_{\mathrm{GW}}^2$ are corrections from the curvature-squared term. This predicts:
 \begin{itemize}
 \item A frequency-dependent gravitational wave speed ($c_{\mathrm{GW}} \neq c$ at high frequencies)
-\item A massive graviton mode with $m_{\mathrm{GW}} \propto \sqrt{\gamma}$
+\item A massive scalar (scalaron) mode with $m_{\mathrm{GW}} \propto \sqrt{\gamma}$
 \end{itemize}
 The LIGO/Virgo/KAGRA constraint $|c_{\mathrm{GW}}/c - 1| < 10^{-15}$ \cite{Abbott2017} places an upper bound on $\gamma$.
 
@@ -910,7 +910,7 @@ $f\sigma_8(z = 0.38)$ & $0.497$ & $0.554 \pm 0.012$ & BOSS, DESI \\
 \end{tabular}
 \end{table*}
 
-The most decisive test is the \textit{gravitational slip} $\eta$: $\Lambda$CDM predicts $\eta = 1$ at all scales, while the CRM predicts $\eta \to 1/2$ at sub-Compton scales. Euclid's combined weak lensing and galaxy clustering analysis (expected 2026--2027) will measure $\eta$ to percent-level precision, providing a clean, model-independent discrimination.
+The most decisive test is the \textit{gravitational slip} $\eta$: $\Lambda$CDM predicts $\eta = 1$ at all scales, while the CRM predicts $\eta \to 5/4$ at sub-Compton scales. Euclid's combined weak lensing and galaxy clustering analysis (expected 2026--2027) will measure $\eta$ to percent-level precision, providing a clean, model-independent discrimination.
 
 \subsection{Additional Datasets: BAO, CMB Lensing, and Future Probes}
 \label{subsec:future_data}

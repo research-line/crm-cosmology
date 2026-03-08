@@ -33,7 +33,7 @@
 \title{CRM-MOND-Vereinigung: Ein baryonisches Universum ohne Dunkle Materie --- Ersetzung des Teilchen-Darksektors durch Raumzeit-Geometrie}
 
 \author{Lukas Geiger}
-\email{Correspondence: Bernau, Germany}
+\email{lukisch@users.noreply.github.com}
 \affiliation{Independent Researcher, Bernau im Schwarzwald, Germany}
 
 \date{\today}
@@ -46,11 +46,11 @@ Wir schlagen ein vereinheitlichtes geometrisches Rahmenwerk vor, das sowohl Dunk
 
 \keywords{Kr\"ummungs-R\"uckgabemodell, MOND, Dunkle Materie, Dunkle Energie, baryonisches Universum, Pantheon+, modifizierte Gravitation, geometrische Kosmologie}
 
-\maketitle
-
 \thanks{KI-Werkzeuge (Claude, Anthropic; Gemini, Google DeepMind) wurden fuer mathematische Formalisierung, Code-Entwicklung und Texterstellung verwendet. Alle physikalischen Hypothesen, wissenschaftliche Interpretation und Verantwortung fuer die Inhalte liegen vollstaendig bei dem Autor. Der Analysecode ist verfuegbar unter \url{https://github.com/lukisch/crm-cosmology}.}
 
 \thanks{Arbeit~II in der CRM-Serie.}
+
+\maketitle
 
 
 % -------------------------------------------------------------------
@@ -112,7 +112,7 @@ mit
 F\"ur die Erweiterung auf ein Universum mit ausschlie\ss{}lich baryonischem Materieinhalt zerlegen wir das geometrische Potential in zwei Komponenten:
 \begin{equation}
 \begin{split}
-H^2(a) = H_0^2 \Big[&\Omega_b\,a^{-3} + \underbrace{\Phi_0 \cdot f_{\mathrm{sat}}(a)}_{\text{geom.\ DE}} \\
+H^2(a) = H_0^2 \Big[&\mu_{\mathrm{eff}}\,\Omega_b\,a^{-3} + \underbrace{\Phi_0 \cdot f_{\mathrm{sat}}(a)}_{\text{geom.\ DE}} \\
 &+ \underbrace{\alpha \cdot a^{-\beta}}_{\text{geom.\ DM}}\Big]
 \end{split}
 \label{eq:extended_cfm}
@@ -120,15 +120,16 @@ H^2(a) = H_0^2 \Big[&\Omega_b\,a^{-3} + \underbrace{\Phi_0 \cdot f_{\mathrm{sat}
 
 wobei:
 \begin{itemize}
-\item $\Omega_b \approx 0{,}05$ die baryonische Materiedichte ist (fest)
+\item $\mu_{\mathrm{eff}}\,\Omega_b$ die MOND-verst\"arkte baryonische Materiedichte ist, wobei $\mu_{\mathrm{eff}} \approx 1{,}77$ die gravitative Verst\"arkung durch die MOND-Interpolationsfunktion auf kosmologischen Skalen kodiert.\footnote{Wir verwenden $\mu_{\mathrm{eff}}$ f\"ur die Hintergrund-MOND-Verst\"arkung und reservieren $\mu(k,a)$ f\"ur die modifizierte Poisson-Gleichung auf St\"orungsebene (Paper~III). Dies sind verschiedene Gr\"o\ss{}en.}
 \item $\Phi_0 \cdot f_{\mathrm{sat}}(a)$ der S\"attigungs-Ersatzterm f\"ur Dunkle Energie ist (aus dem dynamischen S\"attigungsmechanismus)
 \item $\alpha \cdot a^{-\beta}$ ein Potenzgesetz-Term ist, der die \textit{kosmologische} Rolle der Dunklen Materie \"ubernimmt
 \end{itemize}
 
 Die Flachheitsbedingung $H^2(a{=}1)/H_0^2 = 1$ ergibt:
 \begin{equation}
-\Omega_b + \Phi_0 \cdot f_{\mathrm{sat}}(1) + \alpha = 1
+\mu_{\mathrm{eff}}\,\Omega_b + \Phi_0 \cdot f_{\mathrm{sat}}(1) + \alpha = 1
 \end{equation}
+Beachte, dass bei $a=1$ der erste Term in Gl.~\eqref{eq:extended_cfm} $\mu_{\mathrm{eff}}\,\Omega_b$ ist, nicht $\Omega_b$ allein, da der MOND-Verst\"arkungsfaktor $\mu_{\mathrm{eff}}$ auf die baryonische Dichte zu allen Epochen einschlie\ss{}lich heute angewendet wird.
 
 \subsection{Spur-Kopplung und BBN-Konsistenz}
 \label{subsec:trace_coupling}
@@ -147,7 +148,7 @@ T_{\mathrm{rad}} = -\rho_{\mathrm{rad}} + 3 \cdot \tfrac{1}{3}\rho_{\mathrm{rad}
 
 Dies ist kein Zufall, sondern eine Konsequenz der \textit{konformen Symmetrie}: Masselose Felder sind konform invariant, und die Spur eines konform invarianten Energie-Impuls-Tensors verschwindet identisch. W\"ahrend der strahlungsdominierten \"Ara ist die konforme Symmetrie exakt, und der geometrische DM-Term wird automatisch unterdr\"uckt.
 
-F\"ur nicht-relativistische Materie ($w \approx 0$) ist die Spur $T_{\mathrm{mat}} = -\rho_m \neq 0$, und der geometrische DM-Term wird aktiviert. Der \"Ubergang erfolgt nat\"urlich bei der Materie-Strahlungs-Gleichheit ($a_{\mathrm{eq}} \approx 3 \times 10^{-4}$), deutlich nach der BBN ($a_{\mathrm{BBN}} \sim 10^{-9}$).
+F\"ur nicht-relativistische Materie ($w \approx 0$) ist die Spur $T_{\mathrm{mat}} = -\rho_m \neq 0$, und der geometrische DM-Term wird aktiviert. Der \"Ubergang erfolgt nat\"urlich bei der Materie-Strahlungs-Gleichheit ($a_{\mathrm{eq}} \approx 1{,}8 \times 10^{-3}$), deutlich nach der BBN ($a_{\mathrm{BBN}} \sim 10^{-9}$).
 
 Die vollst\"andige erweiterte Friedmann-Gleichung mit Spur-Kopplung lautet:
 \begin{equation}
@@ -160,11 +161,11 @@ wobei $\mathcal{S}(a)$ der Spur-Kopplungs-Unterdr\"uckungsfaktor ist:
 = \frac{1}{1 + (a_{\mathrm{eq}}/a)}
 \label{eq:suppression}
 \end{equation}
-mit $a_{\mathrm{eq}} = \Omega_r/\Omega_b \approx 3 \times 10^{-4}$ (unter Verwendung von $\Omega_r \approx 9 \times 10^{-5}$). Dieser Faktor erf\"ullt:
+mit $a_{\mathrm{eq}} = \Omega_r/\Omega_b \approx 1{,}8 \times 10^{-3}$ (unter Verwendung von $\Omega_r \approx 9 \times 10^{-5}$ und $\Omega_b \approx 0{,}05$ in diesem rein baryonischen Modell; beachte, dass bei Verwendung der effektiven Materiedichte $\mu_{\mathrm{eff}}\,\Omega_b \approx 0{,}089$ stattdessen $a_{\mathrm{eq}} \approx 1{,}0 \times 10^{-3}$ gilt). Dieser Faktor erf\"ullt:
 \begin{itemize}
 \item $\mathcal{S}(a \ll a_{\mathrm{eq}}) \approx a/a_{\mathrm{eq}} \to 0$ \quad (Strahlungs\"ara: BBN gesch\"utzt)
 \item $\mathcal{S}(a \gg a_{\mathrm{eq}}) \approx 1$ \quad (Materie-/DE-\"Ara: voller geometrischer DM-Beitrag)
-\item $\mathcal{S}(a = 1) \approx 1 - 3\times10^{-4} \approx 1$ \quad (heute: SN-Fit unver\"andert)
+\item $\mathcal{S}(a = 1) \approx 1 - 1{,}8\times10^{-3} \approx 1$ \quad (heute: SN-Fit unver\"andert)
 \end{itemize}
 
 \textbf{Auswirkung auf den Pantheon+-Fit:} Da alle Pantheon+-Supernovae bei $z < 2{,}3$ ($a > 0{,}30$) liegen, ist der Unterdr\"uckungsfaktor im gesamten beobachteten Rotverschiebungsbereich $\mathcal{S} > 0{,}999$. Die MCMC-Ergebnisse ($\alpha$, $\beta$, $\chi^2$) bleiben bis auf numerische Pr\"azision unver\"andert.

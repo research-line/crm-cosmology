@@ -22,4 +22,37 @@ results/
 
 # Editor
 .vscode/
+.claude/
 *.swp
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*Notes.bib
+
+# Internal/private files (CLAUDE.md policy)
+Plan.txt
+CORE.txt
+Core2.txt
+REVISE.txt
+_archive/
+_partners/
+_SciPost_submission/
+_data/
+_results/
+_scripts/
+MCMC_SERVER_BRIEFING.md
+backup_renumber_*/
+removed_sections/
+
+# Misc
+count_abstract.py
+renumber_papers.py
+papers/check_integrity.py
+papers/convert_to_revtex.py
+papers/find_cite_diff.py
+papers/fix_abstracts.py
+papers/removed_sections/
+papers/Paper4_DE_part*.txt
