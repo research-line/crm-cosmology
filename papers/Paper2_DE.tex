@@ -34,7 +34,7 @@
 
 \author{Lukas Geiger}
 \email{lukisch@users.noreply.github.com}
-\affiliation{Independent Researcher, Bernau im Schwarzwald, Germany}
+\affiliation{Independent Researcher, Bernau, Germany}
 
 \date{\today}
 
@@ -46,7 +46,7 @@ Wir schlagen ein vereinheitlichtes geometrisches Rahmenwerk vor, das sowohl Dunk
 
 \keywords{Kr\"ummungs-R\"uckgabemodell, MOND, Dunkle Materie, Dunkle Energie, baryonisches Universum, Pantheon+, modifizierte Gravitation, geometrische Kosmologie}
 
-\thanks{KI-Werkzeuge (Claude, Anthropic; Gemini, Google DeepMind) wurden fuer mathematische Formalisierung, Code-Entwicklung und Texterstellung verwendet. Alle physikalischen Hypothesen, wissenschaftliche Interpretation und Verantwortung fuer die Inhalte liegen vollstaendig bei dem Autor. Der Analysecode ist verfuegbar unter \url{https://github.com/lukisch/crm-cosmology}.}
+\thanks{KI-Werkzeuge (Claude, Anthropic; Gemini, Google DeepMind) wurden für mathematische Formalisierung, Code-Entwicklung und Texterstellung verwendet. Alle physikalischen Hypothesen, wissenschaftliche Interpretation und Verantwortung für die Inhalte liegen vollständig bei dem Autor. Der Analysecode ist verfügbar unter \url{https://github.com/lukisch/crm-cosmology}.}
 
 \thanks{Arbeit~II in der CRM-Serie.}
 
@@ -66,7 +66,7 @@ Zwei unabh\"angige Forschungsrichtungen stellen dieses Bild in Frage:
 \begin{enumerate}
 \item \textbf{Das Curvature Relaxation Model (CRM; dt.\ Kr\"ummungs-R\"uckgabemodell)} \cite{Geiger2026}: Das CRM ersetzt die kosmologische Konstante $\Lambda$ durch ein zeitabh\"angiges Kr\"ummungs-R\"uckgabepotential $\Omega_\Phi(a)$ und erkl\"art die beschleunigte Expansion als geometrisches "`Ged\"achtnis"' statt als neue Energieform. Getestet an 1.590 Pantheon+-Supernovae liefert das CRM $\Delta\chi^2 = -12{,}2$ relativ zu $\Lambda$CDM.
 
-\item \textbf{Modifizierte Newtonsche Dynamik (MOND)} \cite{Milgrom1983}: MOND modifiziert die Gravitationsdynamik bei Beschleunigungen unterhalb von $a_0 \approx 1{,}2 \times 10^{-10}$\,m/s$^2$ und sagt galaktische Rotationskurven, die baryonische Tully-Fisher-Relation \cite{McGaugh2016} und die radiale Beschleunigungsrelation \cite{Lelli2017} erfolgreich vorher -- ohne Dunkle Materie zu ben\"otigen.
+\item \textbf{Modifizierte Newtonsche Dynamik (MOND)} \cite{Milgrom1983}: MOND modifiziert die Gravitationsdynamik bei Beschleunigungen unterhalb von $a_0 \approx 1{,}2 \times 10^{-10}$\,m/s$^2$ und sagt galaktische Rotationskurven, die baryonische Tully-Fisher-Relation \cite{McGaugh2016} und die radiale Beschleunigungsrelation \cite{Lelli2017} erfolgreich vorher -- ohne Dunkle Materie zu ben\"otigen (f\"ur einen umfassenden \"Uberblick siehe \cite{FamaeyMcGaugh2012}).
 \end{enumerate}
 
 Die zentrale Frage dieses Papers lautet: \textit{K\"onnen beide Rahmenwerke zu einem einzigen Modell vereint werden, das den gesamten Teilchen-Darksektor durch Raumzeit-Geometrie ersetzt?}
@@ -202,6 +202,8 @@ Eine wesentliche Unterscheidung muss aufrechterhalten werden:
 
 Die beiden Mechanismen sind komplement\"ar: MOND behandelt die lokale Dynamik, w\"ahrend der geometrische DM-Term die globale Expansionsgeschichte behandelt.
 
+\textit{Terminologie und mikroskopischer Status.} Der MOND-Verst\"arkungsfaktor $\mu_{\mathrm{eff}}$, der in diesem Paper eingef\"uhrt wird, fungiert als \emph{effektive MOND-Hintergrundkopplung} -- eine ph\"anomenologische Parametrisierung daf\"ur, wie MOND-Skalen-Physik in die Friedmann-Gleichung eingeht. Paper~IV \cite{Geiger2026d} liefert die mikroskopische Realisierung: Eine teleodynamische Kopplung $\mathcal{F}(A_\mu, \phi, T)$ zwischen dem Scalaron, einem zeitartigen Vektorfeld $A_\mu$ und der Materiespur $T$ erzeugt die MOND-Verst\"arkung dynamisch, wobei $a_0 = cH_0/(2\pi)$ als Konsistenzrelation statt als angepasster Parameter auftritt.
+
 \subsection{Die Effizienzhypothese: Warum keine Dunkle Materie?}
 \label{subsec:efficiency}
 
@@ -333,6 +335,17 @@ Das erweiterte CRM demonstriert, dass die gesamte Expansionsgeschichte, die durc
 \end{itemize}
 
 Falls dieses Ergebnis Tests gegen CMB- und BAO-Daten \"ubersteht, w\"urde es bedeuten, dass 95\% des $\Lambda$CDM-Energiebudgets ein Artefakt der Interpretation geometrischer Effekte als materielle Komponenten sind.
+
+\subsection{Status der MOND-Kopplung (provisorisch)}
+\label{subsec:mond_status}
+
+Die MOND-Hintergrundkopplung $\mu_{\mathrm{eff}}$, die in diesem Paper verwendet wird, ist eine \emph{ph\"anomenologische Parametrisierung}: Ihr Wert ($\mu_{\mathrm{eff}} = \sqrt{\pi}$) und ihre Skalenabh\"angigkeit ($\mu(a) \to 1$ bei $z > 4000$) sind an die Daten angepasst, nicht aus einer Lagrange-Dichte abgeleitet. Dies ist eine ehrliche Einschr\"ankung der vorliegenden Arbeit: Die Kopplung reproduziert die korrekte Expansionsgeschichte, aber ihr physikalischer Ursprung bleibt offen.
+
+Paper~IV \cite{Geiger2026d} liefert die dynamische Grundlage. Der Vektorsektor -- ein zeitartiges Einheitsvektorfeld $A_\mu$, abgeleitet aus dem Prinzip maximaler Entropieproduktion -- erzeugt die MOND-Verst\"arkung durch eine teleodynamische Kopplung an den Scalaron. Die Aufgabenteilung lautet:
+\begin{itemize}
+\item \textbf{Dieses Paper (Paper~II):} Demonstriert, \emph{dass} die MOND-Hintergrundkopplung gemeinsame SN+CMB+BAO-Kompatibilit\"at erreicht, und bestimmt die effektive Gr\"o\ss{}e $\mu_{\mathrm{eff}} \approx \sqrt{\pi}$.
+\item \textbf{Paper~IV:} Demonstriert, \emph{warum} -- leitet die Kopplung aus Feldgleichungen ab und etabliert $a_0 = cH_0/(2\pi)$ als Konsistenzrelation.
+\end{itemize}
 
 \subsection{Das $\beta \approx 2{,}0$-Ergebnis: Kr\"ummung als Dunkle Materie}
 
@@ -720,6 +733,17 @@ Foreman-Mackey, D., Hogg, D.\,W., Lang, D.\ \& Goodman, J.\ (2013).
 emcee: The MCMC Hammer.
 \textit{Publications of the Astronomical Society of the Pacific}, 125(925), 306--312.
 DOI: 10.1086/670067.
+
+\bibitem{Geiger2026d}
+Geiger, L.\ (2026).
+The Galactic--Cosmological Nexus: Connecting CRM to MOND Dynamics via Curvature Saturation.
+Companion paper (Paper~IV), submitted simultaneously.
+
+\bibitem{FamaeyMcGaugh2012}
+Famaey, B.\ \& McGaugh, S.\,S.\ (2012).
+Modified Newtonian Dynamics (MOND): Observational Phenomenology and Relativistic Extensions.
+\textit{Living Reviews in Relativity}, 15, 10.
+DOI: 10.12942/lrr-2012-10.
 
 \end{thebibliography}
 

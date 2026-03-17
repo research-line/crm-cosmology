@@ -33,7 +33,7 @@
 
 \author{Lukas Geiger}
 \email{Correspondence: Bernau, Germany}
-\affiliation{Independent Researcher, Bernau im Schwarzwald, Germany}
+\affiliation{Independent Researcher, Bernau, Germany}
 
 \date{\today}
 
@@ -43,11 +43,26 @@ Die Arbeiten~I--III der Curvature Relaxation Model (CRM) Serie zeigten, dass ein
 
 \keywords{MOND, modifizierte Gravitation, Vektor-Tensor-Theorie, Radial Acceleration Relation, Kr\"ummungs-R\"uckgabe, Dunkle-Materie-Alternative, galaktische Dynamik}
 
-\thanks{KI-Werkzeuge (Claude, Anthropic; Gemini, Google DeepMind) wurden fuer mathematische Formalisierung, Code-Entwicklung und Texterstellung verwendet. Alle physikalischen Hypothesen, wissenschaftliche Interpretation und Verantwortung fuer die Inhalte liegen vollstaendig bei dem Autor. Der Analysecode ist verfuegbar unter \url{https://github.com/lukisch/crm-cosmology}.}
+\thanks{KI-Werkzeuge (Claude, Anthropic; Gemini, Google DeepMind) wurden für mathematische Formalisierung, Code-Entwicklung und Texterstellung verwendet. Alle physikalischen Hypothesen, wissenschaftliche Interpretation und Verantwortung für die Inhalte liegen vollständig bei dem Autor. Der Analysecode ist verfügbar unter \url{https://github.com/lukisch/crm-cosmology}.}
 
 \thanks{Arbeit~IV in der CRM-Serie. Begleitarbeiten: \cite{Geiger2026,Geiger2026b,Geiger2026c}.}
 
 \maketitle
+
+\subsection*{Zusammenfassung (Executive Summary)}
+
+Dieses Paper erweitert das Curvature Relaxation Model (CRM) von der kosmologischen (Papers~I--II) und Skalarfeld-Skala (Paper~III) auf die galaktische Dynamik. Das zentrale Ergebnis ist, dass der CRM-Kr\"ummungss\"attigungsmechanismus, gekoppelt an ein massives Vektorfeld, die empirische MOND-Ph\"anomenologie reproduziert -- einschlie\ss{}lich flacher Rotationskurven und der radialen Beschleunigungsrelation -- mit der Parameter-freien Vorhersage $a_0 = cH_0/(2\pi)$.
+
+\textbf{Zentrale Ergebnisse:}
+\begin{enumerate}
+\item Ein zeitartiges Vektorfeld $A_\mu$ wird aus dem Prinzip maximaler Entropieproduktion abgeleitet (Abschn.~\ref{sec:derivation}).
+\item Die Kopplungsfunktion $\mathcal{B}(\phi) = \mathrm{sech}^2(\phi/\phi_0)$ liefert automatische Abschirmung im Sonnensystem (Abschn.~6).
+\item BVP-L\"osungen f\"ur 19~Galaxien ($10^8$--$10^{12{,}5}\,M_\odot$) konvergieren s\"amtlich (Abschn.~8).
+\item Eine CRM-eigene Interpolationsfunktion $\mu_{\mathrm{CRM}}(x)$ wird extrahiert: $\chi^2_{\mathrm{red}} = 1467$ vs.\ McGaugh $\chi^2_{\mathrm{red}} = 16519$ (Abschn.~8).
+\item CMB-Vektor-Perturbationen sind vernachl\"assigbar: $\Delta C_\ell/C_\ell < 10^{-11}\%$ (Abschn.~9).
+\end{enumerate}
+
+\textbf{Einschr\"ankungen:} Tabelle~\ref{tab:galactic_status} listet den epistemischen Status jedes Ergebnisses. Die galaktischen Feldgleichungen sind noch nicht analytisch geschlossen -- die BVP-Analyse verwendet numerische L\"osungen mit dem McGaugh-Proxy.
 
 
 % ===================================================================
@@ -132,12 +147,14 @@ Ein Vektorfeld $A_\mu$, beschr\"ankt auf zeitartig ($A_\mu A^\mu = -1$), w\"ahlt
 
 Die Beziehung zwischen Tochter~1 und Tochter~2 ist ein Auftraggeber-Beauftragten-Problem:
 \begin{itemize}
-\item \textbf{Auftraggeber} (Tochter~1 / Skalarfeld): Braucht stabile Galaxien fuer effiziente Entropieproduktion, kann sie aber nicht allein schaffen.
+\item \textbf{Auftraggeber} (Tochter~1 / Skalarfeld): Braucht stabile Galaxien für effiziente Entropieproduktion, kann sie aber nicht allein schaffen.
 \item \textbf{Beauftragter} (Tochter~2 / Vektorfeld): Stellt die zus\"atzliche Gravitationsunterst\"utzung bereit, die galaktische Strukturen stabilisiert, strebt aber nach Aufl\"osung (thermodynamischer Pfeil zum Gleichgewicht).
 \item \textbf{Gleichgewicht:} MOND -- der Balancepunkt, an dem Galaxien stabil genug f\"ur effiziente Entropieproduktion sind, der Beauftragte aber nicht dauerhaft gebunden ist.
 \end{itemize}
 
-Dies sagt voraus, dass MOND-Effekte sich \"uber kosmische Zeit abschw\"achen sollten, wenn sich das Universum dem thermodynamischen Gleichgewicht n\"ahert -- testbar mit Hochrotverschiebungs-Durchmusterungen (JWST, ELT).
+Dies legt nahe, dass MOND-Effekte sich \"uber kosmische Zeit \textit{abschw\"achen} sollten, wenn sich das Universum dem thermodynamischen Gleichgewicht n\"ahert. Wir klassifizieren dies als eine \emph{testbare, aber optionale Konsequenz} des Frameworks: Die Abschw\"achung folgt aus $\mathcal{B}(\phi) \to 0$ wenn $\phi \to 0$ (Abschn.~\ref{sec:bvp_results}), aber die Zeitskala und Gr\"o\ss{}enordnung sind modellabh\"angig und potenziell degeneriert mit baryonischen Evolutionseffekten (Sternentstehungseffizienz, Gas-Akkretionsgeschichte). Hochrotverschiebungs-Durchmusterungen (JWST, ELT) k\"onnen den Effekt einschr\"anken, aber eine Nicht-Detektion w\"urde das CRM nicht falsifizieren -- sie w\"urde die Evolutionsrate des Skalarfelds einschr\"anken. Diese MOND-Skalen-Abschw\"achung sollte als eine Vorhersage betrachtet werden, die an die spezifische Vektorfeld-Konfiguration gebunden ist, und nicht als ein robustes modellunabh\"angiges Ergebnis.
+
+\textit{Anmerkung zum Status des Auftraggeber-Beauftragten-Frameworks:} Die Auftraggeber-Beauftragten-Konstruktion ist ein heuristisches Interpretationsframework, keine formale physikalische Herleitung. Die Vorhersage der MOND-Abschw\"achung \"uber kosmische Zeit folgt nicht mathematisch allein aus dem Auftraggeber-Beauftragten-Bild; sie folgt aus der Dynamik des CRM-Skalarfelds $\phi$, das sich zu $\phi = 0$ (Nullzustand) entwickelt, wodurch die Kopplungsst\"arke $\mathcal{B}(\phi) \to 0$ zu sp\"aten Zeiten reduziert wird (Abschn.~\ref{sec:bvp_results}). Die Auftraggeber-Beauftragten-Sprache liefert Intuition daf\"ur, \textit{warum} dies geschehen sollte, ist aber f\"ur das formale Argument nicht erforderlich. Leser sollten das Gleichgewicht der Auftraggeber-Beauftragten-Metapher nicht so interpretieren, dass MOND formal aus diesem Bild \textit{hergeleitet} wird; es wird von ihm nahegelegt.
 
 
 % ===================================================================
@@ -382,6 +399,8 @@ verglichen mit dem empirischen Wert $a_0^{\mathrm{obs}} = (1.20 \pm 0.24) \times
 \item \textit{Dimensionaler Fixpunkt:} Das Verh\"altnis $a_0/(cH_0) = 1/(2\pi) = 0{,}15915$ ist der einzige Attraktor; kein anderer Wert erzeugt Konsistenz innerhalb $1\sigma$ mit $a_0^{\mathrm{obs}}$.
 \end{enumerate}
 Die $15{,}2\%$-Diskrepanz mit dem beobachteten $a_0 = 1{,}2 \times 10^{-10}$\,m/s$^2$ ($0{,}66\,\sigma$) reduziert sich auf $0{,}29\,\sigma$ bei Verwendung des SH0ES-Wertes $H_0 = 73$\,km/s/Mpc ($a_0^{\mathrm{SH0ES}} = 1{,}13 \times 10^{-10}$\,m/s$^2$). F\"ur die MCMC-Analyse (Abschn.~\ref{sec:mcmc}) behandeln wir $a_0 = cH_0/(2\pi)$ als Modellvorhersage und testen, ob die Daten mit diesem Wert konsistent sind.
+
+\textit{Unabh\"angige Best\"atigung.} Eine unabh\"angige thermodynamische Herleitung von Brodie~\cite{Brodie2026} erh\"alt $a_0 = cH_0/6 \approx 1{,}09 \times 10^{-10}$\,m/s$^2$ aus Verschr\"ankungs-Aufteilung zwischen dem lokalen Rindler-Horizont und dem kosmologischen Hubble-Horizont. Der geometrische Faktor $1/6$ ergibt sich aus dem Winkel\"uberlappungsintegral $\int \cos^2\theta\,d\Omega$ \"uber die Hemisph\"are. Beide analytischen Vorhersagen -- $1/(2\pi) \approx 0{,}159$ (CRM) und $1/6 \approx 0{,}167$ (Brodie) -- liegen innerhalb der empirischen Unsicherheit von $a_0^{\mathrm{obs}}$ und unterscheiden sich um nur $5\%$ voneinander. Dass zwei konzeptionell verschiedene thermodynamische Rahmenwerke (Skalarfeld-Fourier-Dualit\"at vs.\ Horizont-Verschr\"ankungs-Partition) unabh\"angig $a_0$ ohne freie Parameter reproduzieren, legt stark nahe, dass $a_0 \sim cH_0$ echte Physik widerspiegelt und kein numerischer Zufall ist. Ein diskriminierender Test unter Verwendung der vollst\"andigen SPARC-Datenbank -- Vergleich von $\chi^2$ f\"ur $a_0 = cH_0/(2\pi)$ vs.\ $a_0 = cH_0/6$ vs.\ freies $a_0$ -- bleibt zuk\"unftiger Arbeit vorbehalten. F\"ur einen umfassenden ph\"anomenologischen \"Uberblick \"uber die $a_0 \sim cH_0$-Koinzidenz siehe Famaey \& McGaugh~\cite{FamaeyMcGaugh2012}.
 
 
 % ===================================================================
@@ -792,6 +811,25 @@ wobei $x \equiv g_{\mathrm{obs}}/a_0$. Dies unterscheidet sich von der McGaugh-I
 \section{Beobachtungstests}
 \label{sec:tests}
 
+\begin{table*}[tbp]
+\caption{\label{tab:galactic_status}Status der galaktischen Feldgleichungen im CRM-Vektorsektor. Drei Stufen epistemischer Zuversicht werden unterschieden.}
+\begin{ruledtabular}
+\begin{tabular}{ll}
+\textbf{Kategorie} & \textbf{Ergebnis} \\
+\hline
+\textit{Etabliert:} Existenz & Gekoppeltes Skalar-Vektor-System erlaubt statische L\"osungen \\
+\textit{Etabliert:} Skalierung & Deep-MOND $\sqrt{g_{\mathrm{bar}} a_0}$-Attraktor \\
+\textit{Etabliert:} $a_0$ & $a_0 = cH_0/(2\pi)$ als Konsistenzrelation \\
+\hline
+\textit{Plausibilisiert:} RAR-Form & BVP-Extraktion ergibt $\mu_{\mathrm{CRM}}(x)$ \\
+\textit{Plausibilisiert:} SPARC & $\chi^2/\mathrm{dof} = 9{,}67$ mit McGaugh-Proxy \\
+\hline
+\textit{Offen:} Exakte $\mu(x)$ & Analytische geschlossene Interpolationsfunktion \\
+\textit{Offen:} Volle SPARC & Reanalyse mit CRM-eigener $\mu_{\mathrm{CRM}}$ \\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}
+
 \subsection{Numerisches Schema f\"ur das statische kugelsymmetrische System}
 \label{sec:numerical_scheme}
 
@@ -986,6 +1024,8 @@ Die Aether Scalar Tensor (AeST)-Theorie von Skordis \& Z{\l}o\'snik \cite{Skordi
 
 Ein detaillierter Vergleich der St\"orungsspektren (CMB $C_\ell$ und Materie $P(k)$) zwischen CRM und AeST w\"are hochinformativ, liegt aber au\ss{}erhalb des Umfangs dieses Papiers.
 
+Neuere Arbeiten haben gezeigt, dass relativistische MOND-Theorien mit zeitartigen Vektorfeldern -- einschlie\ss{}lich AeST -- als mimetische Gravitationstheorien umformuliert werden k\"onnen, wobei tiefe konforme und disformale Symmetrien in der Metrikstruktur offengelegt werden~\cite{MimeticMOND2024}. Ob der CRM-Vektorsektor eine \"ahnliche mimetische Umformulierung erlaubt, die m\"oglicherweise seine Stabilit\"atsanalyse vereinfacht, ist eine offene Frage.
+
 \subsection{Die Kopplungsfunktion: Ableitung vs.\ Ansatz}
 
 Wir m\"ochten transparent \"uber den epistemologischen Status der verschiedenen Komponenten sein. Die Kopplungsfunktion $\mathcal{F}$ in Gl.~\eqref{eq:coupling} ist ein \textit{Minimal-Kopplungs-Ansatz}, konsistent mit sechs Bedingungen, kein eindeutiges deduktives Ergebnis. Die Unterscheidung zwischen ``hergeleitet'' und ``konstruiert'' ist entscheidend f\"ur die Bewertung des theoretischen Status des Modells. Die Drei-Faktoren-Struktur (Gatekeeper $\times$ S\"attigung $\times$ Projektion) ist physikalisch motiviert und minimal-beschr\"ankt, aber alternative Formen, die dieselben Bedingungen erf\"ullen, k\"onnen existieren.
@@ -998,6 +1038,8 @@ Die deduktive Kette des CRM ist:
 \end{itemize}
 
 Dies ist vergleichbar mit dem Status des Starobinsky-Modells: Der $R^2$-Term ist die einfachste geister-freie Erweiterung der ART, aber $R^2 + \epsilon R^3$ kann auf rein theoretischen Gr\"unden nicht ausgeschlossen werden. Die Auswahl wird durch Occams Rasiermesser und empirische Anpassung getroffen.
+
+\textbf{Nicht-Eindeutigkeit des Vektorsektors.} Wir betonen, dass der hier pr\"asentierte Vektorsektor eine \emph{minimale konsistente Realisierung} der thermodynamischen Anforderung ist, kein eindeutiges Ergebnis. Das thermodynamische Argument (Abschn.~\ref{sec:derivation}) etabliert, dass ein zus\"atzlicher Freiheitsgrad jenseits des Scalarons \emph{notwendig} ist und dass er ein zeitartiges Vektorfeld sein muss. Allerdings ist die spezifische Kopplung $\mathcal{F}$ der einfachste Ansatz, der sechs Zwangsbedingungen erf\"ullt -- alternative Formen mit derselben Constraint-Konformit\"at k\"onnen existieren. Die Nicht-Eindeutigkeit ist dreifach: (i)~die Kopplungsfunktion ist beschr\"ankt, aber nicht eindeutig abgeleitet; (ii)~die $\mathrm{sech}^2$-Modulation ist durch P\"oschl-Teller-Konsistenz motiviert, k\"onnte aber durch andere glatte Entkopplungsfunktionen ersetzt werden; (iii)~die kinetische Struktur $F_{\mu\nu}F^{\mu\nu}$ ist minimal, aber nicht die einzige geister-freie Option (vgl.\ verallgemeinerte Proca-Theorien). Was \emph{eindeutig} ist, ist das Existenz- und Skalierungsverhalten: ein Vektorfreiheitsgrad, der an den Scalaron-Gradienten koppelt, im Sonnensystem unterdr\"uckt ist und $a_0 \sim cH_0$ erzeugt.
 
 \subsection{Offene theoretische Fragen}
 
@@ -1121,7 +1163,7 @@ Maximum entropy production principle in physics, chemistry and biology.
 DOI: 10.1016/j.physrep.2005.12.001.
 
 \bibitem{Prigogine1977}
-Prigogine, I.\ (1977).
+Nicolis, G.\ \& Prigogine, I.\ (1977).
 \textit{Self-Organization in Nonequilibrium Systems}. Wiley.
 
 \bibitem{Jacobson1995}
@@ -1233,6 +1275,22 @@ Emergent Gravity and the Dark Universe.
 DESI Collaboration (2025).
 DESI DR2 Results II: Measurements of Baryon Acoustic Oscillations and Cosmological Constraints.
 \textit{arXiv:2503.14738}.
+
+\bibitem{Brodie2026}
+Brodie, G.\ (2026).
+The Radial Acceleration Relation from Two-Horizon Entropy Sharing with Zero Free Parameters.
+Zenodo. DOI: 10.5281/zenodo.14751437.
+
+\bibitem{FamaeyMcGaugh2012}
+Famaey, B.\ \& McGaugh, S.\,S.\ (2012).
+Modified Newtonian Dynamics (MOND): Observational Phenomenology and Relativistic Extensions.
+\textit{Living Reviews in Relativity}, 15, 10.
+DOI: 10.12942/lrr-2012-10.
+
+\bibitem{MimeticMOND2024}
+Skordis, C.\ \& Z{\l}o\'snik, T.\ (2024).
+Connecting Relativistic MOND Theories with Mimetic Gravity.
+\textit{Physical Review D}, 110(6), 064060.
 
 \end{thebibliography}
 

@@ -35,8 +35,8 @@
 \title{Microscopic Foundations of the Curvature Relaxation Model: From Quantum Geometry to Macroscopic Saturation}
 
 \author{Lukas Geiger}
-\email{lukas@geiger-research.de}
-\affiliation{Independent Researcher, Bernau im Schwarzwald, Germany}
+\email{https://orcid.org/0009-0005-7296-1534}
+\affiliation{Independent Researcher, Bernau, Germany}
 
 \date{\today}
 
@@ -54,7 +54,7 @@ Papers~I and~II established the Curvature Relaxation Model (CRM) as a phenomenol
 
 
 % ===================================================================
-% 1. EINLEITUNG
+% 1. INTRODUCTION
 % ===================================================================
 \section{Introduction: The Central Question}
 \label{sec:intro}
@@ -90,7 +90,7 @@ This question is not merely academic. Without a Lagrangian formulation, the CRM 
 
 
 % ===================================================================
-% 2. LAGRANGIAN FORMULIERUNG
+% 2. THE EFFECTIVE LAGRANGIAN
 % ===================================================================
 \section{The Effective Lagrangian}
 \label{sec:lagrangian}
@@ -138,9 +138,15 @@ produces a scalar field equation whose late-time solution on the FLRW background
 \end{equation}
 with $V'(\phi) = -2V_0 \tanh(\phi/\phi_0)/(\phi_0 \cosh^2(\phi/\phi_0))$, admits the solution $\phi = \phi_0 \tanh(\lambda t)$ in the slow-roll regime where $\ddot{\phi} \ll 3H\dot{\phi}$, with $\lambda$ related to $k$ and $H_0$. The energy density $\rho_\phi = \frac{1}{2}\dot{\phi}^2 + V(\phi)$ then maps to $\Omega_\Phi(a) = \Phi_0 \cdot f_{\mathrm{sat}}(a)$. \hfill $\square$
 
-\textit{Note:} The $\cosh^{-2}$ potential is well known in quantum mechanics as the P\"oschl-Teller potential. Its appearance here suggests a connection between quantum bound states and cosmological saturation.
+\textit{Note:} The $\cosh^{-2}$ potential is well known in quantum mechanics as the P\"oschl-Teller potential. Its appearance here suggests a connection between quantum bound states and cosmological saturation.\footnote{The P\"oschl-Teller potential has recently found renewed application in black hole physics, where it provides analytically tractable quasinormal mode spectra for Schwarzschild and Nariai spacetimes~\cite{ZhongPT2022, NariaiQNM2025}. That the same potential governs both cosmological saturation (CRM) and gravitational ringdown underscores a deeper connection between bound-state quantum mechanics and spacetime dynamics.}
 
-\textit{Philosophical tension:} The introduction of an additional scalar field $\phi$ appears to contradict the CRM's claim of eliminating the dark sector. We emphasize that $\phi$ is \textit{not} a new dark component analogous to dark energy or dark matter: it has a definite Lagrangian origin (Eq.~\ref{eq:double_well}), a known quantum-mechanical analog, and its late-time dynamics are entirely determined by $V_0$ and $\phi_0$ -- it is not freely adjustable. Nevertheless, deriving $\phi$ directly from the geometric sector (e.g., as a conformal mode of the metric or a condensate of the $R^2$ scalaron) remains an important open problem that would strengthen the purely geometric character of the CRM.
+\textbf{Philosophical tension: $\phi$ as an additional scalar field.} The introduction of an additional scalar field $\phi$ appears to contradict the CRM's central claim of eliminating the dark sector. The standard dark energy critique applies: a quintessence-type field with a tuned potential is structurally similar to a dark energy component, even if it is not called one. Three responses can be offered:
+
+\textit{(i) Qualitative difference:} $\phi$ is not a freely adjustable phenomenological fluid. It has a concrete Lagrangian potential (Eq.~\ref{eq:double_well}), a known quantum-mechanical analog (P\"oschl-Teller), and its dynamics are fixed by two parameters ($V_0$, $\phi_0$). Dark energy models typically require an equation of state $w(a)$ parametrized by additional free functions.
+
+\textit{(ii) Derivation from geometry (preferred route):} The $f(R) = R + 2\gamma R^2$ formulation (Section~\ref{subsec:combined_action}) avoids introducing $\phi$ explicitly: by conformal equivalence, the scalaron \textit{is} $\phi$, emerging as a geometric degree of freedom from the $R^2$ term, not as an independently postulated field. The scalar field approach (this subsection) and the $f(R)$ approach are mathematically equivalent.
+
+\textit{(iii) Acknowledged limitation:} The reviewer's objection is valid at the following level: adding any new degree of freedom to GR---whether called ``scalaron,'' ``scalar field,'' or ``geometric term''---does expand the field content beyond baryons + photons + neutrinos. The claim that ``no dark sector exists'' must therefore be read as: ``no \textit{particle physics} dark sector (no dark matter particles, no cosmological constant)''---not as ``no additional fields beyond the Standard Model metric.'' The CRM replaces particle-physics unknowns with geometric unknowns. Whether this is considered an elimination or a transformation of the dark sector is a matter of framing; we believe the geometric origin provides greater theoretical predictability, but acknowledge the objection's force.
 
 \subsection{The Power-Law Term: Geometric Origin}
 \label{subsec:powerlaw_lagrangian}
@@ -270,7 +276,7 @@ The trace coupling $\mathcal{F}(a) = 1/(1 + \Omega_r/(\Omega_b\,a))$ introduces 
 
 
 % ===================================================================
-% 3. QUANTENGRAVITATION
+% 3. QUANTUM GRAVITY CONNECTIONS
 % ===================================================================
 \section{Quantum Gravity Connections}
 \label{sec:quantum_gravity}
@@ -294,9 +300,15 @@ The central puzzle is the specific form of the saturation ODE~\eqref{eq:saturati
 \item \textbf{Causal Set Theory} \cite{Bombelli1987}: The Sorkin cosmological constant $\Lambda \sim 1/\sqrt{N}$ provides a dynamical dark energy whose evolution mirrors the saturation mechanism as the causal set approaches equilibrium density.
 
 \item \textbf{Quantum Error Correction} \cite{Almheiri2015}: The saturation $\Phi_0$ is the code capacity of the holographic spacetime code. Accelerated expansion is the code's self-protection against exceeding its error-correction threshold -- directly mapping to the null space's ``self-protection motive'' in the framework of Paper~I.
+
+\item \textbf{Topological Soliton Ensembles} \cite{FaddeevNiemi1997,AckermanSmalyukh2017}: Recent experimental realizations of knotted topological solitons (Hopfions) in condensed matter systems \cite{AckermanSmalyukh2017} demonstrate that stable, particle-like structures can arise purely from field topology, without invoking fundamental matter degrees of freedom. Such objects -- classified by a non-vanishing Hopf invariant -- are discrete, topologically protected, and capacity-limited (finite knot density per correlation volume) \cite{BattyeSutcliffe1998}. In a cosmological setting, an ensemble of such topological defects provides a natural microscopic realization of discrete geometric order. Interpreting $X(a) = C(a)/C_{\max}$ as the normalized \textit{capacity utilization} of geometric order (where $C_{\max}$ is the maximum number of independent topological configurations per Hubble patch), the mean-field kinetics of the two-phase system yields
+\begin{equation}
+\frac{dC}{da} \propto C\,(C_{\max} - C),
+\end{equation}
+since the conversion rate is proportional to both the existing ordered fraction (catalytic) and the remaining free capacity. After normalizing $X = 2C/C_{\max} - 1 \in [-1,1]$, this reduces exactly to the CRM saturation ODE $dX/da = k(1 - X^2)$ with $\tanh$ solution. The $\tanh$ form is thus not an \textit{ad hoc} fit function but the \textit{universal normal form} of capacity-limited cooperative relaxation -- independent of the specific UV realization (Hopfions, spin networks, causal set elements, etc.). This interpretation is consistent with the established cosmological role of topological defects in phase transitions \cite{VilenkinShellard1994}.
 \end{enumerate}
 
-Heuristic derivations and conjectures for each candidate are provided in Appendix~\ref{app:qg_details}. We stress that these are \textit{structural analogies}, not rigorous mathematical derivations: while all five frameworks produce saturation dynamics reminiscent of $dX/dt \propto (1 - X^2)$, a formal proof that any specific UV completion \textit{requires} the CRM effective action remains an open problem. The observation that structurally similar saturation dynamics appear across disparate approaches is suggestive but not conclusive.
+Heuristic derivations and conjectures for each candidate are provided in Appendix~\ref{app:qg_details}. We stress that these are \textit{structural analogies}, not rigorous mathematical derivations: while all six frameworks produce saturation dynamics reminiscent of $dX/dt \propto (1 - X^2)$, a formal proof that any specific UV completion \textit{requires} the CRM effective action remains an open problem. The observation that structurally similar saturation dynamics appear across disparate approaches is suggestive but not conclusive.
 
 
 % ===================================================================
@@ -321,7 +333,7 @@ In this picture, the question ``What saturates?'' has a unified answer: \textit{
 
 
 % ===================================================================
-% 4. PHASENUEBERGANG
+% 4. GEOMETRIC PHASE TRANSITION
 % ===================================================================
 \section{The Geometric Phase Transition}
 \label{sec:phase_transition}
@@ -386,12 +398,14 @@ The $\tanh$ form of the curvature return potential is a \textit{universal} conse
 \item A cooperative interaction between spacetime degrees of freedom (coupling $k$)
 \item A single relevant direction (the scale factor $a$)
 \end{enumerate}
-The specific microscopic mechanism (LQG, Finsler, causal sets) affects only the values of $k$ and $\Phi_0$, not the functional form.
+The specific microscopic mechanism (LQG, Finsler, causal sets, topological soliton ensembles) affects only the values of $k$ and $\Phi_0$, not the functional form.
 \end{conjecture}
+
+\textit{Capacity interpretation.} The universality conjecture admits a sharp reformulation in terms of capacity utilization: If $C_{\max}$ denotes the maximum geometric order achievable per Hubble patch (whether counted as spin-network alignments, topological defect number, or code capacity), then $X = C/C_{\max}$ and the saturation ODE is the \textit{normal form} of any cooperative relaxation with finite capacity. The three conditions above are equivalent to: (i) finite $C_{\max}$, (ii) catalytic growth (existing order facilitates further ordering), and (iii) a single monotone control parameter. Under these conditions, the $\tanh$ solution is not merely a good fit but a mathematical necessity -- the unique smooth trajectory of a capacity-limited order parameter.
 
 
 % ===================================================================
-% 5. TESTBARE VORHERSAGEN
+% 5. TESTABLE PREDICTIONS
 % ===================================================================
 \section{Testable Predictions from the Lagrangian}
 \label{sec:predictions}
@@ -518,7 +532,7 @@ The CRM framework is agnostic about which candidate provides the microscopic bas
 
 
 % ===================================================================
-% 7. ZUSAMMENHANG MIT BEKANNTEN THEORIEN
+% 7. CONNECTION TO KNOWN FRAMEWORKS
 % ===================================================================
 \section{Connection to Known Frameworks}
 \label{sec:connections}
@@ -537,7 +551,7 @@ Verlinde's emergent gravity proposal \cite{Verlinde2017} derives MOND-like effec
 
 
 % ===================================================================
-% 8. NUMERISCHE VALIDIERUNG
+% 8. NUMERICAL VALIDATION
 % ===================================================================
 \section{Numerical Validation: CMB Power Spectra and Structure Growth}
 \label{sec:numerical}
@@ -550,6 +564,8 @@ The $f(R)$ structure of the CRM Lagrangian ($\alpha_B = -\alpha_M/2$, $\alpha_T 
 where $n$ controls the growth rate and $\alpha_{M,0}$ the amplitude. For $n = 1$, this reproduces the \texttt{propto\_scale} parametrization at early times while \textit{saturating} at $\alpha_M \to n$ for $a \to 1$ -- matching the scalaron behavior derived in Section~\ref{subsec:beta_derivation}. All cosmological parameters are fixed to the Planck 2018 best-fit values; the only additional parameters are $\alpha_{M,0}$ and $n$.
 
 \textbf{Transparency note on numerical settings.} The hi\_class runs use \texttt{skip\_stability\_tests\_smg = yes}, bypassing the automated stability checks for the scalar-tensor sector. This is justified because the stability of the cfm\_fR model is established \textit{analytically} in Section~\ref{subsec:ghost_analysis}: (i)~$f_{RR} = 2\gamma > 0$ (no Ostrogradsky ghost), (ii)~$m_s^2 = 1/(6\gamma) > 0$ (no tachyon), (iii)~$c_s^2 = 1$ (no gradient instability), and (iv)~$\alpha_T = 0$ (gravitational waves travel at $c$). The automated stability tests in hi\_class are designed for general Horndeski models and can produce false positives for models that are provably stable. We have verified that enabling the stability tests rejects the model at early times when $\alpha_M \to 0$ faster than the numerical tolerance, despite the model being analytically well-defined.
+
+\textbf{Caveat on bypassing numerical stability checks.} The analytical stability argument is necessary but not sufficient: the hi\_class stability checks test \emph{numerical} stability of the ODE system for a specific parameter realization, not only the existence of ghost-free solutions in the abstract. Analytical proofs typically rely on simplifying assumptions (slow-roll, quasi-static limit, constant $\alpha_M$) that may not hold at every time step of the numerical integration. A clean implementation would pass the stability tests at every redshift without the bypass flag, or document precisely at which $z$ values and parameter combinations the tests fail and why. Until this is provided, the numerical results must be interpreted with some caution: the model's analytic stability is established, but the consistency of the numerical integration may be affected by the bypassed checks at specific redshift steps.
 
 \subsection{TT + TE + EE Power Spectra}
 
@@ -664,12 +680,14 @@ $n_s$ & $0.9660$ & $0.9656 \pm 0.0024$ & $0.9656^{+0.0024}_{-0.0024}$ \\
 $\chi^2_{\mathrm{best}}$ & $6625.1$ & --- & --- \\
 $\Delta\chi^2$ vs.\ $\Lambda$CDM & $-3.7$ & --- & --- \\
 $P(\alpha_{M,0} > 0)$ & 99.99\% & --- & --- \\
-$\alpha_{M,0}$ detection & $1.8\sigma$ & --- & --- \\
+$\alpha_{M,0}$ detection & $1.8\sigma$ (diagonal $\chi^2$; not valid with full Planck likelihood) & --- & --- \\
 \bottomrule
 \end{tabular}
 \end{table*}
 
-\textbf{Convergence diagnostics.} We assess chain convergence using the integrated autocorrelation time $\tau_{\mathrm{int}}$ for each parameter, computed via the \texttt{emcee.autocorr} module. For a well-converged chain, the condition $N_{\mathrm{eff}} = N_{\mathrm{samples}} / \tau_{\mathrm{int}} \gg 1$ should be satisfied. The measured autocorrelation times are: $\tau_{\alpha_{M,0}} = 42.3$, $\tau_n = 38.7$, $\tau_{\omega_{\mathrm{cdm}}} = 35.1$, $\tau_{\ln A_s} = 36.8$, $\tau_{n_s} = 34.2$. With 240{,}000 total samples, this yields $N_{\mathrm{eff}} \sim 5{,}700$--$6{,}800$ independent samples per parameter, satisfying the convergence criterion $N_{\mathrm{eff}} > 100\tau_{\mathrm{int}}$ \cite{Foreman-Mackey2013}. The acceptance fraction is 0.38--0.42 across all walkers, within the optimal range of 0.2--0.5 for affine-invariant ensemble sampling.
+\textbf{Caveat on the $1.8\sigma$ detection.} This detection significance is computed from a MCMC fit using a \textit{diagonal} $\chi^2$ approximation (Section~\ref{subsec:mcmc_details}). The full Planck likelihood is not diagonal: multipole-multipole correlations encoded in the covariance matrix can substantially alter parameter constraints and confidence intervals. Without the full likelihood, the $1.8\sigma$ figure cannot be taken as a reliable significance estimate. It indicates a preference for $\alpha_{M,0} > 0$ but not at a level that would constitute a detection. The claim should be read as: ``the diagonal $\chi^2$ MCMC shows a preference for $\alpha_{M,0} > 0$ at $\sim 1.8\sigma$, pending validation with the official Planck likelihood.''
+
+\textbf{Convergence diagnostics.} We assess chain convergence using the integrated autocorrelation time $\tau_{\mathrm{int}}$ for each parameter, computed via the \texttt{emcee.autocorr} module. For a well-converged chain, the condition $N_{\mathrm{eff}} = N_{\mathrm{samples}} / \tau_{\mathrm{int}} \gg 1$ should be satisfied. The measured autocorrelation times are: $\tau_{\alpha_{M,0}} = 42.3$, $\tau_n = 38.7$, $\tau_{\omega_{\mathrm{cdm}}} = 35.1$, $\tau_{\ln A_s} = 36.8$, $\tau_{n_s} = 34.2$. With 240{,}000 total samples, this yields $N_{\mathrm{eff}} \sim 5{,}700$--$6{,}800$ independent samples per parameter, satisfying the convergence criterion $N_{\mathrm{eff}} > 100\tau_{\mathrm{int}}$ \cite{ForemanMackey2013}. The acceptance fraction is 0.38--0.42 across all walkers, within the optimal range of 0.2--0.5 for affine-invariant ensemble sampling.
 
 Additionally, we verify that the mean parameter values stabilize after the 100-step burn-in phase by computing running means over successive 1000-sample intervals. All parameters exhibit stable means with fluctuations $< 0.5\sigma$ after burn-in, confirming that the walkers have converged to the target posterior distribution. The Gelman-Rubin statistic $\hat{R}$ (comparing variance within and between walkers) is $\hat{R} < 1.02$ for all parameters, well within the standard convergence threshold of $\hat{R} < 1.1$.
 
@@ -696,21 +714,22 @@ At $z = 0.38$ (BOSS LOWZ), the CRM with $c_M = 0.0002$ predicts $f\sigma_8 = 0.4
 \subsection{$S_8$ and Weak Lensing Tension}
 \label{subsec:s8_comparison}
 
-The combined parameter $S_8 = \sigma_8\sqrt{\Omega_m/0.3}$ is the primary observable from weak gravitational lensing surveys. The current observational landscape shows a persistent $\sim 3$--$4\sigma$ tension between CMB and weak lensing probes:
+The combined parameter $S_8 = \sigma_8\sqrt{\Omega_m/0.3}$ is the primary observable from weak gravitational lensing surveys. The 2026 observational landscape~\cite{S8Review2026} reveals a \emph{bifurcation} rather than a uniform tension: the combined CMB baseline (Planck + ACT~DR6 + SPT-3G) yields $S_8 = 0.836^{+0.012}_{-0.013}$, while late-universe probes split into a high branch (eROSITA clusters) and a low branch (galaxy weak lensing):
 
 \begin{center}
 \small
-\begin{tabular}{lcc}
+\begin{tabular}{lccc}
 \toprule
-\textbf{Survey} & $S_8$ & \textbf{Tension} \\
+\textbf{Survey} & $S_8$ & \textbf{vs.\ CMB} & \textbf{Ref.} \\
 \midrule
-Planck 2018 & $0.834 \pm 0.016$ & --- \\
-KiDS-1000 & $0.759^{+0.024}_{-0.021}$ & $2.9\sigma$ \\
-DES Y3 & $0.776 \pm 0.017$ & $2.5\sigma$ \\
-HSC Y3 & $0.776 \pm 0.032$ & $1.6\sigma$ \\
-eROSITA & $0.86 \pm 0.01$ & consistent \\
+Combined CMB (2026) & $0.836^{+0.012}_{-0.013}$ & --- & \cite{S8Review2026} \\
 \midrule
-Combined WL & $\sim 0.77$ & $> 3\sigma$ \\
+DES Y6 & $\sim 0.77$ & $2.4$--$2.7\sigma$ & \cite{DESY6} \\
+DES Y3 & $0.776 \pm 0.017$ & $2.5\sigma$ & \cite{DESY3} \\
+KiDS-1000 & $0.759^{+0.024}_{-0.021}$ & $2.9\sigma$ & \cite{KiDS2021} \\
+KiDS Legacy & consistent & $< 1\sigma$ & \cite{S8Review2026} \\
+HSC Y3 & $0.776 \pm 0.032$ & $1.6\sigma$ & \\
+eROSITA & $0.86 \pm 0.01$ & consistent (high) & \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -724,12 +743,14 @@ The CRM prediction depends on the strength of the Horndeski modification:
 The CRM \textit{increases} $\sigma_8$ relative to $\Lambda$CDM, deepening rather than resolving the $S_8$ tension. This is a generic prediction of $f(R)$ gravity: the enhanced gravitational coupling $G_{\mathrm{eff}} > G_N$ amplifies structure growth. Two interpretations remain viable:
 
 \begin{enumerate}
-\item \textbf{Systematics resolution:} KiDS-Legacy (2025), using the full 1{,}347\,deg$^2$ survey, shows improved agreement with CMB. If the weak lensing $S_8$ converges upward toward $\sim 0.82$, the CRM prediction ($S_8 = 0.845$) would be within $1\sigma$. Euclid's first cosmological weak lensing results (expected October~2026) will be the decisive arbiter.
+\item \textbf{Emerging high-$S_8$ consensus:} KiDS-Legacy (2025) shows improved agreement with CMB ($< 1\sigma$)~\cite{S8Review2026}, and eROSITA cluster counts favor $S_8 = 0.86 \pm 0.01$. The CRM prediction ($S_8 = 0.845$--$0.855$) sits squarely in this emerging high branch. If the weak lensing consensus converges upward toward $\sim 0.82$--$0.84$, the CRM would be fully consistent.
 
-\item \textbf{Scale-dependent screening:} If the low $S_8$ from weak lensing surveys is confirmed by Euclid, the CRM would require either $\Omega_m < 0.31$ or a chameleon-type screening that suppresses $\mu_{\mathrm{eff}}(k)$ at the scales probed by cosmic shear ($k \sim 0.1$--$1 \, h/\mathrm{Mpc}$), while leaving the CMB-scale perturbations enhanced.
+\item \textbf{Baryonic feedback:} Part of the DES--CMB discrepancy may be attributable to baryonic feedback effects (AGN heating, gas redistribution) that suppress the matter power spectrum on small scales ($k \sim 0.1$--$10\,h/$Mpc). Hydrodynamic simulations (BAHAMAS, FLAMINGO~\cite{FLAMINGO2024}) demonstrate that such feedback can reduce the inferred $S_8$ from cosmic shear by $\sim 0.01$--$0.03$, partially resolving the DES--CMB tension independently of modified gravity.
+
+\item \textbf{Scale-dependent screening:} If the low $S_8$ from DES~Y6~\cite{DESY6} is confirmed by Euclid, the CRM would require either $\Omega_m < 0.31$ or a chameleon-type screening that suppresses $\mu_{\mathrm{eff}}(k)$ at the scales probed by cosmic shear ($k \sim 0.1$--$1 \, h/\mathrm{Mpc}$), while leaving the CMB-scale perturbations enhanced.
 \end{enumerate}
 
-\textbf{Honest assessment:} The CRM predicts $S_8 = 0.845$ (conservative) to $0.920$ (aggressive), which is in tension with the DES~Y3 measurement ($S_8 = 0.776 \pm 0.017$) at $\geq 3\sigma$. This is the single most challenging observational constraint for the cfm\_fR model. If Euclid confirms $S_8 < 0.80$ at high significance, the model would need modification (e.g., a non-trivial $\alpha_K \neq 0$ to suppress small-scale growth). Conversely, if Euclid finds $S_8 \geq 0.82$ (as suggested by eROSITA clusters with $S_8 = 0.86 \pm 0.01$), the cfm\_fR prediction would be confirmed. We emphasize that this is a \textit{falsifiable} prediction, not an adjustable parameter.
+\textbf{Honest assessment:} The CRM predicts $S_8 = 0.845$ (conservative) to $0.920$ (aggressive). The 2026 observational landscape is \emph{bifurcated}: the CRM prediction is consistent with the combined CMB baseline ($S_8 = 0.836$, within $0.5\sigma$) and with eROSITA clusters ($S_8 = 0.86$), but in $\geq 3\sigma$ tension with DES~Y6 ($S_8 \sim 0.77$)~\cite{DESY6}. This bifurcation is \emph{not} specific to the CRM -- it challenges $\Lambda$CDM equally. Baryonic feedback effects~\cite{FLAMINGO2024} may account for part of the DES--CMB offset. Euclid's first cosmological weak lensing results (expected late 2026) will be the decisive arbiter. We emphasize that $S_8 = 0.845$ is a \textit{falsifiable} prediction, not an adjustable parameter.
 
 \subsection{DESI DR2 BAO Comparison}
 \label{subsec:desi}
@@ -865,6 +886,10 @@ Several critical consistency checks, previously flagged as open challenges, have
 \end{enumerate}
 
 \subsection{What Remains}
+
+\textit{Completion by the vector sector.} The scalar sector developed in this paper is deliberately incomplete at the galactic scale: the $f(R)$ scalaron yields at most $\mu \to 4/3$, insufficient for flat rotation curves. Paper~IV \cite{Geiger2026d} \emph{completes} the Lagrangian structure by introducing a timelike vector field $A_\mu$ that provides the additional gravitational support required for MOND phenomenology. The scalar sector (this paper) and the vector sector (Paper~IV) are complementary -- not competing -- degrees of freedom within a single action $S_{\mathrm{CRM}} = S_{\mathrm{T1}} + S_{\mathrm{T2}}$.
+
+The scalar sector developed here is intentionally incomplete at the galactic scale: the vector sector introduced in Paper~IV complements---rather than corrects---the Lagrangian structure, providing the missing degrees of freedom for MOND-scale phenomenology. The two sectors address orthogonal physical regimes (cosmological expansion vs.\ galactic rotation) and are unified within a single variational principle.
 
 \begin{enumerate}
 \item \textbf{$\sqrt{\pi}$ Conjecture:} The cosmological MOND enhancement $\mu_{\mathrm{eff}} = \sqrt{\pi}$ (Paper~II) has three independent motivations -- geometric (phase space projection), thermodynamic (zeta-regularized path integral on $S^2$), and dimensional ($\Gamma(1/2) = \sqrt{\pi}$). A complete proof requires the explicit computation of the functional determinant $\det(\Delta_{S^2} + m_{\mathrm{PT}}^2)$ for the P\"oschl-Teller operator on the cosmological two-sphere.
@@ -1040,6 +1065,11 @@ Geiger, L.\ (2026).
 Eliminating the Dark Sector: Unifying the Curvature Relaxation Model with MOND.
 Companion paper.
 
+\bibitem{Geiger2026d}
+Geiger, L.\ (2026).
+The Galactic--Cosmological Nexus: Connecting CRM to MOND Dynamics via Curvature Saturation.
+Companion paper (Paper~IV), submitted simultaneously.
+
 \bibitem{Scolnic2022}
 Scolnic, D.\ et al.\ (2022).
 The Pantheon+ Analysis: The Full Data Set and Light-curve Release.
@@ -1171,7 +1201,7 @@ New Extraction of the Cosmic Birefringence from the Planck 2018 Polarization Dat
 \href{https://doi.org/10.1103/PhysRevLett.125.221301}{DOI: 10.1103/PhysRevLett.125.221301}.
 
 \bibitem{Chou2017}
-Chou, A.\,S.\ et al.\ (Holometer Collaboration) (2017).
+Chou, A.\,S.\ et al.\ (Holometer Collaboration) (2016).
 First Measurements of High Frequency Cross-Spectra from a Pair of Large Michelson Interferometers.
 \textit{Physical Review Letters}, 117(11), 111102.
 \href{https://doi.org/10.1103/PhysRevLett.117.111102}{DOI: 10.1103/PhysRevLett.117.111102}.
@@ -1205,6 +1235,22 @@ Abbott, T.\,M.\,C.\ et al.\ (DES Collaboration) (2022).
 Dark Energy Survey Year 3 results: Cosmological constraints from galaxy clustering and weak lensing.
 \textit{Physical Review D}, 105(2), 023520.
 \href{https://doi.org/10.1103/PhysRevD.105.023520}{DOI: 10.1103/PhysRevD.105.023520}.
+
+\bibitem{DESY6}
+Abbott, T.\,M.\,C.\ et al.\ (DES Collaboration) (2026).
+Dark Energy Survey Year 6 results: Cosmological constraints from galaxy clustering and weak lensing.
+\textit{arXiv:2601.14559}.
+
+\bibitem{S8Review2026}
+Anil Kumar, N.\ et al.\ (2026).
+Status of the $S_8$ Tension: A 2026 Review of Probe Discrepancies.
+\textit{arXiv:2602.12238}.
+
+\bibitem{FLAMINGO2024}
+McCarthy, I.\,G.\ et al.\ (2023).
+The FLAMINGO project: revisiting the $S_8$ tension and the role of baryonic physics.
+\textit{Monthly Notices of the Royal Astronomical Society}, 526, 5494.
+DOI: 10.1093/mnras/stad3107.
 
 \bibitem{Bellini2014}
 Bellini, E.\ \& Sawicki, I.\ (2014).
@@ -1307,6 +1353,39 @@ Li, B., Zhao, G.-B., Teyssier, R.\ \& Koyama, K.\ (2012).
 ECOSMOG: An Efficient COde for Simulating MOdified Gravity.
 \textit{Journal of Cosmology and Astroparticle Physics}, 2012(01), 051.
 \href{https://doi.org/10.1088/1475-7516/2012/01/051}{DOI: 10.1088/1475-7516/2012/01/051}.
+
+\bibitem{FaddeevNiemi1997}
+Faddeev, L.\ \& Niemi, A.~J.\ (1997).
+Stable knot-like structures in classical field theory.
+\textit{Nature}, 387, 58--61.
+\href{https://doi.org/10.1038/387058a0}{DOI: 10.1038/387058a0}.
+
+\bibitem{AckermanSmalyukh2017}
+Ackerman, P.~J.\ \& Smalyukh, I.~I.\ (2017).
+Diversity of Knot Solitons in Liquid Crystals Manifested by Linking of Preimages in Torons and Hopfions.
+\textit{Physical Review X}, 7, 011006.
+\href{https://doi.org/10.1103/PhysRevX.7.011006}{DOI: 10.1103/PhysRevX.7.011006}.
+
+\bibitem{BattyeSutcliffe1998}
+Battye, R.~A.\ \& Sutcliffe, P.~M.\ (1998).
+Knots as stable soliton solutions in a three-dimensional classical field theory.
+\textit{Physical Review Letters}, 81, 4798--4801.
+\href{https://doi.org/10.1103/PhysRevLett.81.4798}{DOI: 10.1103/PhysRevLett.81.4798}.
+
+\bibitem{VilenkinShellard1994}
+Vilenkin, A.\ \& Shellard, E.~P.~S.\ (1994).
+\textit{Cosmic Strings and Other Topological Defects}.
+Cambridge University Press.
+
+\bibitem{ZhongPT2022}
+Zhong, Y.\ (2022).
+Singular P\"oschl-Teller Approximation for Black Hole Quasinormal Modes.
+\textit{European Physical Journal C}, 82, 511.
+
+\bibitem{NariaiQNM2025}
+Nakamoto, N.\ \& Oshita, N.\ (2026).
+Exceptional Lines and Excitation of (Nearly) Double-Pole Quasinormal Modes: A Semi-Analytic Study in the Nariai Black Hole.
+\textit{Preprint}, arXiv:2601.00704.
 
 \end{thebibliography}
 

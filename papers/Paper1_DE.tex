@@ -34,7 +34,7 @@
 
 \author{Lukas Geiger}
 \email{lukisch@users.noreply.github.com}
-\affiliation{Independent Researcher, Bernau im Schwarzwald, Germany}
+\affiliation{Independent Researcher, Bernau, Germany}
 
 \date{\today}
 
@@ -46,7 +46,7 @@ Wir entwickeln einen spieltheoretischen Rahmen f\"ur die Kosmologie, in dem die 
 
 \keywords{Spieltheorie, Nash-Gleichgewicht, Kosmologie, Dunkle Energie, Kr\"ummungs-R\"uckgabepotential, Curvature Relaxation Model, Friedmann-Gleichung, Finsler-Gravitation, beschleunigte Expansion, Zustandsgleichung}
 
-\thanks{KI-Werkzeuge (Claude, Anthropic; Gemini, Google DeepMind) wurden fuer mathematische Formalisierung, Code-Entwicklung und Texterstellung verwendet. Alle physikalischen Hypothesen, wissenschaftliche Interpretation und Verantwortung fuer die Inhalte liegen vollstaendig bei dem Autor. Der Analysecode ist verfuegbar unter \url{https://github.com/lukisch/crm-cosmology}.}
+\thanks{KI-Werkzeuge (Claude, Anthropic; Gemini, Google DeepMind) wurden für mathematische Formalisierung, Code-Entwicklung und Texterstellung verwendet. Alle physikalischen Hypothesen, wissenschaftliche Interpretation und Verantwortung für die Inhalte liegen vollständig bei dem Autor. Der Analysecode ist verfügbar unter \url{https://github.com/lukisch/crm-cosmology}.}
 
 \thanks{Arbeit~I in der CRM-Serie.}
 
@@ -79,13 +79,15 @@ Die vorliegende Arbeit verkn\"upft diese Entwicklungen mit einem eigenst\"andige
 \section{Spieltheoretischer Rahmen: Nullraum und Raumzeitblase}
 \label{sec:spieltheorie}
 
+\textit{Epistemologischer Status.} Der in diesem Abschnitt entwickelte spieltheoretische Rahmen ist eine \emph{heuristisch-konzeptionelle} Interpretationsschicht in der Tradition von Jacobsons thermodynamischer Ableitung der Einstein-Gleichungen \cite{Jacobson1995}. Er liefert physikalische Intuition und motiviert die funktionale Form des CRM, ist aber nicht der operative dynamische Rahmen. Die operative Dynamik ist die Lagrange-Formulierung $\mathcal{L} = R/(16\pi G) + \gamma R^2 + \frac{1}{2}(\partial\phi)^2 - V_{\mathrm{PT}}(\phi)$, die in Paper~III \cite{Geiger2026c} abgeleitet wird und aus der alle testbaren Vorhersagen folgen. Das spieltheoretische Bild sollte daher als \emph{interpretatives Meta-Framework} verstanden werden, nicht als alternative fundamentale Dynamik.
+
 \subsection{Grundannahmen}
 \label{subsec:grundannahmen}
 
 Der hier vorgeschlagene Rahmen geht von folgenden Annahmen aus:
 
 \begin{enumerate}
-\item Es existiert ein metastabiler Quantenvakuumzustand (im Folgenden: \textit{Nullraum}), der durch Quantenfluktuationen charakterisiert ist.
+\item Es existiert ein metastabiler Quantenvakuumzustand (im Folgenden: \textit{Nullraum}), der durch Quantenfluktuationen charakterisiert ist. \textit{Ontologische Einordnung:} Der Nullraum ist eine \emph{pr\"a-geometrische Abstraktion} -- eine Randbedingung f\"ur das Variationsproblem -- kein konkretes physikalisches Objekt mit eigenst\"andiger raumzeitlicher Existenz. Mehrere UV-Completion-Programme (Schleifen-Quantengravitation, Causal-Set-Theorie, Quanten-Fehlerkorrektur; siehe Paper~III \cite{Geiger2026c}, Anhang) sind mit dieser Abstraktion vereinbar.
 \item Eine au\ss{}ergew\"ohnlich gro\ss{}e Fluktuation entnimmt dem Nullraum einmalig eine Energiemenge~$E_0$, die einen Konzentrationsgradienten erzeugt.
 \item Zur Einkapselung und kontrollierten Neutralisation dieses Gradienten entsteht Raumzeit als dynamische Struktur -- die \textit{Raumzeitblase} (Tochtersystem).
 \item Zwischen Nullraum (Muttersystem) und Raumzeitblase besteht ein spieltheoretisches Gleichgewicht.
@@ -151,7 +153,7 @@ Der spieltheoretische Rahmen der vorangegangenen Abschnitte besitzt eine pr\"azi
 \item \textbf{Gradientenabbaurate} $\leftrightarrow$ \textbf{Prinzip maximaler Entropieproduktion (MEPP):} Unter allen mit den Randbedingungen vertr\"aglichen Pfaden entwickelt sich das System entlang desjenigen, der die Entropieproduktion maximiert \cite{Dewar2003}.
 \end{itemize}
 
-Diese \"Aquivalenz gr\"undet auf einem fundamentalen Resultat: Jacobson \cite{Jacobson1995} zeigte, dass die Einsteinschen Feldgleichungen aus der Proportionalit\"at von Entropie und Horizontfl\"ache zusammen mit der Clausius-Relation $\delta Q = T\,dS$ abgeleitet werden k\"onnen, was die Allgemeine Relativit\"atstheorie selbst als thermodynamische Zustandsgleichung etabliert. Wenn die Standard-Gravitation aus der Thermodynamik folgt, ist es nat\"urlich zu erwarten, dass \textit{modifizierte} Gravitation -- hier der Kr\"ummungs-R\"uckgabemechanismus -- aus modifizierten thermodynamischen Randbedingungen folgt, n\"amlich der Zwangsbedingung, dass das Muttervakuum (Nullraum) strukturell stabil bleibt, w\"ahrend die Entropieproduktion im Tochtersystem maximiert wird.
+Diese \"Aquivalenz gr\"undet auf einem fundamentalen Resultat: Jacobson \cite{Jacobson1995} zeigte, dass die Einsteinschen Feldgleichungen aus der Proportionalit\"at von Entropie und Horizontfl\"ache zusammen mit der Clausius-Relation $\delta Q = T\,dS$ abgeleitet werden k\"onnen, was die Allgemeine Relativit\"atstheorie selbst als thermodynamische Zustandsgleichung etabliert. Neuere Arbeiten haben dieses Paradigma auf nicht-Riemannsche Geometrien mit Torsion und Nicht-Metrizit\"at erweitert~\cite{JacobsonNonRiemannian2026}, was darauf hindeutet, dass der thermodynamische Zugang zur Gravitation allgemeiner ist als der metrische Rahmen und die zus\"atzlichen geometrischen Freiheitsgrade (wie den CRM-Scalaron) als entropie-maximierende Kan\"ale nat\"urlich ber\"ucksichtigen kann. Wenn die Standard-Gravitation aus der Thermodynamik folgt, ist es nat\"urlich zu erwarten, dass \textit{modifizierte} Gravitation -- hier der Kr\"ummungs-R\"uckgabemechanismus -- aus modifizierten thermodynamischen Randbedingungen folgt, n\"amlich der Zwangsbedingung, dass das Muttervakuum (Nullraum) strukturell stabil bleibt, w\"ahrend die Entropieproduktion im Tochtersystem maximiert wird.
 
 Der S\"attigungsmechanismus aus Abschnitt~\ref{subsec:tanh_herleitung} ist damit direkt als Ann\"aherung an das thermodynamische Gleichgewicht interpretierbar: Die $\tanh$-Dynamik beschreibt die Entropieproduktionsrate eines Systems mit endlicher Kapazit\"at, das sich unter der gemeinsamen Zwangsbedingung des Zweiten Hauptsatzes und der Muttersystem-Stabilit\"at entwickelt.
 
@@ -220,7 +222,7 @@ wobei $a_{\mathrm{trans}}$ die Integrationskonstante (\"Ubergangspunkt) darstell
 \item Solitonenphysik: Kink-L\"osung $\phi(x) = \phi_0 \tanh(kx)$
 \item Nichtlineare Optik: S\"attigungsabsorption $\alpha(I) \propto 1/(1 + I/I_{\mathrm{sat}})$
 \end{itemize}
-Alle diese Systeme teilen die Eigenschaft eines geordneten \"Ubergangs von einem Zustand in einen anderen mit endlicher Kapazit\"at -- \textit{genau} das Verhalten, das der spieltheoretische Rahmen f\"ur das Nash-Gleichgewicht zwischen Nullraum und Raumzeitblase vorhersagt. Die $\tanh$-Form ist damit nicht postuliert, sondern aus dem zugrunde liegenden Mechanismus \textit{abgeleitet}.
+Alle diese Systeme teilen die Eigenschaft eines geordneten \"Ubergangs von einem Zustand in einen anderen mit endlicher Kapazit\"at -- \textit{genau} das Verhalten, das der spieltheoretische Rahmen f\"ur das Nash-Gleichgewicht zwischen Nullraum und Raumzeitblase vorhersagt. Die $\tanh$-Form ist damit nicht postuliert, sondern aus dem zugrunde liegenden Mechanismus \textit{abgeleitet}. \textit{Mikroskopische Realisierung:} Die S\"attigungs-ODE~\eqref{eq:saturation_ode} wird nicht lediglich auf ph\"anomenologischer Ebene postuliert, sondern ergibt sich sp\"ater mikroskopisch aus einem P\"oschl-Teller-Potential in der effektiven Lagrange-Dichte (Paper~III \cite{Geiger2026c}): Das $\cosh^{-2}$-Potential erlaubt $\tanh$-artige Kink-L\"osungen als universelle Mean-Field-Dynamik und liefert damit ein rigoroses feldtheoretisches Fundament f\"ur den S\"attigungsmechanismus.
 
 Zur \"Uberpr\"ufung der Robustheit wurden vier verschiedene S\"attigungsfunktionen getestet (Abschnitt~\ref{subsec:funktionalformen}). Alle liefern $\Delta\chi^2 \approx -9$ bis $-12$ gegen\"uber $\Lambda$CDM -- die Daten ``sehen'' einen S\"attigungsprozess, unabh\"angig von der exakten mathematischen Formulierung.
 
@@ -633,6 +635,15 @@ Falls das CRM (oder ein verwandtes Modell) best\"atigt wird, h\"atte dies tiefgr
 
 Dies w\"are vergleichbar mit dem \"Ubergang von ``Was treibt die Planeten an?'' (Ptolem\"aus: Sph\"aren) zu ``Wie bewegen sich Planeten in der Geometrie des Raumes?'' (Kepler, Newton, Einstein).
 
+\subsection{Hierarchische Nash-Gleichgewichte}
+\label{subsec:hierarchische_nash}
+
+Das Zweispielermodell aus Abschnitt~\ref{sec:spieltheorie} (Nullraum vs.\ Raumzeitblase) stellt nur die erste Ebene einer emergenten Hierarchie dar. Paper~IV \cite{Geiger2026d} zeigt, dass das Nash-Gleichgewicht des kosmologischen Spiels \emph{Tochterdynamik} erzeugt: Der skalare Sektor (Scalaron), der den kosmologischen Hintergrund liefert, reicht allein nicht aus, um dissipative Strukturen (Galaxien) auf galaktischer Skala zu stabilisieren. Eine zweite Gleichgewichtsebene -- ein zeitartiges Einheitsvektorfeld $A_\mu$, abgeleitet aus dem Prinzip maximaler Entropieproduktion -- wird ben\"otigt, um flache Rotationskurven und die Radiale Beschleunigungsrelation zu erzeugen. Die hierarchische Struktur lautet somit:
+\begin{quote}
+\textit{Nullraum} $\to$ \textit{Skalarer Sektor} (Paper~III) $\to$ \textit{Vektorsektor} (Paper~IV) $\to$ \textit{Standardphysik}.
+\end{quote}
+Jede Ebene ist ein Nash-Gleichgewicht, das bei Ersch\"opfung den n\"achsten Freiheitsgrad erfordert. Der Zweispieler-Rahmen dieses Papers liefert die konzeptionelle Vorlage; Papers~III und~IV stellen die Lagrange-Realisierung bereit.
+
 \subsection{Deduktive Struktur des Modells}
 \label{subsec:deduktiv}
 
@@ -911,6 +922,21 @@ Hunter, J.\,D.\ (2007).
 Matplotlib: A 2D Graphics Environment.
 \textit{Computing in Science \& Engineering}, 9(3), 90--95.
 DOI: 10.1109/MCSE.2007.55.
+
+\bibitem{Geiger2026c}
+Geiger, L.\ (2026).
+Microscopic Foundations of the Curvature Relaxation Model: From Quantum Geometry to Macroscopic Saturation.
+Companion paper (Paper~III), submitted simultaneously.
+
+\bibitem{Geiger2026d}
+Geiger, L.\ (2026).
+The Galactic--Cosmological Nexus: Connecting CRM to MOND Dynamics via Curvature Saturation.
+Companion paper (Paper~IV), submitted simultaneously.
+
+\bibitem{JacobsonNonRiemannian2026}
+Martinez, J.\,N., Rodriguez-Ruiz, J.\,F.\ \& Rodriguez, Y.\ (2026).
+Jacobson's thermodynamic approach to classical gravity applied to non-Riemannian geometries: remarks on the simplicity of Nature.
+\textit{Preprint}, arXiv:2602.00422.
 
 \end{thebibliography}
 
