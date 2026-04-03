@@ -152,14 +152,15 @@ crm-cosmology/
 
 ## crm_fR Patch Documentation
 
-The file `scripts/patch_cfm.py` applies 4 modifications to `hi_class/gravity_models_smg.c`:
+The file `scripts/patch_cfm.py` applies 5 modifications to hi_class:
 
-| # | Location | Change |
-|---|----------|--------|
-| 1 | `gravity_models_init()` | Registers `crm_fR` as a new gravity model |
-| 2 | `gravity_functions_smg()` | Computes alpha_M, alpha_B from parameters `(alpha_M_0, n_exp, M*2_init)` |
-| 3 | `gravity_print_smg()` | Adds print output for crm_fR parameters |
-| 4 | Error message | Adds crm_fR to the list of recognized models |
+| # | File | Location | Change |
+|---|------|----------|--------|
+| 0 | `include/background.h` | `gravity_model` enum | Adds `cfm_fR` to the gravity model enum |
+| 1 | `gravity_models_smg.c` | `gravity_models_init()` | Registers `cfm_fR` as a new gravity model (3 parameters, M2 evolution) |
+| 2 | `gravity_models_smg.c` | `gravity_functions_smg()` | Computes alpha_M, alpha_B from parameters `(alpha_M_0, n_exp, M*2_init)` |
+| 3 | `gravity_models_smg.c` | `gravity_print_stdout_smg()` | Adds print output for `cfm_fR` parameters |
+| 4 | `gravity_models_smg.c` | Error message | Adds `cfm_fR` to the list of recognized models |
 
 **Parameters passed via hi_class:**
 ```python
