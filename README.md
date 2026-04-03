@@ -11,7 +11,7 @@ The Curvature Relaxation Model (CRM) replaces dark energy with a geometric curva
 
 **Key result:** The native `crm_fR` model achieves **Delta chi2 = -3.7** vs. LCDM on Planck CMB data (MCMC best-fit), with alpha_M_0 = 0.0011 +/- 0.0007 (1.76 sigma detection, P(alpha_M_0 > 0) = 100%) and 100*theta_s = 1.04173 (identical to LCDM).
 
-## Papers
+## Core Papers (I--IV)
 
 | Paper | EN | DE | Topic |
 |-------|----|----|-------|
@@ -19,6 +19,17 @@ The Curvature Relaxation Model (CRM) replaces dark energy with a geometric curva
 | II | `papers/Paper2_EN.tex` | `papers/Paper2_DE.tex` | MOND unification, baryon-only universe, running coupling |
 | III | `papers/Paper3_EN.tex` | `papers/Paper3_DE.tex` | Lagrangian (R + gamma R^2), scalaron dynamics, predictions |
 | IV | `papers/Paper4_EN.tex` | `papers/Paper4_DE.tex` | Galactic MOND from curvature saturation (DRAFT) |
+
+## Extensions
+
+| Paper | EN | DE | Topic | DOI |
+|-------|----|----|-------|-----|
+| V | `extensions/Paper5_EN.tex` | `extensions/Paper5_DE.tex` | The Saturation Theorem: tanh profile as mathematical necessity from 4 QG axioms | [10.5281/zenodo.19036188](https://doi.org/10.5281/zenodo.19036188) |
+| VI | `extensions/Paper6_EN.tex` | `extensions/Paper6_DE.tex` | QG-CRM: Ultraviolet Completion via Quantum Quadratic Gravity (DRAFT) | [10.5281/zenodo.19352448](https://doi.org/10.5281/zenodo.19352448) |
+
+**Paper V -- The Saturation Theorem** proves that the tanh saturation profile of Papers I--IV is not a model choice but a mathematical necessity: any quantum gravity theory satisfying four minimal axioms must produce the tanh form. All major QG programs (LQG, asymptotic safety, strings, causal sets, noncommutative geometry) are shown to satisfy the axioms.
+
+**Paper VI -- QG-CRM: Ultraviolet Completion** answers the open question from Paper V: "which UV completion selects k and Phi_0?" By identifying the gamma*R^2 sector of the CRM Lagrangian with asymptotically free quantum quadratic gravity (QQG), inflation is generated dynamically via RG running without an inflaton field. The Saturation Theorem provides the unique UV-IR interface. Predictions: n_s ~ 1 - 4/(3N) ~ 0.976, r >= 0.01, testable with Stage IV CMB experiments.
 
 ## Key Results
 
@@ -118,7 +129,8 @@ crm-cosmology/
   LICENSE                    # CC BY 4.0
   requirements.txt           # Python dependencies
   reviews/                   # Review history (Gen 1-3, response to reviewer)
-  papers/                    # LaTeX sources (4 papers x 2 languages)
+  papers/                    # LaTeX sources: Core Papers I-IV (EN + DE)
+  extensions/                # LaTeX sources: Papers V-VI and future extensions
   scripts/                   # All analysis scripts
   scripts/paper4/            # Paper IV galactic analysis scripts
   results/                   # Key numerical results
