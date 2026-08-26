@@ -9,7 +9,7 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![CI](https://github.com/research-line/crm-cosmology/actions/workflows/ci.yml/badge.svg)](https://github.com/research-line/crm-cosmology/actions/workflows/ci.yml)
-[![Tests](https://img.shields.io/badge/Tests-14%20passed-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/Tests-26%20passed-brightgreen.svg)](tests/)
 [![Open Science](https://img.shields.io/badge/Open--Science-Reproducible-green.svg)](https://github.com/research-line/crm-cosmology)
 [![LLM Indexing](https://img.shields.io/badge/LLM--Indexing-llms.txt-purple.svg)](llms.txt)
 
@@ -103,6 +103,18 @@ or CRM claims. Reproduce its JSON, CSV, and Markdown evidence with:
 
 ```bash
 python scripts/paper5/dprime_2d_ym_heat_kernel_gate.py
+```
+
+The complementary
+[preregistered LQA two-coupling audit](research/crm-v/CRM5_LQA_2D_TRAJECTORY_RPROJ_V1_2026-08-26.md)
+retains both `lambda` and `xi` along the source's large-matter trajectory and
+projects only afterward to its tensor-to-scalar ratio. The source-model
+projection fails D', while the FLRW background exposes a rank-one projection
+limit and no exact binary observable law. Reproduce the complete trajectory,
+full-beta diagnostics, and D' tables with:
+
+```bash
+python scripts/paper5/dprime_lqa_2d_trajectory_gate.py
 ```
 
 **Paper VI -- QG-CRM: Ultraviolet Completion** addresses an open question from Paper V: which UV completion selects k and Phi_0? It explores a proposed identification of the gamma*R^2 sector of the CRM Lagrangian with asymptotically free quantum quadratic gravity (QQG), under which inflation is generated dynamically via RG running without an inflaton field. In this draft, the Saturation Theorem is treated as the UV-IR interface. The resulting headline predictions are n_s ~ 1 - 4/(3N) ~ 0.976 and r >= 0.01, testable with Stage IV CMB experiments.
