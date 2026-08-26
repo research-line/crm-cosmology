@@ -1,0 +1,204 @@
+{
+  "audit_id": "CRM5-METAPHOR-AUDIT-INVARIANTS-V1",
+  "schema_version": "1.0.0",
+  "run_date": "2026-08-26",
+  "lead_language": "en",
+  "scope_terms": [
+    "saturation",
+    "ferromagnetic",
+    "cooperative",
+    "renormalization",
+    "temperature",
+    "capacity"
+  ],
+  "source_pointer": {
+    "todo_locator": ".LAB/.PAPER-LINE/.PRIO-4/!!DRAFT__Metaphern/",
+    "resolved_locator": "legacy-onedrive://.TOPICS/.RESEARCH/.LAB/LLM/!!DRAFT__Metaphern/",
+    "status": "STALE_POINTER__READ_ONLY_SOURCE_RESOLVED"
+  },
+  "source_registry": {
+    "CRM5_PAPER_V": {
+      "kind": "target_primary",
+      "citation": "Paper V, The Saturation Theorem, bilingual source",
+      "locator": "papers/extensions/Paper5_EN.tex"
+    },
+    "METAPHOR_ANALYSIS_V4": {
+      "kind": "method_source",
+      "citation": "Metaphor Analysis Tool v4, source-domain/target-domain classification and inference caveats",
+      "locator": "legacy-onedrive://.TOPICS/.RESEARCH/.LAB/LLM/!!DRAFT__Metaphern/Metaphernanalyse_v4_en.tex"
+    },
+    "LAKOFF_2012": {
+      "kind": "external_primary",
+      "citation": "Lakoff, Explaining Embodied Cognition Results, Topics in Cognitive Science 4 (2012)",
+      "url": "https://doi.org/10.1111/j.1756-8765.2012.01222.x",
+      "supports": "conceptual metaphors as partial frame-to-frame source/target mappings"
+    },
+    "YANG_1952": {
+      "kind": "external_primary",
+      "citation": "Yang, The Spontaneous Magnetization of a Two-Dimensional Ising Model, Physical Review 85 (1952)",
+      "url": "https://doi.org/10.1103/PhysRev.85.808",
+      "supports": "exact two-dimensional Ising magnetization and non-mean-field critical behavior"
+    },
+    "WILSON_KOGUT_1974": {
+      "kind": "external_primary",
+      "citation": "Wilson and Kogut, The Renormalization Group and the Epsilon Expansion, Physics Reports 12 (1974)",
+      "url": "https://doi.org/10.1016/0370-1573(74)90023-4",
+      "supports": "RG transformations, fixed points, scaling, critical exponents, and universality"
+    }
+  },
+  "status_vocabulary": [
+    "STRUCTURAL_NORMAL_FORM",
+    "HEURISTIC_ANALOGY",
+    "LOCAL_FORMAL_CORRESPONDENCE",
+    "CONDITIONAL_STRUCTURAL_GATE",
+    "HEURISTIC_REPARAMETRIZATION",
+    "FORMAL_BOUND__PHYSICAL_READING_HEURISTIC"
+  ],
+  "transfers": [
+    {
+      "term": "saturation",
+      "source_domain": "bounded order-parameter response",
+      "target_domain": "normalized CRM response X=Omega_Phi/Phi_0",
+      "mapping": "m=M/M_s maps to X=Omega_Phi/Phi_0 on the normalized response interval",
+      "preserved_invariants": [
+        "bounded_interval",
+        "ordered_endpoints",
+        "monotone_endpoint_approach",
+        "projective_tanh_normal_form_when_D_prime_holds"
+      ],
+      "not_preserved_or_not_derived": [
+        "microscopic_equation",
+        "free_energy",
+        "UV_mechanism"
+      ],
+      "explicit_morphism": true,
+      "status": "STRUCTURAL_NORMAL_FORM",
+      "evidence_source": [
+        "CRM5_PAPER_V"
+      ],
+      "permitted_wording": "structural at the normalized response and conditional normal-form level"
+    },
+    {
+      "term": "ferromagnetic",
+      "source_domain": "Ising or mean-field magnetization",
+      "target_domain": "geometric curvature-return order parameter",
+      "mapping": "signed scalar order parameter and tanh-shaped mean-field response are compared",
+      "preserved_invariants": [
+        "signed_scalar_order_parameter",
+        "mean_field_tanh_shape"
+      ],
+      "not_preserved_or_not_derived": [
+        "binary_magnetization_composition",
+        "lattice_correlations",
+        "critical_exponents",
+        "microscopic_constituents"
+      ],
+      "explicit_morphism": false,
+      "status": "HEURISTIC_ANALOGY",
+      "evidence_source": [
+        "CRM5_PAPER_V",
+        "YANG_1952"
+      ],
+      "permitted_wording": "heuristic mean-field analogy"
+    },
+    {
+      "term": "cooperative",
+      "source_domain": "positive feedback in an ordering response",
+      "target_domain": "positive local CRM response coefficient c_1",
+      "mapping": "the sign of the local linear response is retained",
+      "preserved_invariants": [
+        "positive_local_response"
+      ],
+      "not_preserved_or_not_derived": [
+        "spin_like_interaction",
+        "many_body_feedback",
+        "correlation_function"
+      ],
+      "explicit_morphism": false,
+      "status": "LOCAL_FORMAL_CORRESPONDENCE",
+      "evidence_source": [
+        "CRM5_PAPER_V"
+      ],
+      "permitted_wording": "local formal sign correspondence; microscopic cooperation remains heuristic"
+    },
+    {
+      "term": "renormalization",
+      "source_domain": "successive RG transformations on theory space",
+      "target_domain": "binary composition of a one-dimensional response",
+      "mapping": "Pi(R_k1 composed R_k2)=C(Pi(R_k1),Pi(R_k2))",
+      "preserved_invariants": [
+        "associativity_if_intertwining_map_exists",
+        "scale_composition_if_intertwining_map_exists"
+      ],
+      "not_preserved_or_not_derived": [
+        "invariant_one_dimensional_channel_for_external_QG_program",
+        "theory_space_to_response_homomorphism"
+      ],
+      "explicit_morphism": false,
+      "status": "CONDITIONAL_STRUCTURAL_GATE",
+      "evidence_source": [
+        "CRM5_PAPER_V",
+        "WILSON_KOGUT_1974"
+      ],
+      "permitted_wording": "structural only after an explicit response homomorphism is proved"
+    },
+    {
+      "term": "temperature",
+      "source_domain": "inverse temperature beta J",
+      "target_domain": "cosmological control coordinate a-a_trans",
+      "mapping": "the order of a one-dimensional control is compared after a chosen reparametrization",
+      "preserved_invariants": [
+        "control_order_after_reparametrization"
+      ],
+      "not_preserved_or_not_derived": [
+        "units",
+        "thermal_ensemble",
+        "thermodynamic_conjugacy",
+        "physical_identity_with_scale_factor"
+      ],
+      "explicit_morphism": false,
+      "status": "HEURISTIC_REPARAMETRIZATION",
+      "evidence_source": [
+        "CRM5_PAPER_V"
+      ],
+      "permitted_wording": "heuristic control-coordinate reparametrization"
+    },
+    {
+      "term": "capacity",
+      "source_domain": "finite magnetization or information endpoint",
+      "target_domain": "finite scalar response endpoint Phi_0",
+      "mapping": "M_s maps to Phi_0 only as an endpoint normalization",
+      "preserved_invariants": [
+        "finite_response_endpoint"
+      ],
+      "not_preserved_or_not_derived": [
+        "entropy_capacity",
+        "information_capacity",
+        "code_capacity",
+        "holographic_capacity"
+      ],
+      "explicit_morphism": false,
+      "status": "FORMAL_BOUND__PHYSICAL_READING_HEURISTIC",
+      "evidence_source": [
+        "CRM5_PAPER_V",
+        "METAPHOR_ANALYSIS_V4",
+        "LAKOFF_2012"
+      ],
+      "permitted_wording": "formal finite bound; any physical capacity interpretation remains heuristic"
+    }
+  ],
+  "universality_boundary": {
+    "paper_v_result": "CONDITIONAL_ABEL_COLLAR_EQUIVALENCE_CLASS",
+    "projective_representative": "tanh only when D_prime is added",
+    "wilsonian_universality_class_claim": false,
+    "shared_microscopic_mechanism_claim": false,
+    "external_QG_response_homomorphism_verified": false
+  },
+  "summary": {
+    "term_count": 6,
+    "structural_transfer_count": 1,
+    "external_QG_response_homomorphism_count": 0,
+    "claim_upgrade_count": 0,
+    "physical_D_prime_closed": false
+  }
+}

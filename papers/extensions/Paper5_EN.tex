@@ -124,7 +124,7 @@ The unification of quantum mechanics and general relativity remains the central 
 
 Orthogonal to these UV-completion programs, the \textit{Swampland conjectures} \cite{Obied2018} constrain which low-energy theories can be consistently embedded in quantum gravity, while the \textit{EFT of Dark Energy} \cite{Gubitosi2013} parametrizes deviations from $\Lambda$CDM at the perturbative level. Neither framework, however, determines the \textit{functional form} of the cosmological saturation profile.
 
-A striking observation is that when any of the UV-completion programs listed above is applied to cosmology, the resulting effective dynamics often exhibits \textit{saturation behavior}: a bounded, cooperative approach to a maximal geometric configuration. This paper asks whether that recurrence is accidental or structurally expected under a shared set of hypotheses.
+Several UV-completion programs contain motifs that can be compared with bounded cosmological response: finite scales, monotone branches, coarse-graining, or ordered phases. Calling all of these motifs ``saturation'' or ``cooperation'' is initially a source-to-target analogy, not a shared microscopic mechanism. This paper asks which explicit invariants are sufficient for a conditional normal-form statement.
 
 \subsection{The CRM as empirical anchor}
 
@@ -172,7 +172,7 @@ Per Hubble patch, there exists a finite maximum geometric order $C_{\max} < \inf
 \end{equation}
 \end{axiom}
 
-\textit{Physical content.} This axiom imposes finite capacity for the selected scalar response channel. It is not a claim that every microscopic observable or every UV amplitude is finite in the underlying theory. It is deliberately weak: it is compatible with LQG (finite area quanta \cite{Rovelli2004}), holography (Bekenstein bound \cite{Bekenstein1981}), quantum error-correcting spacetime (finite code capacity \cite{Almheiri2015}), causal set theory (finite density \cite{Sorkin2003}), and asymptotic safety (finite effective action at the UV fixed point \cite{Reuter1998}) when those programs are restricted to the chosen cosmological response channel.
+\textit{Physical content.} This axiom imposes finite capacity for the selected scalar response channel. It is not a claim that every microscopic observable or every UV amplitude is finite in the underlying theory. Finite area quanta in LQG \cite{Rovelli2004}, the Bekenstein bound \cite{Bekenstein1981}, finite code subspaces \cite{Almheiri2015}, causal-set discreteness \cite{Sorkin2003}, and fixed-point behavior \cite{Reuter1998} are source-domain motifs only. Each requires an explicit map to the bounded response $S_T$ before it counts as structural support for Axiom~A.
 
 Without finite capacity, the framework would permit unbounded geometric configurations associated with the singular behaviors that quantum-gravity programs typically aim to tame.
 
@@ -190,11 +190,11 @@ S_T(g) = c_1 g + c_3 g^3 + \mathcal{O}(g^5)\,, \quad c_1 > 0\,.
 The odd-power structure reflects the catalytic nature of the response: the rate of geometric ordering is proportional to both the existing ordered fraction and the remaining capacity.
 \end{axiom}
 
-\textit{Physical content.} This axiom encodes the cooperative, self-reinforcing character of geometric ordering. It is the gravitational analog of ferromagnetic ordering, where aligned spins facilitate further alignment. Formally, the condition $c_1 > 0$ ensures that the response is positive (ordering, not disordering) for small perturbations, while the odd-power structure is consistent with the antisymmetric extension (Axiom~B').
+\textit{Physical content.} Formally, $c_1>0$ preserves only the sign of the local response, while the odd-power structure is consistent with the signed extension (Axiom~B'). The word ``cooperative'' is a motivating analogy to positive feedback in an order parameter; it does not identify microscopic constituents, interactions, correlations, or a ferromagnetic Hamiltonian.
 
-Without cooperative reinforcement, there would be no classical spacetime: a linear or anti-cooperative response cannot produce the long-lived, large-scale geometric structures observed in the universe. The cooperative character is analogous to spontaneous symmetry breaking in condensed matter: local ordering seeds further ordering, driving the system toward a globally ordered state (saturation).
+Within this effective model, removing the positive local response would remove the intended self-reinforcing saturation interpretation. It would not prove that classical spacetime is impossible. Spontaneous symmetry breaking is therefore used below as a heuristic source domain whose preserved and unpreserved invariants are stated explicitly.
 
-\textit{Connection to CRM.} The saturation coupling $k$ in the CRM ODE~\eqref{eq:saturation_ode} is $c_1$. The game-theoretic equilibrium of Paper~I \cite{Geiger2026} provides the thermodynamic motivation: the null space's concentration gradient $G$ drives cooperative ordering until the spacetime bubble saturates.
+\textit{Connection to CRM.} The saturation coupling $k$ in the CRM ODE~\eqref{eq:saturation_ode} supplies the positive local coefficient $c_1$. The game-theoretic equilibrium of Paper~I \cite{Geiger2026} motivates the language of cooperative ordering; it is not a microscopic derivation of that mechanism.
 
 A companion condition extends the domain of $S_T$ to negative arguments, enabling the group-theoretic classification of Step~2 in the proof:
 
@@ -299,7 +299,7 @@ Equivalently, the ratio of distances to the two saturation faces is the additive
 \]
 which must vanish for the exact projective $\tanh$ representative. Establishing $\Delta_{D'}=0$ from a microscopic theory remains an open physical task.
 
-\textit{Physical content of D.} Axiom~D is the deepest composition axiom. It states that the geometric response must be \textit{self-consistent under coarse-graining}: observing the universe at two successive scales and combining the results must give the same answer as observing at the combined scale directly. This is the defining property of a renormalization group.
+\textit{Physical content of D.} Axiom~D requires the response to be self-consistent under successive scale transformations. This mirrors the semigroup property of renormalization-group maps \cite{WilsonKogut1974}; it is a structural RG transfer only when the response projection obeys the homomorphism~\eqref{eq:rg_response_homomorphism}.
 
 The composition law~\eqref{eq:composition} encodes the requirement that the theory be \textit{scale-coherent} in the following precise sense: the response function $S_T$ is a homomorphism from the additive structure of the control parameter to the composition algebra of responses; i.e., no preferred scale exists at which this homomorphism property breaks down or changes character. The absorbing boundary condition $\mathcal{C}(S, S_{\max}) = S_{\max}$ reflects the fact that fully saturated geometry cannot be further ordered -- it is a fixed point.
 
@@ -307,11 +307,11 @@ The $C^\infty$-extension requirement has a direct physical interpretation: it de
 
 \textit{(a)~No new phase transition at saturation.} A composition that develops singular derivatives at the boundary would signal a phase transition \textit{within} the saturation process itself -- i.e., the saturation mechanism would break down precisely where it is needed most. The smoothness condition excludes such pathological behavior. This is distinct from phase transitions at the \textit{onset} of saturation (which are permitted and correspond to the CRM's transition epoch $a_{\mathrm{trans}}$); the boundary regularity concerns the \textit{fully saturated} regime.
 
-\textit{(b)~Distinction from critical phenomena.} While critical exponents and divergent susceptibilities characterize phase transitions at finite temperature (the Curie point in ferromagnets, $T_c$ in superfluids), the saturation boundary $S \to S_{\max}$ is an \textit{asymptotic} regime ($g \to \infty$), not a critical point. In the ferromagnetic analogy, it corresponds to $T \to 0$ (complete alignment), not to $T \to T_c$ (critical fluctuations). The zero-temperature limit of the magnetization \textit{is} smooth ($M \to M_s$ exponentially in mean-field theory and as a power law in low $T$, but without divergent derivatives of the \textit{composition} of magnetizations). The $C^\infty$ requirement is therefore physically appropriate for the saturation boundary.
+\textit{(b)~Distinction from critical phenomena.} While critical exponents and divergent susceptibilities characterize phase transitions at finite temperature, the theorem's saturation boundary $S \to S_{\max}$ is an \textit{asymptotic} response regime ($g \to \infty$), not a critical point. The ferromagnetic source domain suggests comparison with $T\to0$ rather than $T\to T_c$, but it supplies no binary composition law for magnetizations. Accordingly, boundary smoothness remains an explicit response-channel assumption, not a consequence of ferromagnetic thermodynamics.
 
-\textit{(c)~Analyticity of the vacuum state.} In quantum field theory, the vacuum is an analytic state: all correlation functions at the vacuum are smooth. Since full saturation ($S = S_{\max}$) represents the geometric analog of the vacuum (the maximally ordered state), the composition of responses near this state should inherit the smoothness of the vacuum.
+\textit{(c)~Response regularity is a model postulate.} Generic quantum-field-theory correlators have short-distance singularities, so vacuum language does not derive $C^\infty$ boundary composition. Interpreting full saturation as a maximally ordered state is heuristic; the required smoothness remains an explicit hypothesis of the selected effective response channel.
 
-\textit{Connection to CRM.} In the CRM, the composition law emerges from the thermodynamic structure: the curvature return potential $\Omega_\Phi$ at scale $a_1 \cdot a_2$ is determined by the potentials at $a_1$ and $a_2$ through the saturation ODE's group property. The $\tanh$ function satisfies $\tanh(u_1 + u_2) = (\tanh u_1 + \tanh u_2)/(1 + \tanh u_1 \tanh u_2)$, which is precisely a composition law of the required form with $\mathcal{C}(x,y) = (x + y)/(1 + xy/S_{\max}^2)$.
+\textit{Connection to CRM.} For the phenomenologically chosen $\tanh$ response, the addition identity $\tanh(u_1 + u_2) = (\tanh u_1 + \tanh u_2)/(1 + \tanh u_1 \tanh u_2)$ algebraically defines the required law $\mathcal{C}(x,y) = (x + y)/(1 + xy/S_{\max}^2)$. This internal normal-form identity is not a thermodynamic or microscopic derivation of the physical composition variable.
 
 
 % ===================================================================
@@ -507,19 +507,24 @@ In Loop Quantum Cosmology (LQC) \cite{Ashtekar2006,Bojowald2008}, the modified F
 H^2 = \frac{8\pi G}{3}\,\rho\!\left(1 - \frac{\rho}{\rho_c}\right)\,,
 \label{eq:lqc_friedmann}
 \end{equation}
-where $\rho_c \sim \rho_{\mathrm{Pl}}$ is a critical density set by the Barbero-Immirzi parameter $\gamma_{\mathrm{BI}}$. This has exactly the structure of a saturation equation: the expansion rate is bounded ($H^2 \leq H_{\max}^2$), and the bounce at $\rho = \rho_c$ replaces the classical singularity.
+where $\rho_c \sim \rho_{\mathrm{Pl}}$ is a critical density set by the Barbero-Immirzi parameter $\gamma_{\mathrm{BI}}$. The equation has a bounded quadratic response, which is a saturation motif; it is not the CRM response ODE or a shared microscopic capacity law.
 
-\textit{Axiom A:} The critical density $\rho_c$ provides finite geometric capacity. \textit{Axiom B:} For $\rho \ll \rho_c$, the standard Friedmann equation is recovered with $c_1 > 0$. The holonomy corrections are cooperative: the departure from GR grows with curvature. \textit{Axiom C:} In the expanding branch ($\dot{a} > 0$), the solution is monotone. \textit{Axiom D:} LQC does not possess a manifest RG composition law in the sense of Axiom~D; the effective equations inherit diffeomorphism invariance from full LQG, which provides structural coherence across scales, but a rigorous derivation of the associative composition property~\eqref{eq:composition} from the LQG Hilbert space remains an open problem (hence the ``?'' in Table~\ref{tab:axiom_check}).
+\textit{Axiom A:} The critical density $\rho_c$ is a finite-bound motif, but identifying it with the capacity of the selected CRM response requires a map. \textit{Axiom B:} Recovery of the standard Friedmann equation at $\rho\ll\rho_c$ does not by itself establish cooperative reinforcement or B'. \textit{Axiom C:} The expanding branch supplies a monotone segment. \textit{Axiom D:} LQC does not possess a manifest RG composition law in the sense of Axiom~D; a rigorous response homomorphism from the LQG dynamics to Eq.~\eqref{eq:composition} remains open.
 
-Defining $X = 1 - 2\rho/\rho_c$, the LQC Friedmann equation~\eqref{eq:lqc_friedmann} can be rewritten as $H^2 \propto (1 - X^2)$. The factor $(1-X^2)$ is the same nonlinearity that appears on the right-hand side of the saturation ODE~\eqref{eq:saturation_ode}; note, however, that the LQC equation governs $H^2$ while the CRM ODE governs $dX/da$ -- the structural analogy is in the saturation mechanism, not a direct identification of the two equations. The CRM parameters $k$ and $\Phi_0$ would map to the LQG minimum area gap $\Delta$ (the smallest nonzero eigenvalue of the area operator) and the Barbero-Immirzi parameter $\gamma_{\mathrm{BI}}$, though this mapping has not been rigorously derived.
+Defining $X = 1 - 2\rho/\rho_c$, the LQC Friedmann equation~\eqref{eq:lqc_friedmann} can be rewritten as $H^2 \propto (1 - X^2)$. This preserves a polynomial factor and a finite bound, but the LQC equation governs $H^2$ whereas the CRM ODE governs $dX/da$; no homomorphism between their dynamics is supplied. A proposed parameter correspondence involving the LQG area gap $\Delta$, $\gamma_{\mathrm{BI}}$, $k$, and $\Phi_0$ therefore remains heuristic.
 
 \subsection{Asymptotic Safety}
 
 In the asymptotic safety program \cite{Weinberg1979,Reuter1998,Percacci2017}, the gravitational effective action has a UV fixed point $g^* > 0$ where the dimensionless Newton's constant and cosmological constant become scale-independent. The RG flow from UV to IR defines the effective gravitational coupling $G_k$ and cosmological ``constant'' $\Lambda_k$ as functions of the RG scale $k$.
 
-\textit{Axiom A:} The UV fixed point provides a finite upper bound on the effective coupling. \textit{Axiom B:} The flow away from the fixed point is cooperative: the relevant direction has positive critical exponent \cite{Percacci2017}. \textit{Axiom C:} The flow is monotone along the relevant direction (by definition of relevance). \textit{Axiom D:} A clarification is needed. The Wilson RG semigroup $R_{k_1} \circ R_{k_2} = R_{k_1 k_2}$ operates on the space of couplings (the ``theory space''), not directly on the response function $S_T$. To connect the two, one must project the RG flow onto the single relevant direction parametrized by $g$. In the asymptotic safety scenario with a UV fixed point, the flow near the fixed point is controlled by a finite number of relevant directions; in the simplest truncation (Einstein-Hilbert with $G_k, \Lambda_k$), there are typically two relevant directions. The single-field assumption of Axiom~D corresponds to restricting attention to the dominant relevant direction, under which the RG semigroup on theory space \textit{induces} a composition law on the one-dimensional response $S_T(g)$. This projection is exact when a single relevant direction dominates (as in the cosmological sector), and approximate otherwise -- a limitation shared with the single-field restriction of the theorem (see Limitation~4).
+\textit{Axiom A:} The UV fixed point is a finite-scale motif, not automatically a global bound on the chosen cosmological response. \textit{Axiom B:} A positive critical exponent defines a relevant direction; it does not establish microscopic cooperation. \textit{Axiom C:} Relevance alone does not prove global monotonicity of a projected observable. \textit{Axiom D:} The Wilson RG semigroup $R_{k_1}\circ R_{k_2}=R_{k_1k_2}$ operates on theory space \cite{WilsonKogut1974}, not directly on $S_T$. A structural transfer requires an explicit map $\Pi$ satisfying
+\begin{equation}
+\Pi(R_{k_1}\circ R_{k_2})=\mathcal{C}\!\left(\Pi(R_{k_1}),\Pi(R_{k_2})\right).
+\label{eq:rg_response_homomorphism}
+\end{equation}
+Restricting to a dominant relevant direction is not sufficient by itself: an invariant one-dimensional channel and the homomorphism~\eqref{eq:rg_response_homomorphism} must still be demonstrated. Neither is derived here for an external UV program.
 
-Asymptotic safety is therefore one of the closest matches to Axiom~D, because its central language is renormalization-group evolution.\footnote{The self-similar, scale-recursive character of Axiom~D is not
+Asymptotic safety therefore supplies one of the closest source-domain motifs for Axiom~D, while the target-response homomorphism remains open.\footnote{The self-similar, scale-recursive character of Axiom~D is not
 confined to cosmological RG flow; the same motif surfaces in the distribution
 of the prime numbers. In the primon (Riemann) gas of Julia~\cite{Julia1990}, a
 system of non-interacting bosonic oscillators with energies $\log p$ over the
@@ -532,39 +537,39 @@ with wavefunctions proportional to automorphic $L$-functions on the critical
 axis. This suggests that black-hole singularities may be a further physical
 setting in which a capacity-limited, self-similar geometric ordering of the
 type encoded by the axioms arises naturally. We record the connection as a
-motivating parallel, not as an independent verification of Axioms~A--D.} The asymptotic safety scenario for cosmology \cite{Bonanno2002} produces effective Friedmann equations with saturation behavior at high curvature, consistent with the $\tanh$ form.
+motivating parallel, not as an independent verification of Axioms~A--D.} The asymptotic safety scenario for cosmology \cite{Bonanno2002} produces bounded high-curvature behavior. That is a saturation motif, not evidence for the Paper-V $\tanh$ response or D'.
 
-Recent computations within increasingly sophisticated truncations provide growing numerical evidence for the Reuter fixed point. Eichhorn and Held~\cite{EichhornHeld2018} report that asymptotic safety constrains the top-quark Yukawa coupling, yielding a prediction of approximately 171\,GeV for the top-quark pole mass, consistent with the observed value of $172.6 \pm 0.3$\,GeV \cite{PDG2024} -- a concrete particle-physics consequence of the UV fixed point. More broadly, Eichhorn~\cite{Eichhorn2020} reviews how the fixed-point structure can accommodate the Standard Model matter content without additional fine-tuning. These results strengthen the case that the asymptotic safety program is a strong candidate realization of the axioms: the fixed-point existence (Axiom~A), cooperative flow (Axiom~B), and RG composition (Axiom~D) are all directly tied to state-of-the-art functional RG computations.
+Recent computations within increasingly sophisticated truncations provide numerical evidence for the Reuter fixed point. Eichhorn and Held~\cite{EichhornHeld2018} report a constraint on the top-quark Yukawa coupling, and Eichhorn~\cite{Eichhorn2020} reviews fixed-point constraints on Standard-Model matter. These results support the RG source domain, but they do not verify the scalar-response capacity, cooperative feedback, global monotonicity, or the homomorphism~\eqref{eq:rg_response_homomorphism} required by Axioms~A--D.
 
 \subsection{String Theory and Holography}
 
-In string theory, the UV finiteness of the string amplitude provides Axiom~A. The string landscape, while introducing a selection problem, does not violate the axioms for any \textit{specific} vacuum: within a given compactification, the low-energy EFT has a unique RG flow satisfying Axioms~B--D.
+In string theory, UV-finite amplitudes motivate a finite-behaviour analogy, but they do not provide a finite capacity for the selected scalar response. A low-energy EFT within a compactification has an RG flow; this alone does not establish Axioms~B--D or the response homomorphism~\eqref{eq:rg_response_homomorphism}.
 
-The holographic approach (AdS/CFT \cite{Maldacena1999}) provides particularly strong support for Axiom~D: the bulk/boundary correspondence \textit{is} a composition law relating geometric descriptions at different scales. The Ryu-Takayanagi formula \cite{Ryu2006} and its quantum corrections establish a monotone relationship between entanglement entropy and geometric area, satisfying Axiom~C.
+The holographic approach (AdS/CFT \cite{Maldacena1999}) relates descriptions across scales, while the Ryu--Takayanagi formula \cite{Ryu2006} relates entanglement entropy and geometric area. These are source-domain motifs for scale relation and monotonicity, not an explicit binary composition on the Paper-V response.
 
-For cosmological applications, the de~Sitter entropy bound $S_{\mathrm{dS}} = \pi/(\Lambda G) < \infty$ provides Axiom~A, while the holographic RG flow \cite{deBoer2000} provides the composition structure.
+For cosmological applications, the de~Sitter entropy bound $S_{\mathrm{dS}} = \pi/(\Lambda G) < \infty$ and holographic RG flow \cite{deBoer2000} provide finite-bound and scale-flow motifs. Mapping either to $S_T$ and $\mathcal C$ remains an open derivation.
 
 \subsection{Causal Set Theory}
 
-In causal set theory \cite{Sorkin2003,Surya2019}, the cosmological constant arises as a dynamical quantity $\Lambda \sim 1/\sqrt{N}$, where $N$ is the number of causal set elements. This produces a cosmological ``constant'' that decreases as the universe grows, approaching a finite asymptotic value -- precisely the saturation behavior of Axiom~C.
+In causal set theory \cite{Sorkin2003,Surya2019}, the cosmological constant arises as a dynamical quantity $\Lambda \sim 1/\sqrt{N}$, where $N$ is the number of causal set elements. Its monotone decrease is a possible control-coordinate motif; it is not already the increasing bounded response required by Axiom~C.
 
-\textit{Axiom A:} Finite density of causal set elements provides geometric capacity. \textit{Axiom B:} While the Poisson sprinkling itself is uncorrelated, the \textit{dynamics} of causal set evolution (sequential growth models \cite{Surya2019}) produce cooperative ordering: newly added elements preferentially attach to the existing causal structure, enhancing geometric order. \textit{Axiom C:} The $1/\sqrt{N}$ scaling is monotonically decreasing. \textit{Axiom D:} The sequential growth dynamics provide a natural composition law, though its precise relationship to the RG composition of Axiom~D requires further analysis.
+\textit{Axiom A:} Finite sprinkling density is a discreteness motif, not yet the capacity of a scalar response. \textit{Axiom B:} Poisson sprinkling is uncorrelated, and the required positive-feedback invariant has not been derived from sequential growth \cite{Surya2019}. \textit{Axiom C:} The $1/\sqrt{N}$ scaling is monotone, but mapping its decreasing orientation to $S_T$ requires a chosen reparametrization. \textit{Axiom D:} No homomorphism from sequential growth to the response composition has been established.
 
 \subsection{Causal Dynamical Triangulations}
 
 Causal Dynamical Triangulations (CDT) \cite{Ambjorn2005,Loll2020} construct quantum gravity via a regularized path integral over causal triangulations. Monte Carlo simulations reveal a phase diagram with a physically relevant ``de~Sitter phase'' (phase~$C_{dS}$) in which the emergent geometry has Hausdorff dimension $d_H \approx 4$ and a volume profile well-described by Euclidean de~Sitter space.
 
-\textit{Axiom A:} The triangulation provides a finite number of building blocks per spacetime volume, enforcing finite geometric capacity. \textit{Axiom B:} In the de~Sitter phase, the volume profile grows cooperatively before saturating -- the geometric ordering is self-reinforcing. The odd-power structure (Axiom~B') remains an open signed-channel derivation. \textit{Axiom C:} The de~Sitter volume profile is monotone (in the expanding branch). \textit{Axiom D:} CDT possesses natural blocking transformations (coarse-graining of triangulations), providing a candidate for the composition law, but the precise associative structure has not been rigorously established.
+\textit{Axiom A:} A finite triangulation is a regulator-level finite-count motif; a continuum scalar capacity has not been derived. \textit{Axiom B:} Growth of the de~Sitter volume profile does not by itself establish cooperative feedback or B'. \textit{Axiom C:} The expanding branch supplies a monotone segment. \textit{Axiom D:} Blocking transformations are a coarse-graining motif, but no associative response homomorphism has been established.
 
 \subsection{Noncommutative Geometry}
 
 Connes' program \cite{Connes1994} reconstructs geometry from spectral data (the Dirac operator on a noncommutative algebra). The spectral action principle yields the Standard Model Lagrangian coupled to gravity from the spectrum of a single operator.
 
-\textit{Axiom A:} The spectral action has a natural UV cutoff $\Lambda$ (the energy scale at which the spectral sum is evaluated), providing finite geometric capacity. \textit{Axiom B:} The Seeley-DeWitt coefficients $a_0, a_2, a_4, \ldots$ of the heat kernel expansion have even powers of $\Lambda$; the odd-power structure required by Axiom~B emerges after reparametrization to a suitable coupling variable, but this identification requires further analysis. \textit{Axiom C:} The spectral flow is monotone in the appropriate direction. \textit{Axiom D:} The composition of spectral triples provides algebraic composition coherence.
+\textit{Axiom A:} The spectral cutoff $\Lambda$ is not by itself a finite capacity of the selected response. \textit{Axiom B:} No signed odd response channel has been derived from the heat-kernel expansion. \textit{Axiom C:} A monotone scalar projection has not been specified. \textit{Axiom D:} Products of spectral triples do not by themselves define the binary response law $\mathcal C$. These remain source-domain motifs rather than structural transfers.
 
-\subsection{Summary: Why Universality?}
+\subsection{Summary: Why Conditional Abel/Collar Universality?}
 
-Table~\ref{tab:axiom_check} summarizes the compatibility map. No single external QG program has been rigorously proven here to satisfy A--D, $D^\pm$, and D' simultaneously; rather, each program supplies compatible motifs for a substantial subset, with the remaining axioms being open derivation tasks. No entry in this table is a proof that a UV programme satisfies D' or $D^\pm$. The table records compatibility signals and open derivation tasks. D' is especially important: it is not verified for the listed UV programs in this paper, but is imposed by the CRM effective channel as a projective double-boundary quotient assumption. The theorem's value is therefore twofold: (i)~as a \textit{conditional} result, it identifies the precise conditions under which $\tanh$ saturation is expected, and (ii)~as a \textit{diagnostic}, it pinpoints which properties of each QG program require further investigation. The broad compatibility across programs explains the Abel/collar-level universality of saturation dynamics; the exact $\tanh$ representative additionally requires the projective quotient.
+Table~\ref{tab:axiom_check} summarizes the compatibility map. No single external QG program has been rigorously proven here to satisfy A--D, $D^\pm$, and D' simultaneously. The entries record source-domain motifs and open mapping obligations, not proofs of transfer. The theorem establishes universality only \emph{inside} the explicitly defined class of one-dimensional responses satisfying its hypotheses: A--D, B', and $D^\pm$ give an Abel/collar class, while D' selects its projective $\tanh$ representative. This conditional normal-form equivalence is not a Wilsonian universality class and does not imply shared microscopic dynamics or critical exponents \cite{WilsonKogut1974}.
 
 \begin{table*}[t]
 \caption{Compatibility map with quantum-gravity motifs. $\checkmark$ = compatible motif with explicit construction, ($\checkmark$) = compatible motif requiring mild assumptions, ? = open derivation, no = known obstruction. The D' column records whether the projective double-boundary quotient is derived or explicitly assumed.}
@@ -573,12 +578,12 @@ Table~\ref{tab:axiom_check} summarizes the compatibility map. No single external
 \begin{tabular}{lccccc}
 Program & A & B/B' & C & D & D' \\
 \hline
-LQG/LQC & $\checkmark$ & $\checkmark$ & $\checkmark$ & ? & ? \\
-Asymptotic safety & $\checkmark$ & ($\checkmark$) & $\checkmark$ & $\checkmark$ & ? \\
-Strings/holography & $\checkmark$ & ($\checkmark$) & ($\checkmark$) & ($\checkmark$) & ? \\
-Causal sets & $\checkmark$ & ? & $\checkmark$ & ? & ? \\
-CDT & $\checkmark$ & ($\checkmark$) & ($\checkmark$) & ? & ? \\
-NCG & $\checkmark$ & ? & ? & ? & ? \\
+LQG/LQC & ($\checkmark$) & ? & ($\checkmark$) & ? & ? \\
+Asymptotic safety & ($\checkmark$) & ? & ? & ($\checkmark$) & ? \\
+Strings/holography & ($\checkmark$) & ? & ? & ? & ? \\
+Causal sets & ($\checkmark$) & ? & ($\checkmark$) & ? & ? \\
+CDT & ($\checkmark$) & ? & ($\checkmark$) & ? & ? \\
+NCG & ? & ? & ? & ? & ? \\
 CRM (effective) & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & assumed \\
 \end{tabular}
 \end{ruledtabular}
@@ -591,7 +596,7 @@ CRM (effective) & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & as
 \section{Spacetime as an Ordered Phase}
 \label{sec:ontology}
 
-The broad axiom satisfaction documented in Table~\ref{tab:axiom_check} raises a conceptual question: if the projective $\tanh$ representative recurs whenever D' is physically realized, what does this universality \textit{mean} for the nature of spacetime?
+The compatibility motifs in Table~\ref{tab:axiom_check} raise a conceptual question: if an external response channel is eventually shown to satisfy the stated gates, how should that conditional normal-form equivalence be interpreted without inferring a shared microscopic ontology?
 
 \subsection{The conceptual shift}
 
@@ -610,10 +615,10 @@ The analogy with spontaneous magnetization is useful at the level of a mean-fiel
 \begin{center}
 \begin{tabular}{ll}
 \hline
-Ferromagnetism & CRM Cosmology \\
+\shortstack[l]{Ferromagnetic\\source domain} & \shortstack[l]{CRM target\\domain} \\
 \hline
 Magnetization $M$ & Curvature return $\Omega_\Phi$ \\
-Inverse temperature $J/k_BT$ & Scale factor $a$ \\
+\shortstack[l]{Inverse temperature\\$J/k_BT$} & \shortstack[l]{Control coordinate\\$a-a_{\mathrm{trans}}$\\(heuristic reparametrization)} \\
 Curie point ($J/k_BT_c$) & Transition $a_{\mathrm{trans}}$ \\
 Spin interaction $J$ & Curvature coupling $k$ \\
 Saturation $M_s$ & Saturation $\Phi_0$ \\
@@ -622,7 +627,24 @@ $\tanh(J/k_BT)$ & $\tanh(k(a - a_{\mathrm{trans}}))$ \\
 \end{tabular}
 \end{center}
 
-The Saturation Theorem provides a mathematical guardrail for this analogy at the \textit{mean-field level}: both systems satisfy an Abel-type composition structure in the mean-field approximation, and the usual mean-field magnetization corresponds to the projective $\tanh$ representative. We note that the exact magnetization of a $d$-dimensional Ising model deviates from the mean-field $\tanh$ near the critical temperature ($M \sim (T_c - T)^{\beta}$ with non-trivial critical exponent $\beta \neq 1/2$ for $d < 4$). This deviation corresponds to the breakdown of the one-dimensional projective-collar approximation near the \textit{critical point} (the onset of ordering), not near \textit{saturation} ($T \to 0$). The analogy is therefore limited to the saturation regime and mean-field theory; fluctuation corrections near criticality require a multi-field extension (see Outlook). Within that domain, the relation is structural rather than a mere metaphor.
+\begin{table*}[t]
+\caption{Invariant audit for the source-to-target transfers used in Paper~V. ``Structural'' is reserved for an explicit normal-form map or homomorphism; a shared word or graph shape is insufficient.}
+\label{tab:metaphor_invariants}
+\begin{ruledtabular}
+\begin{tabular}{llll}
+\parbox[t]{0.14\textwidth}{Transfer} & \parbox[t]{0.25\textwidth}{Invariant retained} & \parbox[t]{0.32\textwidth}{Not retained or not derived} & \parbox[t]{0.18\textwidth}{Admissible status} \\
+\hline
+\parbox[t]{0.14\textwidth}{Saturation} & \parbox[t]{0.25\textwidth}{Normalized bounded interval, ordered endpoints, monotone endpoint approach} & \parbox[t]{0.32\textwidth}{Shared microscopic equation, free energy, or UV mechanism} & \parbox[t]{0.18\textwidth}{Structural only at the normalized response/normal-form level} \\[0.5em]
+\parbox[t]{0.14\textwidth}{Ferromagnetic} & \parbox[t]{0.25\textwidth}{Signed scalar order parameter and a mean-field $\tanh$-shaped response} & \parbox[t]{0.32\textwidth}{Magnetization composition law, lattice correlations, critical exponents, constituents} & \parbox[t]{0.18\textwidth}{Heuristic analogy} \\[0.5em]
+\parbox[t]{0.14\textwidth}{Cooperative} & \parbox[t]{0.25\textwidth}{Positive local response $c_1>0$} & \parbox[t]{0.32\textwidth}{Spin-like interaction, many-body feedback, correlation function} & \parbox[t]{0.18\textwidth}{Local formal correspondence} \\[0.5em]
+\parbox[t]{0.14\textwidth}{Renormalization} & \parbox[t]{0.25\textwidth}{Associativity of successive scale maps if Eq.~\eqref{eq:rg_response_homomorphism} holds} & \parbox[t]{0.32\textwidth}{Projection from theory space to the scalar response for any external QG program} & \parbox[t]{0.18\textwidth}{Conditional structural gate} \\[0.5em]
+\parbox[t]{0.14\textwidth}{Temperature} & \parbox[t]{0.25\textwidth}{Order of a chosen one-dimensional control after reparametrization} & \parbox[t]{0.32\textwidth}{Units, thermal ensemble, conjugacy, or physical identification with $a$} & \parbox[t]{0.18\textwidth}{Heuristic reparametrization} \\[0.5em]
+\parbox[t]{0.14\textwidth}{Capacity} & \parbox[t]{0.25\textwidth}{Finite response endpoint under $M_s\leftrightarrow\Phi_0$} & \parbox[t]{0.32\textwidth}{Entropy, information, code, or holographic capacity} & \parbox[t]{0.18\textwidth}{Formal bound; physical reading heuristic} \\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}
+
+Mean-field Ising equilibrium obeys a self-consistency equation of the form $m=\tanh[\beta(B+Jqm)]$; it does not define an Abel binary composition of magnetizations. The appearance of $\tanh$ is therefore not by itself a homomorphism. Exact two-dimensional magnetization also has non-mean-field critical behavior \cite{Yang1952}, and RG universality concerns fixed points and scaling data rather than a shared sigmoid \cite{WilsonKogut1974}. Table~\ref{tab:metaphor_invariants} consequently keeps the explicit normalized response/normal-form map as structural, while ferromagnetism, temperature, and microscopic cooperation remain heuristic unless their missing source-to-target maps are derived.
 
 Having established the ontological framework, we now turn to its empirical consequences.
 
@@ -705,7 +727,7 @@ with $\epsilon \ll 1$. These oscillations would be a candidate signature of micr
 \begin{enumerate}
 \item \textbf{A conditional normal-form/no-go statement:} Any cosmological theory satisfying Axioms~A--D, B', $D^\pm$, and the projective double-boundary quotient assumption D' must produce $\tanh$-type saturation. Without D', the same structural hypotheses produce the Abel/collar structure.
 
-\item \textbf{Universality clarified:} The observation that LQG, asymptotic safety, strings, causal sets, and NCG all produce structurally similar saturation dynamics is no longer mysterious at the Abel-structure level; the precise $\tanh$ representative additionally depends on the projective boundary quotient.
+\item \textbf{Universality delimited:} The theorem defines a conditional Abel/collar equivalence class for responses that satisfy its gates. The QG examples currently provide motifs and mapping obligations, not a Wilsonian universality class or a shared microscopic mechanism; the projective $\tanh$ representative additionally depends on D'.
 
 \item \textbf{CRM calibrated:} Under the stated axioms, the CRM's saturation ODE $dX/da = k(1-X^2)$ can be interpreted as the projective normal form of capacity-limited cooperative relaxation rather than only as a phenomenological fit.
 
@@ -776,7 +798,7 @@ The theorem has three consequences:
 \begin{enumerate}
 \item The CRM's saturation ODE $dX/da = k(1-X^2)$ can be read as the \textit{projective normal form} of capacity-limited cooperative relaxation once the boundary quotient is fixed.
 
-\item The observation that LQG, asymptotic safety, string theory, causal sets, and noncommutative geometry all produce similar saturation structures is explained at the Abel/collar level; the specific $\tanh$ representative requires the projective quotient.
+\item Motifs from LQG, asymptotic safety, string theory, causal sets, and noncommutative geometry can be compared with the Abel/collar gates, but no external source-to-response homomorphism is derived here. The specific $\tanh$ representative additionally requires the projective quotient.
 
 \item The paper offers an interpretive framework in which quantum gravity is studied not only as metric quantization, but also as the theory of geometric order -- a transition from a pre-geometric quantum system to classical spacetime.
 \end{enumerate}
@@ -967,6 +989,18 @@ On the holographic renormalization group.
 DOI: 10.1088/1126-6708/2000/08/003.
 arXiv:hep-th/9912012.
 
+
+\bibitem{Yang1952}
+C.~N.~Yang (1952).
+The spontaneous magnetization of a two-dimensional Ising model.
+\textit{Physical Review}, 85, 808--816.
+DOI: 10.1103/PhysRev.85.808.
+
+\bibitem{WilsonKogut1974}
+K.~G.~Wilson \& J.~Kogut (1974).
+The renormalization group and the $\epsilon$ expansion.
+\textit{Physics Reports}, 12(2), 75--199.
+DOI: 10.1016/0370-1573(74)90023-4.
 
 \bibitem{Meissner2004}
 K.~A.~Meissner (2004).

@@ -9,7 +9,7 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![CI](https://github.com/research-line/crm-cosmology/actions/workflows/ci.yml/badge.svg)](https://github.com/research-line/crm-cosmology/actions/workflows/ci.yml)
-[![Tests](https://img.shields.io/badge/Tests-35%20passed-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/Tests-43%20passed-brightgreen.svg)](tests/)
 [![Open Science](https://img.shields.io/badge/Open--Science-Reproducible-green.svg)](https://github.com/research-line/crm-cosmology)
 [![LLM Indexing](https://img.shields.io/badge/LLM--Indexing-llms.txt-purple.svg)](llms.txt)
 
@@ -93,6 +93,18 @@ flowchart TD
 | VI | `papers/extensions/Paper6_EN.tex` | `papers/extensions/Paper6_DE.tex` | QG-CRM: Ultraviolet Completion via Quantum Quadratic Gravity (DRAFT) | [10.5281/zenodo.19352448](https://doi.org/10.5281/zenodo.19352448) |
 
 **Paper V -- The Saturation Theorem** identifies a conditional normal form for saturation dynamics. Axioms A--D, together with the signed interior composition assumptions, imply an Abel/collar structure; the exact tanh representative appears once the additional projective boundary quotient D' is imposed. Major QG programs motivate the macroscopic A--D structure, while D' remains an explicit diagnostic and open physical ingredient rather than a derived microscopic theorem.
+
+The bilingual manuscript now includes a six-term
+[metaphor-transfer invariant audit](research/crm-v/CRM5_METAPHOR_AUDIT_INVARIANTS_V1_2026-08-26.md)
+for saturation, ferromagnetism, cooperation, renormalization, temperature, and
+capacity. Its machine-readable ledger reserves structural wording for an
+explicit normal-form map or response homomorphism; the external QG mappings
+remain heuristic or conditional, and no row closes physical D'. Validate the
+ledger and bilingual claim boundaries with:
+
+```bash
+python -m pytest tests/test_metaphor_transfer_invariants.py -q
+```
 
 An exact 2D Yang--Mills heat-kernel control case is available as a
 [source-bound D' candidate audit](research/crm-v/CRM5_DPRIME_2DYM_HEAT_KERNEL_V1_2026-08-26.md).
