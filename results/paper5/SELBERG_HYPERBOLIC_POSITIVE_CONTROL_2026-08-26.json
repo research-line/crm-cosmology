@@ -1,0 +1,114 @@
+{
+  "audit_id": "CRM5-SELBERG-HYPERBOLIC-POSITIVE-CONTROL-V1",
+  "schema_version": "1.0.0",
+  "run_date": "2026-08-26",
+  "todo_source": "CRM-V TODO.md:358-373",
+  "result": "HYPERBOLIC_LIE_MOTIF_PASS__FULL_E10_TRANSFER_REJECTED__NO_COSMOLOGY_OR_DPRIME_CLAIM",
+  "source_location_audit": {
+    "stale_todo_path": ".LAB/.ZETA-ZOO/FST_MATHEMATICS/selberg/",
+    "resolved_read_only_path": ".LAB/.ZETA-ZOO/CORE/selberg/",
+    "source_lock_found": false,
+    "source_cloud_lock_risk": "HIGH_CLDFLT_SYS_READ_ONLY"
+  },
+  "shared_hyperbolic_motif": {
+    "selberg_space": "M=Gamma\\H^2 isomorphic to Gamma\\PSL(2,R)/SO(2)",
+    "selberg_operator_channel": "Laplace-Casimir commutes with spherical bi-K-invariant convolution",
+    "crm_response_channel": "x=tanh(u) on the collinear one-parameter boost subgroup SO_plus(1,1)",
+    "boost_identity": "B(u)B(v)=B(u+v)",
+    "response_identity": "C(x,y)=tanh(atanh(x)+atanh(y))=(x+y)/(1+x*y)",
+    "status": "PASS_SHARED_RANK_ONE_LIE_MOTIF_ONLY",
+    "non_isomorphism": "No map identifies the compact Selberg surface, its Laplace spectrum, or its convolution algebra with the CRM response interval"
+  },
+  "positive_control_scope": {
+    "supported_claim": "A classical Lie-origin invariant operator channel exists in the spherical Selberg setting",
+    "unsupported_claims": [
+      "Selberg satisfies the CRM saturation axioms",
+      "Casimir commutation derives the CRM tanh response",
+      "Selberg supplies physical D_prime",
+      "Selberg implies a cosmology or UV completion"
+    ],
+    "status": "PASS_LIE_ORIGIN_COMMUTANT_ONLY"
+  },
+  "e10_audit": [
+    {
+      "id": "A_FINITE_RESPONSE_CAPACITY",
+      "source_motif": "finite area or compactness of Gamma\\H^2",
+      "missing_transfer": "a bounded scalar response with fixed saturation endpoints",
+      "status": "CATEGORY_MISMATCH_NOT_ESTABLISHED"
+    },
+    {
+      "id": "B_COOPERATIVE_REINFORCEMENT",
+      "source_motif": "Casimir centrality and Lie-origin symmetry",
+      "missing_transfer": "positive linear and cooperative odd response coefficients",
+      "status": "CATEGORY_MISMATCH_NOT_ESTABLISHED"
+    },
+    {
+      "id": "B_PRIME_RESPONSE_ODDNESS",
+      "source_motif": "antisymmetry of the sl2 Lie bracket",
+      "missing_transfer": "S(-g)=-S(g) for a source-defined scalar response",
+      "status": "CATEGORY_MISMATCH_NOT_ESTABLISHED"
+    },
+    {
+      "id": "C_MONOTONE_COSMIC_CONTROL",
+      "source_motif": "none",
+      "missing_transfer": "a single monotone cosmological control variable and endpoint saturation",
+      "status": "OUT_OF_SCOPE_NOT_ESTABLISHED"
+    },
+    {
+      "id": "D_RESPONSE_COMPOSITION",
+      "source_motif": "geodesic-flow group law and associative spherical convolution",
+      "missing_transfer": "an explicit response map Pi obeying Pi(T1*T2)=C(Pi(T1),Pi(T2)) with the CRM boundary law",
+      "status": "SOURCE_SIDE_COMPOSITION_MOTIF_ONLY"
+    },
+    {
+      "id": "D_PM_REVERSIBLE_ONE_CHANNEL",
+      "source_motif": "a collinear one-parameter boost or geodesic subgroup",
+      "missing_transfer": "a globally defined source observable taking values in the bounded CRM response group",
+      "status": "SUBGROUP_MOTIF_ONLY"
+    },
+    {
+      "id": "D_PRIME_PROJECTIVE_BOUNDARY_QUOTIENT",
+      "source_motif": "rank-one hyperbolic geometry",
+      "missing_transfer": "two physical response boundaries, neutral response, and source-exact multiplicative boundary quotient",
+      "status": "NOT_ESTABLISHED"
+    }
+  ],
+  "rejected_equivalences": [
+    "C2_X_trivial if and only if E10_satisfied",
+    "E10_satisfied if and only if saturation_embedding_exists",
+    "shared_hyperbolic_motif implies same_geometry_or_same_physics"
+  ],
+  "source_registry": {
+    "SELBERG_IDEA_ANNEX": {
+      "kind": "local_source_idea_under_audit",
+      "locator": ".LAB/.ZETA-ZOO/CORE/selberg/IDEEN_ANHANG.md",
+      "claim_status": "E10 claims rejected by invariant audit"
+    },
+    "SELBERG_PROOF_NOTE": {
+      "kind": "local_source_guardrail",
+      "locator": ".LAB/.ZETA-ZOO/CORE/selberg/BEWEISNOTIZ.md",
+      "supports": "spherical Casimir-convolution channel only"
+    },
+    "SELBERG_1956": {
+      "kind": "external_primary",
+      "citation": "Atle Selberg, Harmonic analysis and discontinuous groups in weakly symmetric Riemannian spaces with applications to Dirichlet series",
+      "url": "https://cds.cern.ch/record/427143",
+      "supports": "trace-formula setting and invariant operator channel on symmetric spaces"
+    },
+    "UNGAR_2007": {
+      "kind": "external_primary",
+      "citation": "Abraham A. Ungar, Einstein's velocity addition law and its hyperbolic geometry",
+      "url": "https://doi.org/10.1016/j.camwa.2006.05.028",
+      "supports": "Einstein velocity addition as a hyperbolic-geometry operation"
+    }
+  },
+  "summary": {
+    "hyperbolic_lie_motif_pass": true,
+    "casimir_positive_control_pass": true,
+    "full_E10_satisfied": false,
+    "cosmology_claim": false,
+    "UV_completion_claim": false,
+    "D_prime_claim": false,
+    "claim_upgrade_count": 0
+  }
+}

@@ -9,7 +9,7 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![CI](https://github.com/research-line/crm-cosmology/actions/workflows/ci.yml/badge.svg)](https://github.com/research-line/crm-cosmology/actions/workflows/ci.yml)
-[![Tests](https://img.shields.io/badge/Tests-59%20passed-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/Tests-67%20passed-brightgreen.svg)](tests/)
 [![Open Science](https://img.shields.io/badge/Open--Science-Reproducible-green.svg)](https://github.com/research-line/crm-cosmology)
 [![LLM Indexing](https://img.shields.io/badge/LLM--Indexing-llms.txt-purple.svg)](llms.txt)
 
@@ -132,6 +132,21 @@ boundary with:
 
 ```bash
 python -m pytest tests/test_dprime_projective_balance_gauge.py -q
+```
+
+The
+[Selberg hyperbolic positive-control audit](research/crm-v/CRM5_SELBERG_HYPERBOLIC_POSITIVE_CONTROL_V1_2026-08-26.md)
+retains one precise shared motif: the spherical Selberg channel has a
+Lie-origin Casimir commutant, while the CRM law is the collinear
+one-parameter boost composition `x=tanh(u)`. It rejects the earlier full-E10
+transfer: finite hyperbolic area is not finite response capacity, Casimir
+centrality is not cooperative reinforcement, and source-side flow or
+convolution composition is not a CRM response homomorphism. The comparison
+therefore supplies no cosmology, UV-completion, or D' claim. Validate the
+boost control, E10 ledger, source relocation, and bilingual guardrail with:
+
+```bash
+python -m pytest tests/test_selberg_hyperbolic_positive_control.py -q
 ```
 
 An exact 2D Yang--Mills heat-kernel control case is available as a
