@@ -300,14 +300,31 @@ unter Komposition multiplikativ:
   R(C(x,y))=R(x)R(y).
   \label{eq:projective_quotient}
 \end{equation}
-Äquivalent ist das Verhältnis der Abstände zu den beiden Sättigungsflächen die additive Arbeits-/Rapiditätskoordinate des eindimensionalen Antwortkanals.
+Äquivalent ist die signierte Koordinate $h(x):=\frac12\log R(x)=\operatorname{arctanh}(x)$, nicht der Quotient selbst, unter der eindimensionalen Antwortkomposition additiv.
 \end{axiom}
 
-\textit{Physikalischer Status von D'.} D' ist die projektive Doppelrand-Quotienten-Annahme. Sobald der Quotient $R=(1+x)/(1-x)$ vor der Wahl einer Abel-Koordinate festgelegt ist, folgt das Geschwindigkeitsadditionsgesetz algebraisch. D' wird somit nicht durch die Hypothesen A--D hergeleitet; es ist der zusätzliche projektive Input, dessen physikalische Herleitung offen bleibt. Es ist eine projektive Response-Bilanzannahme: Die physikalisch komponierte Größe ist das Verhältnis von realisierter Ordnung zu verbleibender Kapazität, analog zu einer Log-Odds- oder Rapiditätskoordinate. Für jedes UV-Kandidatenprogramm ist der diagnostische Defekt
+\textit{Physikalischer Status von D'.} D' ist die projektive Doppelrand-Quotienten-Annahme. Sobald der Quotient $R=(1+x)/(1-x)$ vor der Wahl einer Abel-Koordinate festgelegt ist, folgt das Geschwindigkeitsadditionsgesetz algebraisch. D' wird somit nicht durch die Hypothesen A--D hergeleitet; es ist der zusätzliche projektive Input, dessen physikalische Herleitung offen bleibt. Es setzt fest, dass die physikalisch komponierte Größe der markierte Randkapazitätsquotient ist, dessen Logarithmus einer Log-Odds- oder Rapiditätskoordinate entspricht. Für jedes UV-Kandidatenprogramm ist der diagnostische Defekt
 \[
   \Delta_{D'}(x,y):=\log R(C(x,y))-\log R(x)-\log R(y),
 \]
 der für den exakten projektiven $\tanh$-Repräsentanten verschwinden muss. $\Delta_{D'}=0$ aus einer mikroskopischen Theorie herzuleiten bleibt eine offene physikalische Aufgabe.
+
+\begin{remark}[Markiert-projektives Natürlichkeitsaudit]
+Die Punkte $b_-=-1$, $e=0$ und $b_+=1$ bezeichnen die beiden Antwortränder und die neutrale Antwort. Dann ist
+\[
+  R(x)=
+  \frac{(x-b_-)/(b_+-x)}{(e-b_-)/(b_+-e)}
+  =\frac{1+x}{1-x}
+\]
+ein normiertes Vierpunkt-Doppelverhältnis, und $h(x)=\frac12\log R(x)$ ist die signierte Hilbert-Koordinate von $e$ auf dem Intervall \cite{PapadopoulosTroyanov2008,RainioVuorinen2023}. Diese Größe ist invariant, wenn ein projektiver Koordinatenwechsel auf beide Ränder, den Neutralpunkt und die Antwort wirkt. In einer Karte, die nur die beiden Ränder festhält, gilt für einen orientierungserhaltenden projektiven Automorphismus $R(Tx)=kR(x)$; die zusätzliche Bedingung $T(e)=e$ erzwingt $k=1$, während eine Umkehr der Randorientierung $R$ auf $R^{-1}$ abbildet. Damit ist $R$ nur auf einem orientierten, markierten projektiven Antwortintervall mathematisch kanonisch, nicht auf einem unmarkierten glatten Intervall.
+
+Diese Einschränkung ist physikalischer Zusatzinhalt und keine Konsequenz von A--D oder $D^\pm$. Der obige nichtprojektive Kragen besitzt nämlich unter seiner induzierten Komposition $C_\varepsilon$ die exakt multiplikative Abel-Bilanz
+\[
+  Q_\varepsilon(x):=e^{2\phi_\varepsilon(x)}
+  =R(x)e^{2\varepsilon x},
+\]
+obwohl der feste Doppelrandquotient $R$ im Allgemeinen $\Delta_{D'}\neq0$ hat. Die Existenz \emph{irgendeiner} multiplikativen Bilanz ist daher generisch und wählt D' nicht aus. Eine physikalische Auswahl von $R$ verlangt eine unabhängig definierte Observable mit zwei endlichen unterscheidbaren Randantworten, einer neutralen Identitätsantwort und einem exakten Kompositionsgesetz, unter dem sich die signierten Hilbert-Inkremente addieren. Eine solche quellenseitig hergeleitete Identifikation wird hier nicht etabliert; D' bleibt eine konditionale projektive Gauge-Fixierung und ein empirisches Defekt-Gate, kein hergeleitetes physikalisches Bilanzgesetz.
+\end{remark}
 
 \textit{Physikalischer Gehalt von D.} Axiom~D verlangt Selbstkonsistenz der Antwort unter aufeinanderfolgenden Skalentransformationen. Das spiegelt die Halbgruppeneigenschaft von Renormierungsgruppen-Abbildungen \cite{WilsonKogut1974}; ein struktureller RG-Transfer liegt erst vor, wenn die Antwortprojektion den Homomorphismus~\eqref{eq:rg_response_homomorphism} erfüllt.
 
@@ -1095,6 +1112,16 @@ Statistical theory of numbers.
 In J.~M.~Luck, P.~Moussa, \& M.~Waldschmidt (Eds.), \textit{Number Theory and Physics},
 Springer Proceedings in Physics, Vol.~47, pp.\ 276--293.
 Springer-Verlag, Berlin.
+
+\bibitem{PapadopoulosTroyanov2008}
+A.~Papadopoulos \& M.~Troyanov (2008).
+Harmonic symmetrization of convex sets and of Finsler structures, with applications to Hilbert geometry.
+arXiv:0807.0335.
+
+\bibitem{RainioVuorinen2023}
+O.~Rainio \& M.~Vuorinen (2023).
+Hilbert metric in the unit ball.
+arXiv:2303.03753.
 
 \end{thebibliography}
 

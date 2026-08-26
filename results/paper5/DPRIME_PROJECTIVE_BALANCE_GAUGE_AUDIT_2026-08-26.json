@@ -1,0 +1,73 @@
+{
+  "audit_id": "CRM5-DPRIME-PROJECTIVE-BALANCE-GAUGE-AUDIT-V1",
+  "schema_version": "1.0.0",
+  "run_date": "2026-08-26",
+  "todo_source": "CRM-V TODO.md:345-348",
+  "result": "CONDITIONAL_PROJECTIVE_CANONICALITY__PHYSICAL_SELECTION_OPEN__NO_CLAIM_UPGRADE",
+  "manuscripts": [
+    "papers/extensions/Paper5_EN.tex",
+    "papers/extensions/Paper5_DE.tex"
+  ],
+  "marked_projective_interval": {
+    "lower_boundary": "b_minus=-1",
+    "neutral_identity": "e=0",
+    "upper_boundary": "b_plus=1",
+    "normalized_cross_ratio": "R(x)=((x-b_minus)/(b_plus-x))/((e-b_minus)/(b_plus-e))=(1+x)/(1-x)",
+    "signed_hilbert_coordinate": "h(x)=0.5*log(R(x))=atanh(x)",
+    "composition_gate": "h(C(x,y))=h(x)+h(y), equivalently R(C(x,y))=R(x)*R(y)"
+  },
+  "projective_canonicality": {
+    "four_point_invariance": "R is invariant when a projective chart change acts on both boundaries, the neutral point, and x",
+    "boundary_stabilizer": "R(T_k(x))=k*R(x) for an orientation-preserving projective automorphism fixing both boundaries",
+    "neutral_normalization": "T_k(e)=e if and only if k=1",
+    "orientation_reversal": "swapping the two boundaries sends R to 1/R and h to -h",
+    "conclusion": "R is canonical only after the oriented marked projective structure (b_minus,e,b_plus) is physical input"
+  },
+  "category_correction": {
+    "rejected_statement": "R itself is an additive work or rapidity coordinate",
+    "correct_statement": "R is multiplicative; 0.5*log(R) is the additive signed Hilbert or rapidity coordinate"
+  },
+  "smooth_gauge_counterfamily": {
+    "abel_coordinate": "phi_epsilon(x)=atanh(x)+epsilon*x",
+    "induced_balance": "Q_epsilon(x)=exp(2*phi_epsilon(x))=R(x)*exp(2*epsilon*x)",
+    "exact_property": "Q_epsilon(C_epsilon(x,y))=Q_epsilon(x)*Q_epsilon(y)",
+    "dprime_defect": "Delta_D_prime=-2*epsilon*(C_epsilon(x,y)-x-y), generally nonzero",
+    "conclusion": "existence of some multiplicative Abel balance is generic and does not select the projective cross-ratio R"
+  },
+  "physical_selection_gate": {
+    "requirements": [
+      "source-defined gauge-invariant observable",
+      "two finite distinguishable predeclared boundary responses",
+      "source-defined neutral identity response",
+      "exact independently sourced binary response composition",
+      "evidence that signed Hilbert increments of the marked observable add"
+    ],
+    "current_status": "OPEN_NO_SOURCE_DERIVATION",
+    "interpretation": "D_prime remains a conditional projective gauge fixing and measurable defect gate"
+  },
+  "source_registry": {
+    "PAPER_V": {
+      "kind": "target_primary",
+      "locator": "papers/extensions/Paper5_EN.tex"
+    },
+    "PAPADOPOULOS_TROYANOV_2008": {
+      "kind": "external_primary",
+      "citation": "Athanase Papadopoulos and Marc Troyanov, Harmonic symmetrization of convex sets and of Finsler structures, with applications to Hilbert geometry",
+      "url": "https://arxiv.org/abs/0807.0335",
+      "supports": "Hilbert geometry is canonically associated with a convex projective domain"
+    },
+    "RAINIO_VUORINEN_2023": {
+      "kind": "external_primary",
+      "citation": "Oona Rainio and Matti Vuorinen, Hilbert metric in the unit ball",
+      "url": "https://arxiv.org/abs/2303.03753",
+      "supports": "Hilbert distance is logarithmic in the boundary cross-ratio"
+    }
+  },
+  "summary": {
+    "conditional_projective_canonicality": true,
+    "invariant_under_arbitrary_smooth_response_reparametrization": false,
+    "physical_selection_derived": false,
+    "D_prime_remains_explicit_assumption": true,
+    "claim_upgrade_count": 0
+  }
+}

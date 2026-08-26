@@ -9,7 +9,7 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![CI](https://github.com/research-line/crm-cosmology/actions/workflows/ci.yml/badge.svg)](https://github.com/research-line/crm-cosmology/actions/workflows/ci.yml)
-[![Tests](https://img.shields.io/badge/Tests-51%20passed-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/Tests-59%20passed-brightgreen.svg)](tests/)
 [![Open Science](https://img.shields.io/badge/Open--Science-Reproducible-green.svg)](https://github.com/research-line/crm-cosmology)
 [![LLM Indexing](https://img.shields.io/badge/LLM--Indexing-llms.txt-purple.svg)](llms.txt)
 
@@ -117,6 +117,21 @@ ledger, controls, and bilingual contract with:
 
 ```bash
 python -m pytest tests/test_global_monotonicity_lemma.py -q
+```
+
+The
+[projective-balance gauge audit](research/crm-v/CRM5_DPRIME_PROJECTIVE_BALANCE_GAUGE_AUDIT_V1_2026-08-26.md)
+identifies `R(x)=(1+x)/(1-x)` as the normalized cross-ratio of an oriented
+response interval only after both boundary faces and the neutral identity are
+physically marked. It also corrects the additive coordinate to
+`h=(1/2) log R`: `R` is multiplicative, not additive. Smooth nonprojective
+collars retain their own exact multiplicative Abel balances, so mathematical
+projective naturality does not close the source-bound physical D' gate.
+Validate the cross-ratio invariance, gauge controls, and bilingual claim
+boundary with:
+
+```bash
+python -m pytest tests/test_dprime_projective_balance_gauge.py -q
 ```
 
 An exact 2D Yang--Mills heat-kernel control case is available as a

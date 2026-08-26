@@ -290,14 +290,31 @@ is multiplicative under composition:
   R(C(x,y))=R(x)R(y).
   \label{eq:projective_quotient}
 \end{equation}
-Equivalently, the ratio of distances to the two saturation faces is the additive work/rapidity coordinate of the one-dimensional response channel.
+Equivalently, the signed coordinate $h(x):=\frac12\log R(x)=\operatorname{arctanh}(x)$, rather than the ratio itself, is additive under the one-dimensional response composition.
 \end{axiom}
 
-\textit{Physical status of D'.} D' is the projective double-boundary quotient assumption. Once the quotient $R=(1+x)/(1-x)$ is fixed prior to the choice of an Abel coordinate, the velocity-addition law follows algebraically. Thus D' is not derived by the A--D hypotheses; it is the additional projective input whose physical derivation is left open. It is a projective response-balance assumption: the physically composed quantity is the ratio of realized order to remaining capacity, analogous to a log-odds or rapidity coordinate. For any candidate UV program, the diagnostic defect is
+\textit{Physical status of D'.} D' is the projective double-boundary quotient assumption. Once the quotient $R=(1+x)/(1-x)$ is fixed prior to the choice of an Abel coordinate, the velocity-addition law follows algebraically. Thus D' is not derived by the A--D hypotheses; it is the additional projective input whose physical derivation is left open. It stipulates that the physically composed quantity is the marked boundary-capacity odds, whose logarithm is analogous to a log-odds or rapidity coordinate. For any candidate UV program, the diagnostic defect is
 \[
   \Delta_{D'}(x,y):=\log R(C(x,y))-\log R(x)-\log R(y),
 \]
 which must vanish for the exact projective $\tanh$ representative. Establishing $\Delta_{D'}=0$ from a microscopic theory remains an open physical task.
+
+\begin{remark}[Marked-projective naturality audit]
+Let $b_-=-1$, $e=0$, and $b_+=1$ denote the two response boundaries and the neutral response. Then
+\[
+  R(x)=
+  \frac{(x-b_-)/(b_+-x)}{(e-b_-)/(b_+-e)}
+  =\frac{1+x}{1-x}
+\]
+is a normalized four-point cross-ratio, and $h(x)=\frac12\log R(x)$ is the signed Hilbert coordinate from $e$ on the interval \cite{PapadopoulosTroyanov2008,RainioVuorinen2023}. This quantity is invariant when a projective change of chart acts on both boundaries, the neutral point, and the response. In a chart that keeps only the two boundaries fixed, an orientation-preserving projective automorphism has $R(Tx)=kR(x)$; fixing $T(e)=e$ forces $k=1$, while reversing the boundary orientation sends $R$ to $R^{-1}$. Thus $R$ is mathematically canonical only for an oriented, marked projective response interval, not for an unmarked smooth interval.
+
+That restriction is physical content rather than a consequence of A--D or $D^\pm$. Indeed, the non-projective collar above has the exact multiplicative Abel balance
+\[
+  Q_\varepsilon(x):=e^{2\phi_\varepsilon(x)}
+  =R(x)e^{2\varepsilon x}
+\]
+under its induced composition $C_\varepsilon$, although the fixed cross-ratio $R$ generally has $\Delta_{D'}\neq0$. Hence the existence of \emph{some} multiplicative balance is generic and does not select D'. A physical selection of $R$ requires an independently defined observable with two finite distinguishable boundary responses, a neutral identity response, and an exact composition law whose signed Hilbert increments add. No such source-derived identification is established here; D' remains a conditional projective gauge fixing and an empirical defect gate, not a derived physical balance law.
+\end{remark}
 
 \textit{Physical content of D.} Axiom~D requires the response to be self-consistent under successive scale transformations. This mirrors the semigroup property of renormalization-group maps \cite{WilsonKogut1974}; it is a structural RG transfer only when the response projection obeys the homomorphism~\eqref{eq:rg_response_homomorphism}.
 
@@ -1080,6 +1097,16 @@ Statistical theory of numbers.
 In J.~M.~Luck, P.~Moussa, \& M.~Waldschmidt (Eds.), \textit{Number Theory and Physics},
 Springer Proceedings in Physics, Vol.~47, pp.\ 276--293.
 Springer-Verlag, Berlin.
+
+\bibitem{PapadopoulosTroyanov2008}
+A.~Papadopoulos \& M.~Troyanov (2008).
+Harmonic symmetrization of convex sets and of Finsler structures, with applications to Hilbert geometry.
+arXiv:0807.0335.
+
+\bibitem{RainioVuorinen2023}
+O.~Rainio \& M.~Vuorinen (2023).
+Hilbert metric in the unit ball.
+arXiv:2303.03753.
 
 \end{thebibliography}
 
