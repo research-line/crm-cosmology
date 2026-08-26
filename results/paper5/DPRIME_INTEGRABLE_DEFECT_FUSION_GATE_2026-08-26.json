@@ -1,0 +1,274 @@
+{
+  "RG_transfer_gate": {
+    "finite_size_response": "the defect g-function depends on mR",
+    "fusion_definition": "ma -> 0 at fixed defect labels",
+    "missing_beta_function": "no source equation beta_I(g_I)=d g_I/d log(mu)",
+    "missing_homomorphism": "no source map from additive RG time to repeated fusion",
+    "pass": false,
+    "source_open_question": "the source asks when fusion can be interpreted as an RG flow"
+  },
+  "amplitude_closure_control": {
+    "maximum_amplitude_error": 2.2887833992611187e-16,
+    "same_family_closure": true,
+    "samples": [
+      {
+        "fused_reflection": [
+          -0.3940828694645166,
+          0.788290699773998
+        ],
+        "fused_transmission": [
+          0.4226683080769624,
+          0.21130065307942364
+        ],
+        "g_fused": 1.1111111111111112,
+        "g_left": 0.4,
+        "g_right": 0.8,
+        "reflection_absolute_error": 2.2887833992611187e-16,
+        "single_defect_reflection": [
+          -0.39408286946451665,
+          0.7882906997739982
+        ],
+        "single_defect_transmission": [
+          0.42266830807696243,
+          0.21130065307942364
+        ],
+        "theta": -1.3,
+        "transmission_absolute_error": 5.551115123125783e-17
+      },
+      {
+        "fused_reflection": [
+          -0.7585834633464965,
+          -0.6137601978899685
+        ],
+        "fused_transmission": [
+          0.1375893614259755,
+          -0.1700550388718115
+        ],
+        "g_fused": 1.3913043478260871,
+        "g_left": 1.0,
+        "g_right": 0.6,
+        "reflection_absolute_error": 1.1102230246251565e-16,
+        "single_defect_reflection": [
+          -0.7585834633464965,
+          -0.6137601978899686
+        ],
+        "single_defect_transmission": [
+          0.13758936142597541,
+          -0.17005503887181145
+        ],
+        "theta": 0.7,
+        "transmission_absolute_error": 1.0007415106216802e-16
+      },
+      {
+        "fused_reflection": [
+          -0.20516173372069882,
+          -0.94608068115288
+        ],
+        "fused_transmission": [
+          0.2449849578124522,
+          -0.05312605962849488
+        ],
+        "g_fused": 1.5384615384615385,
+        "g_left": 1.4,
+        "g_right": 0.3,
+        "reflection_absolute_error": 2.2887833992611187e-16,
+        "single_defect_reflection": [
+          -0.20516173372069887,
+          -0.9460806811528802
+        ],
+        "single_defect_transmission": [
+          0.24498495781245203,
+          -0.053126059628494836
+        ],
+        "theta": 2.2,
+        "transmission_absolute_error": 1.716587549445839e-16
+      }
+    ],
+    "source_formulas": {
+      "reflection": "R_f=R_1+T_1^2*R_2/(1-R_1*R_2)",
+      "transmission": "T_f=T_1*T_2/(1-R_1*R_2)"
+    }
+  },
+  "audit_id": "CRM5-DPRIME-INTEGRABLE-DEFECT-FUSION-SOURCE-SEARCH-V1",
+  "boundary_control": {
+    "g_I_0": {
+      "interpretation": "transparent neutral defect",
+      "reflection": [
+        0.0,
+        0.0
+      ],
+      "transmission": [
+        1.0,
+        0.0
+      ]
+    },
+    "g_I_2": {
+      "interpretation": "purely reflective boundary of the audited branch",
+      "reflection": [
+        -0.7476999182374197,
+        -0.664036770267849
+      ],
+      "reflection_probability": 1.0,
+      "transmission": [
+        2.70000838718637e-17,
+        -3.040187141331473e-17
+      ]
+    },
+    "probe_theta": 0.8,
+    "topology_gate": "the neutral response is the lower endpoint of the audited positive branch, not an interior mark between two source-audited response boundaries"
+  },
+  "candidate": {
+    "candidate_id": "NON_TOPOLOGICAL_ISING_DEFECT_FUSION",
+    "criteria": {
+      "IR_status": "EXACT_1PLUS1D_ELASTIC_DEFECT_SCATTERING__NO_4D_IR_TRANSFER",
+      "coupling_is_running_scalar_response": "NOT_SOURCE_DEFINED",
+      "declared_scale_map_to_running_coupling": "NOT_SOURCE_DEFINED",
+      "exact_nonperturbative_scattering_data": "SUPPORTED",
+      "fusion_is_RG_semigroup": "EXPLICITLY_LEFT_OPEN_BY_SOURCE",
+      "gauge_status": "NON_GAUGE_ISING_FIELD_THEORY__NO_GAUGE_PARAMETER",
+      "projective_quotient_on_normalized_coupling": "EXACT_ON_POSITIVE_SEMIGROUP",
+      "scalar_observable_inherits_projective_law": "NOT_ESTABLISHED",
+      "source_defined_exact_binary_physical_fusion": "SUPPORTED",
+      "source_defined_neutral_transparent_defect": "SUPPORTED_BY_EXACT_AMPLITUDES",
+      "two_sided_signed_response_interval": "NOT_SOURCE_AUDITED"
+    },
+    "normalized_law": "x_f=(x_1+x_2)/(1+x_1*x_2), x=g_I/2",
+    "physical_data": "exact reflection and transmission amplitudes",
+    "scale_variables": {
+      "finite_size_TBA_scale": "mR",
+      "fusion_separation": "ma, with fusion defined by ma -> 0",
+      "source_defined_additive_RG_time_for_fusion": null,
+      "source_defined_running_coupling": null
+    },
+    "source_branch": {
+      "coupling_domain": "0 <= g_I <= 2",
+      "full_signed_reversible_channel": false,
+      "neutral_element": "g_I=0 gives T=1 and R=0",
+      "normalized_domain": "0 <= x <= 1",
+      "reason": "the source excludes negative g_I because it produces a bound state",
+      "upper_boundary": "g_I=2 is purely reflective"
+    },
+    "source_coupling_law": "g_I,f=(g_I,1+g_I,2)/(1+g_I,1*g_I,2/4)",
+    "source_operation": "short-distance defect fusion ma -> 0",
+    "theory": "massive Ising field theory with a parity-invariant integrable line defect"
+  },
+  "claim_boundary": [
+    "The exact D-prime algebra is retained as a source-defined positive defect-fusion semigroup control.",
+    "The normalized variable x=g_I/2 is a static defect-coupling label, not a source-defined running scalar response.",
+    "The audited source branch does not establish Paper V's full signed reversible interval with an interior neutral response.",
+    "The spatial fusion limit ma -> 0 is not relabelled as additive RG time or as a beta-function trajectory.",
+    "No physical Paper-V D-prime derivation, 4D transfer, cosmology, UV completion, RH result, or abc result is claimed."
+  ],
+  "exact_projective_semigroup_control": {
+    "abel_coordinate": "artanh(x_f)=artanh(x_1)+artanh(x_2)",
+    "exact_identity": "R_D(x_f)=R_D(x_1)R_D(x_2)",
+    "full_Paper_V_Dprime_pass": false,
+    "marked_quotient": "R_D(x)=(1+x)/(1-x)",
+    "maximum_absolute_Dprime_defect": 2.7755575615628914e-16,
+    "maximum_quotient_error": 1.7763568394002505e-15,
+    "positive_semigroup_Dprime_pass": true,
+    "samples": [
+      {
+        "Dprime_defect": -1.1102230246251565e-16,
+        "quotient_absolute_error": 4.440892098500626e-16,
+        "quotient_fused": 2.2549019607843133,
+        "quotient_product": 2.2549019607843137,
+        "x_fused": 0.38554216867469876,
+        "x_left": 0.15,
+        "x_right": 0.25
+      },
+      {
+        "Dprime_defect": 0.0,
+        "quotient_absolute_error": 0.0,
+        "quotient_fused": 4.846153846153847,
+        "quotient_product": 4.846153846153847,
+        "x_fused": 0.6578947368421053,
+        "x_left": 0.4,
+        "x_right": 0.35
+      },
+      {
+        "Dprime_defect": 2.7755575615628914e-16,
+        "quotient_absolute_error": 1.7763568394002505e-15,
+        "quotient_fused": 8.8397212543554,
+        "quotient_product": 8.839721254355398,
+        "x_fused": 0.796742209631728,
+        "x_left": 0.72,
+        "x_right": 0.18
+      }
+    ],
+    "source_defined_composition": true
+  },
+  "run_date": "2026-08-26",
+  "scalar_observable_transfer_control": {
+    "Dprime_defect": 1.3603954663340774,
+    "g_fused": 1.2499999999999998,
+    "g_inputs": [
+      0.8,
+      0.6
+    ],
+    "marked_quotient": "(1+y)/(1-y)=p_R/(1-p_R)",
+    "neutral_location": "p_R(g_I=0)=0 is an endpoint, not an interior signed identity",
+    "observable": "fixed-rapidity reflection probability p_R=|R(theta,g_I)|^2",
+    "p_fused": 0.9201270642358865,
+    "p_left": 0.712911017114832,
+    "p_right": 0.5434190741845982,
+    "projective_law_inherited": false,
+    "quotient_fused": 11.519885370850425,
+    "quotient_product": 2.95553368448315,
+    "reason": "the exact projective law is on the coupling label x=g_I/2; the source does not identify x with the scalar probability or defect g-function",
+    "signed_endpoint_normalization": "y=2*p_R-1",
+    "theta": 0.7
+  },
+  "schema_version": "1.0.0",
+  "search_contract": {
+    "excluded_reuse": [
+      "local six-source quadratic-gravity corpus",
+      "Bjorken effective-charge CSR transitivity",
+      "2D Yang-Mills heat-kernel control",
+      "FQHE conductance and generic scattering-star-product controls",
+      "massless minimal-model RG-flow scattering amplitude",
+      "RH project",
+      "abc project"
+    ],
+    "new_source_family": "integrable line-defect fusion in two-dimensional Ising field theory",
+    "screened_primary_sources": 2
+  },
+  "source_registry": {
+    "DELFINO_MUSSARDO_SIMONETTI_1994": {
+      "citation": "G. Delfino, G. Mussardo, and P. Simonetti, Scattering Theory and Correlation Functions in Statistical Models with a Line of Defect, Nuclear Physics B 432 (1994) 518-550",
+      "doi": "https://doi.org/10.1016/0550-3213(94)90032-9",
+      "kind": "external_primary_historical",
+      "supports": [
+        "exact Ising-defect reflection and transmission amplitudes",
+        "weak-strong coupling duality and reflecting self-dual points",
+        "multi-defect scattering setting"
+      ],
+      "url": "https://arxiv.org/abs/hep-th/9409076"
+    },
+    "HE_JIANG_LIU_2026": {
+      "citation": "Yang He, Yunfeng Jiang, and Yuxiao Liu, Fusion of Integrable Defects and the Defect g-Function, arXiv:2605.20688v1 (2026)",
+      "kind": "external_primary_preprint",
+      "supports": [
+        "fusion as the ma -> 0 short-distance limit",
+        "exact effective reflection and transmission amplitudes in Eq. (3.20)",
+        "same-family Ising coupling law in Eq. (3.23)",
+        "positive coupling branch and purely reflective g_I=2 endpoint",
+        "mR-dependent defect g-function and the open fusion-versus-RG question"
+      ],
+      "url": "https://arxiv.org/abs/2605.20688"
+    }
+  },
+  "status": "EXACT_SOURCE_DEFINED_ISING_DEFECT_FUSION_DPRIME_SEMIGROUP__RG_RUNNING_AND_SIGNED_CHANNEL_NOT_SOURCE_DEFINED",
+  "summary": {
+    "claim_upgrade_count": 0,
+    "complete_physical_candidate_count": 0,
+    "exact_projective_positive_semigroup_count": 1,
+    "physical_dprime_closed": false,
+    "running_coupling_gate_open_count": 1,
+    "scalar_observable_transfer_gate_open_count": 1,
+    "screened_new_source_families": 1,
+    "signed_reversible_channel_gate_open_count": 1,
+    "source_defined_exact_fusion_count": 1
+  },
+  "todo_source": "CRM-V TODO.md:95-102"
+}

@@ -338,6 +338,18 @@ The exact massless scattering description of the tricritical-Ising-to-Ising flow
 with finite limits $S_{RL}\to+1$ and $-1$. Marking $S_{RL}(0)=i$ gives the exact identity $i(1-S_{RL})/(1+S_{RL})=e^\theta$. However, the mark and the resulting law $S(\theta_1)\mathbin{C}_{\rm ind}S(\theta_2)=S(\theta_1+\theta_2)$ are audit-induced. The source-defined factorization is instead the Yang--Baxter product of pairwise scattering operators in a multiparticle state; it does not define a binary RG-response composition or identify $i$ as its physical identity. Moreover, $S_{RL}$ lies on the complex unit circle, not on the declared real Paper-V response interval, and the source's coupling-to-mass map and TBA crossover do not identify a running scalar coupling with this amplitude. Thus the exact marked quotient does not close physical D' and carries no four-dimensional or cosmological transfer.
 \end{remark}
 
+\begin{remark}[Integrable defect-fusion control]
+Integrable line-defect fusion supplies a source-defined physical composition control rather than an audit-induced law \cite{HeJiangLiu2026,DelfinoMussardoSimonetti1994b}. For the parity-invariant non-topological Ising defect, fusion is the short-distance limit $ma\to0$ of two defects, and the exact multiple-scattering amplitudes close on the same family with
+\[
+ g_{I,f}=\frac{g_{I,1}+g_{I,2}}{1+g_{I,1}g_{I,2}/4}.
+\]
+Thus $x=g_I/2$ obeys $x_f=(x_1+x_2)/(1+x_1x_2)$ and exactly
+\[
+ \frac{1+x_f}{1-x_f}=\frac{1+x_1}{1-x_1}\frac{1+x_2}{1-x_2}.
+\]
+This is a genuine positive D' semigroup control. It is not yet the physical Paper-V derivation: the source audits the no-bound-state branch $0\leq g_I\leq2$, so the transparent neutral element $g_I=0$ is an endpoint rather than an interior mark of a full signed reversible response interval. Moreover, $x$ is a static defect-coupling label. The reflection probability and defect $g$-function are physical scalar quantities, but the source does not identify either with $x$ or transfer the same quotient law to them. Finally, $ma$ is a separation and $mR$ a finite-size TBA scale; no beta function $g_I(\mu)$ or homomorphism from additive RG time to fusion is supplied. The source explicitly leaves open when fusion can be interpreted as an RG flow. Hence the exact defect-fusion law sharpens, but does not close, physical D' and carries no four-dimensional or cosmological transfer.
+\end{remark}
+
 \textit{Physical content of D.} Axiom~D requires the response to be self-consistent under successive scale transformations. This mirrors the semigroup property of renormalization-group maps \cite{WilsonKogut1974}; it is a structural RG transfer only when the response projection obeys the homomorphism~\eqref{eq:rg_response_homomorphism}.
 
 The composition law~\eqref{eq:composition} encodes the requirement that the theory be \textit{scale-coherent} in the following precise sense: the response function $S_T$ is a homomorphism from the additive structure of the control parameter to the composition algebra of responses; i.e., no preferred scale exists at which this homomorphism property breaks down or changes character. The absorbing boundary condition $\mathcal{C}(S, S_{\max}) = S_{\max}$ reflects the fact that fully saturated geometry cannot be further ordered -- it is a fixed point.
@@ -1256,6 +1268,17 @@ P.~Fendley, H.~Saleur, \& A.~B.~Zamolodchikov (1993).
 Massless flows II: The exact S-matrix approach.
 \textit{International Journal of Modern Physics A}, 8, 5751--5778.
 DOI: 10.1142/S0217751X93002277. arXiv:hep-th/9304051.
+
+\bibitem{HeJiangLiu2026}
+Y.~He, Y.~Jiang, \& Y.~Liu (2026).
+Fusion of integrable defects and the defect $g$-function.
+arXiv preprint arXiv:2605.20688v1.
+
+\bibitem{DelfinoMussardoSimonetti1994b}
+G.~Delfino, G.~Mussardo, \& P.~Simonetti (1994).
+Scattering theory and correlation functions in statistical models with a line of defect.
+\textit{Nuclear Physics B}, 432, 518--550.
+DOI: 10.1016/0550-3213(94)90032-9. arXiv:hep-th/9409076.
 
 \bibitem{Selberg1956}
 A.~Selberg (1956).
