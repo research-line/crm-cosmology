@@ -1,0 +1,161 @@
+{
+  "audit_id": "CRM5-MONOTONICITY-LEMMA-GLOBAL-GROUP-V1",
+  "schema_version": "1.0.0",
+  "run_date": "2026-08-26",
+  "todo_source": "CRM-V TODO.md:350-352",
+  "manuscripts": [
+    "papers/extensions/Paper5_EN.tex",
+    "papers/extensions/Paper5_DE.tex"
+  ],
+  "claim": {
+    "name": "GLOBAL_GROUP_MONOTONICITY_WITHOUT_PROFILE_PREMISE",
+    "control_group": "(R,+)",
+    "response_group": "((-1,1),C)",
+    "generator": "a(x)=partial_2 C(x,0)",
+    "differential_identity": "sigma_prime(u)=kappa*a(sigma(u))",
+    "conclusions": [
+      "a(x)>0 on (-1,1)",
+      "sigma_prime(u)>0 for every u in R",
+      "sigma is a strictly increasing bijection R -> (-1,1)",
+      "lim_{u->plus_or_minus_infinity} sigma(u)=plus_or_minus_1"
+    ]
+  },
+  "hypotheses": [
+    {
+      "id": "H1_GLOBAL_RESPONSE_GROUP",
+      "statement": "C is a C1 group law on the connected interval (-1,1) with identity 0",
+      "status": "REQUIRED"
+    },
+    {
+      "id": "H2_TRANSLATION_DIFFEOMORPHISMS",
+      "statement": "every translation L_x(y)=C(x,y) is a C1 diffeomorphism",
+      "status": "REQUIRED"
+    },
+    {
+      "id": "H3_GLOBAL_CONTROL_HOMOMORPHISM",
+      "statement": "sigma(u+v)=C(sigma(u),sigma(v)) for all u,v in R",
+      "status": "REQUIRED"
+    },
+    {
+      "id": "H4_POSITIVE_ORIENTATION",
+      "statement": "kappa=sigma_prime(0)>0 in the global additive control coordinate",
+      "status": "REQUIRED"
+    }
+  ],
+  "proof_steps": [
+    {
+      "id": "P1_GENERATOR_NONZERO",
+      "derives": "a(x) is continuous and nonzero",
+      "from": [
+        "H1_GLOBAL_RESPONSE_GROUP",
+        "H2_TRANSLATION_DIFFEOMORPHISMS"
+      ]
+    },
+    {
+      "id": "P2_GENERATOR_POSITIVE",
+      "derives": "a(x)>0 because a(0)=1 and (-1,1) is connected",
+      "from": [
+        "P1_GENERATOR_NONZERO"
+      ]
+    },
+    {
+      "id": "P3_DIFFERENTIAL_IDENTITY",
+      "derives": "sigma_prime(u)=kappa*a(sigma(u))",
+      "from": [
+        "H3_GLOBAL_CONTROL_HOMOMORPHISM",
+        "H4_POSITIVE_ORIENTATION"
+      ]
+    },
+    {
+      "id": "P4_STRICT_MONOTONICITY",
+      "derives": "sigma_prime(u)>0 globally",
+      "from": [
+        "P2_GENERATOR_POSITIVE",
+        "P3_DIFFERENTIAL_IDENTITY"
+      ]
+    },
+    {
+      "id": "P5_SURJECTIVITY",
+      "derives": "the image is an open subgroup and hence the full connected response group",
+      "from": [
+        "P4_STRICT_MONOTONICITY",
+        "H3_GLOBAL_CONTROL_HOMOMORPHISM"
+      ]
+    },
+    {
+      "id": "P6_ENDPOINT_SATURATION",
+      "derives": "the monotone surjection has endpoint limits -1 and +1",
+      "from": [
+        "P4_STRICT_MONOTONICITY",
+        "P5_SURJECTIVITY"
+      ]
+    }
+  ],
+  "normalization_audit": {
+    "axiom_B_unscaled_slope": "dS_T/dg(0)=c_1>0",
+    "normalized_slope": "dsigma/dg(0)=c_1/S_max>0",
+    "global_coordinate_slope": "kappa=dsigma/du(0)>0 when du/dg(0)>0",
+    "rejected_identity": "sigma_prime(0)=c_1"
+  },
+  "dependency_boundary": {
+    "does_not_use": [
+      "prior_monotonicity_of_sigma",
+      "Axiom_C",
+      "Abel_coordinate_phi",
+      "projective_assumption_D_prime"
+    ],
+    "not_implied_by": [
+      "response_group_D_pm_alone",
+      "local_additive_chart_only",
+      "positive_local_slope_only"
+    ],
+    "one_control_direction_status": "INPUT_VIA_GLOBAL_ONE_PARAMETER_GROUP",
+    "multifield_or_stochastic_extension": "OUT_OF_SCOPE"
+  },
+  "controls": [
+    {
+      "id": "PROJECTIVE_POSITIVE_CONTROL",
+      "profile": "sigma(u)=tanh(kappa*u)",
+      "generator": "a(x)=1-x^2",
+      "status": "SATISFIES_LEMMA"
+    },
+    {
+      "id": "NONPROJECTIVE_COLLAR_POSITIVE_CONTROL",
+      "profile": "phi_epsilon(sigma(u))=kappa*u with phi_epsilon(x)=atanh(x)+epsilon*x",
+      "generator": "a_epsilon(x)=(1-x^2)/(1+epsilon*(1-x^2))",
+      "status": "SATISFIES_MONOTONICITY_WITHOUT_D_PRIME"
+    },
+    {
+      "id": "NO_GLOBAL_HOMOMORPHISM_NEGATIVE_CONTROL",
+      "profile": "sigma(u)=tanh(u+2*sin(u))",
+      "local_slope": "sigma_prime(0)=3>0",
+      "failure": "sigma_prime(pi)<0 and the global homomorphism identity fails",
+      "status": "SHOWS_LOCAL_SLOPE_IS_INSUFFICIENT"
+    },
+    {
+      "id": "REVERSED_ORIENTATION_NEGATIVE_CONTROL",
+      "profile": "sigma(u)=-tanh(u)",
+      "failure": "global homomorphism holds but kappa=-1",
+      "status": "SHOWS_POSITIVE_ORIENTATION_IS_REQUIRED"
+    }
+  ],
+  "source_registry": {
+    "PAPER_V": {
+      "kind": "target_primary",
+      "locator": "papers/extensions/Paper5_EN.tex"
+    },
+    "SVETLICHNY_2009": {
+      "kind": "external_primary",
+      "citation": "George Svetlichny, The Differential and Functional Equations for a Lie Group Homomorphism are Equivalent",
+      "url": "https://arxiv.org/abs/0912.4476",
+      "supports": "equivalence between the homomorphism functional equation and its differential equation"
+    }
+  },
+  "summary": {
+    "global_monotonicity_secured": true,
+    "prior_profile_monotonicity_used": false,
+    "D_prime_used": false,
+    "axiom_C_unconditionally_redundant": false,
+    "claim_upgrade_count": 0
+  }
+}

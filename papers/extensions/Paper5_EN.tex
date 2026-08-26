@@ -239,7 +239,7 @@ In the CRM, the control parameter is the scale factor $a$; in RG language, it co
 \textit{Connection to CRM.} The monotonicity of $\Omega_\Phi(a)$ is a direct consequence of the ODE~\eqref{eq:saturation_ode}: since $1 - X^2 > 0$ for $|X| < 1$, the solution is strictly increasing.
 
 \begin{remark}[Axiom interdependence]
-As shown in Corollary~\ref{cor:monotonicity}, monotonicity (Axiom~C) follows once the reversible-channel hypothesis $D^\pm$ is imposed in addition to Axiom~D. We nevertheless retain Axiom~C as an explicit statement for physical transparency: it connects directly to the thermodynamic arrow of time and makes the exclusion of oscillating/chaotic cosmologies visible at the axiom level. The logical content of the axiom system is thus: A, B/B', and the strengthened composition law $D^\pm$ imply C; without that interior-group condition, C remains an explicit axiom.
+Lemma~\ref{lem:global_monotonicity} and Corollary~\ref{cor:monotonicity} isolate the exact dependency: the monotonicity and endpoint-saturation clauses of Axiom~C follow only after the reversible response law $D^\pm$ is combined with a genuine global one-parameter control-group homomorphism. The response-side group law alone does not supply that global control map. We therefore retain Axiom~C explicitly in the main theorem for physical transparency and for models in which only a local chart, semigroup, stochastic channel, or multi-field control is known.
 \end{remark}
 
 \subsection{Axiom D: Renormalization-Group Composition}
@@ -403,7 +403,7 @@ Under $D^\pm$, the associativity condition $C(C(x,y),z) = C(x, C(y,z))$ and comm
 \phi(C(x,y)) = \phi(x) + \phi(y)\,.
 \label{eq:abel}
 \end{equation}
-This is Abel's functional equation. \emph{(Proof step corrected in this revision; an earlier version wrote $\phi'(0)=c_1$ from Axiom~B, which was a category error: $c_1$ is the derivative of the response profile $\sigma$ at the control-parameter origin, not of the Abel coordinate $\phi$ at the response origin.)} The clean construction proceeds via the invariant vector field: let $a(x) = \partial_2 C(x,0)$; under $D^\pm$, translations are orientation-preserving diffeomorphisms, hence $a(x) > 0$ on $(-1,1)$, and one may define $\phi(x) = \int_0^x dt/a(t)$. The invariance of $a$ under the group law then gives $\phi(C(x,y)) = \phi(x) + \phi(y)$, and $\phi$ inherits the $C^\infty$ regularity of $C$ on $(-1,1)$ directly from this integral representation. The function $\phi$ is determined up to a positive multiplicative constant, and antisymmetry (Axiom~B') lets it be chosen odd; Axiom~B supplies $\sigma'(0) = c_1 > 0$, which enters only through the product $(\phi\circ\sigma)'(0) = \phi'(0)\,c_1$ fixing the overall positive scale $\alpha$. At this stage Axioms~A--D give an Abel/collar theorem, not yet $\phi=\mathrm{arctanh}$.
+This is Abel's functional equation. \emph{(Proof step corrected in this revision; an earlier version wrote $\phi'(0)=c_1$ from Axiom~B, which was a category error: $c_1$ is the derivative of the unnormalized response $S_T$ at the control-parameter origin, not of the Abel coordinate $\phi$ at the response origin.)} The clean construction proceeds via the invariant vector field: let $a(x) = \partial_2 C(x,0)$; under $D^\pm$, translations are orientation-preserving diffeomorphisms, hence $a(x) > 0$ on $(-1,1)$, and one may define $\phi(x) = \int_0^x dt/a(t)$. The invariance of $a$ under the group law then gives $\phi(C(x,y)) = \phi(x) + \phi(y)$, and $\phi$ inherits the $C^\infty$ regularity of $C$ on $(-1,1)$ directly from this integral representation. The function $\phi$ is determined up to a positive multiplicative constant, and antisymmetry (Axiom~B') lets it be chosen odd. Axiom~B supplies $d\sigma/dg(0)=c_1/S_{\max}>0$; if an orientation-preserving additive control coordinate $u=u(g)$ is used, then $\kappa:=(d\sigma/du)(0)>0$ enters only through $(\phi\circ\sigma)'(0)=\phi'(0)\kappa$, fixing the overall positive scale $\alpha$. At this stage Axioms~A--D give an Abel/collar theorem, not yet $\phi=\mathrm{arctanh}$.
 
 \textit{Step 2b: Projective double-boundary quotient.}
 If the additional assumption D' holds, Lemma~\ref{lem:projective_arctanh} gives $\phi=c\,\mathrm{arctanh}$. D' is the projective double-boundary quotient assumption, not a consequence of A--D: once $R=(1+x)/(1-x)$ is fixed before choosing an Abel coordinate, the velocity-addition law follows algebraically. This yields the composition law:
@@ -420,19 +420,38 @@ Since $\phi(\sigma(g)) = c\,\mathrm{arctanh}(\sigma(g))$ must be an additive fun
 \end{equation}
 and therefore $S_T(g) = S_{\max}\,\tanh(\alpha\,u(g))$, after absorbing the positive constant $c$ into $\alpha u$. When Axioms~A--D, B', $D^\pm$, and D' hold exactly, the result is exact. Approximate axiom satisfaction (e.g., breakdown of the composition law at very small $g$ where standard GR dominates) would introduce corrections; a formal stability analysis of such perturbations is an open problem. \hfill $\square$
 
-\begin{corollary}[Monotonicity from the reversible response channel]
+\begin{lemma}[Global group monotonicity without a profile premise]
+\label{lem:global_monotonicity}
+Let $C:(-1,1)^2\to(-1,1)$ be a $C^1$ group law with neutral element $0$, and suppose every translation $L_x(y):=C(x,y)$ is a $C^1$ diffeomorphism. Let
+\[
+  \sigma:(\mathbb{R},+)\longrightarrow((-1,1),C)
+\]
+be a $C^1$ global homomorphism with $\sigma(0)=0$ and $\kappa:=\sigma'(0)>0$. Define $a(x):=\partial_2C(x,0)$. Then
+\begin{equation}
+  a(x)>0,
+  \qquad
+  \sigma'(u)=\kappa\,a(\sigma(u))>0
+  \quad\text{for every }u\in\mathbb{R}.
+  \label{eq:global_monotonicity_generator}
+\end{equation}
+Moreover, $\sigma$ is a strictly increasing bijection from $\mathbb{R}$ onto $(-1,1)$ and therefore $\lim_{u\to\pm\infty}\sigma(u)=\pm1$.
+\end{lemma}
+
+\begin{proof}
+Because $L_x$ and its inverse are $C^1$, $a(x)=L_x'(0)$ never vanishes. The function $a$ is continuous, $(-1,1)$ is connected, and $a(0)=1$ follows from $C(0,y)=y$; hence $a(x)>0$ throughout the interval. Differentiate the global homomorphism identity
+\[
+  \sigma(u+v)=C(\sigma(u),\sigma(v))
+\]
+with respect to $v$ at $v=0$. This gives Eq.~\eqref{eq:global_monotonicity_generator} directly, so strict increase is a conclusion rather than a premise. Since $\sigma'(u)>0$, its image is an open subgroup of the connected target group $((-1,1),C)$; a connected group has no proper open subgroup, so the image is all of $(-1,1)$. A strictly increasing surjection from $\mathbb{R}$ to $(-1,1)$ has the stated endpoint limits. No monotonicity of $\sigma$, Abel coordinate, or projective assumption D' is used in the argument.
+\end{proof}
+
+\begin{corollary}[Exact monotonicity dependency for Axiom C]
 \label{cor:monotonicity}
-Under the reversible-channel hypothesis $D^\pm$, Axiom~C (monotone cosmic control) follows from Axioms~A, B, B', and~D. That is, any response function satisfying $A + B + B' + D^\pm$ is automatically strictly monotonically increasing on the one-dimensional channel.
+For the normalized one-dimensional response, Axiom~B gives $d\sigma/dg(0)=c_1/S_{\max}>0$. If the control admits an orientation-preserving global additive coordinate $u=u(g)$ and the response is a homomorphism $\sigma:(\mathbb{R},+)\to((-1,1),C)$ for all $u,v\in\mathbb{R}$, then $\kappa=(d\sigma/du)(0)>0$ and Lemma~\ref{lem:global_monotonicity} derives the monotonicity and endpoint-saturation clauses of Axiom~C. The single relevant direction is encoded in the one-dimensional global control group; it is not an additional output of the derivative calculation.
 \end{corollary}
 
-\textit{Proof.} Choose the additive coordinate for the one-dimensional control composition, so that the channel composition is written as $g+h$ near the identity. Differentiate $\sigma(g + h) = C(\sigma(g), \sigma(h))$ with respect to $h$ at $h = 0$:
-\[
-\sigma'(g) = \partial_2 C(\sigma(g), 0) \cdot \sigma'(0)\,.
-\]
-Define $a(x) := \partial_2 C(x, 0)$. By $D^\pm$, for each fixed $x \in (-1,1)$ the map $y \mapsto C(x,y)$ is a $C^\infty$ diffeomorphism of $(-1,1)$ (its inverse is $y \mapsto C(-x, y)$ from the group inverse). Therefore $\partial_2 C(x, 0) = a(x) \neq 0$ for all $x \in (-1,1)$. Since $(-1,1)$ is connected and $a(0) = \partial_2 C(0,0) = 1 > 0$ (from $C(0,y) = y$), continuity implies $a(x) > 0$ for all $x$. With $\sigma'(0) = c_1 > 0$ (Axiom~B), we obtain $\sigma'(g) = a(\sigma(g)) \cdot c_1 > 0$ for all $g$. \hfill $\square$
-
 \begin{remark}
-This means the axiom system can be reduced to A, B/B', and $D^\pm$ plus the derived consequence C whenever the one-dimensional interior group law is physically justified. We retain Axiom~C as a separate statement for physical transparency: it makes the monotonicity assumption explicit and connects directly to the thermodynamic arrow of time. Without $D^\pm$, it should be read as an independent single-channel assumption.
+This is a conditional redundancy result for the strengthened global single-channel subclass. The response-side hypothesis $D^\pm$, a local additive chart, or a positive local slope by itself does not establish the global homomorphism gate. The main theorem therefore keeps Axiom~C explicit whenever that gate has not been proved for the physical control variable.
 \end{remark}
 
 \begin{proposition}[Axiom non-redundancy]

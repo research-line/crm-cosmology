@@ -249,7 +249,7 @@ Im CRM ist der Kontrollparameter der Skalenfaktor $a$; in RG-Sprache entspricht 
 \textit{Verbindung zum CRM.} Die Monotonie von $\Omega_\Phi(a)$ ist eine direkte Konsequenz der ODE~\eqref{eq:saturation_ode}: da $1 - X^2 > 0$ für $|X| < 1$ ist, ist die Lösung streng wachsend.
 
 \begin{remark}[Axiom-Interdependenz]
-Wie in Corollary~\ref{cor:monotonicity} gezeigt, folgt Monotonie (Axiom C), sobald Axiom~D in seiner inneren Gruppenform $D^\pm$ verwendet wird. Wir behalten dennoch Axiom C als explizite Aussage für physikalische Transparenz: es verbindet sich direkt mit dem thermodynamischen Zeitpfeil und macht den Ausschluss von oszillierender/chaotischer Kosmologie auf der Axiom-Ebene sichtbar. Der logische Gehalt des Axiom-Systems ist daher: A, B/B' und das verstärkte Kompositionsgesetz $D^\pm$ implizieren C; ohne diese innere Gruppenbedingung bleibt C ein explizites Axiom.
+Lemma~\ref{lem:global_monotonicity} und Corollary~\ref{cor:monotonicity} isolieren die exakte Abhängigkeit: Die Monotonie- und Randsättigungsklauseln von Axiom~C folgen erst, wenn das reversible Antwortgesetz $D^\pm$ mit einem echten globalen Homomorphismus einer einparametrigen Kontrollgruppe kombiniert wird. Das antwortseitige Gruppengesetz allein liefert diese globale Kontrollabbildung nicht. Wir behalten Axiom~C daher im Haupttheorem explizit bei, sowohl zur physikalischen Transparenz als auch für Modelle, in denen nur ein lokaler Chart, eine Halbgruppe, ein stochastischer Kanal oder eine Mehrfeldkontrolle bekannt ist.
 \end{remark}
 
 \subsection{Axiom D: Renormalisierungsgruppenkomposition}
@@ -413,7 +413,7 @@ Unter $D^\pm$ definieren die Assoziativitätsbedingung $C(C(x,y),z) = C(x, C(y,z
 \phi(C(x,y)) = \phi(x) + \phi(y)\,.
 \label{eq:abel}
 \end{equation}
-Dies ist Abels Funktionalgleichung. \emph{(Beweisschritt in dieser Revision korrigiert; eine frühere Version schrieb $\phi'(0)=c_1$ aus Axiom~B, was ein Kategorienfehler war: $c_1$ ist die Ableitung des Antwortprofils $\sigma$ am Ursprung des Kontrollparameters, nicht der Abel-Koordinate $\phi$ am Antwortursprung.)} Die saubere Konstruktion verläuft über das invariante Vektorfeld: Sei $a(x) = \partial_2 C(x,0)$; unter $D^\pm$ sind Translationen orientierungserhaltende Diffeomorphismen, also $a(x) > 0$ auf $(-1,1)$, und man kann $\phi(x) = \int_0^x dt/a(t)$ definieren. Die Invarianz von $a$ unter dem Gruppengesetz liefert dann $\phi(C(x,y)) = \phi(x) + \phi(y)$, und $\phi$ erbt die $C^\infty$-Regularität von $C$ auf $(-1,1)$ direkt aus dieser Integraldarstellung. Die Funktion $\phi$ ist bis auf eine positive multiplikative Konstante bestimmt, und die Antisymmetrie (Axiom~B') erlaubt, sie ungerade zu wählen; Axiom~B liefert $\sigma'(0) = c_1 > 0$, was nur über das Produkt $(\phi\circ\sigma)'(0) = \phi'(0)\,c_1$ eingeht und die positive Gesamtskala $\alpha$ fixiert. An diesem Punkt liefern die Axiome A--D ein Abel-/Randkragen-Theorem, aber noch nicht $\phi=\mathrm{arctanh}$.
+Dies ist Abels Funktionalgleichung. \emph{(Beweisschritt in dieser Revision korrigiert; eine frühere Version schrieb $\phi'(0)=c_1$ aus Axiom~B, was ein Kategorienfehler war: $c_1$ ist die Ableitung der unnormalisierten Antwort $S_T$ am Ursprung des Kontrollparameters, nicht der Abel-Koordinate $\phi$ am Antwortursprung.)} Die saubere Konstruktion verläuft über das invariante Vektorfeld: Sei $a(x) = \partial_2 C(x,0)$; unter $D^\pm$ sind Translationen orientierungserhaltende Diffeomorphismen, also $a(x) > 0$ auf $(-1,1)$, und man kann $\phi(x) = \int_0^x dt/a(t)$ definieren. Die Invarianz von $a$ unter dem Gruppengesetz liefert dann $\phi(C(x,y)) = \phi(x) + \phi(y)$, und $\phi$ erbt die $C^\infty$-Regularität von $C$ auf $(-1,1)$ direkt aus dieser Integraldarstellung. Die Funktion $\phi$ ist bis auf eine positive multiplikative Konstante bestimmt, und die Antisymmetrie (Axiom~B') erlaubt, sie ungerade zu wählen. Axiom~B liefert $d\sigma/dg(0)=c_1/S_{\max}>0$; wird eine orientierungserhaltende additive Kontrollkoordinate $u=u(g)$ verwendet, so geht $\kappa:=(d\sigma/du)(0)>0$ nur über $(\phi\circ\sigma)'(0)=\phi'(0)\kappa$ ein und fixiert die positive Gesamtskala $\alpha$. An diesem Punkt liefern die Axiome A--D ein Abel-/Randkragen-Theorem, aber noch nicht $\phi=\mathrm{arctanh}$.
 
 \textit{Schritt 2b: Projektiver Doppelrand-Quotient.}
 Wenn zusätzlich die Annahme D' gilt, liefert Lemma~\ref{lem:projective_arctanh} $\phi=c\,\mathrm{arctanh}$. D' ist die projektive Doppelrand-Quotienten-Annahme, keine Konsequenz von A--D: Sobald $R=(1+x)/(1-x)$ vor der Wahl einer Abel-Koordinate festgelegt ist, folgt das Geschwindigkeitsadditionsgesetz algebraisch. Dies ergibt das Kompositionsgesetz:
@@ -430,19 +430,38 @@ Da $\phi(\sigma(g)) = c\,\mathrm{arctanh}(\sigma(g))$ eine additive Funktion des
 \end{equation}
 und daher $S_T(g) = S_{\max}\,\tanh(\alpha\,u(g))$, nachdem die positive Konstante $c$ in $\alpha u$ absorbiert wurde. Wenn die Axiome A--D, B', $D^\pm$ und D' exakt gelten, ist das Resultat exakt. Approximative Axiom-Erfüllung (z.B. Zusammenbruch des Kompositionsgesetzes bei sehr kleinem $g$, wo Standardgravitation dominiert) würde Korrektionen einführen; eine formale Stabilitätsanalyse solcher Störungen ist ein offenes Problem. \hfill $\square$
 
-\begin{corollary}[Monotonie aus dem inneren Gruppengesetz]
+\begin{lemma}[Globale Gruppenmonotonie ohne Profilprämisse]
+\label{lem:global_monotonicity}
+Sei $C:(-1,1)^2\to(-1,1)$ ein $C^1$-Gruppengesetz mit Neutralelement $0$, und jede Translation $L_x(y):=C(x,y)$ sei ein $C^1$-Diffeomorphismus. Sei
+\[
+  \sigma:(\mathbb{R},+)\longrightarrow((-1,1),C)
+\]
+ein globaler $C^1$-Homomorphismus mit $\sigma(0)=0$ und $\kappa:=\sigma'(0)>0$. Definiere $a(x):=\partial_2C(x,0)$. Dann gilt
+\begin{equation}
+  a(x)>0,
+  \qquad
+  \sigma'(u)=\kappa\,a(\sigma(u))>0
+  \quad\text{für jedes }u\in\mathbb{R}.
+  \label{eq:global_monotonicity_generator}
+\end{equation}
+Außerdem ist $\sigma$ eine streng wachsende Bijektion von $\mathbb{R}$ auf $(-1,1)$, und daher gilt $\lim_{u\to\pm\infty}\sigma(u)=\pm1$.
+\end{lemma}
+
+\begin{proof}
+Da $L_x$ und seine Inverse $C^1$ sind, verschwindet $a(x)=L_x'(0)$ nirgends. Die Funktion $a$ ist stetig, $(-1,1)$ ist zusammenhängend, und aus $C(0,y)=y$ folgt $a(0)=1$; daher ist $a(x)>0$ auf dem ganzen Intervall. Differenziere die globale Homomorphismusidentität
+\[
+  \sigma(u+v)=C(\sigma(u),\sigma(v))
+\]
+bezüglich $v$ bei $v=0$. Dies liefert Gl.~\eqref{eq:global_monotonicity_generator} unmittelbar, sodass strenges Wachstum eine Folgerung und keine Prämisse ist. Weil $\sigma'(u)>0$ ist, ist das Bild eine offene Untergruppe der zusammenhängenden Zielgruppe $((-1,1),C)$; eine zusammenhängende Gruppe besitzt keine echte offene Untergruppe, also ist das Bild ganz $(-1,1)$. Eine streng wachsende Surjektion von $\mathbb{R}$ auf $(-1,1)$ hat die angegebenen Randgrenzwerte. Der Beweis verwendet weder eine Monotonie von $\sigma$ noch eine Abel-Koordinate oder die projektive Annahme D'.
+\end{proof}
+
+\begin{corollary}[Exakte Monotonieabhängigkeit für Axiom C]
 \label{cor:monotonicity}
-Unter der inneren Gruppenform $D^\pm$ von Axiom~D folgt Axiom C (monotone kosmische Kontrolle) aus den Axiomen A, B, B' und D. Das heißt, jede Antwortfunktion, die $A + B + B' + D^\pm$ erfüllt, ist auf dem eindimensionalen Kanal automatisch strikt monoton wachsend.
+Für die normalisierte eindimensionale Antwort liefert Axiom~B $d\sigma/dg(0)=c_1/S_{\max}>0$. Besitzt die Kontrolle eine orientierungserhaltende globale additive Koordinate $u=u(g)$ und ist die Antwort für alle $u,v\in\mathbb{R}$ ein Homomorphismus $\sigma:(\mathbb{R},+)\to((-1,1),C)$, so ist $\kappa=(d\sigma/du)(0)>0$, und Lemma~\ref{lem:global_monotonicity} leitet die Monotonie- und Randsättigungsklauseln von Axiom~C her. Die einzelne relevante Richtung ist bereits in der eindimensionalen globalen Kontrollgruppe kodiert; sie ist kein zusätzliches Ergebnis der Ableitungsrechnung.
 \end{corollary}
 
-\textit{Beweis.} Wähle die additive Koordinate der eindimensionalen Kontrollkomposition, so dass die Kanalkomposition nahe der Identität als $g+h$ geschrieben wird. Differenziere $\sigma(g + h) = C(\sigma(g), \sigma(h))$ bezüglich $h$ an der Stelle $h = 0$:
-\[
-\sigma'(g) = \partial_2 C(\sigma(g), 0) \cdot \sigma'(0)\,.
-\]
-Definiere $a(x) := \partial_2 C(x, 0)$. Nach $D^\pm$ ist für jedes feste $x \in (-1,1)$ die Abbildung $y \mapsto C(x,y)$ ein $C^\infty$ Diffeomorphismus von $(-1,1)$ (sein Inverses ist $y \mapsto C(-x, y)$ aus dem Gruppen-Inversen). Daher gilt $\partial_2 C(x, 0) = a(x) \neq 0$ für alle $x \in (-1,1)$. Da $(-1,1)$ zusammenhängend ist und $a(0) = \partial_2 C(0,0) = 1 > 0$ (aus $C(0,y) = y$), impliziert Stetigkeit $a(x) > 0$ für alle $x$. Mit $\sigma'(0) = c_1 > 0$ (Axiom B) erhalten wir $\sigma'(g) = a(\sigma(g)) \cdot c_1 > 0$ für alle $g$. \hfill $\square$
-
 \begin{remark}
-Dies bedeutet, dass das Axiom-System auf A, B/B' und $D^\pm$ plus die abgeleitete Konsequenz C reduziert werden kann, sobald das eindimensionale innere Gruppengesetz physikalisch gerechtfertigt ist. Wir behalten Axiom C als separate Aussage für physikalische Transparenz: sie macht die Monotonie-Annahme explizit und verbindet sich direkt mit dem thermodynamischen Pfeil der Zeit. Ohne $D^\pm$ ist sie als unabhängige Ein-Kanal-Annahme zu lesen.
+Dies ist ein konditionales Redundanzergebnis für die verstärkte globale Ein-Kanal-Unterklasse. Die antwortseitige Hypothese $D^\pm$, ein lokaler additiver Chart oder eine positive lokale Steigung allein etablieren das globale Homomorphismus-Gate nicht. Das Haupttheorem behält Axiom~C daher explizit, wenn dieses Gate für die physikalische Kontrollvariable nicht bewiesen wurde.
 \end{remark}
 
 \begin{proposition}[Nicht-Redundanz der Axiome]

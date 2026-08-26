@@ -9,7 +9,7 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![CI](https://github.com/research-line/crm-cosmology/actions/workflows/ci.yml/badge.svg)](https://github.com/research-line/crm-cosmology/actions/workflows/ci.yml)
-[![Tests](https://img.shields.io/badge/Tests-43%20passed-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/Tests-51%20passed-brightgreen.svg)](tests/)
 [![Open Science](https://img.shields.io/badge/Open--Science-Reproducible-green.svg)](https://github.com/research-line/crm-cosmology)
 [![LLM Indexing](https://img.shields.io/badge/LLM--Indexing-llms.txt-purple.svg)](llms.txt)
 
@@ -104,6 +104,19 @@ ledger and bilingual claim boundaries with:
 
 ```bash
 python -m pytest tests/test_metaphor_transfer_invariants.py -q
+```
+
+The separate
+[global-group monotonicity audit](research/crm-v/CRM5_MONOTONICITY_LEMMA_GLOBAL_GROUP_V1_2026-08-26.md)
+proves the generator identity
+`sigma'(u) = kappa * partial_2 C(sigma(u),0)` without assuming profile
+monotonicity. Axiom C becomes redundant only when the response group is paired
+with an orientation-preserving global homomorphism from `(R,+)`; a local chart,
+positive local slope, or `D^pm` alone is insufficient. Validate the proof
+ledger, controls, and bilingual contract with:
+
+```bash
+python -m pytest tests/test_global_monotonicity_lemma.py -q
 ```
 
 An exact 2D Yang--Mills heat-kernel control case is available as a
