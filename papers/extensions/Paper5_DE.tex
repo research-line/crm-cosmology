@@ -505,7 +505,27 @@ Die folgenden Beispiele sind \emph{Trennungsskizzen}, kein vollständiges Unabh�
 
 \textit{(2) Verletzt die lokale Ungeradheit von B/B', erfüllt A,C,D:} $\sigma(g) = 1 - e^{-g}$ für $g \geq 0$, mit $C(x,y) = x + y - xy$ (probabilistisches Oder). \emph{Korrektur:} Eine frühere Version führte dies als ``verletzt B$'$, erfüllt B'' auf; tatsächlich enthält die Taylorentwicklung $1-e^{-g} = g - g^2/2 + g^3/6 - \cdots$ einen quadratischen Term, sodass das Beispiel die von Axiom~B selbst geforderte ungerade lokale Entwicklung verletzt, nicht nur die signierte Erweiterung B$'$. Es trennt $\{$B,B$'\}$ von $\{$A,C,D$\}$, trennt aber nicht B von B$'$.
 
-\textit{(3) Verletzt C (und A auf dem positiven Ast), erfüllt B/B' lokal, aber nicht $D^\pm$:} $\sigma(g) = \tanh(g) \cdot \cos(\epsilon g)$ für kleine $\epsilon > 0$. \emph{Korrektur:} Eine frühere Version behauptete, dieses Beispiel ``erfüllt A''; tatsächlich wechselt für $g \gg 1$ der Faktor $\cos(\epsilon g)$ das Vorzeichen, sodass das Beispiel auf dem positiven Ast auch die Nichtnegativität von Axiom~A verletzt und keinen Sättigungsgrenzwert im Sinne von Axiom~C besitzt. Es trennt daher $\{$C$\}$ (und monotone Sättigung allgemein) von lokalem $\{$B,B$'\}$, ist aber \emph{kein} Zeuge dafür, dass C unabhängig von A ist. Ein saubererer Kandidatenzeuge für C-Unabhängigkeit -- ein glattes, ungerades, beschränktes Profil der Form $\sigma(g) = \tanh(g) + \varepsilon\,\psi(g)$ mit $\psi$ einer kompakt getragenen ungeraden Bump-Funktion, gewählt so, dass $0 \leq \sigma < 1$ auf $g \geq 0$, aber $\sigma' < 0$ auf einem Intervall -- sollte vor der Behauptung in einem Trennungs-Ledger verifiziert werden. Nach Korollar~\ref{cor:monotonicity} ist C in jedem Fall \textit{nicht} unabhängig von $\{A, B, B', D^\pm\}$ gemeinsam -- es folgt unter dem inneren Gruppengesetz als abgeleitete Konsequenz. C bleibt für physikalische Klarheit und zur expliziten Markierung des Ein-Kanal-Pfeils erhalten.
+\textit{(3) Verletzt die Monotonieklausel von C, erfüllt A, B/B' und die Randsättigung, aber nicht $D^\pm$:} Definiere den normierten Standard-Bump
+\[
+ b(z)=\begin{cases}\exp\!\left(1-\dfrac{1}{1-z^2}\right),& |z|<1,\\[0.3em]0,&|z|\geq1.\end{cases}
+\]
+Setze dann
+\[
+ \begin{aligned}
+ \psi(g)&=b(4(g-2))-b(4(g+2)),\\
+ \sigma(g)&=\tanh(g)+\frac{1}{50}\psi(g).
+ \end{aligned}
+\]
+Die Störung ist glatt, ungerade, auf $[-9/4,-7/4]\cup[7/4,9/4]$ getragen und verschwindet nahe dem Ursprung, sodass lokal $\sigma(g)=g-g^3/3+O(g^5)$ gilt. Auf $g\geq0$ beträgt das maximale Verhältnis des positiven Bumps zum verbleibenden Abstand $1-\tanh g$ nur $0.588751887<1$; damit gilt $0\leq\sigma(g)<1$, und der kompakte Träger erhält $\lim_{g\to\infty}\sigma(g)=1$. Dennoch ist
+\[
+ \begin{aligned}
+ \sigma'\!\left(\frac{17}{8}\right)
+ &=\operatorname{sech}^2\!\left(\frac{17}{8}\right)
+   -\frac{32}{225}e^{-1/3}\\
+ &=-0.046443310\ldots<0.
+ \end{aligned}
+\]
+Damit implizieren A, B, B' und Randsättigung allein die Monotonie von C nicht. Das deterministische Zertifikat liegt in \path{results/paper5/AXIOM_C_BUMP_SEPARATION_GATE_2026-08-26.json}. Dies ist kein Zeuge gegen die gemeinsame Menge $\{A,B,B',D^\pm\}$: Die nichtmonotone Antwort ist nicht injektiv und kann den globalen kürzbaren Antwort-Homomorphismus nicht erfüllen, während Korollar~\ref{cor:monotonicity} beweist, dass dieses stärkere Gate Monotonie impliziert. C bleibt für physikalische Klarheit und zur expliziten Markierung des Ein-Kanal-Pfeils erhalten.
 
 \textit{(4) Verletzt D, erfüllt A--C,B':} $\sigma(g) = (2/\pi)\arctan(g)$; beschränkt, monoton, antisymmetrisch, aber seine induzierte Komposition (über $\phi = \tan(\pi x/2)$) entwickelt divergente zweite Ableitungen ($\sim \epsilon^{-1}$) am Rand von $[-1,1]^2$, was die $C^\infty$-Erweiterungs-Anforderung von Axiom D verletzt. Ähnlich hat $\sigma(g) = g/\sqrt{1+g^2}$ (mit $\phi(x) = x/\sqrt{1-x^2}$) divergente zweite Ableitungen am Rand ($\sim \epsilon^{-1/2}$).
 \end{proposition}

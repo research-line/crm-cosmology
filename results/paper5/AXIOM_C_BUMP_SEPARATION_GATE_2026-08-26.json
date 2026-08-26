@@ -1,0 +1,91 @@
+{
+  "audit_id": "CRM5-DPRIME-TANH-EPSILON-BUMP-C-INDEPENDENCE-SEPARATION-V1",
+  "axiom_ledger": {
+    "A_finite_positive_branch_capacity": "PASS__ZERO_LE_SIGMA_LT_ONE",
+    "B_local_odd_expansion_positive_slope": "PASS__IDENTICAL_TO_TANH_NEAR_ZERO",
+    "B_prime_global_odd_extension": "PASS__BY_CONSTRUCTION",
+    "C_endpoint_saturation_clause": "PASS__COMPACT_PERTURBATION_VANISHES_AT_INFINITY",
+    "C_monotone_control": "FAIL__SIGMA_PRIME_NEGATIVE_AT_17_OVER_8",
+    "D_plus_minus_global_group_homomorphism": "INCOMPATIBLE__NONMONOTONE_RESPONSE_IS_NONINJECTIVE",
+    "D_prime_projective_quotient": "OUT_OF_SCOPE",
+    "D_response_composition": "NOT_CLAIMED"
+  },
+  "capacity_certificate": {
+    "headroom_ratio": {
+      "maximizing_g": 2.055566560266945,
+      "maximizing_z": 0.2222662410677798,
+      "maximum_bump_to_headroom_ratio": 0.5887518864565877,
+      "strictly_below_one": true,
+      "uniqueness_argument": "log-ratio rises on (-1,0); on (0,1) its derivative is strictly decreasing because the bump term derivative is <=-2 and the logistic correction derivative is <=1/16"
+    },
+    "largest_local_response": 0.9871157932621778,
+    "largest_local_response_point": 2.083907131241724,
+    "outside_positive_support": "sigma(g)=tanh(g) in [0,7/4] and [9/4,infinity)",
+    "positive_branch_nonnegative": true,
+    "strict_capacity_pass": true
+  },
+  "claim_boundary": [
+    "The witness proves only that A, B, B-prime, and endpoint saturation do not by themselves imply monotonicity.",
+    "It is not a model satisfying the global response homomorphism D-plus/minus; that hypothesis forces monotonicity.",
+    "No physical UV derivation, D-prime derivation, cosmology result, RH result, or abc result is claimed."
+  ],
+  "monotonicity_certificate": {
+    "endpoint_saturation_retained": true,
+    "exact_derivative_expression": "sech(17/8)^2-(32/225)*exp(-1/3)",
+    "limit_g_to_infinity": 1.0,
+    "negative_at_witness": true,
+    "numerical_negative_interval": [
+      2.083907131241724,
+      2.2266146875098096
+    ],
+    "witness_derivative": -0.04644330953106972,
+    "witness_g": 2.125,
+    "witness_response": 0.9862033721249848,
+    "witness_z": 0.5
+  },
+  "review_source": "Paper5_HEILER_2026-07-03.md:P1-7",
+  "run_date": "2026-08-26",
+  "schema_version": "1.0.0",
+  "status": "EXACT_C_SEPARATION_WITNESS__A_B_BPRIME_ENDPOINT_PASS__DPM_NOT_CLAIMED",
+  "summary": {
+    "claim_upgrade_count": 0,
+    "does_not_separate_C_from": [
+      "global_D_plus_minus_homomorphism"
+    ],
+    "old_tanh_cosine_example_replaced": true,
+    "separates_C_from": [
+      "A",
+      "B",
+      "B_prime",
+      "endpoint_saturation"
+    ],
+    "verified_clean_C_witness": true
+  },
+  "todo_source": "CRM-V TODO.md:135-142",
+  "witness": {
+    "base_bump": "b(z)=exp(1-1/(1-z^2)) for |z|<1; b(z)=0 otherwise",
+    "local_identity": "sigma(g)=tanh(g) for |g|<=7/4",
+    "local_series": "g-g^3/3+O(g^5)",
+    "odd_bump": "psi(g)=b(4*(g-2))-b(4*(g+2))",
+    "parameters": {
+      "center": 2.0,
+      "epsilon": 0.02,
+      "width": 0.25
+    },
+    "positive_branch_support": [
+      1.75,
+      2.25
+    ],
+    "response": "sigma(g)=tanh(g)+(1/50)*psi(g)",
+    "support": [
+      [
+        -2.25,
+        -1.75
+      ],
+      [
+        1.75,
+        2.25
+      ]
+    ]
+  }
+}

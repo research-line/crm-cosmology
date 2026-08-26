@@ -9,7 +9,7 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![CI](https://github.com/research-line/crm-cosmology/actions/workflows/ci.yml/badge.svg)](https://github.com/research-line/crm-cosmology/actions/workflows/ci.yml)
-[![Tests](https://img.shields.io/badge/Tests-75%20passed-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/Tests-83%20passed-brightgreen.svg)](tests/)
 [![Open Science](https://img.shields.io/badge/Open--Science-Reproducible-green.svg)](https://github.com/research-line/crm-cosmology)
 [![LLM Indexing](https://img.shields.io/badge/LLM--Indexing-llms.txt-purple.svg)](llms.txt)
 
@@ -117,6 +117,21 @@ ledger, controls, and bilingual contract with:
 
 ```bash
 python -m pytest tests/test_global_monotonicity_lemma.py -q
+```
+
+The verified
+[compact-bump Axiom-C separation ledger](research/crm-v/CRM5_DPRIME_TANH_EPSILON_BUMP_C_INDEPENDENCE_SEPARATION_V1_2026-08-26.md)
+replaces the old oscillatory `tanh(g) cos(epsilon g)` sketch. Its explicit
+odd `tanh+(1/50)*bump` response preserves finite capacity, the local B/B'
+expansion, and endpoint saturation, while
+`sigma'(17/8)=-0.0464433095...<0`. This proves only that A, B/B', and endpoint
+saturation do not imply C monotonicity; it does not claim the global
+`D^pm` homomorphism, which would force monotonicity. Reproduce the certificate
+with:
+
+```bash
+python scripts/paper5/axiom_c_bump_separation_gate.py
+python -m pytest tests/test_axiom_c_bump_separation_gate.py -q
 ```
 
 The
