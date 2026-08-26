@@ -1,0 +1,97 @@
+{
+  "$id": "https://github.com/research-line/crm-cosmology/results/paper5/DPRIME_EVIDENCE_LEDGER_JOURNAL_SCHEMA_V1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "boundary_status": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "claim_pass": {
+      "const": false
+    },
+    "composition_status": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "dprime_outcome": {
+      "enum": [
+        "pass_control",
+        "fail_control",
+        "pass_synthetic_not_physical",
+        "fail_model_bound",
+        "pass_reparametrization_not_physical",
+        "not_decidable"
+      ],
+      "type": "string"
+    },
+    "evidence_source": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "metric": {
+      "type": "object"
+    },
+    "model_dependency": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "preregistered_controls": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "result_artifact": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "scale_status": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "CONTROL_PASS_PROJECTIVE",
+        "CONTROL_FAIL_PROJECTIVE",
+        "SYNTHETIC_SCALE_COMPOSITION_PASS__NOT_PHYSICAL",
+        "NOT_DECIDABLE_SOURCE_INCOMPLETE",
+        "MODEL_BOUND_DPRIME_FAIL__PHYSICAL_C_NOT_SOURCE_EXACT",
+        "EXACT_GAUGE_RESPONSE_COMPOSITION__DPRIME_FAIL__NOT_4D_SCATTERING_OR_RG",
+        "MODEL_BOUND_DPRIME_FAIL__SOURCE_PHYSICS_DEBATED",
+        "MATHEMATICAL_REPARAMETRIZATION_PASS__NOT_PHYSICAL_TIME",
+        "FULL_2D_LARGE_N_TRAJECTORY__R_PROJECTION_DPRIME_FAIL__NO_EXACT_C"
+      ],
+      "type": "string"
+    },
+    "target": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "target_type": {
+      "enum": [
+        "analytic_control",
+        "synthetic_control",
+        "source_candidate"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "target",
+    "evidence_source",
+    "model_dependency",
+    "preregistered_controls",
+    "status"
+  ],
+  "title": "CRM-V D-prime journal evidence ledger entry",
+  "type": "object"
+}

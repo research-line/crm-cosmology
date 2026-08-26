@@ -9,7 +9,7 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![CI](https://github.com/research-line/crm-cosmology/actions/workflows/ci.yml/badge.svg)](https://github.com/research-line/crm-cosmology/actions/workflows/ci.yml)
-[![Tests](https://img.shields.io/badge/Tests-26%20passed-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/Tests-35%20passed-brightgreen.svg)](tests/)
 [![Open Science](https://img.shields.io/badge/Open--Science-Reproducible-green.svg)](https://github.com/research-line/crm-cosmology)
 [![LLM Indexing](https://img.shields.io/badge/LLM--Indexing-llms.txt-purple.svg)](llms.txt)
 
@@ -115,6 +115,18 @@ full-beta diagnostics, and D' tables with:
 
 ```bash
 python scripts/paper5/dprime_lqa_2d_trajectory_gate.py
+```
+
+The resulting
+[journal evidence ledger](research/crm-v/CRM5_DPRIME_EVIDENCE_LEDGER_JOURNAL_V1_2026-08-26.md)
+migrates the seven-row D' prototype and binds six later candidates to a frozen
+source registry and JSON Schema. Its analytic controls, synthetic law,
+source-incomplete case, model-bound failures, and nonphysical
+reparametrization remain separate status classes; no row closes physical D'.
+Rebuild its JSON, CSV, Markdown, and schema artifacts with:
+
+```bash
+python scripts/paper5/build_dprime_evidence_ledger.py
 ```
 
 **Paper VI -- QG-CRM: Ultraviolet Completion** addresses an open question from Paper V: which UV completion selects k and Phi_0? It explores a proposed identification of the gamma*R^2 sector of the CRM Lagrangian with asymptotically free quantum quadratic gravity (QQG), under which inflation is generated dynamically via RG running without an inflaton field. In this draft, the Saturation Theorem is treated as the UV-IR interface. The resulting headline predictions are n_s ~ 1 - 4/(3N) ~ 0.976 and r >= 0.01, testable with Stage IV CMB experiments.

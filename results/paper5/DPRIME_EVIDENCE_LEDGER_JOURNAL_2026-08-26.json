@@ -1,0 +1,453 @@
+{
+  "claim_boundary": [
+    "Control passes are not physical D-prime derivations.",
+    "Model-bound failures are not no-go theorems for the physical observable.",
+    "Null metrics mean not evaluable and are never encoded as zero.",
+    "Every source candidate has at least one registered primary source.",
+    "No Paper V or CRM claim is upgraded."
+  ],
+  "entries": [
+    {
+      "boundary_status": "synthetic_fixed_open_interval",
+      "claim_pass": false,
+      "composition_status": "exact_internal_abel_composition",
+      "dprime_outcome": "pass_control",
+      "evidence_source": [
+        "CRM5_RESIDUAL_LEDGER_2026"
+      ],
+      "metric": {
+        "name": "max_abs_delta",
+        "value": 1.8962609260597674e-12
+      },
+      "model_dependency": "none__analytic_projective_abel_coordinate",
+      "preregistered_controls": [
+        "positive_face_grid_x_y_0.05_to_0.95",
+        "fixed_projective_quotient_R",
+        "common_delta_threshold"
+      ],
+      "result_artifact": "legacy-onedrive://CRM-V/_results/DPRIME_RESIDUAL_LEDGER_2026-06-21.json",
+      "scale_status": "not_physical_scale",
+      "status": "CONTROL_PASS_PROJECTIVE",
+      "target": "canonical_arctanh",
+      "target_type": "analytic_control"
+    },
+    {
+      "boundary_status": "synthetic_fixed_open_interval",
+      "claim_pass": false,
+      "composition_status": "exact_internal_abel_composition",
+      "dprime_outcome": "pass_control",
+      "evidence_source": [
+        "CRM5_RESIDUAL_LEDGER_2026"
+      ],
+      "metric": {
+        "name": "max_abs_delta",
+        "value": 1.8962609260597674e-12
+      },
+      "model_dependency": "none__analytic_projective_abel_coordinate",
+      "preregistered_controls": [
+        "positive_face_grid_x_y_0.05_to_0.95",
+        "fixed_projective_quotient_R",
+        "common_delta_threshold"
+      ],
+      "result_artifact": "legacy-onedrive://CRM-V/_results/DPRIME_RESIDUAL_LEDGER_2026-06-21.json",
+      "scale_status": "not_physical_scale",
+      "status": "CONTROL_PASS_PROJECTIVE",
+      "target": "scaled_2_arctanh",
+      "target_type": "analytic_control"
+    },
+    {
+      "boundary_status": "synthetic_fixed_open_interval",
+      "claim_pass": false,
+      "composition_status": "exact_internal_abel_composition",
+      "dprime_outcome": "fail_control",
+      "evidence_source": [
+        "CRM5_RESIDUAL_LEDGER_2026"
+      ],
+      "metric": {
+        "name": "max_abs_delta",
+        "value": 0.09012008846000352
+      },
+      "model_dependency": "none__analytic_smooth_nonprojective_collar",
+      "preregistered_controls": [
+        "positive_face_grid_x_y_0.05_to_0.95",
+        "fixed_projective_quotient_R",
+        "common_delta_threshold"
+      ],
+      "result_artifact": "legacy-onedrive://CRM-V/_results/DPRIME_RESIDUAL_LEDGER_2026-06-21.json",
+      "scale_status": "not_physical_scale",
+      "status": "CONTROL_FAIL_PROJECTIVE",
+      "target": "collar_eps_plus_0.05",
+      "target_type": "analytic_control"
+    },
+    {
+      "boundary_status": "synthetic_fixed_open_interval",
+      "claim_pass": false,
+      "composition_status": "exact_internal_abel_composition",
+      "dprime_outcome": "fail_control",
+      "evidence_source": [
+        "CRM5_RESIDUAL_LEDGER_2026"
+      ],
+      "metric": {
+        "name": "max_abs_delta",
+        "value": 0.18021949471456633
+      },
+      "model_dependency": "none__analytic_smooth_nonprojective_collar",
+      "preregistered_controls": [
+        "positive_face_grid_x_y_0.05_to_0.95",
+        "fixed_projective_quotient_R",
+        "common_delta_threshold"
+      ],
+      "result_artifact": "legacy-onedrive://CRM-V/_results/DPRIME_RESIDUAL_LEDGER_2026-06-21.json",
+      "scale_status": "not_physical_scale",
+      "status": "CONTROL_FAIL_PROJECTIVE",
+      "target": "collar_eps_plus_0.10",
+      "target_type": "analytic_control"
+    },
+    {
+      "boundary_status": "synthetic_fixed_open_interval",
+      "claim_pass": false,
+      "composition_status": "exact_internal_abel_composition",
+      "dprime_outcome": "fail_control",
+      "evidence_source": [
+        "CRM5_RESIDUAL_LEDGER_2026"
+      ],
+      "metric": {
+        "name": "max_abs_delta",
+        "value": 0.09014379288085905
+      },
+      "model_dependency": "none__analytic_smooth_nonprojective_collar",
+      "preregistered_controls": [
+        "positive_face_grid_x_y_0.05_to_0.95",
+        "fixed_projective_quotient_R",
+        "common_delta_threshold"
+      ],
+      "result_artifact": "legacy-onedrive://CRM-V/_results/DPRIME_RESIDUAL_LEDGER_2026-06-21.json",
+      "scale_status": "not_physical_scale",
+      "status": "CONTROL_FAIL_PROJECTIVE",
+      "target": "collar_eps_minus_0.05",
+      "target_type": "analytic_control"
+    },
+    {
+      "boundary_status": "synthetic_fixed_open_interval",
+      "claim_pass": false,
+      "composition_status": "exact_internal_abel_composition",
+      "dprime_outcome": "fail_control",
+      "evidence_source": [
+        "CRM5_RESIDUAL_LEDGER_2026"
+      ],
+      "metric": {
+        "name": "max_abs_delta",
+        "value": 0.07184145847414047
+      },
+      "model_dependency": "none__analytic_smooth_nonprojective_collar",
+      "preregistered_controls": [
+        "positive_face_grid_x_y_0.05_to_0.95",
+        "fixed_projective_quotient_R",
+        "common_delta_threshold"
+      ],
+      "result_artifact": "legacy-onedrive://CRM-V/_results/DPRIME_RESIDUAL_LEDGER_2026-06-21.json",
+      "scale_status": "not_physical_scale",
+      "status": "CONTROL_FAIL_PROJECTIVE",
+      "target": "collar_cubic_plus_0.05",
+      "target_type": "analytic_control"
+    },
+    {
+      "boundary_status": "synthetic_projective_anchors",
+      "claim_pass": false,
+      "composition_status": "exact_scale_semigroup__synthetic_response",
+      "dprime_outcome": "pass_synthetic_not_physical",
+      "evidence_source": [
+        "CRM5_RESIDUAL_LEDGER_2026"
+      ],
+      "metric": {
+        "name": "max_abs_delta",
+        "value": 1.652011860642233e-13
+      },
+      "model_dependency": "synthetic_tanh_response_on_multiplicative_scale_semigroup",
+      "preregistered_controls": [
+        "same_delta_threshold_as_collar_controls",
+        "r_grid_1.05_to_10",
+        "k_equals_1"
+      ],
+      "result_artifact": "legacy-onedrive://CRM-V/_results/DPRIME_RESIDUAL_LEDGER_2026-06-21.json",
+      "scale_status": "multiplicative_rg_scale_only",
+      "status": "SYNTHETIC_SCALE_COMPOSITION_PASS__NOT_PHYSICAL",
+      "target": "rg_scale_ratio_tanh_k1",
+      "target_type": "synthetic_control"
+    },
+    {
+      "boundary_status": "degenerate__both_natural_responses_diverge_to_plus_infinity",
+      "claim_pass": false,
+      "composition_status": "not_source_defined",
+      "dprime_outcome": "not_decidable",
+      "evidence_source": [
+        "CUNHA_LEHUM_2026"
+      ],
+      "metric": {
+        "name": "dprime_metric",
+        "reason": "boundary_pair_degenerate_and_composition_missing",
+        "value": null
+      },
+      "model_dependency": "massless_tree_level_one_graviton_exchange_fixed_couplings",
+      "preregistered_controls": [
+        "canonical_arctanh",
+        "collar_cubic_plus_0.05",
+        "natural_forward_and_backward_angle_anchors"
+      ],
+      "result_artifact": "legacy-onedrive://CRM-V/_proof-notes/CRM5_DPRIME_PHYS_OBS_V1_2026-08-24.md",
+      "scale_status": "tree_level_fixed_couplings__running_deferred_by_source",
+      "status": "NOT_DECIDABLE_SOURCE_INCOMPLETE",
+      "target": "agravity_qed_gamma_gamma_unpolarized_sqamp_tree",
+      "target_type": "source_candidate"
+    },
+    {
+      "boundary_status": "physical_finite_distinct__alpha_g1_0_pi__alpha_g1_infinity_0",
+      "claim_pass": false,
+      "composition_status": "CSR_transitivity_supported__exact_response_C_not_source_defined",
+      "dprime_outcome": "fail_model_bound",
+      "evidence_source": [
+        "DEUR_ET_AL_2022",
+        "BRODSKY_LU_1995",
+        "DE_TERAMOND_ET_AL_2024"
+      ],
+      "metric": {
+        "grid_span": 0.558359378671,
+        "ir_limit": 0.5,
+        "name": "projective_generator_limits",
+        "uv_limit": 0.0
+      },
+      "model_dependency": "physical_effective_charge_plus_de_teramond_analytic_model",
+      "preregistered_controls": [
+        "fixed_GDH_and_asymptotic_freedom_anchors",
+        "canonical_tanh_generator_positive_control",
+        "eleven_Q_values_0.001_to_100_GeV"
+      ],
+      "result_artifact": "legacy-onedrive://CRM-V/_proof-notes/CRM5_DPRIME_BJORKEN_EFFECTIVE_CHARGE_V1_2026-08-26.md",
+      "scale_status": "additive_log_Q_squared__model_validity_limited_in_full_UV",
+      "status": "MODEL_BOUND_DPRIME_FAIL__PHYSICAL_C_NOT_SOURCE_EXACT",
+      "target": "bjorken_effective_charge_alpha_g1",
+      "target_type": "source_candidate"
+    },
+    {
+      "boundary_status": "finite_distinct_response_values__minus_1_plus_1",
+      "claim_pass": false,
+      "composition_status": "exact_source_response_composition",
+      "dprime_outcome": "fail_model_bound",
+      "evidence_source": [
+        "AROCA_KUBYSHIN_2000",
+        "WITTEN_1991",
+        "NGUYEN_2018"
+      ],
+      "metric": {
+        "at_x_0": 1.0,
+        "at_x_0_5": 0.6666666666666666,
+        "name": "projective_generator_witness"
+      },
+      "model_dependency": "exact_pure_2d_U1_Yang_Mills_heat_kernel_area_law",
+      "preregistered_controls": [
+        "exact_semigroup_identity",
+        "normalized_composition_associativity",
+        "two_finite_response_boundaries"
+      ],
+      "result_artifact": "results/paper5/DPRIME_2D_YM_HEAT_KERNEL_GATE_2026-08-26.json",
+      "scale_status": "additive_area__not_4d_scattering_or_rg_time",
+      "status": "EXACT_GAUGE_RESPONSE_COMPOSITION__DPRIME_FAIL__NOT_4D_SCATTERING_OR_RG",
+      "target": "u1_2d_yang_mills_wilson_loop_area_response",
+      "target_type": "source_candidate"
+    },
+    {
+      "boundary_status": "model_normalized_finite_asymptotic_anchors",
+      "claim_pass": false,
+      "composition_status": "RG_flow_only__no_exact_physical_response_C",
+      "dprime_outcome": "fail_model_bound",
+      "evidence_source": [
+        "LIU_QUINTIN_AFSHORDI_2026",
+        "CRM5_GENERATOR_LEDGER_2026"
+      ],
+      "metric": {
+        "generator_residual": 1.344,
+        "name": "generator_and_stationarity",
+        "stationarity_span": 1.492
+      },
+      "model_dependency": "large_N_one_loop_xi_projection__debated_physical_beta_functions",
+      "preregistered_controls": [
+        "logistic_tanh_positive_control",
+        "cubic_abel_warp_negative_control",
+        "fixed_t_equals_log_mu_over_mu0"
+      ],
+      "result_artifact": "legacy-onedrive://CRM-V/_results/DPRIME_RG_GENERATOR_GATE_2026-08-08.json",
+      "scale_status": "standard_additive_log_mu__source_physics_debated",
+      "status": "MODEL_BOUND_DPRIME_FAIL__SOURCE_PHYSICS_DEBATED",
+      "target": "lqa_largeN_xi_in_log_mu",
+      "target_type": "source_candidate"
+    },
+    {
+      "boundary_status": "model_normalized_finite_asymptotic_anchors",
+      "claim_pass": false,
+      "composition_status": "mathematical_linearization_only__no_physical_C",
+      "dprime_outcome": "pass_reparametrization_not_physical",
+      "evidence_source": [
+        "LIU_QUINTIN_AFSHORDI_2026",
+        "CRM5_GENERATOR_LEDGER_2026"
+      ],
+      "metric": {
+        "name": "generator_residual",
+        "stationarity_span": 1.33e-15,
+        "value": 1.67e-16
+      },
+      "model_dependency": "same_large_N_xi_path__second_logarithm_reparametrization",
+      "preregistered_controls": [
+        "same_source_path_as_standard_time_fail",
+        "tau_equals_log_log_mu_over_mu0",
+        "physical_time_justification_required"
+      ],
+      "result_artifact": "legacy-onedrive://CRM-V/_results/DPRIME_RG_GENERATOR_GATE_2026-08-08.json",
+      "scale_status": "unjustified_second_logarithm__not_physical_time",
+      "status": "MATHEMATICAL_REPARAMETRIZATION_PASS__NOT_PHYSICAL_TIME",
+      "target": "lqa_largeN_xi_in_log_log_mu",
+      "target_type": "source_candidate"
+    },
+    {
+      "boundary_status": "model_finite_distinct__r_16_to_0",
+      "claim_pass": false,
+      "composition_status": "not_source_defined__rank_one_FLRW_projection",
+      "dprime_outcome": "fail_model_bound",
+      "evidence_source": [
+        "LIU_QUINTIN_AFSHORDI_2026"
+      ],
+      "metric": {
+        "max_full_beta_residual": 0.00017966650836274059,
+        "maximum": 4.308953871418275,
+        "minimum": 4.172428974518387,
+        "name": "dprime_relative_spread"
+      },
+      "model_dependency": "preregistered_large_N_two_coupling_path_plus_FLRW_tensor_r_projection",
+      "preregistered_controls": [
+        "two_coordinate_retention",
+        "reduced_and_full_beta_residuals",
+        "six_frozen_b_Nm_cases",
+        "source_tensor_r_anchor"
+      ],
+      "result_artifact": "results/paper5/DPRIME_LQA_2D_TRAJECTORY_RPROJ_GATE_2026-08-26.json",
+      "scale_status": "log_mu_with_ambiguous_curvature_scale_map",
+      "status": "FULL_2D_LARGE_N_TRAJECTORY__R_PROJECTION_DPRIME_FAIL__NO_EXACT_C",
+      "target": "lqa_full_lambda_xi_trajectory_tensor_r_projection",
+      "target_type": "source_candidate"
+    }
+  ],
+  "ledger_id": "CRM5-DPRIME-EVIDENCE-LEDGER-JOURNAL-V1",
+  "required_fields": [
+    "target",
+    "evidence_source",
+    "model_dependency",
+    "preregistered_controls",
+    "status"
+  ],
+  "run_date": "2026-08-26",
+  "schema_version": "1.0.0",
+  "source_registry": {
+    "AROCA_KUBYSHIN_2000": {
+      "arxiv": "https://arxiv.org/abs/hep-th/9901155",
+      "citation": "Aroca and Kubyshin, Study of Wilson loop functionals in 2D Yang-Mills theories, Annals of Physics 283 (2000)",
+      "kind": "external_primary",
+      "locator": "heat-kernel formulation and U(1) plane area law, Eq. (62)",
+      "url": "https://doi.org/10.1006/aphy.2000.6044",
+      "verified_date": "2026-08-26"
+    },
+    "BRODSKY_LU_1995": {
+      "arxiv": "https://arxiv.org/abs/hep-ph/9405218",
+      "citation": "Brodsky and Lu, Commensurate Scale Relations in Quantum Chromodynamics, Physical Review D 51, 3652 (1995)",
+      "kind": "external_primary",
+      "locator": "renormalization-group transitivity for commensurate scales",
+      "url": "https://doi.org/10.1103/PhysRevD.51.3652",
+      "verified_date": "2026-08-26"
+    },
+    "CRM5_GENERATOR_LEDGER_2026": {
+      "citation": "CRM-V D-prime RG generator equivalence audit (2026-08-08)",
+      "kind": "internal_analytic",
+      "locator": "legacy-onedrive://CRM-V/DPRIME_RG_GENERATOR_EQUIVALENCE_2026-08-08",
+      "url": "",
+      "verified_date": "2026-08-26"
+    },
+    "CRM5_RESIDUAL_LEDGER_2026": {
+      "citation": "CRM-V D-prime Residual Ledger, proof note and results (2026-06-21)",
+      "kind": "internal_analytic",
+      "locator": "legacy-onedrive://CRM-V/DPRIME_RESIDUAL_LEDGER_2026-06-21",
+      "url": "",
+      "verified_date": "2026-08-26"
+    },
+    "CUNHA_LEHUM_2026": {
+      "arxiv": "https://arxiv.org/abs/2603.05476",
+      "citation": "Cunha and Lehum, Scattering amplitudes in dimensionless quadratic gravity coupled to QED (2026)",
+      "kind": "external_primary",
+      "locator": "Eqs. (17)-(19); gauge-fixing and forward/backward limits",
+      "url": "https://doi.org/10.1103/k79x-52gj",
+      "verified_date": "2026-08-26"
+    },
+    "DEUR_ET_AL_2022": {
+      "arxiv": "https://arxiv.org/abs/2205.01169",
+      "citation": "Deur et al., Experimental determination of the QCD effective charge alpha_g1(Q), Particles 5, 171 (2022)",
+      "kind": "external_primary",
+      "locator": "effective-charge definition and measured low-Q behavior",
+      "url": "https://doi.org/10.3390/particles5020015",
+      "verified_date": "2026-08-26"
+    },
+    "DE_TERAMOND_ET_AL_2024": {
+      "citation": "de Teramond et al., The strong coupling in the nonperturbative and near-perturbative regimes (2024)",
+      "kind": "external_primary",
+      "locator": "Eqs. (1), (4)-(6), analytic effective-charge model and beta function",
+      "url": "https://arxiv.org/abs/2403.16126",
+      "verified_date": "2026-08-26"
+    },
+    "LIU_QUINTIN_AFSHORDI_2026": {
+      "arxiv": "https://arxiv.org/abs/2510.18733",
+      "citation": "Liu, Quintin, and Afshordi, Ultraviolet Completion of the Big Bang in Quadratic Gravity, Physical Review Letters 136, 111501 (2026)",
+      "kind": "external_primary",
+      "locator": "main Eq. (2); Supplemental Eqs. (9), (22)-(26)",
+      "url": "https://doi.org/10.1103/6gtx-j455",
+      "verified_date": "2026-08-26"
+    },
+    "NGUYEN_2018": {
+      "arxiv": "https://arxiv.org/abs/1508.06305",
+      "citation": "Nguyen, Quantum Yang-Mills theory in two dimensions: exact versus perturbative, Communications in Mathematical Physics 357 (2018)",
+      "kind": "external_primary",
+      "locator": "continuum Wilson-loop construction via group heat kernels",
+      "url": "https://doi.org/10.1007/s00220-017-2942-6",
+      "verified_date": "2026-08-26"
+    },
+    "WITTEN_1991": {
+      "citation": "Witten, On quantum gauge theories in two dimensions, Communications in Mathematical Physics 141 (1991)",
+      "kind": "external_primary",
+      "locator": "gauge-invariant Wilson-line framework",
+      "url": "https://doi.org/10.1007/BF02100009",
+      "verified_date": "2026-08-26"
+    }
+  },
+  "summary": {
+    "entry_count": 13,
+    "external_primary_source_count": 8,
+    "outcome_counts": {
+      "fail_control": 4,
+      "fail_model_bound": 4,
+      "not_decidable": 1,
+      "pass_control": 2,
+      "pass_reparametrization_not_physical": 1,
+      "pass_synthetic_not_physical": 1
+    },
+    "physical_claim_pass_count": 0,
+    "physical_dprime_closed": false,
+    "prototype_rows_migrated": 7,
+    "source_candidate_count": 6,
+    "status_counts": {
+      "CONTROL_FAIL_PROJECTIVE": 4,
+      "CONTROL_PASS_PROJECTIVE": 2,
+      "EXACT_GAUGE_RESPONSE_COMPOSITION__DPRIME_FAIL__NOT_4D_SCATTERING_OR_RG": 1,
+      "FULL_2D_LARGE_N_TRAJECTORY__R_PROJECTION_DPRIME_FAIL__NO_EXACT_C": 1,
+      "MATHEMATICAL_REPARAMETRIZATION_PASS__NOT_PHYSICAL_TIME": 1,
+      "MODEL_BOUND_DPRIME_FAIL__PHYSICAL_C_NOT_SOURCE_EXACT": 1,
+      "MODEL_BOUND_DPRIME_FAIL__SOURCE_PHYSICS_DEBATED": 1,
+      "NOT_DECIDABLE_SOURCE_INCOMPLETE": 1,
+      "SYNTHETIC_SCALE_COMPOSITION_PASS__NOT_PHYSICAL": 1
+    }
+  }
+}
