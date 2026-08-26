@@ -1,0 +1,204 @@
+{
+  "audit_id": "CRM5-DPRIME-IR-SAFE-EXACT-COMPOSITION-SOURCE-SEARCH-V2",
+  "candidate": {
+    "boundary_responses": {
+      "finite_and_distinguishable": true,
+      "probe_lower_amplitude": [
+        1.0,
+        8.496708510583178e-18
+      ],
+      "probe_max_endpoint_error": 8.496708510583178e-18,
+      "probe_theta": 40.0,
+      "probe_upper_amplitude": [
+        -1.0,
+        8.496708510583178e-18
+      ],
+      "theta_to_minus_infinity": "S_RL -> +1",
+      "theta_to_plus_infinity": "S_RL -> -1"
+    },
+    "candidate_id": "TRICRITICAL_ISING_TO_ISING_MASSLESS_RL_AMPLITUDE",
+    "criteria": {
+      "IR_status": "FINITE_UNIT_MODULUS_MASSLESS_INTEGRABLE_AMPLITUDE__NO_4D_INCLUSIVE_IR_SAFETY_CLAIM",
+      "declared_scale_map": "SUPPORTED_FROM_SOURCE_KINEMATICS",
+      "exact_binary_response_composition": "NOT_SOURCE_DEFINED",
+      "exact_nonperturbative_on_shell_amplitude": "SUPPORTED",
+      "finite_distinct_boundary_amplitudes": "SUPPORTED",
+      "gauge_status": "NON_GAUGE_SCALAR_QFT__NO_GAUGE_PARAMETER",
+      "real_Paper_V_response_interval": "NOT_SUPPORTED__AMPLITUDE_LIES_ON_COMPLEX_UNIT_CIRCLE",
+      "running_scalar_coupling_identified_with_response": "NOT_SOURCE_DEFINED",
+      "source_defined_RG_crossover": "SUPPORTED_BY_TBA_C_FUNCTION",
+      "source_defined_neutral_identity_response": "NOT_SUPPORTED__S_RL_0_EQUALS_I_IS_AUDIT_MARKED"
+    },
+    "equivalent_formula": "S_RL(theta)=(1+i*exp(theta))/(1-i*exp(theta))",
+    "observable": "exact on-shell mixed-chirality two-particle amplitude S_RL(theta)",
+    "scale_map": {
+      "additive_coordinate": "theta=theta_R-theta_L=log(s/M^2)",
+      "derived_lorentz_invariant": "s=M^2 exp(theta_R-theta_L)",
+      "mass_coupling_relation": "M proportional to |delta_beta|^(5/4) for t=4",
+      "source_momenta": "p_R=(M/2)exp(theta_R), p_L=-(M/2)exp(-theta_L)"
+    },
+    "source_formula": "S_RL(theta)=-tanh(theta/2-i*pi/4)",
+    "theory": "unitary minimal-model flow M(4,5) to M(3,4) driven by Phi_13"
+  },
+  "claim_boundary": [
+    "The exact marked quotient identity is an audit derivation from a source formula, not a source-defined response composition law.",
+    "The source's Yang-Baxter equation composes pairwise scattering operators in a multiparticle consistency relation, not two RG responses.",
+    "The complex unit-circle amplitude is not silently identified with Paper V's real response interval or with a running coupling.",
+    "No physical D-prime derivation, 4D scattering transfer, cosmology, UV completion, RH result, or abc result is claimed."
+  ],
+  "induced_composition_control": {
+    "absolute_error": 1.5700924586837752e-16,
+    "audit_identity": "S_RL(0)=i",
+    "composed_amplitude": [
+      -0.8336546070121552,
+      0.5522861542782047
+    ],
+    "definition": "C_induced(S1,S2)=R_inverse(R(S1)*R(S2))",
+    "expected_S_of_theta_sum": [
+      -0.8336546070121551,
+      0.5522861542782048
+    ],
+    "status": "EXACT_BUT_AUDIT_INDUCED__NOT_A_SOURCE_DEFINED_PHYSICAL_RESPONSE_LAW",
+    "theta_inputs": [
+      -0.7,
+      1.9
+    ]
+  },
+  "marked_projective_audit": {
+    "algebraic_projective_identity_pass": true,
+    "audit_mark": {
+      "response": [
+        0.0,
+        1.0
+      ],
+      "theta": 0.0
+    },
+    "exact_identity": "R(S_RL(theta))=exp(theta)=s/M^2",
+    "maximum_sample_error": 1.4778600167870026e-12,
+    "normalized_ratio": "R(S)=i*(1-S)/(1+S)",
+    "oriented_endpoints": {
+      "b_minus": "+1",
+      "b_plus": "-1"
+    },
+    "physical_Dprime_pass": false,
+    "samples": [
+      {
+        "amplitude": [
+          0.9999877116507956,
+          0.004957473893560379
+        ],
+        "amplitude_modulus": 1.0,
+        "marked_ratio": [
+          0.0024787521766663585,
+          -7.431867079209231e-18
+        ],
+        "ratio_absolute_error": 7.431867079209231e-18,
+        "s_over_M_squared": 0.0024787521766663585,
+        "theta": -6.0
+      },
+      {
+        "amplitude": [
+          0.9640275800758168,
+          0.2658022288340798
+        ],
+        "amplitude_modulus": 0.9999999999999999,
+        "marked_ratio": [
+          0.13533528323661273,
+          3.469446951953614e-17
+        ],
+        "ratio_absolute_error": 4.443059973708341e-17,
+        "s_over_M_squared": 0.1353352832366127,
+        "theta": -2.0
+      },
+      {
+        "amplitude": [
+          -0.0,
+          0.9999999999999999
+        ],
+        "amplitude_modulus": 0.9999999999999999,
+        "marked_ratio": [
+          1.0,
+          1.1102230246251568e-16
+        ],
+        "ratio_absolute_error": 1.1102230246251568e-16,
+        "s_over_M_squared": 1.0,
+        "theta": 0.0
+      },
+      {
+        "amplitude": [
+          -0.9051482536448664,
+          0.42509603494228043
+        ],
+        "amplitude_modulus": 0.9999999999999999,
+        "marked_ratio": [
+          4.481689070338065,
+          6.219592993875291e-16
+        ],
+        "ratio_absolute_error": 1.0842943674646834e-15,
+        "s_over_M_squared": 4.4816890703380645,
+        "theta": 1.5
+      },
+      {
+        "amplitude": [
+          -0.999909204262595,
+          0.013475282221304551
+        ],
+        "amplitude_modulus": 0.9999999999999999,
+        "marked_ratio": [
+          148.41315910257666,
+          1.4767664185475963e-12
+        ],
+        "ratio_absolute_error": 1.4778600167870026e-12,
+        "s_over_M_squared": 148.4131591025766,
+        "theta": 5.0
+      }
+    ]
+  },
+  "physical_composition_gate": {
+    "category_error_blocked": "pairwise operator factorization and rapidity-difference consistency are not composition of two scale responses",
+    "missing_statement": "a binary law taking two response amplitudes to S_RL(theta1+theta2)",
+    "pass": false,
+    "source_interpretation": "Yang-Baxter consistency for a three-particle state",
+    "source_law": "S12(theta12) S13(theta13) S23(theta23) = S23(theta23) S13(theta13) S12(theta12)"
+  },
+  "run_date": "2026-08-26",
+  "schema_version": "1.0.0",
+  "search_contract": {
+    "excluded_reuse": [
+      "local six-source quadratic-gravity corpus",
+      "Bjorken effective-charge CSR transitivity as a physical response law",
+      "2D Yang-Mills area composition as 4D scattering or RG time",
+      "V1 FQHE boundary-conductance family",
+      "V1 massive O(N) and quantum-graph composition controls",
+      "RH project",
+      "abc project"
+    ],
+    "new_source_family": "massless factorized scattering on an exact 1+1D RG flow"
+  },
+  "source_registry": {
+    "FENDLEY_SALEUR_ZAMOLODCHIKOV_1993": {
+      "citation": "Fendley, Saleur, and Zamolodchikov, Massless Flows II: the exact S-matrix approach, International Journal of Modern Physics A 8 (1993) 5751-5778",
+      "doi": "https://doi.org/10.1142/S0217751X93002277",
+      "kind": "external_primary",
+      "supports": [
+        "exact massless minimal-model S matrices and nonperturbative TBA c-function",
+        "mass/rapidity scale map and M proportional to |delta_beta|^((t+1)/4)",
+        "Yang-Baxter factorization equation (2.2)",
+        "t=4 formula S_LL=1 and S_RL=-tanh(theta/2-i*pi/4)"
+      ],
+      "url": "https://arxiv.org/abs/hep-th/9304051"
+    }
+  },
+  "status": "EXACT_MARKED_PROJECTIVE_AMPLITUDE_IDENTITY__PHYSICAL_C_AND_RUNNING_COUPLING_NOT_SOURCE_DEFINED",
+  "summary": {
+    "algebraic_projective_near_hit_count": 1,
+    "claim_upgrade_count": 0,
+    "complete_physical_candidate_count": 0,
+    "physical_composition_gate_open_count": 1,
+    "physical_dprime_closed": false,
+    "real_response_transfer_gate_open_count": 1,
+    "running_coupling_response_gate_open_count": 1,
+    "screened_new_source_families": 1
+  },
+  "todo_source": "CRM-V TODO.md:95-102"
+}

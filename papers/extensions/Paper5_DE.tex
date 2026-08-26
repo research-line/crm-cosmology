@@ -336,6 +336,18 @@ Ein exakter physikalischer Nahkandidat verschärft diese Grenze, ohne sie zu sch
 Die koeffizientenunabhängige Abweichung ist ein quellenseitiger asymptotischer D'-Fehlschlag. Das exakte Objekt ist außerdem eine impulsabhängige $2\times2$-Kink/Antikink-Rand-S-Matrix, während $G$ ein durch die thermodynamische Bethe-Ansatz-Lösung gewichtetes Integral einer Transmissionswahrscheinlichkeit ist \cite{GhoshalZamolodchikov1994,FendleyLudwigSaleur1995}. Die exakte Sternprodukt-Komposition vollständiger unitärer Streumatrizen \cite{KostrykinSchrader2001} liefert daher kein binäres Skalar-Gesetz $C(G_1,G_2)$: Von $G$ verworfene Phasen- und Kanalinformation kann die zusammengesetzte Transmission ändern. Dieses Audit liefert weder das fehlende physikalische D'-Gesetz noch einen kosmologischen oder vierdimensionalen UV-Transfer.
 \end{remark}
 
+\begin{remark}[Nahkandidat einer masselosen RG-Fluss-Amplitude]
+Die exakte masselose Streubeschreibung des Flusses vom trikritischen zum kritischen Ising-Modell liefert einen schärferen algebraischen Nahkandidaten \cite{FendleySaleurZamolodchikov1993}. Für den gemischten Rechts--Links-Kanal gilt
+\[
+ \begin{aligned}
+ S_{RL}(\theta)&=-\tanh(\theta/2-i\pi/4),\\
+                &=\frac{1+i e^\theta}{1-i e^\theta},\\
+ \theta&=\log(s/M^2),
+ \end{aligned}
+\]
+mit den endlichen Grenzwerten $S_{RL}\to+1$ und $-1$. Markiert man $S_{RL}(0)=i$, ergibt sich die exakte Identität $i(1-S_{RL})/(1+S_{RL})=e^\theta$. Die Markierung und das daraus folgende Gesetz $S(\theta_1)\mathbin{C}_{\rm ind}S(\theta_2)=S(\theta_1+\theta_2)$ werden jedoch erst durch dieses Audit induziert. Die quellenseitig definierte Faktorisierung ist stattdessen das Yang--Baxter-Produkt paarweiser Streuoperatoren in einem Mehrteilchenzustand; sie definiert weder eine binäre RG-Antwortkomposition noch $i$ als deren physikalische Identität. Außerdem liegt $S_{RL}$ auf dem komplexen Einheitskreis statt im erklärten reellen Paper-V-Antwortintervall, und die quellenseitige Kopplungs-Massen-Abbildung samt TBA-Übergang identifiziert keine laufende skalare Kopplung mit dieser Amplitude. Der exakte markierte Quotient schließt daher das physikalische D' nicht und liefert keinen vierdimensionalen oder kosmologischen Transfer.
+\end{remark}
+
 \textit{Physikalischer Gehalt von D.} Axiom~D verlangt Selbstkonsistenz der Antwort unter aufeinanderfolgenden Skalentransformationen. Das spiegelt die Halbgruppeneigenschaft von Renormierungsgruppen-Abbildungen \cite{WilsonKogut1974}; ein struktureller RG-Transfer liegt erst vor, wenn die Antwortprojektion den Homomorphismus~\eqref{eq:rg_response_homomorphism} erfüllt.
 
 Das Kompositionsgesetz~\eqref{eq:composition} kodiert die Anforderung, dass die Theorie \textit{skala-kohärent} im folgenden präzisen Sinne sein muss: die Antwortfunktion $S_T$ ist ein Homomorphismus von der additiven Struktur des Kontrollparameters zur Kompositionsalgebra von Antworten; d.h. keine bevorzugte Skala existiert, auf der diese Homomorphismus-Eigenschaft abbricht oder ihren Charakter ändert. Die absorbierende Randbedingung $\mathcal{C}(S, S_{\max}) = S_{\max}$ spiegelt die Tatsache, dass vollständig gesättigte Geometrie nicht weiter geordnet werden kann -- sie ist ein Fixpunkt.
@@ -1253,6 +1265,12 @@ V.~Kostrykin \& R.~Schrader (2001).
 The generalized star product and the factorization of scattering matrices on graphs.
 \textit{Journal of Mathematical Physics}, 42, 1563--1598.
 DOI: 10.1063/1.1354641. arXiv:math-ph/0008022.
+
+\bibitem{FendleySaleurZamolodchikov1993}
+P.~Fendley, H.~Saleur, \& A.~B.~Zamolodchikov (1993).
+Massless flows II: The exact S-matrix approach.
+\textit{International Journal of Modern Physics A}, 8, 5751--5778.
+DOI: 10.1142/S0217751X93002277. arXiv:hep-th/9304051.
 
 \bibitem{Selberg1956}
 A.~Selberg (1956).

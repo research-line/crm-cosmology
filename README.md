@@ -9,7 +9,7 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![CI](https://github.com/research-line/crm-cosmology/actions/workflows/ci.yml/badge.svg)](https://github.com/research-line/crm-cosmology/actions/workflows/ci.yml)
-[![Tests](https://img.shields.io/badge/Tests-93%20passed-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/Tests-101%20passed-brightgreen.svg)](tests/)
 [![Open Science](https://img.shields.io/badge/Open--Science-Reproducible-green.svg)](https://github.com/research-line/crm-cosmology)
 [![LLM Indexing](https://img.shields.io/badge/LLM--Indexing-llms.txt-purple.svg)](llms.txt)
 
@@ -215,6 +215,20 @@ the lost phase information. Reproduce both gates with:
 ```bash
 python scripts/paper5/dprime_external_ir_safe_composition_gate.py
 python -m pytest tests/test_dprime_external_ir_safe_composition_gate.py -q
+```
+
+The follow-up
+[massless RG-flow scattering audit](research/crm-v/CRM5_DPRIME_IR_SAFE_EXACT_COMPOSITION_SOURCE_SEARCH_V2_2026-08-26.md)
+tests one new exact source family. The tricritical-Ising-to-Ising amplitude has
+the exact marked quotient `i(1-S)/(1+S)=exp(theta)`, but the corresponding
+binary response operation is audit-induced: the source defines Yang--Baxter
+factorization of pairwise scattering operators, not composition of two RG
+responses. Its complex response and missing running-coupling identification
+keep physical D' open. Reproduce the source-bound gate with:
+
+```bash
+python scripts/paper5/dprime_massless_rg_scattering_gate.py
+python -m pytest tests/test_dprime_massless_rg_scattering_gate.py -q
 ```
 
 The resulting
