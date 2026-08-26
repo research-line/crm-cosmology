@@ -45,6 +45,7 @@ STATUS_VOCABULARY = (
     "MODEL_BOUND_DPRIME_FAIL__SOURCE_PHYSICS_DEBATED",
     "MATHEMATICAL_REPARAMETRIZATION_PASS__NOT_PHYSICAL_TIME",
     "FULL_2D_LARGE_N_TRAJECTORY__R_PROJECTION_DPRIME_FAIL__NO_EXACT_C",
+    "EXACT_IR_FINITE_TRANSPORT_DPRIME_FAIL__SCALAR_C_NOT_SOURCE_DEFINED",
 )
 
 TARGET_TYPES = ("analytic_control", "synthetic_control", "source_candidate")
@@ -132,6 +133,30 @@ SOURCE_REGISTRY = {
         "url": "https://doi.org/10.1103/6gtx-j455",
         "arxiv": "https://arxiv.org/abs/2510.18733",
         "locator": "main Eq. (2); Supplemental Eqs. (9), (22)-(26)",
+        "verified_date": RUN_DATE,
+    },
+    "FENDLEY_LUDWIG_SALEUR_1995": {
+        "kind": "external_primary",
+        "citation": "Fendley, Ludwig, and Saleur, Exact conductance through point contacts in the nu=1/3 fractional quantum Hall effect, Physical Review Letters 74 (1995)",
+        "url": "https://doi.org/10.1103/PhysRevLett.74.3005",
+        "arxiv": "https://arxiv.org/abs/cond-mat/9408068",
+        "locator": "exact conductance, boundary S matrix, T_B scaling, and endpoint powers 4 and 4/3",
+        "verified_date": RUN_DATE,
+    },
+    "GHOSHAL_ZAMOLODCHIKOV_1994": {
+        "kind": "external_primary",
+        "citation": "Ghoshal and Zamolodchikov, Boundary S-matrix and boundary state in two-dimensional integrable quantum field theory, International Journal of Modern Physics A 9 (1994)",
+        "url": "https://doi.org/10.1142/S0217751X94001552",
+        "arxiv": "https://arxiv.org/abs/hep-th/9306002",
+        "locator": "factorizable boundary S matrices and boundary sine-Gordon reflection structure",
+        "verified_date": RUN_DATE,
+    },
+    "KOSTRYKIN_SCHRADER_2001": {
+        "kind": "external_primary",
+        "citation": "Kostrykin and Schrader, The generalized star product and the factorization of scattering matrices on graphs, Journal of Mathematical Physics 42 (2001)",
+        "url": "https://doi.org/10.1063/1.1354641",
+        "arxiv": "https://arxiv.org/abs/math-ph/0008022",
+        "locator": "exact generalized-star-product composition of full unitary scattering matrices",
         "verified_date": RUN_DATE,
     },
 }
@@ -237,13 +262,17 @@ def build_entries(repo_root: Path | None = None) -> list[LedgerEntry]:
     root = repo_root or _repo_root()
     ym_path = root / "results" / "paper5" / "DPRIME_2D_YM_HEAT_KERNEL_GATE_2026-08-26.json"
     lqa_path = root / "results" / "paper5" / "DPRIME_LQA_2D_TRAJECTORY_RPROJ_GATE_2026-08-26.json"
+    transport_path = root / "results" / "paper5" / "DPRIME_EXTERNAL_IR_SAFE_COMPOSITION_GATE_2026-08-26.json"
     ym = _read_json(ym_path)
     lqa = _read_json(lqa_path)
+    transport = _read_json(transport_path)
 
     if ym["status"] != "EXACT_GAUGE_RESPONSE_COMPOSITION__DPRIME_FAIL__NOT_4D_SCATTERING_OR_RG":
         raise ValueError("2D Yang-Mills evidence status drifted")
     if lqa["status"] != "FULL_2D_LARGE_N_TRAJECTORY__R_PROJECTION_DPRIME_FAIL__NO_EXACT_C":
         raise ValueError("LQA two-coupling evidence status drifted")
+    if transport["status"] != "EXACT_IR_FINITE_TRANSPORT_DPRIME_FAIL__SCALAR_C_NOT_SOURCE_DEFINED":
+        raise ValueError("external transport evidence status drifted")
 
     entries = _legacy_entries()
     entries.extend(
@@ -416,6 +445,37 @@ def build_entries(repo_root: Path | None = None) -> list[LedgerEntry]:
                 result_artifact=(
                     "results/paper5/"
                     "DPRIME_LQA_2D_TRAJECTORY_RPROJ_GATE_2026-08-26.json"
+                ),
+            ),
+            LedgerEntry(
+                target="fqhe_nu_1_3_point_contact_conductance",
+                evidence_source=[
+                    "FENDLEY_LUDWIG_SALEUR_1995",
+                    "GHOSHAL_ZAMOLODCHIKOV_1994",
+                    "KOSTRYKIN_SCHRADER_2001",
+                ],
+                model_dependency="exact_nu_1_3_boundary_sine_Gordon_TBA_transport_model",
+                preregistered_controls=[
+                    "fixed_zero_and_e_squared_over_3h_conductance_boundaries",
+                    "fixed_t_equals_log_T_over_TB",
+                    "source_endpoint_powers_4_and_4_over_3",
+                    "scalar_transmission_closure_counterexample",
+                ],
+                status=str(transport["status"]),
+                target_type="source_candidate",
+                dprime_outcome="fail_model_bound",
+                composition_status="exact_boundary_S_matrix__conductance_integral_has_no_source_defined_binary_law",
+                boundary_status="physical_finite_distinct__zero_to_e_squared_over_3h",
+                scale_status="additive_log_T_over_TB__boundary_RG_crossover",
+                metric={
+                    "name": "projective_generator_endpoint_limits",
+                    "lower_limit": transport["dprime_endpoint_gate"]["lower_limit"],
+                    "upper_limit": transport["dprime_endpoint_gate"]["upper_limit"],
+                    "absolute_gap": transport["dprime_endpoint_gate"]["absolute_gap"],
+                },
+                result_artifact=(
+                    "results/paper5/"
+                    "DPRIME_EXTERNAL_IR_SAFE_COMPOSITION_GATE_2026-08-26.json"
                 ),
             ),
         ]

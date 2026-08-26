@@ -36,7 +36,7 @@ def test_ledger_migrates_every_prototype_row_and_all_later_candidates():
     targets = {entry["target"] for entry in ledger["entries"]}
 
     assert ledger["summary"]["prototype_rows_migrated"] == len(LEGACY_RESIDUAL_CASES) + 1
-    assert ledger["summary"]["entry_count"] == 13
+    assert ledger["summary"]["entry_count"] == 14
     assert {
         "canonical_arctanh",
         "scaled_2_arctanh",
@@ -51,6 +51,7 @@ def test_ledger_migrates_every_prototype_row_and_all_later_candidates():
         "lqa_largeN_xi_in_log_mu",
         "lqa_largeN_xi_in_log_log_mu",
         "lqa_full_lambda_xi_trajectory_tensor_r_projection",
+        "fqhe_nu_1_3_point_contact_conductance",
     } == targets
 
 
@@ -111,10 +112,15 @@ def test_current_result_artifacts_are_synchronized_into_ledger():
     lqa_source = json.loads(
         (REPO_ROOT / "results/paper5/DPRIME_LQA_2D_TRAJECTORY_RPROJ_GATE_2026-08-26.json").read_text(encoding="utf-8")
     )
+    transport_source = json.loads(
+        (REPO_ROOT / "results/paper5/DPRIME_EXTERNAL_IR_SAFE_COMPOSITION_GATE_2026-08-26.json").read_text(encoding="utf-8")
+    )
 
     assert by_target["u1_2d_yang_mills_wilson_loop_area_response"]["status"] == ym_source["status"]
     assert by_target["lqa_full_lambda_xi_trajectory_tensor_r_projection"]["status"] == lqa_source["status"]
     assert by_target["lqa_full_lambda_xi_trajectory_tensor_r_projection"]["metric"]["max_full_beta_residual"] == lqa_source["maxima"]["full_vector_residual"]
+    assert by_target["fqhe_nu_1_3_point_contact_conductance"]["status"] == transport_source["status"]
+    assert by_target["fqhe_nu_1_3_point_contact_conductance"]["metric"]["absolute_gap"] == transport_source["dprime_endpoint_gate"]["absolute_gap"]
 
 
 def test_artifacts_are_deterministic_and_csv_preserves_required_columns(tmp_path):
@@ -134,7 +140,7 @@ def test_artifacts_are_deterministic_and_csv_preserves_required_columns(tmp_path
         reader = csv.DictReader(handle)
         assert reader.fieldnames[: len(REQUIRED_FIELDS)] == list(REQUIRED_FIELDS)
         rows = list(reader)
-    assert len(rows) == 13
+    assert len(rows) == 14
     assert json.loads(rows[0]["evidence_source"])
     assert json.loads(rows[0]["preregistered_controls"])
 
@@ -148,6 +154,6 @@ def test_cli_writes_schema_and_three_ledger_formats(tmp_path):
         text=True,
     )
 
-    assert "entries=13" in completed.stdout
+    assert "entries=14" in completed.stdout
     assert "physical_claim_passes=0" in completed.stdout
     assert len(list(tmp_path.iterdir())) == 4

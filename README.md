@@ -9,7 +9,7 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![CI](https://github.com/research-line/crm-cosmology/actions/workflows/ci.yml/badge.svg)](https://github.com/research-line/crm-cosmology/actions/workflows/ci.yml)
-[![Tests](https://img.shields.io/badge/Tests-67%20passed-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/Tests-75%20passed-brightgreen.svg)](tests/)
 [![Open Science](https://img.shields.io/badge/Open--Science-Reproducible-green.svg)](https://github.com/research-line/crm-cosmology)
 [![LLM Indexing](https://img.shields.io/badge/LLM--Indexing-llms.txt-purple.svg)](llms.txt)
 
@@ -172,9 +172,23 @@ full-beta diagnostics, and D' tables with:
 python scripts/paper5/dprime_lqa_2d_trajectory_gate.py
 ```
 
+The
+[external IR-safe composition search](research/crm-v/CRM5_DPRIME_EXTERNAL_IR_SAFE_COMPOSITION_SEARCH_V1_2026-08-26.md)
+identifies the exact `nu=1/3` fractional-quantum-Hall point-contact
+conductance as the strongest physical near-candidate. Its source endpoint
+powers give unequal projective-generator limits `2` and `2/3`, so D' fails.
+The exact boundary S matrix also does not define a binary law on the
+TBA-integrated scalar conductance; an exact two-scatterer control demonstrates
+the lost phase information. Reproduce both gates with:
+
+```bash
+python scripts/paper5/dprime_external_ir_safe_composition_gate.py
+python -m pytest tests/test_dprime_external_ir_safe_composition_gate.py -q
+```
+
 The resulting
 [journal evidence ledger](research/crm-v/CRM5_DPRIME_EVIDENCE_LEDGER_JOURNAL_V1_2026-08-26.md)
-migrates the seven-row D' prototype and binds six later candidates to a frozen
+migrates the seven-row D' prototype and binds seven later candidates to a frozen
 source registry and JSON Schema. Its analytic controls, synthetic law,
 source-incomplete case, model-bound failures, and nonphysical
 reparametrization remain separate status classes; no row closes physical D'.

@@ -1,0 +1,144 @@
+{
+  "audit_id": "CRM5-DPRIME-EXTERNAL-IR-SAFE-COMPOSITION-SEARCH-V1",
+  "claim_boundary": [
+    "The D-prime failure is source-bound to the nu=1/3 point-contact conductance and t=log(T/T_B).",
+    "The exact boundary S matrix is not silently identified with the integrated scalar conductance.",
+    "The O(N) and graph results are composition controls, not four-dimensional quantum-gravity candidates.",
+    "No physical D-prime derivation, cosmology, UV completion, RH result, or abc result is claimed."
+  ],
+  "dprime_endpoint_gate": {
+    "absolute_gap": 1.3333333333333335,
+    "constant_generator_required": true,
+    "dprime_pass": false,
+    "generator": "beta_x/(1-x^2) with beta_x=dx/dt",
+    "lower_limit": 2.0,
+    "lower_limit_formula": "p_minus/2",
+    "status": "SOURCE_ASYMPTOTIC_DPRIME_FAIL",
+    "upper_limit": 0.6666666666666666,
+    "upper_limit_formula": "p_plus/2"
+  },
+  "external_composition_controls": [
+    {
+      "class": "factorized O(N) sigma-model scattering",
+      "kill_gate": "multiparticle operator factorization is not a closed real scalar response law with marked absorbing boundaries",
+      "positive": "massive asymptotically-free 1+1D theory with an exact factorized S matrix",
+      "status": "EXACT_AMPLITUDE_COMPOSITION_ONLY"
+    },
+    {
+      "class": "quantum-graph generalized star product",
+      "kill_gate": "scalar transmission loses phase/channel data and the source supplies no coupling running or RG response path",
+      "positive": "exact composition rule for full unitary on-shell scattering matrices",
+      "status": "EXACT_MATRIX_COMPOSITION__SCALAR_AND_RG_GATES_FAIL"
+    }
+  ],
+  "primary_near_candidate": {
+    "additive_control": "t=log(T/T_B)",
+    "boundary_responses": {
+      "finite_and_distinguishable": true,
+      "t_to_minus_infinity": "G/G0 -> 0 and x -> -1",
+      "t_to_plus_infinity": "G/G0 -> 1 and x -> +1"
+    },
+    "boundary_scale": "T_B proportional to lambda^(1/(1-nu))",
+    "candidate_id": "FQHE_NU_1_3_POINT_CONTACT_CONDUCTANCE",
+    "composition_boundary": {
+      "exact_object": "momentum-dependent 2x2 kink/antikink boundary S matrix",
+      "forbidden_substitution": "one-by-one quasiparticle scattering or S-matrix unitarity is not a binary conductance law",
+      "missing_object": "a closed binary law C(G1,G2) for the conductance itself",
+      "physical_observable_construction": "G is a TBA-weighted momentum integral of |S_++|^2 and occupation factors"
+    },
+    "criteria": {
+      "IR_finite_endpoints": "SUPPORTED_IN_THE_NU_1_3_TRANSPORT_MODEL",
+      "declared_boundary_RG_crossover": "SUPPORTED",
+      "exact_binary_scalar_conductance_composition": "NOT_SOURCE_DEFINED",
+      "finite_distinct_boundaries": "SUPPORTED",
+      "gauge_status": "PHYSICAL_CONDUCTANCE__NO_GAUGE_FIXING_PARAMETER__NO_SEPARATE_GAUGE_THEOREM_CLAIMED",
+      "physical_transport_observable": "SUPPORTED",
+      "source_exact_nonperturbative_scaling_function": "SUPPORTED"
+    },
+    "fixed_normalization": "x=2*G/G0-1 with G0=e^2/(3h)",
+    "observable": "linear point-contact conductance G(T/T_B) at filling fraction nu=1/3",
+    "physical_scope": "integrable boundary sine-Gordon description of fractional-quantum-Hall edge transport",
+    "source_asymptotics": {
+      "coefficient_independence": "A and B cancel from the endpoint generator limits",
+      "lower_response": "G/G0 ~ A*(T/T_B)^4",
+      "lower_response_power": 4.0,
+      "upper_deficit": "1-G/G0 ~ B*(T_B/T)^(4/3)",
+      "upper_deficit_power": 1.3333333333333333
+    }
+  },
+  "run_date": "2026-08-26",
+  "scalar_composition_counterexample": {
+    "conclusion": "no phase-blind binary law C(T1,T2) can reproduce exact S-matrix composition",
+    "individual_transmission_probabilities": [
+      0.5,
+      0.5
+    ],
+    "phase_half_pi_total_transmission": 1.0,
+    "phase_zero_total_transmission": 0.1111111111111111,
+    "same_scalar_inputs_different_output": true,
+    "source_class": "exact serial composition of full unitary scattering matrices"
+  },
+  "schema_version": "1.0.0",
+  "search_contract": {
+    "excluded_reuse": [
+      "local six-source quadratic-gravity corpus",
+      "Bjorken effective-charge CSR transitivity as a physical response law",
+      "2D Yang-Mills area composition as 4D scattering or RG time",
+      "RH project",
+      "abc project"
+    ],
+    "required": [
+      "physical gauge-independent or gauge-invariant scattering/transport observable",
+      "two finite distinguishable source-predeclared boundary responses",
+      "independently source-defined exact nonperturbative binary response composition",
+      "coupling running or source-defined RG crossover on a declared additive scale",
+      "IR-finite validity window"
+    ]
+  },
+  "source_registry": {
+    "FENDLEY_LUDWIG_SALEUR_1995": {
+      "citation": "Fendley, Ludwig, and Saleur, Exact Conductance through Point Contacts in the nu=1/3 Fractional Quantum Hall Effect, Physical Review Letters 74 (1995) 3005",
+      "doi": "https://doi.org/10.1103/PhysRevLett.74.3005",
+      "kind": "external_primary",
+      "supports": "exact conductance, boundary S matrix, T_B scaling, finite endpoints, and powers 4 and 4/3",
+      "url": "https://arxiv.org/abs/cond-mat/9408068"
+    },
+    "GHOSHAL_ZAMOLODCHIKOV_1994": {
+      "citation": "Ghoshal and Zamolodchikov, Boundary S-Matrix and Boundary State in Two-Dimensional Integrable Quantum Field Theory, International Journal of Modern Physics A 9 (1994) 3841",
+      "doi": "https://doi.org/10.1142/S0217751X94001552",
+      "kind": "external_primary",
+      "supports": "factorizable boundary S matrices and boundary sine-Gordon reflection structure",
+      "url": "https://arxiv.org/abs/hep-th/9306002"
+    },
+    "KOSTRYKIN_SCHRADER_2001": {
+      "citation": "Kostrykin and Schrader, The Generalized Star Product and the Factorization of Scattering Matrices on Graphs, Journal of Mathematical Physics 42 (2001) 1563",
+      "doi": "https://doi.org/10.1063/1.1354641",
+      "kind": "external_primary",
+      "supports": "exact generalized-star-product composition of full unitary scattering matrices",
+      "url": "https://arxiv.org/abs/math-ph/0008022"
+    },
+    "MARINO_REIS_2020": {
+      "citation": "Marino and Reis, Renormalons in integrable field theories, JHEP 04 (2020) 160",
+      "doi": "https://doi.org/10.1007/JHEP04(2020)160",
+      "kind": "external_primary",
+      "supports": "O(N) beta-function coefficients, running scale, and exact charged-channel S matrix",
+      "url": "https://arxiv.org/abs/1909.12134"
+    },
+    "ZAMOLODCHIKOV_ZAMOLODCHIKOV_1979": {
+      "citation": "A. B. Zamolodchikov and Al. B. Zamolodchikov, Factorized S-matrices in two dimensions as the exact solutions of certain relativistic quantum field theory models, Annals of Physics 120 (1979) 253",
+      "kind": "external_primary",
+      "supports": "exact multiparticle factorization and the massive asymptotically-free O(N) sigma-model S matrix",
+      "url": "https://doi.org/10.1016/0003-4916(79)90391-9"
+    }
+  },
+  "status": "EXACT_IR_FINITE_TRANSPORT_DPRIME_FAIL__SCALAR_C_NOT_SOURCE_DEFINED",
+  "summary": {
+    "claim_upgrade_count": 0,
+    "complete_candidate_count": 0,
+    "physical_dprime_closed": false,
+    "scalar_composition_gate_open_count": 1,
+    "screened_external_classes": 3,
+    "source_bound_dprime_fail_count": 1
+  },
+  "todo_source": "CRM-V TODO.md:95-102"
+}

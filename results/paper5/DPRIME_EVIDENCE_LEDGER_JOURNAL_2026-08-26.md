@@ -2,9 +2,9 @@
 
 - Ledger: `CRM5-DPRIME-EVIDENCE-LEDGER-JOURNAL-V1`
 - Schema: `1.0.0`
-- Entries: `13`
+- Entries: `14`
 - Migrated prototype rows: `7`
-- Source candidates: `6`
+- Source candidates: `7`
 - Physical claim passes: `0`
 
 ## Required journal fields
@@ -28,6 +28,7 @@
 | `lqa_largeN_xi_in_log_mu` | `LIU_QUINTIN_AFSHORDI_2026; CRM5_GENERATOR_LEDGER_2026` | `large_N_one_loop_xi_projection__debated_physical_beta_functions` | `logistic_tanh_positive_control; cubic_abel_warp_negative_control; fixed_t_equals_log_mu_over_mu0` | `MODEL_BOUND_DPRIME_FAIL__SOURCE_PHYSICS_DEBATED` | `fail_model_bound` |
 | `lqa_largeN_xi_in_log_log_mu` | `LIU_QUINTIN_AFSHORDI_2026; CRM5_GENERATOR_LEDGER_2026` | `same_large_N_xi_path__second_logarithm_reparametrization` | `same_source_path_as_standard_time_fail; tau_equals_log_log_mu_over_mu0; physical_time_justification_required` | `MATHEMATICAL_REPARAMETRIZATION_PASS__NOT_PHYSICAL_TIME` | `pass_reparametrization_not_physical` |
 | `lqa_full_lambda_xi_trajectory_tensor_r_projection` | `LIU_QUINTIN_AFSHORDI_2026` | `preregistered_large_N_two_coupling_path_plus_FLRW_tensor_r_projection` | `two_coordinate_retention; reduced_and_full_beta_residuals; six_frozen_b_Nm_cases; source_tensor_r_anchor` | `FULL_2D_LARGE_N_TRAJECTORY__R_PROJECTION_DPRIME_FAIL__NO_EXACT_C` | `fail_model_bound` |
+| `fqhe_nu_1_3_point_contact_conductance` | `FENDLEY_LUDWIG_SALEUR_1995; GHOSHAL_ZAMOLODCHIKOV_1994; KOSTRYKIN_SCHRADER_2001` | `exact_nu_1_3_boundary_sine_Gordon_TBA_transport_model` | `fixed_zero_and_e_squared_over_3h_conductance_boundaries; fixed_t_equals_log_T_over_TB; source_endpoint_powers_4_and_4_over_3; scalar_transmission_closure_counterexample` | `EXACT_IR_FINITE_TRANSPORT_DPRIME_FAIL__SCALAR_C_NOT_SOURCE_DEFINED` | `fail_model_bound` |
 
 ## Source registry
 
@@ -43,6 +44,9 @@
 | `WITTEN_1991` | `external_primary` | [Witten, On quantum gauge theories in two dimensions, Communications in Mathematical Physics 141 (1991)](https://doi.org/10.1007/BF02100009) | gauge-invariant Wilson-line framework |
 | `NGUYEN_2018` | `external_primary` | [Nguyen, Quantum Yang-Mills theory in two dimensions: exact versus perturbative, Communications in Mathematical Physics 357 (2018)](https://doi.org/10.1007/s00220-017-2942-6) | continuum Wilson-loop construction via group heat kernels |
 | `LIU_QUINTIN_AFSHORDI_2026` | `external_primary` | [Liu, Quintin, and Afshordi, Ultraviolet Completion of the Big Bang in Quadratic Gravity, Physical Review Letters 136, 111501 (2026)](https://doi.org/10.1103/6gtx-j455) | main Eq. (2); Supplemental Eqs. (9), (22)-(26) |
+| `FENDLEY_LUDWIG_SALEUR_1995` | `external_primary` | [Fendley, Ludwig, and Saleur, Exact conductance through point contacts in the nu=1/3 fractional quantum Hall effect, Physical Review Letters 74 (1995)](https://doi.org/10.1103/PhysRevLett.74.3005) | exact conductance, boundary S matrix, T_B scaling, and endpoint powers 4 and 4/3 |
+| `GHOSHAL_ZAMOLODCHIKOV_1994` | `external_primary` | [Ghoshal and Zamolodchikov, Boundary S-matrix and boundary state in two-dimensional integrable quantum field theory, International Journal of Modern Physics A 9 (1994)](https://doi.org/10.1142/S0217751X94001552) | factorizable boundary S matrices and boundary sine-Gordon reflection structure |
+| `KOSTRYKIN_SCHRADER_2001` | `external_primary` | [Kostrykin and Schrader, The generalized star product and the factorization of scattering matrices on graphs, Journal of Mathematical Physics 42 (2001)](https://doi.org/10.1063/1.1354641) | exact generalized-star-product composition of full unitary scattering matrices |
 
 ## Interpretation guard
 
