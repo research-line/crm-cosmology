@@ -1,0 +1,127 @@
+{
+  "analytic_boundaries": {
+    "composition_absorber": 1.0,
+    "composition_identity": -1.0,
+    "x_at_infinite_area_limit": 1.0,
+    "x_at_zero_area": -1.0
+  },
+  "candidate": {
+    "additive_parameter": "supported_area",
+    "candidate_id": "CRM5-DPRIME-2DYM-HEAT-KERNEL-CANDIDATE-V1",
+    "claim_pass": false,
+    "dprime_projective_quotient": "fail_nonconstant",
+    "exact_binary_response_composition": "supported",
+    "finite_distinct_response_boundaries": "supported",
+    "gauge_invariant_physical_response": "supported",
+    "observable": "U(1) Wilson-loop expectation on the two-dimensional plane",
+    "renormalization_group_running": "not_supported_dimensionful_2d_coupling",
+    "scattering_observable": "not_supported",
+    "theory_scope": "pure 2D U(1) Yang--Mills theory",
+    "transfer_to_paper5_physical_dprime": "not_bookable"
+  },
+  "checks": {
+    "composition_associative": true,
+    "dprime_pass": false,
+    "dprime_quotient_nonconstant": true,
+    "finite_distinct_response_boundaries": true,
+    "normalized_composition": true,
+    "paper5_claim_pass": false,
+    "wilson_semigroup": true
+  },
+  "claim_boundary": [
+    "The exact result is for pure two-dimensional U(1) Yang--Mills theory.",
+    "Area is additive but is not a four-dimensional RG energy scale.",
+    "The Wilson loop is a gauge response, not a scattering observable.",
+    "The result does not derive physical D' for Paper V or CRM."
+  ],
+  "dprime_witness": {
+    "absorbing_boundary_limit": 0.5,
+    "at_x_0": 1.0,
+    "at_x_0_5": 0.6666666666666666,
+    "identity_boundary_limit": "diverges_as_x_to_minus_1"
+  },
+  "formulae": {
+    "composition": "C(x,y) = 1 - (1-x)*(1-y)/2",
+    "dprime_quotient": "beta_x/(1-x^2) = kappa/(1+x)",
+    "generator": "beta_x = dx/dA = kappa*(1-x)",
+    "kappa": "e_squared * nu_squared / 2",
+    "normalization": "x(A) = 1 - 2*w(A)",
+    "wilson_response": "w(A) = exp(-kappa*A)"
+  },
+  "parameters": {
+    "areas": [
+      0.0,
+      0.25,
+      0.5,
+      1.0,
+      2.0,
+      4.0
+    ],
+    "kappa": 1.0
+  },
+  "rows": [
+    {
+      "area": 0.0,
+      "dprime_quotient": null,
+      "generator": 2.0,
+      "normalized_response": -1.0,
+      "wilson_response": 1.0
+    },
+    {
+      "area": 0.25,
+      "dprime_quotient": 2.260405832093899,
+      "generator": 1.5576015661428098,
+      "normalized_response": -0.5576015661428098,
+      "wilson_response": 0.7788007830714049
+    },
+    {
+      "area": 0.5,
+      "dprime_quotient": 1.2707470412683992,
+      "generator": 1.2130613194252668,
+      "normalized_response": -0.21306131942526685,
+      "wilson_response": 0.6065306597126334
+    },
+    {
+      "area": 1.0,
+      "dprime_quotient": 0.7909883534346632,
+      "generator": 0.7357588823428847,
+      "normalized_response": 0.26424111765711533,
+      "wilson_response": 0.36787944117144233
+    },
+    {
+      "area": 2.0,
+      "dprime_quotient": 0.5782588213748329,
+      "generator": 0.2706705664732254,
+      "normalized_response": 0.7293294335267746,
+      "wilson_response": 0.1353352832366127
+    },
+    {
+      "area": 4.0,
+      "dprime_quotient": 0.5093286801818872,
+      "generator": 0.03663127777746833,
+      "normalized_response": 0.9633687222225317,
+      "wilson_response": 0.01831563888873418
+    }
+  ],
+  "run_date": "2026-08-26",
+  "sources": [
+    {
+      "arxiv": "https://arxiv.org/abs/hep-th/9901155",
+      "citation": "Aroca and Kubyshin, Annals of Physics 283 (2000) 11-37",
+      "doi": "https://doi.org/10.1006/aphy.2000.6044",
+      "use": "heat-kernel formulation and exact U(1) plane area law"
+    },
+    {
+      "citation": "Witten, Communications in Mathematical Physics 141 (1991) 153-209",
+      "doi": "https://doi.org/10.1007/BF02100009",
+      "use": "gauge-invariant Wilson-line framework for exact 2D Yang--Mills theory"
+    },
+    {
+      "arxiv": "https://arxiv.org/abs/1508.06305",
+      "citation": "Nguyen, Communications in Mathematical Physics 357 (2018) 333-374",
+      "doi": "https://doi.org/10.1007/s00220-017-2942-6",
+      "use": "rigorous continuum Wilson-loop construction via group heat kernels"
+    }
+  ],
+  "status": "EXACT_GAUGE_RESPONSE_COMPOSITION__DPRIME_FAIL__NOT_4D_SCATTERING_OR_RG"
+}

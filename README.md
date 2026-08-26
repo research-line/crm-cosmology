@@ -9,7 +9,7 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![CI](https://github.com/research-line/crm-cosmology/actions/workflows/ci.yml/badge.svg)](https://github.com/research-line/crm-cosmology/actions/workflows/ci.yml)
-[![Tests](https://img.shields.io/badge/Tests-4%20passed-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/Tests-14%20passed-brightgreen.svg)](tests/)
 [![Open Science](https://img.shields.io/badge/Open--Science-Reproducible-green.svg)](https://github.com/research-line/crm-cosmology)
 [![LLM Indexing](https://img.shields.io/badge/LLM--Indexing-llms.txt-purple.svg)](llms.txt)
 
@@ -93,6 +93,17 @@ flowchart TD
 | VI | `papers/extensions/Paper6_EN.tex` | `papers/extensions/Paper6_DE.tex` | QG-CRM: Ultraviolet Completion via Quantum Quadratic Gravity (DRAFT) | [10.5281/zenodo.19352448](https://doi.org/10.5281/zenodo.19352448) |
 
 **Paper V -- The Saturation Theorem** identifies a conditional normal form for saturation dynamics. Axioms A--D, together with the signed interior composition assumptions, imply an Abel/collar structure; the exact tanh representative appears once the additional projective boundary quotient D' is imposed. Major QG programs motivate the macroscopic A--D structure, while D' remains an explicit diagnostic and open physical ingredient rather than a derived microscopic theorem.
+
+An exact 2D Yang--Mills heat-kernel control case is available as a
+[source-bound D' candidate audit](research/crm-v/CRM5_DPRIME_2DYM_HEAT_KERNEL_V1_2026-08-26.md).
+Its gauge-invariant Wilson-loop response has an exact associative composition,
+but its projective-boundary quotient is nonconstant. The audit therefore fails
+D' and is explicitly not transferred to 4D scattering, RG running, Paper V,
+or CRM claims. Reproduce its JSON, CSV, and Markdown evidence with:
+
+```bash
+python scripts/paper5/dprime_2d_ym_heat_kernel_gate.py
+```
 
 **Paper VI -- QG-CRM: Ultraviolet Completion** addresses an open question from Paper V: which UV completion selects k and Phi_0? It explores a proposed identification of the gamma*R^2 sector of the CRM Lagrangian with asymptotically free quantum quadratic gravity (QQG), under which inflation is generated dynamically via RG running without an inflaton field. In this draft, the Saturation Theorem is treated as the UV-IR interface. The resulting headline predictions are n_s ~ 1 - 4/(3N) ~ 0.976 and r >= 0.01, testable with Stage IV CMB experiments.
 
@@ -205,10 +216,13 @@ crm-cosmology/
     paper2/                    # Paper II: model comparison, plots
     paper3/                    # Paper III: Pantheon+, MOND, scalaron
     paper4/                    # Paper IV: galactic MOND, SPARC
+    paper5/                    # Paper V source-bound D' diagnostics
   results/                     # Cross-paper results
     paper1/                    # Paper I: MCMC summaries, chi2 results
     paper3/                    # Paper III: baryon-only, MOND posteriors
     paper4/                    # Paper IV: SPARC, BVP, rotation curves
+    paper5/                    # Paper V candidate-gate tables and reports
+  research/                    # Source-bound research audit notes
   figures/                     # Plots referenced in papers
     paper1/                    # Paper I: Cl spectra, fsigma8
     paper2/                    # Paper II: contours, tradeoffs
