@@ -276,7 +276,7 @@ induces a smooth associative composition on the open interval and gives a smooth
   q_\varepsilon(x)=e^{-2\phi_\varepsilon(x)}
   =\frac{1-x}{1+x}e^{-2\varepsilon x}.
 \]
-Thus bare smoothness of the positive saturation face places the response in an Abel-coordinate collar framework; it does not classify all smooth collars or select a unique projective coordinate. Boundary smoothness is used as an admissibility condition for the response channel. It is not derived from a UV model in this paper. The $\tanh$ normal form becomes a theorem only after the projective double-boundary quotient D' is fixed explicitly.
+Thus bare smoothness of the positive saturation face places the response in an Abel-coordinate collar framework; it does not select a unique projective coordinate. Proposition~\ref{prop:smooth_collar_classification} below classifies the smooth strict members of that framework by a boundary-defining function $q_h$. Boundary smoothness is used as an admissibility condition for the response channel. It is not derived from a UV model in this paper. The $\tanh$ normal form becomes a theorem only after the projective double-boundary quotient D' is fixed explicitly.
 \end{remark}
 
 \begin{axiom}[Projective Double-Boundary Quotient Assumption (D')]
@@ -372,7 +372,7 @@ Table~\ref{tab:proof_status_ledger} separates the logical layers of the correcte
 \begin{ruledtabular}
 \begin{tabular}{@{}llll@{}}
 \parbox[t]{0.14\textwidth}{\textbf{Layer}} & \parbox[t]{0.24\textwidth}{\textbf{Input}} & \parbox[t]{0.22\textwidth}{\textbf{Output}} & \parbox[t]{0.27\textwidth}{\textbf{Status / non-claim}} \\
-\parbox[t]{0.14\textwidth}{A--D, B', $D^\pm$} & \parbox[t]{0.24\textwidth}{Bounded, cooperative, signed one-dimensional interior composition} & \parbox[t]{0.22\textwidth}{Odd Abel coordinate and hyperbolic collar class} & \parbox[t]{0.27\textwidth}{Theorem-level, conditional on the single-channel hypotheses; not yet a unique $\tanh$ profile.} \\[0.6em]
+\parbox[t]{0.14\textwidth}{A--D, B', $D^\pm$} & \parbox[t]{0.24\textwidth}{Bounded, cooperative, signed one-dimensional interior composition} & \parbox[t]{0.22\textwidth}{Odd Abel coordinate and the smooth strict $q_h$ collar family} & \parbox[t]{0.27\textwidth}{Classified within the declared single-channel subclass; not yet a unique $\tanh$ profile.} \\[0.6em]
 \parbox[t]{0.14\textwidth}{D'} & \parbox[t]{0.24\textwidth}{Projective double-boundary quotient $R(C)=R(x)R(y)$} & \parbox[t]{0.22\textwidth}{Canonical $\tanh$ representative and velocity-addition law} & \parbox[t]{0.27\textwidth}{Additional projective assumption; treated as diagnostic, not derived here from a UV program.} \\[0.6em]
 \parbox[t]{0.14\textwidth}{QG program map} & \parbox[t]{0.24\textwidth}{LQG, asymptotic safety, holography, causal sets, CDT and NCG} & \parbox[t]{0.22\textwidth}{Compatibility pattern for A--D, $D^\pm$ and D'} & \parbox[t]{0.27\textwidth}{Motivation and filter; not a verification that any program satisfies all inputs.} \\[0.6em]
 \parbox[t]{0.14\textwidth}{CRM data anchor} & \parbox[t]{0.24\textwidth}{Existing CRM fit and monotone transition evidence} & \parbox[t]{0.22\textwidth}{Empirical motivation for using saturation dynamics} & \parbox[t]{0.27\textwidth}{Not an independent test of this theorem, because the CRM already used a $\tanh$ profile.} \\[0.6em]
@@ -409,6 +409,72 @@ Thus $F(t):=\phi(\tanh t)$ is a continuous additive function of $t=L(x)$, so $F(
 \begin{remark}[Why D' is necessary]
 The family $\phi_\varepsilon(x)=\operatorname{arctanh}(x)+\varepsilon x$ is odd, smooth and strictly increasing for small $\varepsilon$, diverges at the boundary, and induces a smooth positive saturation collar through $q_\varepsilon=e^{-2\phi_\varepsilon}$. Hence the old claim that $C^\infty$ boundary regularity alone excludes all non-$\mathrm{arctanh}$ Abel coordinates is too strong. The corrected theorem uses D' as the mathematical and physical normalization that removes this boundary-gauge freedom.
 \end{remark}
+
+\begin{proposition}[Classification of smooth strict boundary collars]
+\label{prop:smooth_collar_classification}
+Let $C\in C^\infty([0,1]^2,[0,1])$ be commutative and associative, with neutral element $0$, absorbing element $1$, and strict increase on the open positive face. Assume its interior is the positive restriction of the cancellative one-dimensional channel $D^\pm$. Define
+\[
+ a(x):=\partial_2C(x,0),
+ \qquad
+ \phi(x):=\int_0^x\frac{dt}{a(t)}.
+\]
+Then $a(1)=0$ is a simple zero: with $\kappa:=-a'(1)$ one has $\kappa>0$. Moreover,
+\[
+ q(x):=e^{-\kappa\phi(x)}
+\]
+is the unique decreasing $C^\infty$ boundary-defining diffeomorphism $[0,1]\to[1,0]$ satisfying
+\[
+ \begin{aligned}
+ q(0)&=1, & q(1)&=0,\\
+ q'(1)&\neq0, & q(C(x,y))&=q(x)q(y).
+ \end{aligned}
+\]
+Conversely, every such $q$ defines one and only one smooth strict positive collar by
+\[
+ C_q(x,y)=q^{-1}\!\bigl(q(x)q(y)\bigr).
+\]
+Relative to $q_0(x)=(1-x)/(1+x)$, the full class is parameterized uniquely as
+\[
+ \begin{aligned}
+ q_h(x)&=q_0(x)e^{-2h(x)}, & h(0)&=0,\\
+ 1+(1-x^2)h'(x)&>0.&&
+ \end{aligned}
+\]
+with $h\in C^\infty([0,1])$. Compatibility with B' is equivalent to $h$ admitting a smooth odd extension through $0$. Its normalized generator and the conjugating response chart are
+\[
+ \begin{aligned}
+ a_h(x)&=
+ \frac{(1+h'(0))(1-x^2)}{1+(1-x^2)h'(x)},\\
+ H_h&=q_0^{-1}\circ q_h.
+ \end{aligned}
+\]
+\[
+ \begin{aligned}
+ H_h(C_h(x,y))
+ &=C_0(H_h(x),H_h(y)),\\
+ C_0(x,y)&=\frac{x+y}{1+xy}.
+ \end{aligned}
+\]
+Finally, in the fixed marked response chart, D' holds if and only if $h=0$. More precisely,
+\[
+ \Delta_{D'}(x,y)
+ =2\bigl(h(x)+h(y)-h(C_h(x,y))\bigr).
+\]
+The deterministic ledger is
+\path{results/paper5/SMOOTH_COLLAR_CLASSIFICATION_GATE_2026-08-26.json}.
+\end{proposition}
+
+\begin{proof}
+The positive restriction is a smooth strict Archimedean t-conorm, whose standard continuous representation uses an additive generator unique up to positive scale \cite{MesiarovaZemankova2015}; the signed strict extension is an Abelian group in the corresponding bipolar construction \cite{Grabisch2009}. Here the boundary regularity gives the sharper statement. The identity and $D^\pm$ imply $a(0)=1$ and $a>0$ on $[0,1)$, while absorption gives $a(1)=0$. In Abel time $t=\phi(y)$, the translation $x\mapsto C(x,y)$ is the time-$t$ flow of $a(x)\partial_x$. Its derivative at the fixed boundary is
+\[
+ \partial_1C(1,y)=e^{a'(1)\phi(y)}.
+\]
+If $a'(1)=0$, this derivative equals $1$ for every $y<1$. Closed-square smoothness instead makes it converge to $\partial_1C(1,1)=0$, since $C(x,1)=1$. Positivity gives $a'(1)\leq0$, hence $a'(1)<0$.
+
+Writing $a(x)=\kappa(1-x)A(x)$ with $A(1)=1$, the equation $a q'=-\kappa q$ shows that $q/(1-x)$ extends smoothly and positively to $x=1$. Thus $q$ is a boundary diffeomorphism, and Abel additivity gives its multiplicative law. Any second multiplicative boundary-defining coordinate is $q^c$ by the uniqueness of continuous additive generators; a simple zero forces $c=1$. Pulling multiplication back by an arbitrary such $q$ proves the converse.
+
+Since both $q$ and $q_0$ have simple zeros, their quotient is smooth and positive through $x=1$, which gives the displayed unique $h$ parameterization and its monotonicity condition. The odd-extension and conjugacy statements follow directly. If D' holds, $q_0$ is a second multiplicative boundary-defining coordinate and uniqueness gives $q_h=q_0$, hence $h=0$; the converse is immediate. Taking logarithms of $q_h(C_h)=q_h(x)q_h(y)$ gives the displayed defect identity.
+\end{proof}
 
 \subsection{Proof of the Saturation Theorem}
 
@@ -1021,6 +1087,17 @@ DOI: 10.1007/JHEP04(2015)163.
 J.~Acz\'el (1966).
 \textit{Lectures on Functional Equations and Their Applications}.
 Academic Press, New York.
+
+\bibitem{MesiarovaZemankova2015}
+A.~Mesiarov\'a-Zem\'ankov\'a (2015).
+Characterization of uninorms with continuous underlying t-norm and t-conorm by means of an extended ordinal sum.
+arXiv:1506.07820.
+DOI: 10.48550/arXiv.1506.07820.
+
+\bibitem{Grabisch2009}
+M.~Grabisch, J.-L.~Marichal, R.~Mesiar, \& E.~Pap (2009).
+Aggregation on bipolar scales.
+In \textit{Proceedings of the 30th Linz Seminar on Fuzzy Set Theory}, 46--51.
 
 \bibitem{Hazewinkel1978}
 M.~Hazewinkel (1978).

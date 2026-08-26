@@ -1,0 +1,203 @@
+{
+  "audit_id": "CRM5-SMOOTH-COLLAR-OPERATIONS-CLASSIFICATION-V1",
+  "claim_boundary": [
+    "This is a mathematical classification of the declared one-dimensional smooth strict positive-face collar class.",
+    "It is not a classification of every smooth associative operation on a compact interval.",
+    "Smooth conjugacy does not make D-prime physically automatic; D-prime fixes the marked projective response chart.",
+    "No UV derivation, cosmology result, RH result, or abc result is claimed."
+  ],
+  "classification_scope": {
+    "excluded": [
+      "nilpotent or noncancellative t-conorms",
+      "ordinal sums with interior idempotents",
+      "multi-channel or stochastic response laws",
+      "smoothness at the mixed compactified signed corners (1,-1) and (-1,1)"
+    ],
+    "hypotheses": [
+      "C is C-infinity on the closed positive square",
+      "C is commutative and associative",
+      "0 is neutral and 1 is absorbing",
+      "C is strictly increasing on the open positive face",
+      "the interior law belongs to the cancellative D-plus/minus channel"
+    ],
+    "positive_face": "[0,1]^2"
+  },
+  "classification_theorem": {
+    "canonical_collar": "q(x)=exp(-kappa*phi(x))",
+    "canonical_collar_properties": "q is the unique C-infinity decreasing boundary-defining diffeomorphism with q(0)=1 and q(C)=q(x)q(y)",
+    "converse": "C_q(x,y)=q^{-1}(q(x)q(y))",
+    "fixed_R_defect": "Delta_Dprime(x,y)=2*(h(x)+h(y)-h(C_h(x,y)))",
+    "generator": "a(x)=partial_2 C(x,0)",
+    "generator_in_h_gauge": "a_h(x)=(1+h'(0))*(1-x^2)/(1+(1-x^2)h'(x))",
+    "normalized_abel_coordinate": "phi(x)=integral_0^x dt/a(t), phi'(0)=1",
+    "projective_relative_parameterization": "q_h(x)=((1-x)/(1+x))*exp(-2h(x)); h in C-infinity[0,1], h(0)=0, 1+(1-x^2)h'(x)>0",
+    "projective_slice": "D-prime holds if and only if h=0",
+    "signed_B_prime_condition": "h admits a smooth odd extension through x=0; equivalently -log(q_h) has a smooth odd extension",
+    "simple_boundary_zero": "a(1)=0 and kappa=-a'(1)>0",
+    "smooth_conjugacy": "H_h=q_0^{-1} o q_h and H_h(C_h(x,y))=C_0(H_h(x),H_h(y))"
+  },
+  "necessity_proof_ledger": [
+    "D-plus/minus gives a(x)>0 in the interior and the Abel flow",
+    "absorption gives a(1)=0",
+    "if a'(1)=0, every finite-time translation has boundary derivative 1",
+    "closed-square smoothness instead forces that derivative to tend to 0 at (1,1)",
+    "therefore a'(1)<0 and the boundary zero is simple",
+    "the regular-singular ODE a*q'=-kappa*q makes q/(1-x) smooth and positive",
+    "multiplicativity follows from Abel additivity",
+    "a second multiplicative boundary-defining coordinate differs by q^c; a simple zero forces c=1"
+  ],
+  "profile_audits": [
+    {
+      "D_prime_pass": true,
+      "admissibility_margin": 1.0,
+      "fixed_R_defect_at_x_0p20_y_0p35": 0.0,
+      "generator_at_boundary": 0.0,
+      "generator_at_identity": 1.0,
+      "h_expression": "h(x)=0*x",
+      "kappa": 2.0,
+      "maximum_residuals": {
+        "absorbing_boundary": 0.0,
+        "associativity": 2.220446049250313e-16,
+        "exact_defect_coboundary": 2.930988785010413e-14,
+        "identity": 1.1102230246251565e-16,
+        "multiplicative_collar": 1.1102230246251565e-16,
+        "projective_conjugacy": 2.220446049250313e-16
+      },
+      "name": "linear_eps_+0.00",
+      "odd_signed_extension": true,
+      "q_at_boundary": 0.0,
+      "q_at_identity": 1.0,
+      "q_prime_at_boundary": -0.5,
+      "q_prime_at_identity": -2.0,
+      "strictly_decreasing_q": true
+    },
+    {
+      "D_prime_pass": false,
+      "admissibility_margin": 0.25,
+      "fixed_R_defect_at_x_0p20_y_0p35": -0.12535253829706017,
+      "generator_at_boundary": 0.0,
+      "generator_at_identity": 1.0,
+      "h_expression": "h(x)=-0.75*x",
+      "kappa": 0.5,
+      "maximum_residuals": {
+        "absorbing_boundary": 0.0,
+        "associativity": 4.440892098500626e-16,
+        "exact_defect_coboundary": 6.439293542825908e-15,
+        "identity": 2.220446049250313e-16,
+        "multiplicative_collar": 2.498001805406602e-16,
+        "projective_conjugacy": 3.3306690738754696e-16
+      },
+      "name": "linear_eps_-0.75",
+      "odd_signed_extension": true,
+      "q_at_boundary": 0.0,
+      "q_at_identity": 1.0,
+      "q_prime_at_boundary": -2.2408445351690323,
+      "q_prime_at_identity": -0.5,
+      "strictly_decreasing_q": true
+    },
+    {
+      "D_prime_pass": false,
+      "admissibility_margin": 1.0,
+      "fixed_R_defect_at_x_0p20_y_0p35": 0.015204740400161398,
+      "generator_at_boundary": 0.0,
+      "generator_at_identity": 1.0,
+      "h_expression": "h(x)=0.25*x",
+      "kappa": 2.5,
+      "maximum_residuals": {
+        "absorbing_boundary": 0.0,
+        "associativity": 2.220446049250313e-16,
+        "exact_defect_coboundary": 1.2656542480726785e-14,
+        "identity": 1.1102230246251565e-16,
+        "multiplicative_collar": 2.220446049250313e-16,
+        "projective_conjugacy": 2.220446049250313e-16
+      },
+      "name": "linear_eps_+0.25",
+      "odd_signed_extension": true,
+      "q_at_boundary": 0.0,
+      "q_at_identity": 1.0,
+      "q_prime_at_boundary": -0.3032653298563167,
+      "q_prime_at_identity": -2.5,
+      "strictly_decreasing_q": true
+    },
+    {
+      "D_prime_pass": false,
+      "admissibility_margin": 1.0,
+      "fixed_R_defect_at_x_0p20_y_0p35": 0.041647723484325105,
+      "generator_at_boundary": 0.0,
+      "generator_at_identity": 1.0,
+      "h_expression": "h(x)=1*x",
+      "kappa": 4.0,
+      "maximum_residuals": {
+        "absorbing_boundary": 0.0,
+        "associativity": 2.220446049250313e-16,
+        "exact_defect_coboundary": 1.3722356584366935e-13,
+        "identity": 1.1102230246251565e-16,
+        "multiplicative_collar": 1.6653345369377348e-16,
+        "projective_conjugacy": 2.220446049250313e-16
+      },
+      "name": "linear_eps_+1.00",
+      "odd_signed_extension": true,
+      "q_at_boundary": 0.0,
+      "q_at_identity": 1.0,
+      "q_prime_at_boundary": -0.06766764161830635,
+      "q_prime_at_identity": -4.0,
+      "strictly_decreasing_q": true
+    },
+    {
+      "D_prime_pass": false,
+      "admissibility_margin": 1.0,
+      "fixed_R_defect_at_x_0p20_y_0p35": -0.043505019024627334,
+      "generator_at_boundary": 0.0,
+      "generator_at_identity": 1.0,
+      "h_expression": "h(x)=0.3*x^3",
+      "kappa": 2.0,
+      "maximum_residuals": {
+        "absorbing_boundary": 0.0,
+        "associativity": 2.220446049250313e-16,
+        "exact_defect_coboundary": 3.241851231905457e-14,
+        "identity": 1.1102230246251565e-16,
+        "multiplicative_collar": 1.1102230246251565e-16,
+        "projective_conjugacy": 2.220446049250313e-16
+      },
+      "name": "cubic_eps_+0.30",
+      "odd_signed_extension": true,
+      "q_at_boundary": 0.0,
+      "q_at_identity": 1.0,
+      "q_prime_at_boundary": -0.27440581804701325,
+      "q_prime_at_identity": -2.0,
+      "strictly_decreasing_q": true
+    }
+  ],
+  "review_source": "Paper5_HEILER_2026-07-03.md:P1-10",
+  "run_date": "2026-08-26",
+  "schema_version": "1.0.0",
+  "source_binding": [
+    {
+      "role": "standard continuous strict t-conorm additive-generator context",
+      "source": "Mesiarova-Zemankova, arXiv:1506.07820 (2015), Proposition 1"
+    },
+    {
+      "role": "signed strict t-conorm extension as an Abelian group",
+      "source": "Grabisch, Marichal, Mesiar, Pap, Aggregation on bipolar scales (2009), Theorem 1"
+    },
+    {
+      "role": "C-infinity boundary simple-zero, canonical-q, h-gauge, and D-prime slice proof",
+      "source": "current audit"
+    }
+  ],
+  "status": "COMPLETE_WITHIN_SMOOTH_STRICT_DPM_COLLAR_CLASS__DPRIME_IS_H_ZERO__NO_UV_CLAIM",
+  "sufficiency_proof_ledger": [
+    "a decreasing C-infinity boundary diffeomorphism q has a C-infinity inverse",
+    "multiplication on [0,1] is C-infinity, commutative, associative, neutral at 1, and absorbing at 0",
+    "pullback by q gives the complete smooth strict positive collar law"
+  ],
+  "summary": {
+    "D_prime_unique_in_marked_projective_chart": true,
+    "all_collars_smoothly_conjugate": true,
+    "claim_upgrade_count": 0,
+    "complete_within_declared_smooth_strict_class": true,
+    "infinite_dimensional_h_gauge_exposed": true,
+    "physical_UV_selection_derived": false
+  },
+  "todo_source": "CRM-V TODO.md:135-142"
+}

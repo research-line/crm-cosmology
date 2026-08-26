@@ -286,7 +286,7 @@ induziert eine glatte assoziative Komposition auf dem offenen Intervall und lief
   q_\varepsilon(x)=e^{-2\phi_\varepsilon(x)}
   =\frac{1-x}{1+x}e^{-2\varepsilon x}
 \]
-einen glatten positiven Randkragen. Bloße Glattheit der positiven Sättigungsfläche wählt daher eine hyperbolische Randkragenklasse, aber keine eindeutige projektive Koordinate. Randglattheit wird als Zulässigkeitsbedingung für den Antwortkanal verwendet. Sie wird in diesem Paper nicht aus einem UV-Modell hergeleitet. Die $\tanh$-Normalform wird erst dann ein Theorem, wenn der projektive Randquotient explizit festgelegt wird.
+einen glatten positiven Randkragen. Bloße Glattheit der positiven Sättigungsfläche wählt daher keine eindeutige projektive Koordinate. Proposition~\ref{prop:smooth_collar_classification} klassifiziert unten die glatten strikten Mitglieder dieses Rahmens durch eine randdefinierende Funktion $q_h$. Randglattheit wird als Zulässigkeitsbedingung für den Antwortkanal verwendet. Sie wird in diesem Paper nicht aus einem UV-Modell hergeleitet. Die $\tanh$-Normalform wird erst dann ein Theorem, wenn der projektive Randquotient explizit festgelegt wird.
 \end{remark}
 
 \begin{axiom}[Projektive Doppelrand-Quotienten-Annahme (D')]
@@ -382,7 +382,7 @@ Tabelle~\ref{tab:proof_status_ledger} trennt die logischen Schichten des korrigi
 \begin{ruledtabular}
 \begin{tabular}{@{}llll@{}}
 \parbox[t]{0.14\textwidth}{\textbf{Schicht}} & \parbox[t]{0.24\textwidth}{\textbf{Input}} & \parbox[t]{0.22\textwidth}{\textbf{Output}} & \parbox[t]{0.27\textwidth}{\textbf{Status / Nicht-Behauptung}} \\
-\parbox[t]{0.14\textwidth}{A--D, B', $D^\pm$} & \parbox[t]{0.24\textwidth}{Beschränkte, kooperative, signierte eindimensionale innere Komposition} & \parbox[t]{0.22\textwidth}{Ungerade Abel-Koordinate und hyperbolische Randkragenklasse} & \parbox[t]{0.27\textwidth}{Theorem-Level, bedingt auf die Ein-Kanal-Hypothesen; noch kein eindeutiges $\tanh$-Profil.} \\[0.6em]
+\parbox[t]{0.14\textwidth}{A--D, B', $D^\pm$} & \parbox[t]{0.24\textwidth}{Beschränkte, kooperative, signierte eindimensionale innere Komposition} & \parbox[t]{0.22\textwidth}{Ungerade Abel-Koordinate und glatte strikte $q_h$-Kragenfamilie} & \parbox[t]{0.27\textwidth}{Innerhalb der deklarierten Ein-Kanal-Unterklasse klassifiziert; noch kein eindeutiges $\tanh$-Profil.} \\[0.6em]
 \parbox[t]{0.14\textwidth}{D'} & \parbox[t]{0.24\textwidth}{Projektiver Randquotient $R(C)=R(x)R(y)$} & \parbox[t]{0.22\textwidth}{Kanonischer $\tanh$-Repräsentant und Geschwindigkeitsadditionsgesetz} & \parbox[t]{0.27\textwidth}{Zusätzliche Normalisierung; diagnostisch geführt, hier nicht aus einem UV-Programm hergeleitet.} \\[0.6em]
 \parbox[t]{0.14\textwidth}{QG-Programmkarte} & \parbox[t]{0.24\textwidth}{LQG, Asymptotic Safety, Holographie, Causal Sets, CDT und NCG} & \parbox[t]{0.22\textwidth}{Kompatibilitätsmuster für A--D, $D^\pm$ und D'} & \parbox[t]{0.27\textwidth}{Motivation und Filter; keine Verifikation, dass ein Programm alle Inputs erfüllt.} \\[0.6em]
 \parbox[t]{0.14\textwidth}{CRM-Datenanker} & \parbox[t]{0.24\textwidth}{Bestehender CRM-Fit und monotone Übergangsevidenz} & \parbox[t]{0.22\textwidth}{Empirische Motivation für Sättigungsdynamik} & \parbox[t]{0.27\textwidth}{Kein unabhängiger Test dieses Theorems, weil das CRM bereits ein $\tanh$-Profil nutzte.} \\[0.6em]
@@ -419,6 +419,72 @@ Damit ist $F(t):=\phi(\tanh t)$ eine stetige additive Funktion von $t=L(x)$, als
 \begin{remark}[Warum D' nötig ist]
 Die Familie $\phi_\varepsilon(x)=\operatorname{arctanh}(x)+\varepsilon x$ ist für kleines $\varepsilon$ ungerade, glatt und strikt wachsend, divergiert am Rand und induziert über $q_\varepsilon=e^{-2\phi_\varepsilon}$ einen glatten positiven Sättigungskragen. Die alte Behauptung, $C^\infty$-Randregularität allein schließe alle nicht-$\mathrm{arctanh}$-Abel-Koordinaten aus, war daher zu stark. Das korrigierte Theorem verwendet D' als mathematische und physikalische Normalisierung, die diese Rand-Gauge-Freiheit entfernt.
 \end{remark}
+
+\begin{proposition}[Klassifikation glatter strikter Randkrägen]
+\label{prop:smooth_collar_classification}
+Sei $C\in C^\infty([0,1]^2,[0,1])$ kommutativ und assoziativ, mit Neutralelement $0$, absorbierendem Element $1$ und strengem Wachstum auf der offenen positiven Fläche. Das Innere sei die positive Einschränkung des kürzbaren eindimensionalen Kanals $D^\pm$. Definiere
+\[
+ a(x):=\partial_2C(x,0),
+ \qquad
+ \phi(x):=\int_0^x\frac{dt}{a(t)}.
+\]
+Dann ist $a(1)=0$ eine einfache Nullstelle: Mit $\kappa:=-a'(1)$ gilt $\kappa>0$. Außerdem ist
+\[
+ q(x):=e^{-\kappa\phi(x)}
+\]
+die eindeutige fallende randdefinierende $C^\infty$-Diffeomorphie $[0,1]\to[1,0]$ mit
+\[
+ \begin{aligned}
+ q(0)&=1, & q(1)&=0,\\
+ q'(1)&\neq0, & q(C(x,y))&=q(x)q(y).
+ \end{aligned}
+\]
+Umgekehrt definiert jedes solche $q$ genau einen glatten strikten positiven Kragen durch
+\[
+ C_q(x,y)=q^{-1}\!\bigl(q(x)q(y)\bigr).
+\]
+Relativ zu $q_0(x)=(1-x)/(1+x)$ wird die ganze Klasse eindeutig parametrisiert durch
+\[
+ \begin{aligned}
+ q_h(x)&=q_0(x)e^{-2h(x)}, & h(0)&=0,\\
+ 1+(1-x^2)h'(x)&>0.&&
+ \end{aligned}
+\]
+mit $h\in C^\infty([0,1])$. Die Verträglichkeit mit B' ist äquivalent dazu, dass $h$ eine glatte ungerade Fortsetzung durch $0$ besitzt. Der normierte Generator und die konjugierende Antwortkoordinate sind
+\[
+ \begin{aligned}
+ a_h(x)&=
+ \frac{(1+h'(0))(1-x^2)}{1+(1-x^2)h'(x)},\\
+ H_h&=q_0^{-1}\circ q_h.
+ \end{aligned}
+\]
+\[
+ \begin{aligned}
+ H_h(C_h(x,y))
+ &=C_0(H_h(x),H_h(y)),\\
+ C_0(x,y)&=\frac{x+y}{1+xy}.
+ \end{aligned}
+\]
+Schließlich gilt D' in der festen markierten Antwortkoordinate genau dann, wenn $h=0$. Genauer ist
+\[
+ \Delta_{D'}(x,y)
+ =2\bigl(h(x)+h(y)-h(C_h(x,y))\bigr).
+\]
+Das deterministische Ledger liegt unter
+\path{results/paper5/SMOOTH_COLLAR_CLASSIFICATION_GATE_2026-08-26.json}.
+\end{proposition}
+
+\begin{proof}
+Die positive Einschränkung ist eine glatte strikte archimedische t-Conorm; ihre stetige Standarddarstellung verwendet einen bis auf positiven Maßstab eindeutigen additiven Generator \cite{MesiarovaZemankova2015}. Die zugehörige signierte strikte Erweiterung ist in der bipolaren Konstruktion eine abelsche Gruppe \cite{Grabisch2009}. Hier liefert die Randregularität die schärfere Aussage. Identität und $D^\pm$ implizieren $a(0)=1$ und $a>0$ auf $[0,1)$, während Absorption $a(1)=0$ ergibt. In der Abel-Zeit $t=\phi(y)$ ist die Translation $x\mapsto C(x,y)$ der Zeit-$t$-Fluss von $a(x)\partial_x$. Ihre Ableitung am festen Rand ist
+\[
+ \partial_1C(1,y)=e^{a'(1)\phi(y)}.
+\]
+Wäre $a'(1)=0$, so wäre diese Ableitung für jedes $y<1$ gleich $1$. Die Glattheit auf dem abgeschlossenen Quadrat lässt sie dagegen gegen $\partial_1C(1,1)=0$ konvergieren, da $C(x,1)=1$ gilt. Die Positivität liefert $a'(1)\leq0$, also $a'(1)<0$.
+
+Schreibt man $a(x)=\kappa(1-x)A(x)$ mit $A(1)=1$, so zeigt die Gleichung $a q'=-\kappa q$, dass $q/(1-x)$ glatt und positiv bis $x=1$ fortgesetzt wird. Damit ist $q$ eine Randdiffeomorphie, und die Abel-Additivität ergibt ihr multiplikatives Gesetz. Jede zweite multiplikative randdefinierende Koordinate ist wegen der Eindeutigkeit stetiger additiver Generatoren von der Form $q^c$; eine einfache Nullstelle erzwingt $c=1$. Das Zurückziehen der Multiplikation durch ein beliebiges solches $q$ beweist die Umkehrung.
+
+Da sowohl $q$ als auch $q_0$ einfache Nullstellen besitzen, ist ihr Quotient glatt und positiv durch $x=1$; dies ergibt die angegebene eindeutige $h$-Parametrisierung und ihre Monotoniebedingung. Die Aussagen zur ungeraden Fortsetzung und Konjugation folgen direkt. Gilt D', so ist $q_0$ eine zweite multiplikative randdefinierende Koordinate, und die Eindeutigkeit ergibt $q_h=q_0$, also $h=0$; die Umkehrung ist unmittelbar. Logarithmieren von $q_h(C_h)=q_h(x)q_h(y)$ liefert die angegebene Defektidentität.
+\end{proof}
 
 \subsection{Beweis des Saturation Theorems}
 
@@ -1036,6 +1102,17 @@ DOI: 10.1007/JHEP04(2015)163.
 J.~Acz\'el (1966).
 \textit{Lectures on Functional Equations and Their Applications}.
 Academic Press, New York.
+
+\bibitem{MesiarovaZemankova2015}
+A.~Mesiarov\'a-Zem\'ankov\'a (2015).
+Characterization of uninorms with continuous underlying t-norm and t-conorm by means of an extended ordinal sum.
+arXiv:1506.07820.
+DOI: 10.48550/arXiv.1506.07820.
+
+\bibitem{Grabisch2009}
+M.~Grabisch, J.-L.~Marichal, R.~Mesiar, \& E.~Pap (2009).
+Aggregation on bipolar scales.
+In \textit{Proceedings of the 30th Linz Seminar on Fuzzy Set Theory}, 46--51.
 
 \bibitem{Hazewinkel1978}
 M.~Hazewinkel (1978).

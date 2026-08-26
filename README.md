@@ -9,7 +9,7 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![CI](https://github.com/research-line/crm-cosmology/actions/workflows/ci.yml/badge.svg)](https://github.com/research-line/crm-cosmology/actions/workflows/ci.yml)
-[![Tests](https://img.shields.io/badge/Tests-83%20passed-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/Tests-93%20passed-brightgreen.svg)](tests/)
 [![Open Science](https://img.shields.io/badge/Open--Science-Reproducible-green.svg)](https://github.com/research-line/crm-cosmology)
 [![LLM Indexing](https://img.shields.io/badge/LLM--Indexing-llms.txt-purple.svg)](llms.txt)
 
@@ -132,6 +132,22 @@ with:
 ```bash
 python scripts/paper5/axiom_c_bump_separation_gate.py
 python -m pytest tests/test_axiom_c_bump_separation_gate.py -q
+```
+
+The
+[smooth-collar classification](research/crm-v/CRM5_SMOOTH_COLLAR_OPERATIONS_CLASSIFICATION_V1_2026-08-26.md)
+closes the Paper-V P1-10 gap within the explicitly declared smooth, strict,
+one-dimensional `D^pm` positive-face class. Every admissible law has a unique
+boundary-defining multiplicative coordinate
+`q_h=((1-x)/(1+x))*exp(-2h)`, with
+`1+(1-x^2)h'(x)>0`; B' selects gauges with an odd smooth extension. All such
+laws are smoothly conjugate, while the fixed marked D' quotient holds exactly
+at `h=0`. This is a mathematical classification, not a physical UV selection.
+Reproduce its ledger with:
+
+```bash
+python scripts/paper5/smooth_collar_classification_gate.py
+python -m pytest tests/test_smooth_collar_classification_gate.py -q
 ```
 
 The
