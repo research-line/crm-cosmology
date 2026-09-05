@@ -1,11 +1,13 @@
 \documentclass[11pt,a4paper]{article}
+\usepackage{cmap} % ToUnicode-Zuordnung für lesbare PDF-Textextraktion
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\input{glyphtounicode.tex}
+\pdfgentounicode=1
 \usepackage[ngerman]{babel}
 \usepackage{geometry}
 \geometry{a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
-\usepackage{mathptmx}
-\usepackage{helvet}
+\usepackage{lmodern}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}

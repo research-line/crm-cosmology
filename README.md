@@ -25,7 +25,7 @@ This repository contains the bilingual paper series, the `crm_fR` / `cfm_fR` ana
 
 **Current headline CMB result in this repository:** the native `crm_fR` model yields **Delta chi2 = -3.7** relative to LCDM on Planck 2018 CMB TT+TE+EE data in the current MCMC best-fit run, with alpha_M_0 = 0.0011 +/- 0.0007 and 100*theta_s = 1.04173.
 
-**Research status:** this is an open research/preprint repository, not a consensus cosmology package. Theoretical and statistical limitations are summarized in the paper texts and public result artifacts included here; additional working notes remain local. The live Zenodo v7 record has not yet been updated to the latest local paper rebuilds.
+**Research status:** this is an open research/preprint repository, not a consensus cosmology package. Theoretical and statistical limitations are summarized in the paper texts and public result artifacts included here; additional working notes remain local. The repository citation metadata remains pinned to the published Zenodo v7.0 record (`10.5281/zenodo.19233559`). The main concept DOI resolved on 2026-09-05 to the newer published v8.4 record (`10.5281/zenodo.21946248`); local changes in this checkout are unpublished and do not imply a new release.
 
 ## What This Repository Is For
 
@@ -266,7 +266,10 @@ This work uses the following open-source software:
 If you use this work, please cite the Zenodo deposit and include the accessed Git commit when referring to the repository code. GitHub can also read the repository-level `CITATION.cff` file for citation export.
 
 - Concept DOI for all CRM I--IV versions: [10.5281/zenodo.18728935](https://doi.org/10.5281/zenodo.18728935)
-- Latest published Zenodo v7.0 record checked for this README: [10.5281/zenodo.19233559](https://doi.org/10.5281/zenodo.19233559)
+- Latest published version under the concept DOI, checked on 2026-09-05: v8.4, [10.5281/zenodo.21946248](https://doi.org/10.5281/zenodo.21946248)
+- Repository-pinned archive in `CITATION.cff`: v7.0, [10.5281/zenodo.19233559](https://doi.org/10.5281/zenodo.19233559)
+
+The BibTeX block below intentionally reproduces the repository-pinned v7.0 archive metadata; it is not a claim that v7.0 is the newest version under the concept DOI.
 
 ```bibtex
 @misc{Geiger2026CRM,

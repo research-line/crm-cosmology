@@ -7,6 +7,13 @@ and this project adheres to open-science preprint versioning tied to Zenodo arch
 
 ## [Unreleased]
 
+### Changed
+- **Local documentation and PDF text-quality audit (2026-09-05, base commit `2cd5401`):**
+  - Normalized German guide, report, and runtime-facing text to real UTF-8 umlauts and `ß` while retaining intentional LaTeX accent macros in mathematical paper sources.
+  - Rebuilt German Papers I--V with explicit ToUnicode font mappings; Paper VI was unchanged. `pdftotext` readback of all six `*_DE.pdf` files found no unexpected C0 control characters, U+FFFD replacement characters, or common mojibake markers.
+  - Reconfirmed the distinct metadata roles without changing a release: Python package `1.2.4`; repository-pinned `CITATION.cff` archive v7.0 (`10.5281/zenodo.19233559`); main concept DOI `10.5281/zenodo.18728935`, which resolved on 2026-09-05 to published v8.4 (`10.5281/zenodo.21946248`). These audit changes remain local and unpublished.
+  - Verified `4 passed` with `python -m pytest -q` and compiled `scripts/paper3/cfm_pantheonplus_test.py`. Long-running MCMC chains were not rerun; versioned chain summaries and scientific results were left unchanged.
+
 ## [1.2.4] - 2026-07-30
 
 ### Changed

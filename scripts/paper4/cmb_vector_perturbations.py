@@ -3,12 +3,12 @@
 """
 CRM Paper IV: CMB Vector Perturbation Analysis (Sec. 9.4)
 ==========================================================
-Semi-analytische EFT-Abschaetzung des Einflusses der CRM-Vektor-Perturbationen
+Semi-analytische EFT-Abschätzung des Einflusses der CRM-Vektor-Perturbationen
 delta_A_mu auf das CMB-Leistungsspektrum C_l.
 
 Offene Frage aus Paper IV Sec 9.4:
   Sind die Modifikationen Delta_C_l / C_l durch den Vektorsektor < 1%?
-  Falls ja: Vektorsektor fuer CMB irrelevant, keine hi_class-Rechnung noetig.
+  Falls ja: Vektorsektor für CMB irrelevant, keine hi_class-Rechnung nötig.
   Falls > 1%: FLAG gesetzt, hi_class-Vollrechnung erforderlich.
 
 Methode:
@@ -17,9 +17,9 @@ Methode:
      - alpha_T = 0                   [GW-Geschwindigkeit = c, exakt]
      - alpha_B = -alpha_M            [Braiding aus f(R)]
      - mu(k,a), gamma(k,a) Transferfunktionen
-     - Abschaetzung Delta_C_l/C_l (Skalar) ueber modifizierte Poisson-Gleichung
+     - Abschätzung Delta_C_l/C_l (Skalar) über modifizierte Poisson-Gleichung
 
-  2. Vektor-Sektor (Ordnungsabschaetzung)
+  2. Vektor-Sektor (Ordnungsabschätzung)
      - Hintergrund: rho_A = 0 exakt (Paper IV Sec 6.4)
      - Perturbation: delta_rho_A / rho_crit ~ alpha_M0^2 ~ 10^{-6}
      - Anisotroper Stress pi_A ~ K_B * (delta_Phi')^2
@@ -27,7 +27,7 @@ Methode:
 
   3. Vergleich mit AeST (Skordis & Zlosnik 2021)
      - AeST: Vektorfeld-Perturbationen ~ few-%
-     - CRM: schwaechere Kopplung -> erwartet << AeST
+     - CRM: schwächere Kopplung -> erwartet << AeST
 
   4. Numerische Verifikation
      - Vereinfachte Boltzmann-Hierarchie (Transferfunktionen-Ansatz)
@@ -39,7 +39,7 @@ Physikalischer Hintergrund:
   delta_A_mu sind rein perturbativ und proportional zu delta_F_{munu}.
   Der Beitrag zum anisotropen Stress:
     pi_A ~ K_B * F_{0i} * F^{0i} ~ K_B * (delta_Phi')^2
-  ist quadratisch in der Perturbation und daher O(alpha_M0^2) unterdrueckt.
+  ist quadratisch in der Perturbation und daher O(alpha_M0^2) unterdrückt.
 
 Autor:  L. Geiger / Claude Code
 Datum:  2026-02-26
@@ -81,11 +81,11 @@ alpha_M0   = 0.0011
 n_alpha    = 0.55
 alpha_T    = 0.0                    # exakt, GW-Test
 # alpha_B = -alpha_M (aus f(R) Herleitung)
-# alpha_K ~ 2 * Omega_phi (aus Kinetizitaet)
+# alpha_K ~ 2 * Omega_phi (aus Kinetizität)
 
 rho_crit   = 3.0 * H0**2 / (8.0 * np.pi * G)
 
-# Skalaron-Masse (effektive Compton-Wellenlaenge, Paper III Eq. 23)
+# Skalaron-Masse (effektive Compton-Wellenlänge, Paper III Eq. 23)
 # m_eff^2 ~ alpha_M * H^2  (Horizont-Skala)
 m_eff_0    = np.sqrt(alpha_M0) * H0  # s^{-1}, heutiger Wert
 
@@ -136,8 +136,8 @@ def alpha_B(a):
 
 def alpha_K(a):
     """
-    Kinetizitaet: alpha_K ~ 2 * Omega_phi(a).
-    Im f(R)-Grenzfall: Omega_phi ~ alpha_M / 6 (Approximation fuer kleine alpha_M).
+    Kinetizität: alpha_K ~ 2 * Omega_phi(a).
+    Im f(R)-Grenzfall: Omega_phi ~ alpha_M / 6 (Approximation für kleine alpha_M).
     Exakte Formel: alpha_K = 2 * (F_XX * X^2) / (F_X * X)
     Hier: Approximation alpha_K ~ (1/3) * alpha_M (konservativ).
     """
@@ -166,11 +166,11 @@ def mu_crm(k_phys, a):
     Im quasi-statischen Grenzfall (EFT modified gravity, Bellini+Sawicki 2014):
       mu = [1 + (2*alpha_B^2 + alpha_T*(alpha_K + 6*alpha_B)) / D ] / M_*^2
 
-    Fuer CRM (alpha_T = 0, alpha_B = -alpha_M):
-      Zaehler ~ 1 + 2*alpha_M^2 / D
-      D       = alpha_K + 6*alpha_B^2 (Nenner der EFT-Stabilitaet)
+    Für CRM (alpha_T = 0, alpha_B = -alpha_M):
+      Zähler ~ 1 + 2*alpha_M^2 / D
+      D       = alpha_K + 6*alpha_B^2 (Nenner der EFT-Stabilität)
 
-    Vereinfachung fuer kleine alpha_M:
+    Vereinfachung für kleine alpha_M:
       mu(k,a) ~ 1 + (4/3) * k^2 / (k^2 + a^2 * m_eff^2 / (c_light/MPC)^2)
 
     Das ist die Standard-Chameleon/f(R)-Formel:
@@ -187,7 +187,7 @@ def mu_crm(k_phys, a):
     m_sq = aM * H_a**2 / (c_light / MPC)**2   # in Mpc^{-2}
 
     # k ist in Mpc^{-1}
-    D    = aK + 6.0 * aB**2   # EFT-Stabilitaetsnenner
+    D    = aK + 6.0 * aB**2   # EFT-Stabilitätsnenner
     if abs(D) < 1e-15:
         D = 1e-15
 
@@ -195,11 +195,11 @@ def mu_crm(k_phys, a):
     # numerisch sicherer: direkt die f(R)-Formel
     k2   = k_phys**2
     m2   = m_sq
-    # Gravitationspotential-Verstaerkung
+    # Gravitationspotential-Verstärkung
     mu_val = 1.0 + (1.0 / 3.0) * k2 / (k2 + m2 + 1e-30)
     # Skalierung mit effektiver Planck-Masse (klein, da int alpha_M da ~ alpha_M0)
-    # Fuer kleine alpha_M: M_*^2 ~ 1 + 2*alpha_M0 * ln(a_end/a_start)
-    # Korrektur ~ O(alpha_M0) ~ 0.001, vernachlaessigbar
+    # Für kleine alpha_M: M_*^2 ~ 1 + 2*alpha_M0 * ln(a_end/a_start)
+    # Korrektur ~ O(alpha_M0) ~ 0.001, vernachlässigbar
     return mu_val
 
 
@@ -210,7 +210,7 @@ def eta_crm(k_phys, a):
     Im EFT-Formalismus (alpha_T = 0, alpha_B = -alpha_M):
       eta(k,a) = 1 - alpha_M * k^2 / (k^2 + m_eff^2)  (Slip durch Braiding)
 
-    Fuer LCDM: eta = 1.
+    Für LCDM: eta = 1.
     Das Slip-Potential modifiziert CMB-Lensing und ISW.
     """
     aM   = alpha_M(a)
@@ -225,12 +225,12 @@ def eta_crm(k_phys, a):
 
 
 # ============================================================
-# ABSCHNITT 3: Vektor-Sektor Abschaetzung
+# ABSCHNITT 3: Vektor-Sektor Abschätzung
 # ============================================================
 
 def vector_sector_estimate(a_arr):
     """
-    Ordnungsabschaetzung des Vektorbeitrags zu delta_rho und pi.
+    Ordnungsabschätzung des Vektorbeitrags zu delta_rho und pi.
 
     Physik:
       Im CRM-Hintergrund: rho_A = 0 exakt (Beweis: Paper IV Sec 6.4).
@@ -240,7 +240,7 @@ def vector_sector_estimate(a_arr):
       Also:
         delta_rho_A / rho_crit ~ alpha_M0^2 * Phi^2 ~ 0.0011^2 * 1e-10 ~ 1.2e-16
 
-    Fuer den anisotropen Stress:
+    Für den anisotropen Stress:
       pi_A ~ K_B * F_{0i} F^{0i}
       Im linearisierten Regime: F_{munu} ~ 0 (Hintergrund), also
         F_{munu}^{(1)} ~ partial_mu A_nu^{(1)} - partial_nu A_mu^{(1)}
@@ -252,10 +252,10 @@ def vector_sector_estimate(a_arr):
       In AeST ist die Vektor-Kopplung O(1) -> few-%-Effekte.
       Im CRM ist die Kopplung O(alpha_M0) << 1 -> Suppression um Faktor ~10^3.
 
-    Rueckgabe:
+    Rückgabe:
       delta_rho_A_over_rho:  Array als Funktion von a
       pi_A_over_rho:         Array als Funktion von a
-      Delta_Cl_over_Cl:      Abschaetzung des relativen C_l-Effekts
+      Delta_Cl_over_Cl:      Abschätzung des relativen C_l-Effekts
     """
     Phi_cmb   = 1e-5            # CMB-Gravitationspotential-Amplitude
 
@@ -271,23 +271,23 @@ def vector_sector_estimate(a_arr):
     # Relativer C_l-Effekt:
     # Delta_C_l / C_l ~ delta_rho_A / rho_crit  (Dichte-Kanal)
     # PLUS Slip-Kanal: Delta_C_l / C_l ~ (delta_eta)^2 (Slip-Kanal)
-    # Der Slip-Kanal ist subdominant gegenueber dem Skalar-Sektor.
-    # Gesamtabschaetzung (Oberschranke):
+    # Der Slip-Kanal ist subdominant gegenüber dem Skalar-Sektor.
+    # Gesamtabschätzung (Oberschranke):
     Delta_Cl_over_Cl = pi_over_rho   # dominanter Term
 
     return delta_rho_over_rho, pi_over_rho, Delta_Cl_over_Cl
 
 
 # ============================================================
-# ABSCHNITT 4: Transferfunktionen und C_l-Abschaetzung
+# ABSCHNITT 4: Transferfunktionen und C_l-Abschätzung
 # ============================================================
 
 def transfer_function_scalar(k_arr, a_eq=2.94e-4):
     """
-    Vereinfachte CMB-Transferfunktion T(k) fuer den Skalarbereich.
+    Vereinfachte CMB-Transferfunktion T(k) für den Skalarbereich.
 
     Approximation nach Eisenstein & Hu 1998 (ohne Baryonen-Oszillationen,
-    fuer Ordnungsabschaetzung ausreichend):
+    für Ordnungsabschätzung ausreichend):
       T(k) = L / (L + C*q^2)
       q = k / (Omega_m * H0^2 / h^2) * Theta_CMB^2
       L = ln(2e + 1.8q), C = 14.2 + 731/(1+62.5q)
@@ -295,7 +295,7 @@ def transfer_function_scalar(k_arr, a_eq=2.94e-4):
     k in h/Mpc.
     """
     h      = 0.6736
-    Theta  = T_CMB / 2.7   # = 1 fuer Standard-CMB
+    Theta  = T_CMB / 2.7   # = 1 für Standard-CMB
     Omega_m_h2 = Omega_m * h**2
 
     q      = k_arr * Theta**2 / (Omega_m_h2)
@@ -307,20 +307,20 @@ def transfer_function_scalar(k_arr, a_eq=2.94e-4):
 
 def Delta_T_scalar_crm(k_arr):
     """
-    Abschaetzung der relativen Aenderung der Transferfunktion durch
+    Abschätzung der relativen Änderung der Transferfunktion durch
     den CRM-Skalarsektor (modifizierte Poisson-Gleichung).
 
     Delta T / T ~ (mu - 1) * integral_weight
-    Im Weyl-Potential (relevant fuer CMB-Lensing + ISW):
+    Im Weyl-Potential (relevant für CMB-Lensing + ISW):
       Phi_W = (Phi + Psi) / 2 = (1 + eta)/2 * Phi_GR * mu
-    Relative Aenderung:
+    Relative Änderung:
       delta = mu * (1+eta)/2 - 1
 
     Sigma(k,a) = mu * (1+eta) / 2 ist die EFT-Lensing-Funktion.
-    Delta_C_l / C_l ~ 2 * delta_Sigma (fuer Lensing-dominierte l)
-    Fuer Sachse-Wolfe (grosse Skalen): Delta_C_l / C_l ~ 2 * (mu - 1)
+    Delta_C_l / C_l ~ 2 * delta_Sigma (für Lensing-dominierte l)
+    Für Sachse-Wolfe (große Skalen): Delta_C_l / C_l ~ 2 * (mu - 1)
 
-    Wir mitteln ueber die Matter-Epoche a in [0.01, 1].
+    Wir mitteln über die Matter-Epoche a in [0.01, 1].
     """
     a_arr   = np.linspace(0.1, 1.0, 50)
     n_k     = len(k_arr)
@@ -335,7 +335,7 @@ def Delta_T_scalar_crm(k_arr):
             # Lensing-Funktion Sigma
             Sigma   = mu_val * (1.0 + eta_val) / 2.0
             sigma_vals[j] = Sigma - 1.0   # Abweichung von LCDM
-        # Gewichtetes Mittel (hoeheres Gewicht in der jungen Vergangenheit)
+        # Gewichtetes Mittel (höheres Gewicht in der jungen Vergangenheit)
         weights = a_arr**2
         delta_sigma_avg[i] = np.average(sigma_vals, weights=weights)
 
@@ -354,25 +354,25 @@ def primordial_power_spectrum(k_arr, n_s=0.9649, A_s=2.1e-9, k_pivot=0.05):
 
 def cl_sachs_wolfe_approx(ell_arr, model='LCDM', include_vector=False):
     """
-    Vereinfachte C_l-Abschaetzung fuer grosse Winkelskalen (Sachs-Wolfe).
+    Vereinfachte C_l-Abschätzung für große Winkelskalen (Sachs-Wolfe).
 
     Im SW-Grenzfall (ell < 30):
       C_l^{SW} = (4*pi/25) * int dk/k * P(k) * T^2(k) * j_l(k*chi_*)^2
 
     Wobei chi_* der Komoving-Abstand zur Rekombination ist.
-    chi_* ~ 14000 Mpc (fuer unsere Kosmologie).
+    chi_* ~ 14000 Mpc (für unsere Kosmologie).
 
-    Fuer die CRM-Modifikation skalieren wir die LCDM-C_l mit:
+    Für die CRM-Modifikation skalieren wir die LCDM-C_l mit:
       Delta_C_l / C_l ~ 2 * delta_Sigma (Lensing-Kanal)
-    Fuer den SW-Kanal:
+    Für den SW-Kanal:
       Delta_C_l / C_l ~ 2 * (mu - 1) * f_SW(ell)
-    wobei f_SW ~ 1 fuer grosse Skalen.
+    wobei f_SW ~ 1 für große Skalen.
 
-    Fuer intermediare Skalen (ell ~ 100-1000, erster akustischer Peak):
+    Für intermediäre Skalen (ell ~ 100-1000, erster akustischer Peak):
       Der Einfluss ist reduziert, da die Perturbationen vor Rekombination
       durch die Chameleon-Masse gescreent werden.
 
-    Rueckgabe: Tupel (Cl_LCDM, Cl_CRM_scalar, Cl_CRM_scalar_vector)
+    Rückgabe: Tupel (Cl_LCDM, Cl_CRM_scalar, Cl_CRM_scalar_vector)
     """
     h       = 0.6736
     chi_rec = 14000.0   # Mpc, Komoving-Abstand zur Rekombination
@@ -389,10 +389,10 @@ def cl_sachs_wolfe_approx(ell_arr, model='LCDM', include_vector=False):
     # CRM-Modifikation (Skalar-Sektor)
     delta_sigma = Delta_T_scalar_crm(k_arr)
 
-    # Abschaetzung des Vektor-Effekts auf C_l
+    # Abschätzung des Vektor-Effekts auf C_l
     # Delta_C_l / C_l (Vektor) ~ alpha_M0 * Phi_cmb^2 ~ 1.1e-8
     # Wir modellieren dies als additiven Beitrag zur delta_sigma
-    a_mid    = 0.5   # repraesentative Epoche
+    a_mid    = 0.5   # repräsentative Epoche
     _, pi_rho, Delta_Cl_V = vector_sector_estimate(np.array([a_mid]))
     vector_effect = float(Delta_Cl_V[0])   # Einzel-Zahl
 
@@ -423,11 +423,11 @@ def cl_sachs_wolfe_approx(ell_arr, model='LCDM', include_vector=False):
             crm_s_factor         = (1.0 + 2.0 * delta_sigma[j])**2
             integrand_crm_s[j]  = base * crm_s_factor
 
-            # CRM Skalar + Vektor: zusaetzlicher Vektor-Beitrag
+            # CRM Skalar + Vektor: zusätzlicher Vektor-Beitrag
             crm_sv_factor        = crm_s_factor * (1.0 + vector_effect)
             integrand_crm_sv[j] = base * crm_sv_factor
 
-        # Trapezoidal-Integration ueber dln(k) = dk/k
+        # Trapezoidal-Integration über dln(k) = dk/k
         dlnk             = np.diff(np.log(k_arr))
         Cl_LCDM[i]       = np.sum((integrand_lcdm[:-1] + integrand_lcdm[1:]) / 2.0 * dlnk)
         Cl_CRM_s[i]      = np.sum((integrand_crm_s[:-1] + integrand_crm_s[1:]) / 2.0 * dlnk)
@@ -443,22 +443,22 @@ def cl_sachs_wolfe_approx(ell_arr, model='LCDM', include_vector=False):
 
 
 # ============================================================
-# ABSCHNITT 5: k-abhaengige relative Modifikation Delta_C_l / C_l
+# ABSCHNITT 5: k-abhängige relative Modifikation Delta_C_l / C_l
 # ============================================================
 
 def compute_relative_modification_vs_k():
     """
     Zeigt die relative Modifikation (mu - 1) als Funktion von k und a,
-    um die Scale-Abhaengigkeit der CRM-Modifikation zu visualisieren.
+    um die Scale-Abhängigkeit der CRM-Modifikation zu visualisieren.
 
     Drei charakteristische Epochen:
       a = 0.1  (z=9, Beginn nicht-linearer Strukturbildung)
-      a = 0.5  (z=1, repraesentative Epoche)
+      a = 0.5  (z=1, repräsentative Epoche)
       a = 1.0  (z=0, heute)
 
     Drei charakteristische Skalen:
       k << k_Compton:  mu -> 1    (GR-Grenzfall)
-      k ~ k_Compton:   mu -> 1.15 (Uebergangsbereich)
+      k ~ k_Compton:   mu -> 1.15 (Übergangsbereich)
       k >> k_Compton:  mu -> 4/3  (maximale Modifikation)
     """
     k_arr   = np.logspace(-4, 2, 200)  # Mpc^{-1}
@@ -471,7 +471,7 @@ def compute_relative_modification_vs_k():
         eta_vals = np.array([eta_crm(k, a) for k in k_arr])
         Sigma    = mu_vals * (1.0 + eta_vals) / 2.0
 
-        # Compton-Wellenlaenge
+        # Compton-Wellenlänge
         H_a   = H_of_a(a)
         aM    = alpha_M(a)
         m_sq  = aM * H_a**2 / (c_light / MPC)**2
@@ -493,11 +493,11 @@ def compute_relative_modification_vs_k():
 
 
 # ============================================================
-# ABSCHNITT 6: Vollstaendige Analyse und Report
+# ABSCHNITT 6: Vollständige Analyse und Report
 # ============================================================
 
 def run_full_analysis():
-    """Fuehrt die vollstaendige Analyse durch und erstellt Report + Plots."""
+    """Führt die vollständige Analyse durch und erstellt Report + Plots."""
 
     print("=" * 70)
     print("CRM Paper IV: CMB Vector Perturbation Analysis (Sec. 9.4)")
@@ -517,14 +517,14 @@ def run_full_analysis():
     print(f"   n_alpha  = {n_alpha:.3f}   (Wachstums-Exponent)")
     print(f"   alpha_T  = {alpha_T:.4f}   (exakt, GW-Test)")
     print(f"   alpha_B(a=1) = {alpha_B(1.0):.4e}  (Braiding = -alpha_M)")
-    print(f"   alpha_K(a=1) = {alpha_K(1.0):.4e}  (Kinetizitaet)")
+    print(f"   alpha_K(a=1) = {alpha_K(1.0):.4e}  (Kinetizität)")
     print(f"   m_eff(z=0) = {m_eff_0:.4e} s^{{-1}}")
 
-    # Compton-Wellenlaenge heute
+    # Compton-Wellenlänge heute
     m_sq_0   = alpha_M0 * H0**2 / (c_light / MPC)**2
     k_C_0    = np.sqrt(m_sq_0)  # Mpc^{-1}
     lambda_C = 1.0 / k_C_0      # Mpc
-    print(f"   Compton-Wellenlaenge (z=0): lambda_C = {lambda_C:.1f} Mpc")
+    print(f"   Compton-Wellenlänge (z=0): lambda_C = {lambda_C:.1f} Mpc")
     print(f"   Compton-k (z=0): k_C = {k_C_0:.4e} Mpc^{{-1}}")
 
     results_json['eft_parameters'] = {
@@ -539,10 +539,10 @@ def run_full_analysis():
     }
 
     # ------------------------------------------------------------------
-    # 2. Vektor-Sektor Ordnungsabschaetzung
+    # 2. Vektor-Sektor Ordnungsabschätzung
     # ------------------------------------------------------------------
     print("\n" + "=" * 50)
-    print("2. VEKTOR-SEKTOR ORDNUNGSABSCHAETZUNG")
+    print("2. VEKTOR-SEKTOR ORDNUNGSABSCHÄTZUNG")
     print("=" * 50)
 
     a_arr      = np.linspace(0.01, 1.0, 100)
@@ -553,7 +553,7 @@ def run_full_analysis():
     pi_z0    = float(pi_r[-1])
     dCl_z0   = float(dCl_V[-1])
 
-    # Bei Matter-Dominanz (a = 0.1, relevante Epoche fuer CMB-Sekundaer-Effekte)
+    # Bei Matter-Dominanz (a = 0.1, relevante Epoche für CMB-Sekundär-Effekte)
     idx_01   = int(0.1 / 1.0 * 99)
     drho_01  = float(drho[idx_01])
     pi_01    = float(pi_r[idx_01])
@@ -568,7 +568,7 @@ def run_full_analysis():
     print(f"     pi_A / rho_crit        ~ {pi_01:.4e}")
     print(f"     Delta_C_l / C_l        ~ {dCl_01:.4e}  ({dCl_01*100:.6f}%)")
 
-    # Oberschranke (Maximum ueber alle a)
+    # Oberschranke (Maximum über alle a)
     dCl_max  = float(np.max(dCl_V))
     dCl_max_pct = dCl_max * 100.0
 
@@ -579,7 +579,7 @@ def run_full_analysis():
     flag_hiclass  = dCl_max_pct > threshold_pct
 
     print(f"\n   1%-Schwellenwert:  {threshold_pct:.1f}%")
-    print(f"   hi_class noetig?   {'JA -- ACHTUNG!' if flag_hiclass else 'NEIN -- Vektorsektor vernachlaessigbar'}")
+    print(f"   hi_class nötig?   {'JA -- ACHTUNG!' if flag_hiclass else 'NEIN -- Vektorsektor vernachlässigbar'}")
 
     results_json['vector_sector'] = {
         'delta_rho_A_over_rho_z0': drho_z0,
@@ -595,10 +595,10 @@ def run_full_analysis():
     }
 
     # ------------------------------------------------------------------
-    # 3. Skalar-Sektor Modifikation (Scale-Abhaengigkeit)
+    # 3. Skalar-Sektor Modifikation (Scale-Abhängigkeit)
     # ------------------------------------------------------------------
     print("\n" + "=" * 50)
-    print("3. SKALAR-SEKTOR: Scale-Abhaengigkeit von mu(k,a)")
+    print("3. SKALAR-SEKTOR: Scale-Abhängigkeit von mu(k,a)")
     print("=" * 50)
 
     k_arr_mpc, mod_results = compute_relative_modification_vs_k()
@@ -647,7 +647,7 @@ def run_full_analysis():
 
     print(f"\n   Max |Delta_C_l/C_l| Skalar-Sektor:         {dCl_s_max:.4f}%")
     print(f"   Max |Delta_C_l/C_l| Skalar+Vektor:         {dCl_sv_max:.4f}%")
-    print(f"   Additiver Vektor-Beitrag (ueber Skalar):   {dCl_sv_add:.6f}%")
+    print(f"   Additiver Vektor-Beitrag (über Skalar):   {dCl_sv_add:.6f}%")
 
     results_json['cl_comparison'] = {
         'ell': ell_sw.tolist(),
@@ -706,20 +706,20 @@ def run_full_analysis():
     print(f"     Delta_C_l / C_l (max, SW-Approx) = {dCl_s_max:.4f}%")
     print(f"     Bewertung: {'>> 1% -- signifikant' if dCl_s_max > 1.0 else '< 1% -- klein'}")
 
-    print(f"\n   VEKTOR-SEKTOR (CRM, Ordnungsabschaetzung):")
+    print(f"\n   VEKTOR-SEKTOR (CRM, Ordnungsabschätzung):")
     print(f"     Delta_C_l / C_l (Oberschranke)   = {dCl_max_pct:.6f}%")
-    print(f"     Additiver Effekt ueber Skalar:    = {dCl_sv_add:.6f}%")
-    print(f"     Bewertung: {'>> 1% -- hi_class noetig!' if flag_hiclass else '< 1% -- vernachlaessigbar'}")
+    print(f"     Additiver Effekt über Skalar:    = {dCl_sv_add:.6f}%")
+    print(f"     Bewertung: {'>> 1% -- hi_class nötig!' if flag_hiclass else '< 1% -- vernachlässigbar'}")
 
     conclusion_vector = (
-        "Der Vektorsektor ist fuer das CMB-Leistungsspektrum vernachlaessigbar. "
+        "Der Vektorsektor ist für das CMB-Leistungsspektrum vernachlässigbar. "
         f"Delta_C_l/C_l (Vektor) < {dCl_max_pct:.2e}% << 1%%. "
         "Grund: rho_A = 0 im Hintergrund (Paper IV Sec 6.4), Perturbationen "
-        f"sind O(alpha_M0^2) ~ {alpha_M0**2:.2e} unterdrueckt. "
+        f"sind O(alpha_M0^2) ~ {alpha_M0**2:.2e} unterdrückt. "
         "Keine hi_class-Vollrechnung erforderlich. "
         "Der Skalar-Sektor (modifizierte Poisson-Gleichung) dominiert."
     ) if not flag_hiclass else (
-        "WARNUNG: Der Vektorsektor uebersteigt 1%! hi_class-Rechnung erforderlich. "
+        "WARNUNG: Der Vektorsektor übersteigt 1%! hi_class-Rechnung erforderlich. "
         f"Delta_C_l/C_l (Vektor) = {dCl_max_pct:.2f}%."
     )
 
@@ -763,8 +763,8 @@ def run_full_analysis():
         f"Analyse abgeschlossen.\n"
         f"Vektor-Sektor: Delta_Cl/Cl = {dCl_max_pct:.2e}% (Oberschranke)\n"
         f"Skalar-Sektor: Delta_Cl/Cl = {dCl_s_max:.4f}%\n"
-        f"hi_class noetig: {'JA' if flag_hiclass else 'NEIN'}\n"
-        f"Fazit: Vektorsektor {'SIGNIFIKANT' if flag_hiclass else 'vernachlaessigbar (< 1%)'}\n"
+        f"hi_class nötig: {'JA' if flag_hiclass else 'NEIN'}\n"
+        f"Fazit: Vektorsektor {'SIGNIFIKANT' if flag_hiclass else 'vernachlässigbar (< 1%)'}\n"
         f"Ergebnisse: {OUTDIR}"
     )
     send_telegram(telegram_msg)
@@ -807,7 +807,7 @@ def create_plots(
     ax1.set_xlim([0.01, 1.0])
 
     # ------------------------------------------------------------------
-    # Panel 2: mu(k,a) fuer drei Epochen
+    # Panel 2: mu(k,a) für drei Epochen
     # ------------------------------------------------------------------
     ax2 = fig.add_subplot(gs[0, 1])
     colors_ep = ['#1f77b4', '#ff7f0e', '#2ca02c']
@@ -871,7 +871,7 @@ def create_plots(
     ax5.legend(fontsize=9)
 
     # ------------------------------------------------------------------
-    # Panel 6: Zusammenfassung (Balkendiagramm der Beitraege)
+    # Panel 6: Zusammenfassung (Balkendiagramm der Beiträge)
     # ------------------------------------------------------------------
     ax6 = fig.add_subplot(gs[1, 2])
 
@@ -927,7 +927,7 @@ def create_plots(
     print(f"   Plot gespeichert: {plot_path}")
 
     # ------------------------------------------------------------------
-    # Zusatz-Plot: Zeitentwicklung der Vektor-Beitraege
+    # Zusatz-Plot: Zeitentwicklung der Vektor-Beiträge
     # ------------------------------------------------------------------
     fig2, ax = plt.subplots(figsize=(9, 5))
     z_arr   = 1.0 / a_arr - 1.0

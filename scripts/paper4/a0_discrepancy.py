@@ -113,7 +113,7 @@ def main():
     # a_0 = (c * H_0 / (2*pi)) * (1 / B_0^alpha)
     # where alpha depends on the exponent in the Chameleon potential
 
-    # For the Poeschl-Teller potential used in Paper III:
+    # For the Pöschl-Teller potential used in Paper III:
     # V_PT(phi) = V_0 / cosh^2(phi/phi_0)
     # B(phi) = sech^2(phi/phi_0)
     # At partial saturation: phi_bar/phi_0 ~ 0.5-1.0
@@ -324,7 +324,7 @@ def main():
     send_telegram(
         f"a0-Analyse fertig!\n"
         f"Diskrepanz: {discrepancy:.1f}% ({n_sigma:.2f} sigma)\n"
-        f"B0 noetig (Model 1): {B0_needed_m1:.3f}\n"
+        f"B0 nötig (Model 1): {B0_needed_m1:.3f}\n"
         f"H0-Tension hilft: SH0ES a0={a0_shoes*1e10:.3f}"
     )
 

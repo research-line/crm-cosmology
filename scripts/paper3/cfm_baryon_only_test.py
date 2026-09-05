@@ -114,7 +114,7 @@ def omega_phi_extended(a, Phi0, k, a_trans, alpha, beta):
 
     Der zweite Term (alpha * a^(-beta)) simuliert einen geometrischen
     "Materie-ähnlichen" Beitrag, der bei kleinen a dominiert und für
-    grosse a verschwindet. In einem MOND-Universum könnte dieser Term
+    große a verschwindet. In einem MOND-Universum könnte dieser Term
     die Rolle der Dunklen Materie auf kosmologischen Skalen übernehmen.
     The second term (alpha * a^(-beta)) simulates a geometric "matter-like"
     contribution that dominates at small a and vanishes for large a.
@@ -341,7 +341,7 @@ def test_C_extended_cfm(z, m_obs, m_err, Om_fixed=0.05):
             return 1e10
 
     # alpha: Amplitude des DM-Ersatzterms / amplitude of DM replacement term
-    # beta: Skalierung (beta~3 = materieaehnlich, beta~2 = Strahlung)
+    # beta: Skalierung (beta~3 = materieähnlich, beta~2 = Strahlung)
     # beta: scaling (beta~3 = matter-like, beta~2 = radiation)
     bounds = [(0.1, 100.0), (0.05, 0.95), (0.01, 0.50), (0.5, 4.0)]
     res = differential_evolution(objective, bounds, seed=42, maxiter=500,
@@ -749,7 +749,7 @@ def write_report(lcdm, cfm_std, testA, testB, testC):
     if dchi2_A < 50:
         lines.append("")
         lines.append("  ERGEBNIS: Das einfache Baryon-Only CFM (Test A) liefert einen")
-        lines.append(f"  chi2-Unterschied von {dchi2_A:+.1f} gegenueber LCDM.")
+        lines.append(f"  chi2-Unterschied von {dchi2_A:+.1f} gegenüber LCDM.")
         if dchi2_A < 0:
             lines.append("  => SENSATION: Baryon-Only CFM fittet BESSER als LCDM!")
         elif dchi2_A < 20:
@@ -765,7 +765,7 @@ def write_report(lcdm, cfm_std, testA, testB, testC):
     if dchi2_C < 0:
         lines.append("  Das erweiterte CFM (Test C) mit geometrischem DM-Ersatz")
         lines.append(f"  fittet BESSER als LCDM (Delta chi2 = {dchi2_C:+.1f})!")
-        lines.append("  => Die Vereinigung von CFM + MOND ist prinzipiell MOEGLICH.")
+        lines.append("  => Die Vereinigung von CFM + MOND ist prinzipiell MÖGLICH.")
         lines.append("  The extended CFM (Test C) with geometric DM compensation fits")
         lines.append(f"  BETTER than LCDM (Delta chi2 = {dchi2_C:+.1f})!")
         lines.append("  => The unification of CFM + MOND is conceptually POSSIBLE.")

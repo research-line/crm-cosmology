@@ -103,13 +103,13 @@ def download_covariance():
         print(f"  Gespeichert: {os.path.basename(COV_FILE)}")
         return True
     except Exception as e:
-        print(f"  WARNUNG: Kovarianzmatrix nicht verfuegbar ({e})")
+        print(f"  WARNUNG: Kovarianzmatrix nicht verfügbar ({e})")
         return False
 
 
 def load_covariance():
     """
-    Laedt die volle Pantheon+ Kovarianzmatrix (STAT+SYS).
+    Lädt die volle Pantheon+ Kovarianzmatrix (STAT+SYS).
     Loads the full Pantheon+ covariance matrix (STAT+SYS).
     """
     if not os.path.exists(COV_FILE):
@@ -229,7 +229,7 @@ def chi2_full_cov(mu_theory, m_obs, C_inv):
 
 def phi0_from_flatness(Omega_m, k, a_trans, phi_func=omega_phi_tanh):
     """
-    Berechnet Phi0 aus Flachheitsbedingung fuer verschiedene Funktionalformen.
+    Berechnet Phi0 aus Flachheitsbedingung für verschiedene Funktionalformen.
     Calculates Phi0 from flatness condition for various functional forms.
     """
     if phi_func == omega_phi_tanh:
@@ -353,7 +353,7 @@ def fit_cfm_flat(z, m_obs, m_err, C_inv=None, phi_func=omega_phi_tanh, label="ta
 
 def run_mcmc(z, m_obs, m_err, best_params, nwalkers=32, nsteps=3000, burnin=500):
     """
-    MCMC mit emcee fuer CFM (flach) Parameterunsicherheiten.
+    MCMC mit emcee für CFM (flach) Parameterunsicherheiten.
     MCMC with emcee for CFM (flat) parameter uncertainties.
     """
     print("\n" + "="*65)
@@ -451,7 +451,7 @@ def run_mcmc(z, m_obs, m_err, best_params, nwalkers=32, nsteps=3000, burnin=500)
 
 def test_functional_forms(z, m_obs, m_err):
     """
-    Testet verschiedene Funktionalformen fuer Omega_Phi(a).
+    Testet verschiedene Funktionalformen für Omega_Phi(a).
     Tests various functional forms for Omega_Phi(a).
     """
     print("\n" + "="*65)
@@ -562,7 +562,7 @@ def compute_deceleration(z_arr, Omega_m, Phi0, k, a_trans):
     """
     Dezelerationsparameter q(z) = -1 - dH/dt / H^2 = -1 + (1+z)/H * dH/dz
 
-    Fuer CFM: q(a) = -1 + (1+z) * (dH/dz) / H
+    Für CFM: q(a) = -1 + (1+z) * (dH/dz) / H
     Numerisch berechnet.
     """
     a = 1.0 / (1.0 + z_arr)
@@ -589,7 +589,7 @@ def compute_deceleration(z_arr, Omega_m, Phi0, k, a_trans):
 
 def compute_deceleration_lcdm(z_arr, Omega_m):
     """
-    Dezelerationsparameter fuer LCDM.
+    Dezelerationsparameter für LCDM.
     Deceleration parameter for LCDM.
     """
     a = 1.0 / (1.0 + z_arr)
@@ -602,16 +602,16 @@ def compute_deceleration_lcdm(z_arr, Omega_m):
 
 
 # ==========================================================================
-# 6. PHANTOM-STABILITAETSANALYSE / PHANTOM STABILITY ANALYSIS
+# 6. PHANTOM-STABILITÄTSANALYSE / PHANTOM STABILITY ANALYSIS
 # ==========================================================================
 
 def phantom_analysis(Phi0, k, a_trans, Omega_m):
     """
-    Analysiert die Phantom-Eigenschaft und Stabilitaet.
+    Analysiert die Phantom-Eigenschaft und Stabilität.
     Analyzes phantom properties and stability.
     """
     print("\n" + "="*65)
-    print("  PHANTOM-STABILITAETSANALYSE")
+    print("  PHANTOM-STABILITÄTSANALYSE")
     print("="*65)
 
     a_arr = np.linspace(0.1, 5.0, 1000)
@@ -645,13 +645,13 @@ def phantom_analysis(Phi0, k, a_trans, Omega_m):
 
     # Big Rip Test: Skalenfaktor divergiert in endlicher Zeit?
     # Big Rip test: scale factor diverges in finite time?
-    # Big Rip tritt auf wenn w < -1 UND rho waechst unbegrenzt
+    # Big Rip tritt auf wenn w < -1 UND rho wächst unbegrenzt
     # Big Rip occurs when w < -1 AND rho grows unboundedly
-    # Im CFM: Omega_Phi -> Phi0 (Saettigung), also KEIN Big Rip
+    # Im CFM: Omega_Phi -> Phi0 (Sättigung), also KEIN Big Rip
     # In CFM: Omega_Phi -> Phi0 (saturation), hence NO Big Rip
 
     # Asymptotisches Verhalten / Asymptotic behavior
-    OPhi_inf = Phi0  # Saettigung / saturation
+    OPhi_inf = Phi0  # Sättigung / saturation
     w_inf = -1.0     # asymptotisch Lambda-artig / asymptotically Lambda-like
 
     # Energiedichte bei a -> infty / Energy density at a -> infty
@@ -661,12 +661,12 @@ def phantom_analysis(Phi0, k, a_trans, Omega_m):
     idx_today = np.argmin(np.abs(a_arr - 1.0))
     print(f"    Omega_Phi(1)    = {OPhi[idx_today]:.4f}")
     print(f"    w_eff(1)        = {w_arr[idx_today]:.4f}")
-    print(f"    rho + p         = {nec[idx_today]:.4f}  {'> 0 (NEC erfuellt)' if nec[idx_today] > 0 else '< 0 (NEC VERLETZT)'}")
+    print(f"    rho + p         = {nec[idx_today]:.4f}  {'> 0 (NEC erfüllt)' if nec[idx_today] > 0 else '< 0 (NEC VERLETZT)'}")
 
     print(f"\n  Asymptotik (a -> inf):")
-    print(f"    Omega_Phi(inf)  = {OPhi_inf:.4f}  (SAETTIGUNG - endlich!)")
+    print(f"    Omega_Phi(inf)  = {OPhi_inf:.4f}  (SÄTTIGUNG - endlich!)")
     print(f"    w_eff(inf)      = {w_inf:.4f}  (Lambda-artig)")
-    print(f"    Big Rip?        = NEIN (Energiedichte saettigt)")
+    print(f"    Big Rip?        = NEIN (Energiedichte sättigt)")
 
     # NEC-Verletzung Bereich / NEC violation range
     nec_violated = a_arr[nec < 0]
@@ -678,17 +678,17 @@ def phantom_analysis(Phi0, k, a_trans, Omega_m):
         print(f"    (z = {z_nec_min:.2f} bis {z_nec_max:.2f})")
         print(f"    ABER: In geometrischen Modellen unproblematisch!")
         print(f"    Omega_Phi ist KEIN physisches Feld, sondern geometrische Eigenschaft.")
-        print(f"    Energiebedingungen gelten fuer physische Felder, nicht fuer Geometrie.")
+        print(f"    Energiebedingungen gelten für physische Felder, nicht für Geometrie.")
     else:
-        print(f"\n  NEC: Ueberall erfuellt!")
+        print(f"\n  NEC: Überall erfüllt!")
 
-    # Vergleich: In einem physischen Skalarfeld waere w < -1 instabil (Ghost)
+    # Vergleich: In einem physischen Skalarfeld wäre w < -1 instabil (Ghost)
     # Comparison: In a physical scalar field, w < -1 would be unstable (ghost)
     # Im CFM: Omega_Phi ist eine geometrische Funktion, kein dynamisches Feld
     # In CFM: Omega_Phi is a geometric function, not a dynamical field
     # Analoge Situation: f(R)-Gravitation kann auch effektiv w < -1 zeigen
     # Analogous: f(R) gravity can also show effective w < -1
-    # ohne physische Instabilitaet / without physical instability
+    # ohne physische Instabilität / without physical instability
 
     phantom_result = {
         'w_today': w_arr[idx_today],
@@ -743,56 +743,56 @@ def weff_with_uncertainties(z_arr, mcmc_samples, n_samples=500):
 
 
 # ==========================================================================
-# 8. MATHEMATISCHE MOTIVATION FUER TANH / MATHEMATICAL MOTIVATION FOR TANH
+# 8. MATHEMATISCHE MOTIVATION FÜR TANH / MATHEMATICAL MOTIVATION FOR TANH
 # ==========================================================================
 
 def tanh_motivation():
     """
-    Zeigt, dass tanh natuerlich aus Saettigungsdynamik entsteht.
+    Zeigt, dass tanh natürlich aus Sättigungsdynamik entsteht.
     Shows that tanh arises naturally from saturation dynamics.
     """
     print("\n" + "="*65)
-    print("  MATHEMATISCHE MOTIVATION FUER TANH")
+    print("  MATHEMATISCHE MOTIVATION FÜR TANH")
     print("="*65)
 
     print("""
-  Die tanh-Parametrisierung entsteht natuerlich aus einer einfachen
-  Saettigungs-Differentialgleichung:
+  Die tanh-Parametrisierung entsteht natürlich aus einer einfachen
+  Sättigungs-Differentialgleichung:
 
   dOmega_Phi/da = k * [1 - (Omega_Phi/Phi0)^2]    (*)
 
   Physikalische Bedeutung:
-  - Die Aenderungsrate von Omega_Phi ist proportional zur "ungenutzten
-    Kapazitaet" (1 - (Omega_Phi/Phi0)^2).
-  - Bei kleinem Omega_Phi: nahezu lineares Wachstum (Bremse loest sich).
-  - Bei Omega_Phi -> Phi0: Saettigung (Bremse vollstaendig geloest).
+  - Die Änderungsrate von Omega_Phi ist proportional zur "ungenutzten
+    Kapazität" (1 - (Omega_Phi/Phi0)^2).
+  - Bei kleinem Omega_Phi: nahezu lineares Wachstum (Bremse löst sich).
+  - Bei Omega_Phi -> Phi0: Sättigung (Bremse vollständig gelöst).
 
-  Loesung von (*):
+  Lösung von (*):
     Omega_Phi(a) = Phi0 * tanh(k * (a - a_trans))
 
-  wobei a_trans die Integrationskonstante (Uebergangspunkt) ist.
+  wobei a_trans die Integrationskonstante (Übergangspunkt) ist.
 
   Der Normierungsshift s = tanh(k * a_trans) stellt Omega_Phi(0) = 0 sicher.
 
   Analoge Systeme:
   1. Ferromagnetismus: Spontane Magnetisierung M(T) ~ tanh(...)
   2. Neuronale Aktivierung: sigma(x) = tanh(x)
-  3. Solitonen: Kink-Loesung phi(x) = phi0 * tanh(k*x)
-  4. BCS-Energieluecke: Delta(T) ~ tanh(...)
+  3. Solitonen: Kink-Lösung phi(x) = phi0 * tanh(k*x)
+  4. BCS-Energielücke: Delta(T) ~ tanh(...)
 
   Alle diese Systeme teilen die Eigenschaft:
-  "Geordneter Uebergang von einem Zustand in einen anderen mit Saettigung"
+  "Geordneter Übergang von einem Zustand in einen anderen mit Sättigung"
 
   Dies ist GENAU das Verhalten, das der spieltheoretische Rahmen vorhersagt:
-  Die "Bremse" (Kruemmungs-Rueckgabepotential) wird graduell geloest und
-  saettigt bei einem Maximalwert -- ein emergentes Gleichgewichtsverhalten.
+  Die "Bremse" (Krümmungs-Rückgabepotential) wird graduell gelöst und
+  sättigt bei einem Maximalwert -- ein emergentes Gleichgewichtsverhalten.
     """)
 
     # Numerische Verifikation / Numerical verification
     a_arr = np.linspace(0.01, 2.0, 1000)
     Phi0, k_val, a_t = 1.047, 1.30, 0.75
 
-    # Analytische Loesung (CFM) / Analytical solution (CFM)
+    # Analytische Lösung (CFM) / Analytical solution (CFM)
     s = np.tanh(k_val * a_t)
     OPhi_analytic = Phi0 * (np.tanh(k_val * (a_arr - a_t)) + s) / (1.0 + s)
 
@@ -810,7 +810,7 @@ def tanh_motivation():
     max_diff = np.max(np.abs(sol.y[0] - OPhi_analytic))
     print(f"  Numerische Verifikation:")
     print(f"    Max. Abweichung ODE vs. analytisch: {max_diff:.2e}")
-    print(f"    => tanh ist EXAKTE Loesung der Saettigungs-ODE")
+    print(f"    => tanh ist EXAKTE Lösung der Sättigungs-ODE")
 
     return True
 
@@ -983,7 +983,7 @@ def create_enhanced_plots(z, m_obs, m_err, lcdm, cfm_flat, mcmc_results, mcmc_sa
         ax4.set_title('MCMC Posterior: $\\Omega_m$', fontsize=12)
         ax4.legend(fontsize=9)
     else:
-        ax4.text(0.5, 0.5, 'MCMC nicht verfuegbar', ha='center', va='center', transform=ax4.transAxes)
+        ax4.text(0.5, 0.5, 'MCMC nicht verfügbar', ha='center', va='center', transform=ax4.transAxes)
 
     # ---- Panel 5: Dezelerationsparameter q(z) ----
     ax5 = fig.add_subplot(gs[2, 1])
@@ -999,7 +999,7 @@ def create_enhanced_plots(z, m_obs, m_err, lcdm, cfm_flat, mcmc_results, mcmc_sa
     ax5.set_title('Deceleration parameter', fontsize=12)
     ax5.legend(fontsize=9)
 
-    # Uebergangspunkt q=0 finden / Find transition point q=0
+    # Übergangspunkt q=0 finden / Find transition point q=0
     for zz, qq, label in [(z_q, q_cfm, 'CFM'), (z_q, q_lcdm, 'LCDM')]:
         crossings = np.where(np.diff(np.sign(qq)))[0]
         for c in crossings:
@@ -1025,7 +1025,7 @@ def create_enhanced_plots(z, m_obs, m_err, lcdm, cfm_flat, mcmc_results, mcmc_sa
             ax6.text(val + 0.5, bar.get_y() + bar.get_height()/2,
                     f'{val:.1f}', va='center', fontsize=9)
 
-    # ---- Panel 7: Omega_Phi(a) fuer verschiedene Formen ----
+    # ---- Panel 7: Omega_Phi(a) für verschiedene Formen ----
     ax7 = fig.add_subplot(gs[3, 1])
     a_plot = np.linspace(0.01, 1.5, 300)
 
@@ -1069,7 +1069,7 @@ def create_enhanced_plots(z, m_obs, m_err, lcdm, cfm_flat, mcmc_results, mcmc_sa
 
     txt += f"\n{'Phantom-Analyse':40s}\n"
     txt += f"  w(z=0)  = {phantom['w_today']:.4f}, w(inf) = {phantom['w_asymptotic']:.4f}\n"
-    txt += f"  Big Rip = {'NEIN' if not phantom['big_rip'] else 'JA'} (Saettigung bei Phi0)\n"
+    txt += f"  Big Rip = {'NEIN' if not phantom['big_rip'] else 'JA'} (Sättigung bei Phi0)\n"
 
     ax8.text(0.03, 0.95, txt, transform=ax8.transAxes,
              fontsize=9, va='top', fontfamily='monospace',
@@ -1132,8 +1132,8 @@ def write_enhanced_report(z, lcdm, cfm_flat, mcmc_results, mcmc_samples,
     L.append("")
     L.append("  FAZIT / CONCLUSION: Alle getesteten Funktionalformen liefern vergleichbare")
     L.append("  Ergebnisse. Die tanh-Form ist nicht 'cherry-picked', sondern")
-    L.append("  repraesentiert eine robuste Klasse von Saettigungsfunktionen.")
-    L.append("  Zudem entsteht tanh natuerlich als Loesung der Saettigungs-ODE")
+    L.append("  repräsentiert eine robuste Klasse von Sättigungsfunktionen.")
+    L.append("  Zudem entsteht tanh natürlich als Lösung der Sättigungs-ODE")
     L.append("  dOmega_Phi/da = k * [1 - (Omega_Phi/Phi0)^2].")
     L.append("  All tested functional forms provide comparable results. The tanh form")
     L.append("  is not 'cherry-picked' but represents a robust class of saturation")
@@ -1143,20 +1143,20 @@ def write_enhanced_report(z, lcdm, cfm_flat, mcmc_results, mcmc_samples,
 
     # 3. Phantom-Analyse
     L.append("-" * 75)
-    L.append("3. PHANTOM-STABILITAETSANALYSE")
+    L.append("3. PHANTOM-STABILITÄTSANALYSE")
     L.append("-" * 75)
     L.append(f"  w(z=0)        = {phantom['w_today']:.4f}")
     L.append(f"  w(z -> inf)   = {phantom['w_asymptotic']:.4f}")
     L.append(f"  Big Rip?      = {'NEIN' if not phantom['big_rip'] else 'JA'}")
     L.append(f"  NEC verletzt? = {'JA' if phantom['nec_violated'] else 'NEIN'}")
     L.append("")
-    L.append("  FAZIT / CONCLUSION: Im CFM ist w < -1 KEIN Instabilitaets-Problem:")
+    L.append("  FAZIT / CONCLUSION: Im CFM ist w < -1 KEIN Instabilitäts-Problem:")
     L.append("  - Omega_Phi ist kein physisches Feld (kein 'Ghost')")
-    L.append("  - Omega_Phi saettigt bei Phi0 (keine Divergenz)")
+    L.append("  - Omega_Phi sättigt bei Phi0 (keine Divergenz)")
     L.append("  - Asymptotisch: w -> -1 (de-Sitter-Endzustand)")
     L.append("  - KEIN Big Rip (endliche Energiedichte zu allen Zeiten)")
     L.append("  - Analog: f(R)-Gravitation zeigt auch effektiv w < -1")
-    L.append("    ohne physische Instabilitaet (Sotiriou & Faraoni 2010)")
+    L.append("    ohne physische Instabilität (Sotiriou & Faraoni 2010)")
     L.append("  In CFM, w < -1 is NOT an instability problem:")
     L.append("  - Omega_Phi is not a physical field (no 'ghost')")
     L.append("  - Omega_Phi saturates at Phi0 (no divergence)")
@@ -1178,9 +1178,9 @@ def write_enhanced_report(z, lcdm, cfm_flat, mcmc_results, mcmc_samples,
         L.append(f"  Delta M = {h0_results[1]-h0_results[2]:+.4f}")
     L.append("")
     L.append("  FAZIT / CONCLUSION: Das CFM absorbiert H0 im Nuisance-Parameter M.")
-    L.append("  Die H0-Spannung wird NICHT direkt geloest, aber das")
+    L.append("  Die H0-Spannung wird NICHT direkt gelöst, aber das")
     L.append("  unterschiedliche M deutet auf unterschiedliche effektive")
-    L.append("  Entfernungen hin -- ein Ansatzpunkt fuer kuenftige Arbeit.")
+    L.append("  Entfernungen hin -- ein Ansatzpunkt für künftige Arbeit.")
     L.append("  CFM absorbs H0 into the nuisance parameter M. The H0 tension")
     L.append("  is NOT directly solved, but the different M values point towards")
     L.append("  different effective distances -- a starting point for future work.")
@@ -1196,7 +1196,7 @@ def write_enhanced_report(z, lcdm, cfm_flat, mcmc_results, mcmc_samples,
         L.append(f"  Delta chi2 (cov):     {cfm_cov['chi2']-lcdm_cov['chi2']:+.2f}")
         L.append(f"  Delta AIC  (cov):     {cfm_cov['aic']-lcdm_cov['aic']:+.2f}")
     else:
-        L.append("  Volle Kovarianzmatrix nicht verfuegbar / fehlerhaft.")
+        L.append("  Volle Kovarianzmatrix nicht verfügbar / fehlerhaft.")
         L.append("  Ergebnisse basieren auf diagonalen Fehlern.")
     L.append("")
 
@@ -1214,7 +1214,7 @@ def write_enhanced_report(z, lcdm, cfm_flat, mcmc_results, mcmc_samples,
     for zi, ql, qc in zip(z_check, q_lcdm, q_cfm):
         L.append(f"  {zi:5.1f} {ql:>12.4f} {qc:>12.4f} {qc-ql:>+12.4f}")
 
-    # Beschleunigungs-Uebergang
+    # Beschleunigungs-Übergang
     z_fine = np.linspace(0.01, 3.0, 10000)
     q_cfm_fine = compute_deceleration(z_fine, p_f['Omega_m'], p_f['Phi0'], p_f['k_param'], p_f['a_trans'])
     q_lcdm_fine = compute_deceleration_lcdm(z_fine, p_l['Omega_m'])
@@ -1224,7 +1224,7 @@ def write_enhanced_report(z, lcdm, cfm_flat, mcmc_results, mcmc_samples,
 
     if len(cross_cfm) > 0:
         z_acc_cfm = z_fine[cross_cfm[0]]
-        L.append(f"\n  Beschleunigungs-Uebergang (q=0) / Acceleration transition (q=0):")
+        L.append(f"\n  Beschleunigungs-Übergang (q=0) / Acceleration transition (q=0):")
         L.append(f"    LCDM: z_acc = {z_fine[cross_lcdm[0]]:.3f}" if len(cross_lcdm) > 0 else "")
         L.append(f"    CFM:  z_acc = {z_acc_cfm:.3f}")
     L.append("")
@@ -1257,32 +1257,32 @@ def write_enhanced_report(z, lcdm, cfm_flat, mcmc_results, mcmc_samples,
     L.append("OVERALL CONCLUSION: RESPONSE TO GEMINI REVIEW")
     L.append("=" * 75)
     L.append("")
-    L.append("  SCHWAECHE 1 / WEAKNESS 1: 'Phaenomenologische Natur von tanh'")
-    L.append("  ANTWORT / RESPONSE: tanh entsteht als exakte Loesung der Saettigungs-ODE.")
+    L.append("  SCHWÄCHE 1 / WEAKNESS 1: 'Phänomenologische Natur von tanh'")
+    L.append("  ANTWORT / RESPONSE: tanh entsteht als exakte Lösung der Sättigungs-ODE.")
     L.append("  Vier alternative Funktionalformen zeigen vergleichbare Fits.")
-    L.append("  Die Ergebnisse sind ROBUST gegenueber der Wahl der Funktion.")
+    L.append("  Die Ergebnisse sind ROBUST gegenüber der Wahl der Funktion.")
     L.append("  tanh arises as the exact solution of the saturation ODE. Four alternative")
     L.append("  functional forms show comparable fits. Results are ROBUST.")
     L.append("")
-    L.append("  SCHWAECHE 2 / WEAKNESS 2: 'Phantom-Bereich w < -1'")
-    L.append("  ANTWORT / RESPONSE: Kein Big Rip (Saettigung). Kein Ghost (keine Feldtheorie).")
+    L.append("  SCHWÄCHE 2 / WEAKNESS 2: 'Phantom-Bereich w < -1'")
+    L.append("  ANTWORT / RESPONSE: Kein Big Rip (Sättigung). Kein Ghost (keine Feldtheorie).")
     L.append("  Asymptotisch de-Sitter (w -> -1). Analog zu f(R)-Gravitation.")
     L.append("  No Big Rip (saturation). No ghost (no field theory). Asymptotically")
     L.append("  de Sitter (w -> -1). Analogous to f(R) gravity.")
     L.append("")
-    L.append("  SCHWAECHE 3 / WEAKNESS 3: 'Nuisance-Parameter / H0-Spannung'")
+    L.append("  SCHWÄCHE 3 / WEAKNESS 3: 'Nuisance-Parameter / H0-Spannung'")
     L.append("  ANTWORT / RESPONSE: H0-Extraktion zeigt, dass CFM einen leicht anderen")
-    L.append("  effektiven H0 bevorzugt. Direkte Loesung der H0-Spannung")
-    L.append("  erfordert zusaetzliche Daten (CMB, BAO).")
+    L.append("  effektiven H0 bevorzugt. Direkte Lösung der H0-Spannung")
+    L.append("  erfordert zusätzliche Daten (CMB, BAO).")
     L.append("  H0 extraction shows that CFM prefers a slightly different effective H0.")
     L.append("  Directly solving the H0 tension requires additional data (CMB, BAO).")
     L.append("")
     L.append("  NEUE ERGEBNISSE / NEW RESULTS:")
     if mcmc_results:
         L.append(f"  - MCMC-Unsicherheiten / MCMC uncertainties: Omega_m = {mcmc_results['Omega_m']['median']:.4f} +/- {mcmc_results['Omega_m']['upper']:.4f}")
-    L.append("  - Alternative Funktionalformen bestaetigen Robustheit / Alternative functional forms confirm robustness")
-    L.append("  - Phantom-Stabilitaet: KEIN Big Rip / Phantom stability: NO Big Rip")
-    L.append("  - Dezelerationsparameter q(z): Zusaetzliche Vorhersage / Deceleration parameter q(z): additional prediction")
+    L.append("  - Alternative Funktionalformen bestätigen Robustheit / Alternative functional forms confirm robustness")
+    L.append("  - Phantom-Stabilität: KEIN Big Rip / Phantom stability: NO Big Rip")
+    L.append("  - Dezelerationsparameter q(z): Zusätzliche Vorhersage / Deceleration parameter q(z): additional prediction")
     L.append("")
 
     report = '\n'.join(L)
@@ -1335,10 +1335,10 @@ if __name__ == '__main__':
                 C_inv = np.linalg.inv(C_sub)
                 print(f"  Inverse Kovarianzmatrix berechnet: {C_inv.shape}")
             except np.linalg.LinAlgError:
-                print("  WARNUNG: Kovarianzmatrix singulaer, verwende diagonal")
+                print("  WARNUNG: Kovarianzmatrix singulär, verwende diagonal")
                 C_inv = None
         else:
-            print(f"  WARNUNG: Kovarianzmatrix-Groesse ({C_full.shape[0]}) != Daten ({len(df_full)})")
+            print(f"  WARNUNG: Kovarianzmatrix-Größe ({C_full.shape[0]}) != Daten ({len(df_full)})")
 
     # 3. Standard-Fits (diagonal)
     print("\n[3/9] STANDARD-FITS (diagonal)")
@@ -1351,7 +1351,7 @@ if __name__ == '__main__':
         lcdm_cov = fit_lcdm(z, m_obs, m_err, C_inv)
         cfm_cov = fit_cfm_flat(z, m_obs, m_err, C_inv, label="tanh+Cov")
     else:
-        print("\n[4/9] UEBERSPRUNGEN (keine Kovarianzmatrix)")
+        print("\n[4/9] ÜBERSPRUNGEN (keine Kovarianzmatrix)")
 
     # 5. MCMC
     print("\n[5/9] MCMC")

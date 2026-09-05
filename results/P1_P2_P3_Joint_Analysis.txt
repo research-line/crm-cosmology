@@ -33,9 +33,9 @@
 
   WICHTIGE ERKENNTNIS:
   ============================================================
-  Der Schallhorizont r_s haengt von Omega_b und Omega_r ab.
-  Ohne CDM aendert sich r_s, weil die Expansionsrate H(a)
-  bei fruehen Zeiten anders ist.
+  Der Schallhorizont r_s hängt von Omega_b und Omega_r ab.
+  Ohne CDM ändert sich r_s, weil die Expansionsrate H(a)
+  bei frühen Zeiten anders ist.
   Ratio r_s(CFM)/r_s(LCDM) = 1.3544
   Ratio d_C(CFM)/d_C(LCDM) = 1.4248
 
@@ -50,10 +50,10 @@
     -> 2551 Multipole berechnet
   Berechne Baryon-only (kein CDM)...
     -> 2551 Multipole berechnet
-  Berechne R2-Scalaron-Aequivalent (mu=4/3, Omega_cdm_eff=0.0167)...
+  Berechne R2-Scalaron-Äquivalent (mu=4/3, Omega_cdm_eff=0.0167)...
     -> 2551 Multipole berechnet
 
-  mu_eff-Scan: Effektive Gravitationsverstaerkung
+  mu_eff-Scan: Effektive Gravitationsverstärkung
   (mu_eff = 1 + Omega_cdm_eff / Omega_b)
 
     mu_eff    Om_cdm_eff     omch2_eff    l_1.Peak   D_l(1.Pk)   D_l(3.Pk)     Pk3/Pk1
@@ -69,7 +69,7 @@
   Planck-Beobachtung: Pk3/Pk1 = 0.4295
   R2-Scalaron (mu=4/3): Pk3/Pk1 = 0.3981
 
-  OPTIMALES mu_eff fuer Peak-Verhaeltnis: 5.94
+  OPTIMALES mu_eff für Peak-Verhältnis: 5.94
   => Omega_cdm_eff = 0.2472
   => R2-Scalaron liefert mu=1.33, es fehlt Faktor 4.46
 
@@ -78,7 +78,7 @@
   SECTION 3: P2 -- DETAILLIERTE C_l-ANALYSE
 ==========================================================================
 
-  C_l-Vergleich bei ausgewaehlten Multipolen:
+  C_l-Vergleich bei ausgewählten Multipolen:
 
        l     D_l(LCDM)   D_l(Baryon)   D_l(R2,4/3)     Ratio B/L
   ------------------------------------------------------------
@@ -94,7 +94,7 @@
     1500        687.18       1213.84       1454.10        1.7664
     2000        231.04        693.86        757.67        3.0032
 
-  Peak-Positionen und -Hoehen:
+  Peak-Positionen und -Höhen:
   ----------------------------------------------------------------------
   Modell                     l_1      D_l(1)       l_3      D_l(3)     Pk3/1
   ----------------------------------------------------------------------
@@ -158,8 +158,8 @@
   INTERPRETATION:
   Der R2-Scalaron allein liefert mu=4/3=1.33.
   Optimales mu_eff = 6.25 (Omega_cdm_eff = 0.2625).
-  Fehlender Faktor gegenueber R2-allein: 4.69x
-  Dieser muss vom Poeschl-Teller-Skalarfeld und
+  Fehlender Faktor gegenüber R2-allein: 4.69x
+  Dieser muss vom Pöschl-Teller-Skalarfeld und
   der Trace-Kopplung-Dynamik geliefert werden.
 
 
@@ -186,7 +186,7 @@
   SECTION 6: P3 -- CMB + BAO LIKELIHOOD
 ==========================================================================
 
-  A. CMB-Abstandsmasse:
+  A. CMB-Abstandsmaße:
   -------------------------------------------------------
   Modell                            l_A      chi2_CMB
   --------------------------------------------------
@@ -229,10 +229,10 @@
   -------------------------------------------------------
   CFM hat SCHLECHTEREN gemeinsamen Fit (Delta chi2 = +30596.73)
 
-  Staerken des CFM:
+  Stärken des CFM:
     [+] SN:  Besserer Fit (Delta = -24.31)
 
-  Schwaechen des CFM:
+  Schwächen des CFM:
     [-] CMB: Schlechterer Fit (Delta = +29409.04)
     [-] BAO: Schlechterer Fit (Delta = +1212.00)
 
@@ -243,12 +243,12 @@
 
   A. Was der R2-Scalaron liefert:
   -------------------------------------------------------
-  mu_R2  = 4/3 = 1.3333  (33% Gravitationsverstaerkung)
+  mu_R2  = 4/3 = 1.3333  (33% Gravitationsverstärkung)
   eta_R2 = 1/2 = 0.5000  (Gravitational Slip)
   Omega_cdm_eff(R2) = 0.01667
   Omega_total(R2)   = 0.06667
 
-  B. Was fuer CMB-Kompatibilitaet benoetigt wird:
+  B. Was für CMB-Kompatibilität benötigt wird:
   -------------------------------------------------------
   mu_needed      = 6.25
   Om_cdm_eff     = 0.26250
@@ -258,28 +258,28 @@
   -------------------------------------------------------
   mu_needed / mu_R2 = 6.25 / 1.3333 = 4.69
 
-  Der R2-Scalaron liefert 21.3% der benoetigten Verstaerkung.
-  Fehlende Verstaerkung: Faktor 4.69x
+  Der R2-Scalaron liefert 21.3% der benötigten Verstärkung.
+  Fehlende Verstärkung: Faktor 4.69x
 
-  D. Moegliche Quellen fuer die fehlende Verstaerkung:
+  D. Mögliche Quellen für die fehlende Verstärkung:
   -------------------------------------------------------
-  1. Poeschl-Teller-Skalarfeld (delta_phi Perturbationen)
-     -> Koppelt indirekt ueber Metrik an Gravitationspotentiale
+  1. Pöschl-Teller-Skalarfeld (delta_phi Perturbationen)
+     -> Koppelt indirekt über Metrik an Gravitationspotentiale
      -> In AeST liefert das Skalarfeld einen signifikanten Beitrag
 
   2. Trace-Kopplung-Dynamik F(T/rho)
-     -> Transienter Verstaerkungseffekt beim 'Einschalten'
+     -> Transienter Verstärkungseffekt beim 'Einschalten'
      -> Nicht im quasi-statischen Limit enthalten
 
   3. Nichtlineare Kopplung: F(T/rho) * R^2
-     -> Die effektive Kopplung kann staerker sein als 4/3
-     -> Abhaengig von der spezifischen Form von F()
+     -> Die effektive Kopplung kann stärker sein als 4/3
+     -> Abhängig von der spezifischen Form von F()
 
   4. Scalaron-Resonanz bei m_s ~ H(z*)
-     -> Fuer gamma ~ 1.4e-10 H0^{-2}
-     -> Kann resonante Verstaerkung liefern
+     -> Für gamma ~ 1.4e-10 H0^{-2}
+     -> Kann resonante Verstärkung liefern
 
-  E. AeST-Praezedenzfall:
+  E. AeST-Präzedenzfall:
   -------------------------------------------------------
   Skordis & Zlosnik (2021) zeigten: AeST reproduziert
   die CMB-Peaks OHNE CDM mit 3 Freiheitsgraden:
@@ -287,8 +287,8 @@
     CFM:  Skalarfeld + Scalaron + Metrik
 
   In AeST liefert KEIN einzelnes Feld allein die volle
-  Verstaerkung. Die KOMBINATION ist entscheidend.
-  Dasselbe Prinzip gilt fuer das CFM.
+  Verstärkung. Die KOMBINATION ist entscheidend.
+  Dasselbe Prinzip gilt für das CFM.
 
 
 ==========================================================================
@@ -300,7 +300,7 @@
   [OK] CFM-Hintergrund-Kosmologie implementiert
   [OK] CAMB-Referenzspektren berechnet (LCDM, Baryon-only, mu-Scan)
   [OK] R2-Perturbationsphysik (mu, eta) implementiert
-  [OK] Effektive-CDM-Mapping fuer mu_eff-Scan
+  [OK] Effektive-CDM-Mapping für mu_eff-Scan
 
   P2: C_l-BERECHNUNG
   -------------------------------------------------------
@@ -322,31 +322,31 @@
   l_A(CFM) = 316.907  vs. Planck = 301.471  (171.5 sigma)
   r_s(CFM) = 195.96 Mpc  vs. r_s(LCDM) = 144.68 Mpc
 
-  PERTURBATIONS-LEVEL (Peak-Hoehen):
+  PERTURBATIONS-LEVEL (Peak-Höhen):
   -------------------------------------------------------
-  R2-Scalaron allein: UNZUREICHEND (mu=4/3, nur 33% Verstaerkung)
-  Benoetigte Verstaerkung: mu_eff = 6.25 (525%)
-  => Volles 2-Feld-System (Scalaron + Poeschl-Teller) noetig
-  => AeST-Praezedenzfall zeigt: 3-Feld-System KANN ausreichen
+  R2-Scalaron allein: UNZUREICHEND (mu=4/3, nur 33% Verstärkung)
+  Benötigte Verstärkung: mu_eff = 6.25 (525%)
+  => Volles 2-Feld-System (Scalaron + Pöschl-Teller) nötig
+  => AeST-Präzedenzfall zeigt: 3-Feld-System KANN ausreichen
 
-  NAECHSTE SCHRITTE:
+  NÄCHSTE SCHRITTE:
   -------------------------------------------------------
   1. [KRITISCH] hi_class/EFTCAMB: Volle CFM-Perturbationen
      implementieren (Scalaron + Skalarfeld + Trace-Kopplung)
   2. [KRITISCH] C_l-Berechnung mit dem vollen System
   3. [WICHTIG]  Gemeinsamer MCMC: SN + CMB + BAO
-     mit gamma als zusaetzlichem Parameter
+     mit gamma als zusätzlichem Parameter
   4. [OPTIONAL] Vergleich mit AeST-Resultaten
 
   PHYSIKALISCHES FAZIT:
   =======================================================
-  Das CFM hat den RICHTIGEN RAHMEN fuer CMB-Kompatibilitaet:
-  - Skalarfeld (Poeschl-Teller) ~ AeST Skalarfeld
+  Das CFM hat den RICHTIGEN RAHMEN für CMB-Kompatibilität:
+  - Skalarfeld (Pöschl-Teller) ~ AeST Skalarfeld
   - Scalaron (R2-Term) ~ AeST Vektorfeld
-  - Trace-Kopplung ~ AeST Chamaeleon
+  - Trace-Kopplung ~ AeST Chamäleon
 
   Die QUANTITATIVE Frage -- ob mu_eff = 6.25 erreicht wird --
-  erfordert die numerische Loesung der vollen gekoppelten
+  erfordert die numerische Lösung der vollen gekoppelten
   Perturbationsgleichungen (hi_class/EFTCAMB).
 
   STATUS: Der Hintergrund-Level-Test (Distanzen, SN, BAO)

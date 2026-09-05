@@ -83,7 +83,7 @@ CORRECTED UNDERSTANDING:
 CONCLUSION: The theta_s problem is RESOLVED by Paper I's Lagrangian
 approach, not by tuning alpha_M. Paper I > Paper III for this test.
 
-7. POESCHL-TELLER PATH INTEGRAL
+7. PÖSCHL-TELLER PATH INTEGRAL
 ---------------------------------
 Gel'fand-Yaglom results for 1D PT:
 lambda=0.5: sqrt(det) = 1.2495

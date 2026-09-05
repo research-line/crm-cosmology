@@ -61,8 +61,8 @@ MODELLVERGLEICH
   Delta AIC         =      -8.18               -7.09
   Delta BIC         =      +2.56               +9.02
 
-  BIC-Urteil CFM_flat: POSITIVE EVIDENZ FUER LCDM
-  BIC-Urteil CFM_free: STARKE EVIDENZ FUER LCDM
+  BIC-Urteil CFM_flat: POSITIVE EVIDENZ FÜR LCDM
+  BIC-Urteil CFM_free: STARKE EVIDENZ FÜR LCDM
 
 ------------------------------------------------------------------------
 KREUZVALIDIERUNG (5-Fold)
@@ -103,7 +103,7 @@ ANTWORT AUF GEMINI-REVIEW-KRITIK
 ========================================================================
   Kritik 1: 'Nur simulierte Daten'
     STATUS: ADRESSIERT
-    Test mit 1590 REALEN Supernovae (Pantheon+, groesster SN-Ia-Katalog)
+    Test mit 1590 REALEN Supernovae (Pantheon+, größter SN-Ia-Katalog)
 
   Kritik 2: 'Overfitting (4 vs 2 Parameter)'
     STATUS: ADRESSIERT
@@ -112,7 +112,7 @@ ANTWORT AUF GEMINI-REVIEW-KRITIK
     c) BIC (strenge Bestrafung):     Delta = +2.56
     d) 5-Fold Kreuzvalidierung:      CFM = 0.4499 vs LCDM = 0.4519
 
-  Kritik 3: 'Phaenomenologie (tanh nicht aus First Principles)'
+  Kritik 3: 'Phänomenologie (tanh nicht aus First Principles)'
     STATUS: BLEIBT OFFEN
     Die funktionale Form tanh ist postuliert, nicht abgeleitet.
     Dies ist eine Limitation des CFM in seiner jetzigen Form.
@@ -120,10 +120,10 @@ ANTWORT AUF GEMINI-REVIEW-KRITIK
 ========================================================================
 FAZIT
 ========================================================================
-  CFM (flach) besteht den Pantheon+ Realdaten-Test UEBERZEUGEND.
-  Chi2, AIC und Kreuzvalidierung bevorzugen CFM gegenueber LCDM.
+  CFM (flach) besteht den Pantheon+ Realdaten-Test ÜBERZEUGEND.
+  Chi2, AIC und Kreuzvalidierung bevorzugen CFM gegenüber LCDM.
 
   Physikalische Bewertung der gefitteten Parameter:
     Omega_m = 0.363  -- physikalisch plausibel (Planck: 0.315)
-    z_trans = 0.33  -- Uebergangs-Rotverschiebung
-    k       = 1.30  -- Uebergangsschaerfe
+    z_trans = 0.33  -- Übergangs-Rotverschiebung
+    k       = 1.30  -- Übergangsschärfe

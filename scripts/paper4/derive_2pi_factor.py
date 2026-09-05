@@ -12,7 +12,7 @@ from a heuristic Fourier argument, but from:
             The 2*pi arises because H0 is an angular frequency (rad/s):
             a0 = c * (H0 / 2*pi) = c * f_H  where f_H is the Hubble frequency.
 
-  Method 2: The Fourier transform of the Poeschl-Teller phi_dot profile
+  Method 2: The Fourier transform of the Pöschl-Teller phi_dot profile
             peaks at omega=0 with width ~ H0. The wavenumber associated with
             the Hubble angular frequency k_H = H0/c gives
             a0 = c^2 * k_H / (2*pi) = c * H0 / (2*pi).
@@ -25,7 +25,7 @@ from a heuristic Fourier argument, but from:
             cosmological equilibrium point x_bar -> 0.
 
 Physical setup (CRM Paper IV):
-  phi   -- Poeschl-Teller scalar, background: phi_bar(t)
+  phi   -- Pöschl-Teller scalar, background: phi_bar(t)
   A_mu  -- unit timelike vector field (Daughter 2)
   Coupling: F = |T|/rho_crit * sech^2(phi/phi0) * A_mu * d^mu phi
   Galactic Xi acceleration: Xi(r) = B0 * (phi_dot_bar/rho_crit) * varphi'(r)
@@ -307,7 +307,7 @@ def method1_saturation_ode():
 def method2_fourier_frequency():
     """
     The CRM scalar field phi_bar(t) has a characteristic dynamical timescale
-    set by the Hubble rate H0. The Poeschl-Teller solution:
+    set by the Hubble rate H0. The Pöschl-Teller solution:
 
         phi_bar(t) = phi0 * tanh(H0 * t / sqrt(2))  (attractor solution)
         phi_dot_bar(t) = phi0 * H0/sqrt(2) * sech^2(H0*t/sqrt(2))

@@ -6,9 +6,9 @@ CFM vs LCDM: Test against Pantheon+ real data
 
 Zweck:
     Testet das Curvature Feedback Model (CFM) aus dem Artikel
-    "Spieltheoretische Kosmologie und das Kruemmungs-Rueckgabepotential-Modell"
-    (Geiger, 2026) gegen den Pantheon+ Datensatz -- den groessten oeffentlich
-    verfuegbaren Katalog von Typ-Ia-Supernovae.
+    "Spieltheoretische Kosmologie und das Krümmungs-Rückgabepotential-Modell"
+    (Geiger, 2026) gegen den Pantheon+ Datensatz -- den größten öffentlich
+    verfügbaren Katalog von Typ-Ia-Supernovae.
 Purpose:
     Tests the Curvature Feedback Model (CFM) from the article
     "Game-Theoretic Cosmology and the Curvature-Feedback-Potential Model"
@@ -17,7 +17,7 @@ Purpose:
 
 Datensatz:
     Pantheon+ (Scolnic et al. 2022, ApJ 938, 113)
-    - 1701 Lichtkurven von 1550 spektroskopisch bestaetigten SNe Ia
+    - 1701 Lichtkurven von 1550 spektroskopisch bestätigten SNe Ia
     - Rotverschiebungsbereich z = 0.001 bis z = 2.26
     - Wir nutzen z > 0.01 (1590 SNe) um Pekuliargeschwindigkeits-Dominanz
       bei sehr niedrigem z zu vermeiden.
@@ -46,14 +46,14 @@ Modelle:
 Methodik:
     - Observable: m_b_corr (bias-korrigierte scheinbare B-Band-Helligkeit)
     - Fehler: m_b_corr_err_DIAG (diagonale Fehler; volle Kovarianzmatrix
-      wuerde systematische Korrelationen einschliessen, ist hier nicht
-      verwendet -- betrifft beide Modelle gleichermassen)
+      würde systematische Korrelationen einschließen, ist hier nicht
+      verwendet -- betrifft beide Modelle gleichermaßen)
     - Nuisance-Parameter M (absolute Helligkeit + Hubble-Konstante) wird
       analytisch marginalisiert
     - Optimierung: Differential Evolution (globaler Optimizer)
     - Modellvergleich: chi2, AIC, BIC, 5-Fold Kreuzvalidierung
     - Integration: Schnelle kumulative Trapezregel auf feinem z-Gitter
-      (N=2000 Stuetzstellen, Fehler < 10^-5)
+      (N=2000 Stützstellen, Fehler < 10^-5)
 Methodology:
     - Observable: m_b_corr (bias-corrected apparent B-band magnitude)
     - Errors: m_b_corr_err_DIAG (diagonal errors; full covariance matrix 
@@ -79,7 +79,7 @@ Ausgaben / Outputs:
     - CFM_Pantheon_Plus_Result.png  (6-Panel Visualisierung / visualization)
     - CFM_Pantheon_Plus_Result.txt  (Detaillierter Ergebnisbericht / detailed results report)
 
-Abhaengigkeiten / Dependencies:
+Abhängigkeiten / Dependencies:
     numpy, pandas, scipy, matplotlib, requests
 
 Autor/Author: LG (mit Claude Opus 4.6)
@@ -121,7 +121,7 @@ OUTPUT_DIR = str(REPO_ROOT / "data" / "paper3")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 Z_MIN = 0.01       # Mindest-Rotverschiebung (unterhalb dominieren Pekuliarv.)
-N_GRID = 2000      # Gitterpunkte fuer kumulative Trapezregel
+N_GRID = 2000      # Gitterpunkte für kumulative Trapezregel
 
 
 # ==========================================================================
@@ -130,7 +130,7 @@ N_GRID = 2000      # Gitterpunkte fuer kumulative Trapezregel
 
 def download_data():
     """
-    Laedt den Pantheon+ Datensatz herunter, falls nicht lokal vorhanden.
+    Lädt den Pantheon+ Datensatz herunter, falls nicht lokal vorhanden.
     Quelle: GitHub PantheonPlusSH0ES/DataRelease
     Downloads the Pantheon+ dataset if not locally present.
     Source: GitHub PantheonPlusSH0ES/DataRelease
@@ -148,7 +148,7 @@ def download_data():
 
 def load_data():
     """
-    Laedt und filtert den Pantheon+ Datensatz.
+    Lädt und filtert den Pantheon+ Datensatz.
 
     Verwendet:
         zHD            - Hubble-Diagramm-Rotverschiebung (CMB + VPEC korrigiert)
@@ -189,7 +189,7 @@ def load_data():
 # 2. INTEGRATION: FAST VECTORIZED LUMINOSITY DISTANCE
 # ==========================================================================
 #
-# Statt scipy.integrate.quad fuer jede einzelne SN (langsam bei 1590 SNe)
+# Statt scipy.integrate.quad für jede einzelne SN (langsam bei 1590 SNe)
 # wird eine kumulative Trapezregel auf einem feinen z-Gitter berechnet
 # und dann auf die Daten-Rotverschiebungen interpoliert.
 # Instead of scipy.integrate.quad for each SN (slow for 1590 SNe),
@@ -206,7 +206,7 @@ def load_data():
 
 def _z_grid(z_max):
     """
-    Feines z-Gitter von 0 bis leicht ueber z_max.
+    Feines z-Gitter von 0 bis leicht über z_max.
     Fine z-grid from 0 to slightly above z_max.
     """
     return np.linspace(0, z_max * 1.05, N_GRID)
@@ -215,13 +215,13 @@ def _z_grid(z_max):
 def _cumulative_integral(z_grid, E_inverse):
     """
     Kumulative Trapezregel: integral_0^z_i dz' * f(z')
-    fuer ein aequidistantes Gitter.
+    für ein äquidistantes Gitter.
     Cumulative trapezoidal rule: integral_0^z_i dz' * f(z')
     for an equidistant grid.
     """
     dz = z_grid[1] - z_grid[0]
     # Trapezmethode: (f[0]/2 + f[1] + f[2] + ... + f[n-1] + f[n]/2) * dz
-    # Fuer kumulative Summe verwenden wir die einfache Rechtecksumme,
+    # Für kumulative Summe verwenden wir die einfache Rechtecksumme,
     # korrigiert durch dz. Der Fehler bei N_GRID=2000 ist < 10^-5.
     # For cumulative sum we use the simple rectangular sum, corrected by dz.
     # The error at N_GRID=2000 is < 10^-5.
@@ -232,7 +232,7 @@ def _cumulative_integral(z_grid, E_inverse):
 
 def distance_modulus_lcdm(z_data, Omega_m):
     """
-    Distanzmodul mu(z) fuer flaches LCDM.
+    Distanzmodul mu(z) für flaches LCDM.
 
     E(z) = sqrt(Omega_m * (1+z)^3 + (1-Omega_m))
     mu = 5 * log10(d_L)  [+ M wird separat marginalisiert]
@@ -248,7 +248,7 @@ def distance_modulus_lcdm(z_data, Omega_m):
 
 def distance_modulus_cfm(z_data, Omega_m, Phi0, k, a_trans):
     """
-    Distanzmodul mu(z) fuer das Curvature Feedback Model.
+    Distanzmodul mu(z) für das Curvature Feedback Model.
 
     E(z) = sqrt(Omega_m * (1+z)^3 + Omega_Phi(a))
     mit  Omega_Phi(a) = Phi0 * [tanh(k*(a-a_trans)) + s] / (1+s)
@@ -272,7 +272,7 @@ def distance_modulus_cfm(z_data, Omega_m, Phi0, k, a_trans):
 # 3. CHI-SQUARE WITH ANALYTICAL M-MARGINALIZATION
 # ==========================================================================
 #
-# Die Beobachtungsgroesse ist m_b_corr.  Die Modellvorhersage ist:
+# Die Beobachtungsgröße ist m_b_corr.  Die Modellvorhersage ist:
 #     m_model = mu_theory(z; params) + M
 # wobei M = M_B + 5*log10(c/H0) + 25 ein Nuisance-Parameter ist,
 # der die absolute Helligkeit und die Hubble-Konstante absorbiert.
@@ -289,7 +289,7 @@ def distance_modulus_cfm(z_data, Omega_m, Phi0, k, a_trans):
 
 def chi2_marginalized(mu_theory, m_obs, m_err):
     """
-    Berechnet chi2 nach analytischer Marginalisierung ueber M.
+    Berechnet chi2 nach analytischer Marginalisierung über M.
     Calculates chi2 after analytical marginalization over M.
 
     Returns:
@@ -414,7 +414,7 @@ def fit_cfm_flat(z, m_obs, m_err):
 
     bounds = [
         (0.10, 0.50),   # Omega_m
-        (0.5, 50.0),    # k (Uebergangsschaerfe)
+        (0.5, 50.0),    # k (Übergangsschärfe)
         (0.20, 0.75),   # a_trans (entspricht z_trans = 0.33 bis 4.0)
     ]
 
@@ -556,7 +556,7 @@ def compute_weff(z_arr, Phi0, k, a_trans):
     w_eff(a) = -1 - (1/3) * d(ln Omega_Phi) / d(ln a)
 
     Bei a >> a_trans: Omega_Phi ~ const => w -> -1  (wie Lambda)
-    Bei a ~ a_trans:  Omega_Phi aendert sich schnell => w weicht ab
+    Bei a ~ a_trans:  Omega_Phi ändert sich schnell => w weicht ab
     Bei a << a_trans: Omega_Phi ~ 0 => w -> 0  (wie Materie/Staub)
     """
     a = 1.0 / (1.0 + z_arr)
@@ -577,9 +577,9 @@ def compute_weff(z_arr, Phi0, k, a_trans):
 
 def cross_validate(z, m_obs, m_err, n_folds=5):
     """
-    k-Fold Kreuzvalidierung fuer LCDM, CFM_flat und CFM_free.
+    k-Fold Kreuzvalidierung für LCDM, CFM_flat und CFM_free.
 
-    Fuer jeden Fold:
+    Für jeden Fold:
       1. Fitte Modell auf Training-Set (80% der Daten)
       2. Evaluiere chi2 auf Test-Set (20% der Daten)
       3. Normiere auf chi2/n (vergleichbar zwischen Folds)
@@ -782,13 +782,13 @@ def create_plots(z, m_obs, m_err, lcdm, cfm_flat, cfm_free, cv):
     ref_chi2 = lcdm['chi2']
 
     def bic_verdict(dbic):
-        if dbic < -10: return "Sehr stark fuer Modell"
-        if dbic < -6: return "Stark fuer Modell"
-        if dbic < -2: return "Positiv fuer Modell"
+        if dbic < -10: return "Sehr stark für Modell"
+        if dbic < -6: return "Stark für Modell"
+        if dbic < -2: return "Positiv für Modell"
         if dbic < 2: return "Nicht signifikant"
-        if dbic < 6: return "Positiv fuer LCDM"
-        if dbic < 10: return "Stark fuer LCDM"
-        return "Sehr stark fuer LCDM"
+        if dbic < 6: return "Positiv für LCDM"
+        if dbic < 10: return "Stark für LCDM"
+        return "Sehr stark für LCDM"
 
     txt = f"MODEL COMPARISON: PANTHEON+ REAL DATA ({len(z)} SNe Ia)\n"
     txt += "="*72 + "\n"
@@ -915,13 +915,13 @@ def write_report(z, lcdm, cfm_flat, cfm_free, cv):
     L.append("")
 
     def bic_txt(d):
-        if d < -10: return "SEHR STARKE EVIDENZ FUER CFM"
-        if d < -6: return "STARKE EVIDENZ FUER CFM"
-        if d < -2: return "POSITIVE EVIDENZ FUER CFM"
+        if d < -10: return "SEHR STARKE EVIDENZ FÜR CFM"
+        if d < -6: return "STARKE EVIDENZ FÜR CFM"
+        if d < -2: return "POSITIVE EVIDENZ FÜR CFM"
         if d < 2: return "KEIN SIGNIFIKANTER UNTERSCHIED"
-        if d < 6: return "POSITIVE EVIDENZ FUER LCDM"
-        if d < 10: return "STARKE EVIDENZ FUER LCDM"
-        return "SEHR STARKE EVIDENZ FUER LCDM"
+        if d < 6: return "POSITIVE EVIDENZ FÜR LCDM"
+        if d < 10: return "STARKE EVIDENZ FÜR LCDM"
+        return "SEHR STARKE EVIDENZ FÜR LCDM"
 
     L.append(f"  BIC-Urteil CFM_flat: {bic_txt(d_bic_f)}")
     L.append(f"  BIC-Urteil CFM_free: {bic_txt(d_bic_r)}")
@@ -958,7 +958,7 @@ def write_report(z, lcdm, cfm_flat, cfm_free, cv):
     L.append("=" * 72)
     L.append(f"  Kritik 1: 'Nur simulierte Daten'")
     L.append(f"    STATUS: ADRESSIERT")
-    L.append(f"    Test mit {len(z)} REALEN Supernovae (Pantheon+, groesster SN-Ia-Katalog)")
+    L.append(f"    Test mit {len(z)} REALEN Supernovae (Pantheon+, größter SN-Ia-Katalog)")
     L.append("")
     L.append(f"  Kritik 2: 'Overfitting (4 vs 2 Parameter)'")
     L.append(f"    STATUS: ADRESSIERT")
@@ -967,7 +967,7 @@ def write_report(z, lcdm, cfm_flat, cfm_free, cv):
     L.append(f"    c) BIC (strenge Bestrafung):     Delta = {d_bic_f:+.2f}")
     L.append(f"    d) 5-Fold Kreuzvalidierung:      CFM = {cv['cfm_flat']['mean']:.4f} vs LCDM = {cv['lcdm']['mean']:.4f}")
     L.append("")
-    L.append(f"  Kritik 3: 'Phaenomenologie (tanh nicht aus First Principles)'")
+    L.append(f"  Kritik 3: 'Phänomenologie (tanh nicht aus First Principles)'")
     L.append(f"    STATUS: BLEIBT OFFEN")
     L.append(f"    Die funktionale Form tanh ist postuliert, nicht abgeleitet.")
     L.append(f"    Dies ist eine Limitation des CFM in seiner jetzigen Form.")
@@ -984,22 +984,22 @@ def write_report(z, lcdm, cfm_flat, cfm_free, cv):
         cv['cfm_flat']['mean'] < cv['lcdm']['mean'],
     ])
     if score >= 3:
-        L.append("  CFM (flach) besteht den Pantheon+ Realdaten-Test UEBERZEUGEND.")
-        L.append("  Chi2, AIC und Kreuzvalidierung bevorzugen CFM gegenueber LCDM.")
+        L.append("  CFM (flach) besteht den Pantheon+ Realdaten-Test ÜBERZEUGEND.")
+        L.append("  Chi2, AIC und Kreuzvalidierung bevorzugen CFM gegenüber LCDM.")
     elif score >= 2:
         L.append("  CFM (flach) zeigt GEMISCHTE Ergebnisse gegen Realdaten.")
         L.append("  Chi2-Fit besser, aber nicht alle Kriterien eindeutig.")
     else:
-        L.append("  CFM (flach) besteht den Realdaten-Test NICHT ueberzeugend.")
-        L.append("  Der bessere chi2-Wert wird durch Parameter-Freiheit erklaert.")
+        L.append("  CFM (flach) besteht den Realdaten-Test NICHT überzeugend.")
+        L.append("  Der bessere chi2-Wert wird durch Parameter-Freiheit erklärt.")
     L.append("")
     L.append("  Physikalische Bewertung der gefitteten Parameter:")
     if abs(pf['Omega_m'] - 0.30) < 0.10:
         L.append(f"    Omega_m = {pf['Omega_m']:.3f}  -- physikalisch plausibel (Planck: 0.315)")
     else:
         L.append(f"    Omega_m = {pf['Omega_m']:.3f}  -- weicht von Planck (0.315) ab")
-    L.append(f"    z_trans = {pf['z_trans']:.2f}  -- Uebergangs-Rotverschiebung")
-    L.append(f"    k       = {pf['k_param']:.2f}  -- Uebergangsschaerfe")
+    L.append(f"    z_trans = {pf['z_trans']:.2f}  -- Übergangs-Rotverschiebung")
+    L.append(f"    k       = {pf['k_param']:.2f}  -- Übergangsschärfe")
     L.append("")
 
     report = '\n'.join(L)

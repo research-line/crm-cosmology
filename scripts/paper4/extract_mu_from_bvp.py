@@ -3,12 +3,12 @@
 """
 CFM Paper IV: Extract mu(x) from BVP Solutions
 ===============================================
-Laueft den BVP-Solver v5 fuer 20 Galaxiemassen (10^8 bis 10^12.5 Msun)
+Läuft den BVP-Solver v5 für 20 Galaxiemassen (10^8 bis 10^12.5 Msun)
 und extrahiert die emergente CRM-native Interpolationsfunktion mu(x).
 
 Vergleich mit:
   (a) McGaugh (2016):  mu = 1 / (1 - exp(-sqrt(x)))
-  (b) Simple IF:       mu = (1 + x) / x   (aequivalent zu nu = 1 + 1/x)
+  (b) Simple IF:       mu = (1 + x) / x   (äquivalent zu nu = 1 + 1/x)
   (c) CRM-native:      mu = x / (1 - exp(-x^alpha))  mit freiem alpha
 
 Aufruf auf Hetzner-Server:
@@ -83,7 +83,7 @@ def send_telegram(msg: str) -> None:
 
 def scale_radius_kpc(log_m: float) -> float:
     """
-    Skalierungsrelation fuer Plummer-Skalenradius:
+    Skalierungsrelation für Plummer-Skalenradius:
       r_s ~ 1.5 * (M / 10^10)^0.3  kpc
 
     Kalibriert auf Beobachtungsdaten (McGaugh et al. 2016):
@@ -114,7 +114,7 @@ def nu_mcgaugh(x):
 
 
 def nu_simple(x):
-    """Einfache IF: nu = 1 + 1/x  (aequivalent zu mu = x/(1+x))"""
+    """Einfache IF: nu = 1 + 1/x  (äquivalent zu mu = x/(1+x))"""
     return 1.0 + 1.0 / np.clip(x, 1e-10, None)
 
 
@@ -122,7 +122,7 @@ def nu_crm(x, alpha):
     """
     CRM-native Ansatz: nu(x) = 1 / (1 - exp(-x^alpha))
     (entspricht mu(x) = x / (1 - exp(-x^alpha)))
-    Fuer alpha = 0.5 konvergiert das gegen McGaugh.
+    Für alpha = 0.5 konvergiert das gegen McGaugh.
     """
     xa = np.clip(x, 1e-10, None) ** np.clip(alpha, 0.01, 5.0)
     return 1.0 / (1.0 - np.exp(-np.clip(xa, 0.0, 700.0)))
@@ -135,7 +135,7 @@ def nu_crm(x, alpha):
 def fit_nu(x_data: np.ndarray, nu_data: np.ndarray, nu_sigma: np.ndarray):
     """
     Fittet die drei analytischen Formen an die kombinierten Datenpunkte.
-    Gibt ein Dict mit Parametern, chi^2 und dof zurueck.
+    Gibt ein Dict mit Parametern, chi^2 und dof zurück.
     """
     results = {}
 
@@ -202,7 +202,7 @@ def fit_nu(x_data: np.ndarray, nu_data: np.ndarray, nu_sigma: np.ndarray):
 
 
 # ---------------------------------------------------------------------------
-# Datenpunkte aus BVP-Loesung extrahieren
+# Datenpunkte aus BVP-Lösung extrahieren
 # ---------------------------------------------------------------------------
 
 def extract_mu_points(res: dict, r_min_kpc: float = 0.5) -> dict:
@@ -210,9 +210,9 @@ def extract_mu_points(res: dict, r_min_kpc: float = 0.5) -> dict:
     Extrahiert mu(x) = g_obs/g_N als Funktion von x = g_N/a0
     aus einem solve_cfm_v5()-Ergebnis.
 
-    Qualitaetsschnitte:
+    Qualitätsschnitte:
       - r > r_min_kpc (Kernbereich meiden)
-      - x in [1e-4, 100]   (MOND-Uebergangsbereich)
+      - x in [1e-4, 100]   (MOND-Übergangsbereich)
       - g_obs > 0, g_N > 1e-16
       - nu in [1.0, 50]    (physikalisch sinnvoll)
     """
@@ -297,7 +297,7 @@ def make_mu_plot(
     # ---- rechtes Panel: Residuen relativ zu McGaugh ----
     ax2 = axes[1]
 
-    # Median-Binning fuer saubere Residuen
+    # Median-Binning für saubere Residuen
     x_bins = np.logspace(-4, 2, 60)
     bin_idx = np.digitize(all_x, x_bins)
     bin_centers, bin_res_mc, bin_res_si, bin_res_crm = [], [], [], []
@@ -366,7 +366,7 @@ def make_summary_plot(
     out_path: Path,
 ) -> None:
     """
-    4-Panel-Ueberblick:
+    4-Panel-Überblick:
       (1) Anzahl Datenpunkte pro Galaxie
       (2) Slope (RAR log-log Steigung) vs. log M
       (3) V_flat vs. log M
@@ -412,12 +412,12 @@ def make_summary_plot(
                label=r'$\sqrt{GM/a_0}$')
     ax.set_xlabel(r'$\log_{10}(M/M_\odot)$')
     ax.set_ylabel(r'$r_\mathrm{MOND}$ [kpc]')
-    ax.set_title('MOND-Uebergangsradius')
+    ax.set_title('MOND-Übergangsradius')
     ax.set_yscale('log')
     ax.legend()
     ax.grid(True, alpha=0.3, which='both')
 
-    fig.suptitle('CFM BVP: 20-Galaxien-Ueberblick', fontsize=13)
+    fig.suptitle('CFM BVP: 20-Galaxien-Überblick', fontsize=13)
     fig.tight_layout()
     fig.savefig(out_path, dpi=150)
     plt.close(fig)
@@ -432,7 +432,7 @@ def main():
     t_start = time.time()
 
     print("=" * 72)
-    print("CFM Paper IV: mu(x)-Extraktion aus BVP-Loesungen")
+    print("CFM Paper IV: mu(x)-Extraktion aus BVP-Lösungen")
     print("=" * 72)
     print(f"a0 = {A0:.6e} m/s^2")
     print(f"Galaxiemassen: {len(LOG_MASSES)} Stufen von 10^{LOG_MASSES[0]} "
@@ -446,7 +446,7 @@ def main():
     )
 
     # ------------------------------------------------------------------
-    # Phase 1: BVP-Solver fuer jede Galaxiemasse ausfuehren
+    # Phase 1: BVP-Solver für jede Galaxiemasse ausführen
     # ------------------------------------------------------------------
     per_galaxy  = []   # Extrahierte mu(x)-Punkte
     galaxy_meta = []   # Metadaten (slope, V_flat, ...)
@@ -484,7 +484,7 @@ def main():
             )
             dt = time.time() - t0
 
-            # Konvergenz pruefen
+            # Konvergenz prüfen
             last = res['convergence_log'][-1]
             converged = last['converged']
             status = "OK" if converged else "WARN"
@@ -542,7 +542,7 @@ def main():
 
     print(f"  Gesamtzahl Datenpunkte: {len(all_x)}")
 
-    # Logarithmisch aequidistante Bins fuer repraesentativen Fit
+    # Logarithmisch äquidistante Bins für repräsentativen Fit
     # (Verhindert, dass dichte Regionen den Fit dominieren)
     x_bins    = np.logspace(np.log10(max(all_x.min(), 1e-4)), np.log10(min(all_x.max(), 100)), 100)
     bin_idx   = np.digitize(all_x, x_bins)

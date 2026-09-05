@@ -93,4 +93,4 @@ BEWERTUNG
 
   Das erweiterte CFM (Test C) mit geometrischem DM-Ersatz
   fittet BESSER als LCDM (Delta chi2 = -18.7)!
-  => Die Vereinigung von CFM + MOND ist prinzipiell MOEGLICH.
+  => Die Vereinigung von CFM + MOND ist prinzipiell MÖGLICH.

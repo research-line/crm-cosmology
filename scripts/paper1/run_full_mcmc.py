@@ -5,9 +5,9 @@ MCMC RESUME from checkpoint.
 Fixes vs. original run_full_mcmc_extended.py:
   1. maxtasksperchild=50  -- Worker-Prozesse werden nach 50 Evaluationen recycelt
      -> Verhindert Memory Leak durch hi_class C-Bibliothek
-  2. 6 statt 8 Kerne      -- Laesst ~6 GB RAM frei fuer OS + Puffer
-  3. Checkpoint alle 250   -- Haeufigere Sicherung
-  4. Laedt Checkpoint und setzt ab dort fort
+  2. 6 statt 8 Kerne      -- Lässt ~6 GB RAM frei für OS + Puffer
+  3. Checkpoint alle 250   -- Häufigere Sicherung
+  4. Lädt Checkpoint und setzt ab dort fort
 """
 import sys
 sys.path.insert(0, '/home/hi_class/python/build/lib.linux-x86_64-cpython-312')
@@ -29,7 +29,7 @@ def limit_memory():
     resource.setrlimit(resource.RLIMIT_AS, (4_500_000_000, hard))
 
 def worker_init():
-    """Initializer fuer jeden neuen Worker-Prozess."""
+    """Initializer für jeden neuen Worker-Prozess."""
     limit_memory()
 
 # ================================================================
@@ -201,7 +201,7 @@ nwalkers = 48
 
 print(f"Checkpoint: Step {start_step}, {len(chain_prev)} samples, acceptance={prev_acceptance:.3f}")
 
-# Letzte Walker-Positionen extrahieren (letzte 48 Eintraege der flat chain)
+# Letzte Walker-Positionen extrahieren (letzte 48 Einträge der flat chain)
 last_positions = chain_prev[-nwalkers:]  # shape: (48, 5)
 last_log_probs = log_prob_prev[-nwalkers:]
 
@@ -216,8 +216,8 @@ for i, name in enumerate(PARAM_NAMES):
 n_production_total = 5000
 n_remaining = n_production_total - start_step
 chunk_size = 100
-checkpoint_interval = 250  # Haeufiger als vorher (war 500)
-N_CORES = 6  # Reduziert von 8 -> laesst ~6 GB RAM frei
+checkpoint_interval = 250  # Häufiger als vorher (war 500)
+N_CORES = 6  # Reduziert von 8 -> lässt ~6 GB RAM frei
 
 print(f"\n{'='*80}")
 print(f"MCMC RESUME: cfm_fR (continuing from step {start_step})")
@@ -246,7 +246,7 @@ state = State(last_positions, log_prob=last_log_probs)
 print(f"\n[{time.strftime('%H:%M:%S')}] Starting production (steps {start_step+1}-{n_production_total})...")
 sys.stdout.flush()
 
-# Sammle vorherige Chain fuer den finalen Output
+# Sammle vorherige Chain für den finalen Output
 all_chain_parts = [chain_prev]
 all_logprob_parts = [log_prob_prev]
 

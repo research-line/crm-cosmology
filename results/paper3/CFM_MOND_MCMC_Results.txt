@@ -12,9 +12,9 @@ Delta chi2 vs LCDM = -26.31
   Phi0         = 0.4287  (+0.1364 / -0.0811)
 
   w_eff(DM-Term) = beta/3 - 1 = -0.3260
-    (Materie: 0.000, Kruemmung: -0.333, Strahlung: 0.333)
+    (Materie: 0.000, Krümmung: -0.333, Strahlung: 0.333)
 
 INTERPRETATION:
-  beta = 2.02 liegt zwischen Materie (3.0) und Kruemmung (2.0)
-  => Geometrischer Effekt mit materie-aehnlicher Skalierung
+  beta = 2.02 liegt zwischen Materie (3.0) und Krümmung (2.0)
+  => Geometrischer Effekt mit materie-ähnlicher Skalierung
   => Konsistent mit MOND-inspiriertem geometrischen DM-Ersatz

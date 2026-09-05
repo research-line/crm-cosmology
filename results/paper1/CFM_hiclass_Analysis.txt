@@ -1,6 +1,6 @@
 ======================================================================
   CFM+MOND: hi_class PERTURBATIONSANALYSE
-  Vollstaendige Ergebnisse (aktualisiert)
+  Vollständige Ergebnisse (aktualisiert)
   Datum: 2026-02-13
 ======================================================================
 
@@ -50,9 +50,9 @@ Ergebnis: KEIN EFFEKT bei z=1090!
   Mit f(R)-Relation: aB = -aM/2, aT = 0
 
   ERGEBNIS: aM = 0.001 verschiebt l1 von 223 auf 220 (EXAKT Planck!)
-  OHNE theta_s zu aendern! Rein perturbativer ISW-Effekt!
+  OHNE theta_s zu ändern! Rein perturbativer ISW-Effekt!
 
-  Vollstaendiger Scan (f(R): aB = -aM/2):
+  Vollständiger Scan (f(R): aB = -aM/2):
 
   omch2    aM       l1  r31     theta_s   rs_d
   ---------------------------------------------------
@@ -71,13 +71,13 @@ Ergebnis: KEIN EFFEKT bei z=1090!
   0.1090  0.0012  219 0.4203  1.02786  150.13
   0.1095  0.0010  220 0.4217  1.02845  149.99
 
-  Zusaetzliche verifizierte Punkte:
+  Zusätzliche verifizierte Punkte:
   0.1125  0.0007  220 0.4269  1.03193  149.15
   0.1125  0.0010  219 0.4259  1.03193  149.15
   0.1140  0.0007  220 0.4291  1.03363  148.73
   **0.1143  0.0007  220 0.4295  1.03397  148.65** <-- EXAKTER MATCH!
 
-  Numerisches Limit: Einige omch2 >= 0.1100 Kombinationen fuehren zu
+  Numerisches Limit: Einige omch2 >= 0.1100 Kombinationen führen zu
   Perturbations-Integrator-Fehlern, aber aM=0.0007 bei omch2 bis 0.1143 stabil.
 
 --- 2d. cfm_fR NATIVES MODELL (NEU IMPLEMENTIERT 2026-02-14) ---
@@ -87,13 +87,13 @@ Ergebnis: KEIN EFFEKT bei z=1090!
   f(R)-Relation: alpha_B = -alpha_M/2, alpha_T = 0, alpha_K = 0
 
   Kompiliert mit classy Python-Wrapper (make + python setup.py)
-  Quasi-statische Naeherung (method_qs_smg = quasi_static)
+  Quasi-statische Näherung (method_qs_smg = quasi_static)
 
   Systematischer Scan (omch2=0.1143, n=0.1):
   aM_0    n     l1      r31      theta_s    Interpretation
   -----------------------------------------------------------
   0.012  0.1   220.63  0.4336   0.010318   zu schwach
-  0.015  0.1   220.40  0.4328   0.010318   naeher
+  0.015  0.1   220.40  0.4328   0.010318   näher
   0.018  0.1   220.15  0.4317   0.010346   gut
   0.020  0.1   219.97  0.4309   0.010355   l1 fast exakt
   0.025  0.1   219.45  0.4283   0.010355   zu stark
@@ -120,11 +120,11 @@ Ergebnis: KEIN EFFEKT bei z=1090!
     alpha_B(a=1)     = -0.00103 (f(R) Relation)
 
   ACHTUNG: SIGMA8-PROBLEM bei n_exp=0.1!
-    sigma8 = 1.37 bei A_s=2.1e-9 (Planck: 0.811, +68% Ueberschuss!)
-    Verstaerktes Strukturwachstum durch G_eff-Erhoehung bei spaeten Zeiten
+    sigma8 = 1.37 bei A_s=2.1e-9 (Planck: 0.811, +68% Überschuss!)
+    Verstärktes Strukturwachstum durch G_eff-Erhöhung bei späten Zeiten
     A_s-Reduktion hilft nur teilweise (sigma8 ~ 1.36 bei A_s=2.05e-9)
 
-  LOESUNG: n_exp=0.01 (fast-konstantes alpha_M-Profil)
+  LÖSUNG: n_exp=0.01 (fast-konstantes alpha_M-Profil)
     omch2=0.1138, aM0=0.06, n_exp=0.01, A_s=2.05e-9, n_s=0.97:
     l1=220.3, r31=0.4352, sigma8=0.847, chi2/n=1.103
     alpha_M(a=1) ~ 0.00059, alpha_M(a=0.001) ~ 0.00054
@@ -144,19 +144,19 @@ Ergebnis: KEIN EFFEKT bei z=1090!
   Status: Durch cfm_fR ersetzt (gleiche Formel, 3 statt 8 Parameter)
 
 ======================================================================
-3. SCHLUESSELERKENNTNISSE
+3. SCHLÜSSELERKENNTNISSE
 ======================================================================
 
 3a. Entkopplung von Peaks und Hintergrund:
-  - alpha_M (Planck-Massenrate) aendert l1 OHNE theta_s zu aendern
+  - alpha_M (Planck-Massenrate) ändert l1 OHNE theta_s zu ändern
   - theta_s ist rein hintergrundbasiert, aM wirkt nur auf Perturbationen
-  - omch2 kontrolliert r31 (Peakhoehenverhaeltnis)
-  - omch2 und aM wirken fast unabhaengig voneinander
+  - omch2 kontrolliert r31 (Peakhöhenverhältnis)
+  - omch2 und aM wirken fast unabhängig voneinander
 
-3b. Lineare Trends (verifiziert ueber 13 Datenpunkte):
-  - dr31/domch2 = +1.4 (pro 0.01 omch2-Aenderung)
-  - dr31/daM = -3.7 (pro 0.001 aM-Aenderung)
-  - dtheta/domch2 = +1.19 (pro 0.01 omch2-Aenderung)
+3b. Lineare Trends (verifiziert über 13 Datenpunkte):
+  - dr31/domch2 = +1.4 (pro 0.01 omch2-Änderung)
+  - dr31/daM = -3.7 (pro 0.001 aM-Änderung)
+  - dtheta/domch2 = +1.19 (pro 0.01 omch2-Änderung)
   - dtheta/daM = 0 (EXAKT entkoppelt)
 
 3c. Optimales Modell - constant_alphas (DIREKT VERIFIZIERT):
@@ -165,7 +165,7 @@ Ergebnis: KEIN EFFEKT bei z=1090!
   - theta_s = 1.034 (-0.69% vs Planck), rs_d = 148.65 Mpc
   HINWEIS: Nicht mehr nur Extrapolation, sondern hi_class-verifiziert!
 
-3d. Optimales Modell - cfm_fR (ZEITABHAENGIG, 2026-02-14):
+3d. Optimales Modell - cfm_fR (ZEITABHÄNGIG, 2026-02-14):
   - omch2 = 0.1136, alpha_M_0 = 0.021, n_exp = 0.1
   - alpha_M(a) = 0.021 * 0.1 * a^0.1 / (1 + 0.021*a^0.1)
   - f(R)-Relation: alpha_B = -alpha_M/2, alpha_T = 0
@@ -175,7 +175,7 @@ Ergebnis: KEIN EFFEKT bei z=1090!
   VORTEIL: Physikalisch korrekt (alpha_M -> 0 bei a -> 0), numerisch stabil
 
 ======================================================================
-4. VOLLSTAENDIGE CHI2-ANALYSE GEGEN PLANCK 2018 TT-DATEN
+4. VOLLSTÄNDIGE CHI2-ANALYSE GEGEN PLANCK 2018 TT-DATEN
 ======================================================================
 
 4a. Alte Chi2-Analyse (Peak-basiert, relativ):
@@ -186,7 +186,7 @@ Ergebnis: KEIN EFFEKT bei z=1090!
   CFM+MG (omch2=0.1095)       18165       5684        -32%
   CFM r31-opt (omch2=0.1125)   8694       2451        -71%
 
-4b. NEUE VOLLSTAENDIGE CHI2-ANALYSE (2026-02-14, gegen Planck TT binned):
+4b. NEUE VOLLSTÄNDIGE CHI2-ANALYSE (2026-02-14, gegen Planck TT binned):
   Planck Daten: COM_PowerSpect_CMB-TT-full_R3.01.txt (2507 Punkte, l=2-2508)
   Fehler: Symmetrisiert aus +/- asymmetrischen Fehlern
 
@@ -208,17 +208,17 @@ Ergebnis: KEIN EFFEKT bei z=1090!
   INTERPRETATION:
   - LCDM bleibt bestes Gesamtfit (chi2/npts=1.03)
   - CFM+constant_alphas ist BESTES CFM-Modell (chi2/npts=1.20)
-  - CFM+cfm_fR hat grosses Max-Residual bei l=31 (ISW bei niedrigem l)
-  - cfm_fR sigma8=1.368 VIEL ZU HOCH (Problem: verstaerktes Strukturwachstum)
+  - CFM+cfm_fR hat großes Max-Residual bei l=31 (ISW bei niedrigem l)
+  - cfm_fR sigma8=1.368 VIEL ZU HOCH (Problem: verstärktes Strukturwachstum)
   - constant_alphas sigma8=0.841 nahe an Planck (0.811)
   - Peak-Regionen: Alle CFM-Modelle zeigen leichten positiven Bias (+0.2-0.7s)
 
   SIGMA8-PROBLEM bei cfm_fR:
-  - cfm_fR: sigma8 = 1.368 (68% Ueberschuss!)
-  - const_alphas: sigma8 = 0.841 (3.7% Ueberschuss)
+  - cfm_fR: sigma8 = 1.368 (68% Überschuss!)
+  - const_alphas: sigma8 = 0.841 (3.7% Überschuss)
   - LCDM: sigma8 = 0.811 (EXAKT Planck)
-  - Ursache: alpha_M(a) verstaerkt G_eff bei spaeten Zeiten -> Ueberwachstum
-  - Loesung: Reduzierung von A_s oder steileres alpha_M(a)-Profil
+  - Ursache: alpha_M(a) verstärkt G_eff bei späten Zeiten -> Überwachstum
+  - Lösung: Reduzierung von A_s oder steileres alpha_M(a)-Profil
 
 4c. Relative Abweichungen zu Planck-Targets:
   Modell             dl1    dr31       dtheta
@@ -229,7 +229,7 @@ Ergebnis: KEIN EFFEKT bei z=1090!
   CFM+cfm_fR         0     0.00%     -0.61% (VERIFIZIERT)
   CFM+const_a        0    +0.93%     -0.54% (VERIFIZIERT)
 
-BEMERKENSWERT: LCDM hat r31 = 0.4434, also +3.23% UEBER dem
+BEMERKENSWERT: LCDM hat r31 = 0.4434, also +3.23% ÜBER dem
 Planck-Messwert von 0.4295. CFM+cfm_fR reproduziert r31 EXAKT!
 
 ======================================================================
@@ -258,11 +258,11 @@ Interpolation: omch2=0.11253 gibt r31=0.4295 (verifiziert: r31=0.4296)
 6a. Geometrischer Term: Zustandsgleichung
   w_eff(z) = (beta(z) - 3) / 3
   z=0     (heute):        w = -0.327 (deutlich verschieden von CDM)
-  z=10    (Uebergang):    w = -0.172
+  z=10    (Übergang):    w = -0.172
   z=1090  (Rekombination):w = -0.060 (fast CDM-artig)
 
   Konsequenz: rho_geom ~ a^{-2.82} vs rho_CDM ~ a^{-3.00}
-  -> 3% groesserer Schalchorizont, 1.5% kleinere theta_s
+  -> 3% größerer Schalchorizont, 1.5% kleinere theta_s
 
 6b. f(R)-Kopplung (Modified Gravity)
   alpha_M = 0.0008 (Planck-Massenrate pro e-fold)
@@ -270,26 +270,26 @@ Interpolation: omch2=0.11253 gibt r31=0.4295 (verifiziert: r31=0.4296)
   alpha_T = 0 (c_gw = c, konsistent mit LIGO/Virgo GW170817)
 
   Interpretation:
-  - Gravitationskonstante aendert sich um 0.08% pro e-fold
+  - Gravitationskonstante ändert sich um 0.08% pro e-fold
   - Entspricht f(R) = R + epsilon*R^2/R_0 mit epsilon ~ 5e-4
   - ISW-Effekt verschiebt apparente Peak-Position um -3 Multipole
-  - Keine Aenderung des Hintergrunds (theta_s, rs_d, DA)
+  - Keine Änderung des Hintergrunds (theta_s, rs_d, DA)
 
 6c. CFM-Physik-Verbindung
-  Der Kruemmungsfeedback-Mechanismus des CFM modifiziert das
+  Der Krümmungsfeedback-Mechanismus des CFM modifiziert das
   effektive Gravitationspotential: phi_eff = phi_N * (1 + delta_phi)
 
   Im Horndeski-Framework entspricht dies:
   - alpha_M = d ln G_eff / d ln a = -Phi_0/H^2 * Ableitungsterme
-  - Die f(R)-Relation alpha_B = -alpha_M/2 folgt natuerlich aus
+  - Die f(R)-Relation alpha_B = -alpha_M/2 folgt natürlich aus
     der R^2-Struktur des CFM-Lagrangians
-  - alpha_T = 0 ist automatisch erfuellt (keine Tensor-Modifikation)
+  - alpha_T = 0 ist automatisch erfüllt (keine Tensor-Modifikation)
 
 ======================================================================
-7. PARAMETERANPASSUNGEN FUER EXAKTEN MATCH
+7. PARAMETERANPASSUNGEN FÜR EXAKTEN MATCH
 ======================================================================
 
-Ziel: omch2_eff = 0.1146 (statt 0.1066) fuer r31=0.4295 + l1=220
+Ziel: omch2_eff = 0.1146 (statt 0.1066) für r31=0.4295 + l1=220
 
 Option A: beta_early anpassen (EMPFOHLEN)
   beta_early: 2.8200 -> 2.8336 (Delta = +0.0136, 0.48%)
@@ -298,14 +298,14 @@ Option A: beta_early anpassen (EMPFOHLEN)
 
 Option B: alpha anpassen
   alpha: 0.695 -> ~0.76 (Delta ~ 9%)
-  Aendert auch Spaetzeit-Kosmologie
+  Ändert auch Spätzeit-Kosmologie
 
 Option C: mu(z*) anpassen
   mu(z*): 1.768 -> ~2.10 (Delta ~ 19%)
-  Groesste Aenderung, nicht bevorzugt
+  Größte Änderung, nicht bevorzugt
 
 EMPFEHLUNG: Option A (beta_early ~ 2.83) ist physikalisch am
-  natuerlichsten und aendert die Spaetzeit-Kosmologie minimal.
+  natürlichsten und ändert die Spätzeit-Kosmologie minimal.
 
 ======================================================================
 8. BAO UND SIGMA8 DIAGNOSTIK
@@ -332,8 +332,8 @@ Spannungen:
 
 WICHTIG: sigma8-Spannung ist Artefakt des As-Mappings!
   As=3.039e-9 (CFM) vs 2.1e-9 (Planck)
-  Mit As=2.2e-9 waere sigma8=0.808 (1 sigma von Planck)
-  -> As ist im CFM kein unabhaengiger Parameter
+  Mit As=2.2e-9 wäre sigma8=0.808 (1 sigma von Planck)
+  -> As ist im CFM kein unabhängiger Parameter
 
 ======================================================================
 9. THETA_S ANALYSE: DIE VERBLEIBENDE HERAUSFORDERUNG
@@ -349,25 +349,25 @@ theta_s = rs_rec / DA(z_rec)
 Fortschritt: theta_s-Offset von 1.55% auf 0.69% reduziert (55% Verbesserung)
 
 Verbleibender Offset (0.63%) kommt aus:
-  1. Groesserer Schalchorizont rs: ~2% Ueberschuss
-  2. Leicht groessere DA: ~1.5% Ueberschuss
+  1. Größerer Schalchorizont rs: ~2% Überschuss
+  2. Leicht größere DA: ~1.5% Überschuss
   Beide durch w_eff = -0.06 (statt 0) bei Rekombination verursacht
 
-Moegliche weitere Verbesserungen:
+Mögliche weitere Verbesserungen:
   a) Volle Perturbationsrechnung mit CFM-modifiziertem Boltzmann-Code
-  b) Nichtminimale Kopplung: alpha_M(a) zeitsabhaengig statt konstant
-  c) Strahlung-Materie-Gleichgewicht: zusaetzliche Effekte bei z ~ 3400
-  d) Der theta_s-Offset entspricht ~0.35% Aenderung in der
+  b) Nichtminimale Kopplung: alpha_M(a) zeitsabhängig statt konstant
+  c) Strahlung-Materie-Gleichgewicht: zusätzliche Effekte bei z ~ 3400
+  d) Der theta_s-Offset entspricht ~0.35% Änderung in der
      Schallgeschwindigkeit cs oder ~0.3% in der Expansionsrate H(z*)
 
 ======================================================================
 10. ZUSAMMENFASSUNG UND BEWERTUNG
 ======================================================================
 
-STAERKEN des CFM bei CMB:
+STÄRKEN des CFM bei CMB:
   + l1 = 220 EXAKT (mit f(R)-Perturbations-Modifikation)
   + r31 = 0.4295 EXAKT (mit beta_early = 2.83, 0.48% Anpassung)
-  + BBN vollstaendig konsistent (Delta_N_eff = 0.000)
+  + BBN vollständig konsistent (Delta_N_eff = 0.000)
   + P(k)-Form qualitativ korrekt
   + DA(0.57) innerhalb 1 sigma von BOSS
   + alpha_T = 0 (GW-Geschwindigkeit = c, konsistent mit GW170817)
@@ -376,13 +376,13 @@ STAERKEN des CFM bei CMB:
 VERBLEIBENDE HERAUSFORDERUNGEN:
   - theta_s Offset: 0.69% (von 1.55% reduziert, aber noch signifikant)
   - Numerisches Limit: Einige omch2/aM-Kombinationen crashen bei omch2 > 0.11
-  - Vollstaendige CMB C_l-Berechnung mit nativem CFM-Boltzmann noch ausstehend
-  - MCMC-Parameteranpassung an vollstaendige Planck-Daten
+  - Vollständige CMB C_l-Berechnung mit nativem CFM-Boltzmann noch ausstehend
+  - MCMC-Parameteranpassung an vollständige Planck-Daten
 
-NAECHSTE SCHRITTE:
+NÄCHSTE SCHRITTE:
   1. Nativen CFM-Gravity-Modus in hi_class implementieren
-     (zeitabhaengiges alpha_M aus CFM-Physik, nicht ad hoc)
-  2. Numerische Stabilitaet fuer omch2 > 0.11 sicherstellen
+     (zeitabhängiges alpha_M aus CFM-Physik, nicht ad hoc)
+  2. Numerische Stabilität für omch2 > 0.11 sicherstellen
   3. MCMC-Fit der CFM-Parameter an Planck C_l-Daten
   4. Tensorperturbationen (Gravitationswellen)
   5. Volle Parameterentartungs-Analyse
@@ -394,8 +394,8 @@ SCHLUSSFOLGERUNG (Stand 2026-02-14, aktualisiert 2026-02-14-B):
   ======================================================================
 
   ZENTRALE NEUE ERKENNTNIS (2026-02-14-B):
-  Die zeitabhaengigen Parametrisierungen propto_omega und propto_scale
-  mit CFM-f(R)-Relation (alpha_B = -alpha_M/2) uebertreffen LCDM im
+  Die zeitabhängigen Parametrisierungen propto_omega und propto_scale
+  mit CFM-f(R)-Relation (alpha_B = -alpha_M/2) übertreffen LCDM im
   chi2-Fit gegen Planck TT binned Daten (83 Datenpunkte):
 
   Modell                 Parameter      chi2   dchi2   sigma8  ds8%
@@ -416,38 +416,38 @@ SCHLUSSFOLGERUNG (Stand 2026-02-14, aktualisiert 2026-02-14-B):
   **  = chi2 < LCDM UND sigma8-Exzess < 10%
   *   = chi2 < LCDM
 
-  PHYSIKALISCHE ERKLAERUNG:
+  PHYSIKALISCHE ERKLÄRUNG:
   - propto_omega: alpha_i(a) = c_i * Omega_DE(a) -> Null bei Rekombination
   - propto_scale: alpha_i(a) = c_i * a          -> Null bei Rekombination
-  - Primaere CMB-Peaks UNGEAENDERT (identisch mit LCDM)
+  - Primäre CMB-Peaks UNGEÄNDERT (identisch mit LCDM)
   - chi2-Verbesserung durch modifizierten ISW-Effekt bei niedrigen l
-  - sigma8-Erhoehung durch verstaerktes Strukturwachstum (G_eff > G_N)
+  - sigma8-Erhöhung durch verstärktes Strukturwachstum (G_eff > G_N)
   - Fundamentaler Tradeoff: mehr chi2-Verbesserung = mehr sigma8-Exzess
 
   WARUM CONSTANT_ALPHAS SCHLECHTER IST:
   Bei constant_alphas mit alpha_K=0 und alpha_B=-alpha_M/2 (CFM-Relation):
     D = alpha_K + 3/2*alpha_B^2 = 3/8*alpha_M^2 (extrem klein!)
     G_eff/G = 1 + 2*alpha_M^2/D = 1 + 16/3 ~ 6.33
-  Das heisst: G_eff ist UNABHAENGIG von alpha_M immer 6.33x staerker!
+  Das heißt: G_eff ist UNABHÄNGIG von alpha_M immer 6.33x stärker!
   Dadurch werden ALLE Perturbationen massiv modifiziert -> hohe chi2-Werte
   bei dem CFM omega_cdm=0.1165, aber OK bei Planck omega_cdm=0.1200.
 
   WARUM ALPHA_B=-ALPHA_M BESSER ALS -ALPHA_M/2:
   Standard-f(R) hat alpha_B = -alpha_M (nicht -alpha_M/2).
   Bei alpha_B=-alpha_M: D = 3/2*alpha_M^2 -> G_eff/G = 1+4/3 = 2.33
-  Schwaecher als CFM-Relation -> bessere Kontrolle der Modifikation.
+  Schwächer als CFM-Relation -> bessere Kontrolle der Modifikation.
   Aber: alle Tests verwenden alpha_B=-alpha_M/2 (aus CFM-Lagrangian).
 
-  SCHLUESSELRESULTAT FUER DAS PAPER:
+  SCHLÜSSELRESULTAT FÜR DAS PAPER:
   Das CFM mit Horndeski-Kopplung (propto_omega, cM=0.0005) gibt:
     - chi2 = 83.1 (BESSER als LCDM: 84.1)
-    - sigma8 = 0.849 (nur +4.7% ueber Planck)
+    - sigma8 = 0.849 (nur +4.7% über Planck)
     - theta_s = 0.010417 (EXAKT Planck, da LCDM-Hintergrund!)
     - Alle Standardparameter bei Planck LCDM best-fit
-    - NUR 1 zusaetzlicher Parameter (cM)
+    - NUR 1 zusätzlicher Parameter (cM)
 
   SIGMA8-TRADEOFF: A_s kann NICHT gesenkt werden, um sigma8 zu reduzieren!
-  Die CMB-TT-Peaks fixieren A_s praezise auf 2.1e-9. Jede A_s-Aenderung
+  Die CMB-TT-Peaks fixieren A_s präzise auf 2.1e-9. Jede A_s-Änderung
   verschlechtert chi2 um Hunderte bis Tausende von Einheiten.
 
   INSTALLIERTE TOOLS:
@@ -456,7 +456,7 @@ SCHLUSSFOLGERUNG (Stand 2026-02-14, aktualisiert 2026-02-14-B):
 
   BEKANNTES PROBLEM: Division durch D bei alpha_M=0
     gravity_functions_smg.c, Zeile 697: D=0 -> Division durch Null
-    -> alpha_M=0 crasht, LCDM-Vergleich nur ueber separaten Run moeglich
+    -> alpha_M=0 crasht, LCDM-Vergleich nur über separaten Run möglich
 
   VISUALISIERUNGEN:
     - cfm_cl_comparison.png: Vollspektrum + Residuen
@@ -465,19 +465,19 @@ SCHLUSSFOLGERUNG (Stand 2026-02-14, aktualisiert 2026-02-14-B):
     - cfm_contour.png: Delta-chi2 Konturen
     - cfm_profile.png: Profile Likelihood
 
-  NAECHSTE SCHRITTE:
+  NÄCHSTE SCHRITTE:
   1. TT+TE+EE Polarisationsdaten einbeziehen
   2. CMB-Lensing Likelihood testen (sigma8-sensitiv!)
-  3. BAO-Daten (BOSS/DESI) als zusaetzliches Constraint
+  3. BAO-Daten (BOSS/DESI) als zusätzliches Constraint
   4. S8-Spannung: Kann CFM-sigma8=0.85 mit Galaxy-Surveys vereinbart werden?
-  5. Lagrangian-Herleitung: alpha_B=-alpha_M/2 vs -alpha_M pruefen
+  5. Lagrangian-Herleitung: alpha_B=-alpha_M/2 vs -alpha_M prüfen
 
 ======================================================================
 11. FEIN-GRID ERGEBNISSE MIT ECHTEN PLANCK-DATEN (2026-02-14-C)
 ======================================================================
 
 WICHTIGE KORREKTUR:
-  Vorherige chi2-Werte (84.1 fuer LCDM) basierten auf 83 gebinnten Datenpunkten.
+  Vorherige chi2-Werte (84.1 für LCDM) basierten auf 83 gebinnten Datenpunkten.
   Neue Analyse nutzt volle Planck TT-Daten (2507 Punkte, l=2-2508).
   LCDM chi2 = 2539.5 (chi2/n = 1.013, exzellent)
   Relative Delta-chi2-Werte bleiben konsistent.
@@ -548,7 +548,7 @@ WICHTIGE KORREKTUR:
   5e-04      2555.60   +16.11    0.8660    +6.78%
 
   ERKENNTNIS: CFM-Relation (aB=-aM/2) verschlechtert chi2 IMMER bei
-  constant_alphas! Nur propto_omega/propto_scale koennen chi2 verbessern.
+  constant_alphas! Nur propto_omega/propto_scale können chi2 verbessern.
 
   Std-f(R)-Relation (alpha_B = -alpha_M):
   aM         chi2       dchi2    sigma8    ds8%
@@ -562,7 +562,7 @@ WICHTIGE KORREKTUR:
   3e-04      2542.67    +3.18    0.9138   +12.68%
 
   OPTIMUM bei aM=0.0001: chi2=2539.20 (dchi2=-0.29), sigma8=0.842 (+3.8%)
-  ABER: dchi2=-0.29 fuer 1 zusaetzlichen Parameter -> statistisch NICHT signifikant
+  ABER: dchi2=-0.29 für 1 zusätzlichen Parameter -> statistisch NICHT signifikant
   (Delta-AIC = -0.29 + 2 = +1.71 -> LCDM bevorzugt nach AIC!)
 
 ======================================================================
@@ -584,7 +584,7 @@ ZUSAMMENFASSUNG ALLER MODELLE (volle Planck TT-Daten):
 
   INTERPRETATION:
   - Keines der Modelle ist STATISTISCH SIGNIFIKANT besser als LCDM
-  - dchi2 ~ -1 bis -3 fuer 1 zusaetzlichen Parameter -> Delta-AIC > 0
+  - dchi2 ~ -1 bis -3 für 1 zusätzlichen Parameter -> Delta-AIC > 0
   - Nur propto_scale (cM=0.001) hat Delta-AIC < 0 (marginal besser)
   - ABER: sigma8=0.96 (+18.3%) ist physikalisch problematisch
   - Das "Goldilocks"-Regime (chi2<LCDM UND sigma8<5%) zeigt dchi2 ~ -0.5 bis -0.9
@@ -596,18 +596,18 @@ ZUSAMMENFASSUNG ALLER MODELLE (volle Planck TT-Daten):
   Es gibt einen LEICHTEN (nicht signifikanten) Hinweis auf verbesserte
   low-l ISW-Anpassung, der aber mit sigma8-Exzess erkauft wird.
 
-  FUNDAMENTALER TRADEOFF (bestaetigt mit echten Planck-Daten):
+  FUNDAMENTALER TRADEOFF (bestätigt mit echten Planck-Daten):
   - chi2-Verbesserung kommt aus modifiziertem ISW-Effekt (niedrige l)
-  - sigma8-Erhoehung kommt aus verstaerktem Strukturwachstum (hohe k)
+  - sigma8-Erhöhung kommt aus verstärktem Strukturwachstum (hohe k)
   - Beides wird durch G_eff > G_N getrieben
   - Kein Parameterwahl kann beides gleichzeitig optimieren
 
-  FUER DAS PAPER:
-  Das staerkste Argument ist NICHT der chi2-Vergleich (nicht signifikant),
-  sondern die KONSISTENZ: Das CFM mit nur 1 zusaetzlichem Parameter
-  reproduziert das LCDM-CMB-Spektrum vollstaendig, mit theta_s EXAKT
-  korrekt, und liefert dabei eine physikalisch motivierte Erklaerung
-  fuer modifizierte Gravitation auf kosmologischen Skalen.
+  FÜR DAS PAPER:
+  Das stärkste Argument ist NICHT der chi2-Vergleich (nicht signifikant),
+  sondern die KONSISTENZ: Das CFM mit nur 1 zusätzlichem Parameter
+  reproduziert das LCDM-CMB-Spektrum vollständig, mit theta_s EXAKT
+  korrekt, und liefert dabei eine physikalisch motivierte Erklärung
+  für modifizierte Gravitation auf kosmologischen Skalen.
 
 ======================================================================
 13. f*sigma8 WACHSTUMSRATEN (RSD) — NEU 2026-02-14-D
@@ -615,7 +615,7 @@ ZUSAMMENFASSUNG ALLER MODELLE (volle Planck TT-Daten):
 
   Berechnet mit hi_class (propto_omega/propto_scale, CFM-Relation).
   f(z) = d ln D / d ln a (logarithmische Wachstumsrate)
-  f*sigma8(z) = testbare Vorhersage fuer RSD-Messungen
+  f*sigma8(z) = testbare Vorhersage für RSD-Messungen
 
   z      LCDM    pO_0.0002  pO_0.0005  pO_0.001  pS_0.0003  Beobachtung
   -------------------------------------------------------------------------
@@ -632,10 +632,10 @@ ZUSAMMENFASSUNG ALLER MODELLE (volle Planck TT-Daten):
 
   INTERPRETATION:
   - LCDM-Vorhersagen sind exzellent (chi2/n = 0.22, alle innerhalb Fehlerbalken)
-  - CFM mit cM=0.0002: f*sigma8 ~ 2-8% hoeher als LCDM bei z<1
+  - CFM mit cM=0.0002: f*sigma8 ~ 2-8% höher als LCDM bei z<1
     -> BOSS LOWZ (z=0.38): LCDM 0.475 vs CFM 0.495, Messung 0.497 +/- 0.045
-    -> CFM NAEHER an Messung als LCDM! (BOSS LOWZ leicht besser)
-  - CFM mit cM=0.0005: 11-20% Erhoehung bei z<0.5 -> beginnt Daten zu ueberschreiten
+    -> CFM NÄHER an Messung als LCDM! (BOSS LOWZ leicht besser)
+  - CFM mit cM=0.0005: 11-20% Erhöhung bei z<0.5 -> beginnt Daten zu überschreiten
   - CFM mit cM=0.001: deutlich zu hoch (>2sigma bei BOSS CMASS z=0.61)
 
   SCHLUSSFOLGERUNG f*sigma8:
@@ -668,7 +668,7 @@ ZUSAMMENFASSUNG ALLER MODELLE (volle Planck TT-Daten):
   HSCxBOSS GGL        0.829+-0.011   -0.3 sigma  -1.6 sigma
 
   INTERPRETATION:
-  1. KiDS Legacy hat S8-Spannung mit Planck AUFGELOEST (0.815 vs 0.836, <1sigma)
+  1. KiDS Legacy hat S8-Spannung mit Planck AUFGELÖST (0.815 vs 0.836, <1sigma)
   2. DES Y6 bleibt niedrig (0.789) -> UNVEREINBAR mit CFM (4.8 sigma!)
   3. eROSITA ist hoch (0.860) -> GUT vereinbar mit CFM (1.3 sigma)
   4. HSC Y3 (0.776) -> 2.2 sigma mit CFM, etwas gespannt
@@ -689,19 +689,19 @@ ZUSAMMENFASSUNG ALLER MODELLE (volle Planck TT-Daten):
 
   WICHTIGE ERKENNTNIS (S8 Review 2026, arXiv:2602.12238):
   Die S8-Spannung ist BIFURKIERT:
-  - KiDS Legacy: S8=0.815, <1 sigma von Planck -> Spannung aufgeloest!
+  - KiDS Legacy: S8=0.815, <1 sigma von Planck -> Spannung aufgelöst!
   - DES Y6: S8=0.789, 2.7 sigma von Planck -> Spannung bleibt
   - Ursache der Diskrepanz: wahrscheinlich Survey-Systematik (photo-z, IA)
 
   f(R)-Gravitation und S8 (aus Literatur):
-  - Hu-Sawicki f(R): VERSCHAERFT die S8-Spannung (mehr Struktur!)
+  - Hu-Sawicki f(R): VERSCHÄRFT die S8-Spannung (mehr Struktur!)
   - Constraint: log10(|fR0|) < -5.3 (CMB + Cluster kombiniert)
   - DESI 2024 full-shape: Sigma_0 = 0.006 +/- 0.043 (konsistent mit GR)
 
   FAZIT:
   - CFM cM=0.0002 (S8=0.847): KONSISTENT mit Planck, KiDS, eROSITA
   - CFM cM=0.0002 (S8=0.847): INKONSISTENT mit DES Y6 (4.8 sigma!)
-  - Die S8-Spannung wird NICHT geloest, aber auch nicht stark verschaerft
+  - Die S8-Spannung wird NICHT gelöst, aber auch nicht stark verschärft
   - Euclid (erste Ergebnisse 2026) wird entscheidender Test sein
   - Quellen: S8_weak_lensing_review.md (detaillierter Report)
 
@@ -709,15 +709,15 @@ ZUSAMMENFASSUNG ALLER MODELLE (volle Planck TT-Daten):
 15. DESI DR2 BAO VERGLEICH — NEU 2026-02-14-D
 ======================================================================
 
-  Quelle: DESI DR2 (arxiv:2503.14738), Maerz 2025
-  14+ Millionen Galaxien und Quasare, Praezision 0.45%-1.6%
+  Quelle: DESI DR2 (arxiv:2503.14738), März 2025
+  14+ Millionen Galaxien und Quasare, Präzision 0.45%-1.6%
 
   ZENTRALE DESI DR2 ERKENNTNIS:
-  w0-wa dynamische Dark Energy bevorzugt bei 3.1 sigma gegenueber LCDM!
+  w0-wa dynamische Dark Energy bevorzugt bei 3.1 sigma gegenüber LCDM!
   Bevorzugt: w0 > -1, wa < 0
 
-  Ausgewaehlte BAO-Messungen:
-  Tracer    zeff   Observable       Wert           Praezision
+  Ausgewählte BAO-Messungen:
+  Tracer    zeff   Observable       Wert           Präzision
   -----------------------------------------------------------
   BGS       0.295  DV/rd            7.944+-0.075   0.95%
   LRG1      0.510  DM/rd            13.587+-0.169  1.2%
@@ -726,7 +726,7 @@ ZUSAMMENFASSUNG ALLER MODELLE (volle Planck TT-Daten):
   Lya       2.33   DH/rd            8.632+-0.098   1.1%
   Lya       2.33   DM/rd            38.99+-0.52    1.3%
 
-  VOLLSTAENDIGE DESI DR2 BAO-TABELLE (arXiv:2503.14738):
+  VOLLSTÄNDIGE DESI DR2 BAO-TABELLE (arXiv:2503.14738):
 
   Tracer      zeff   DV/rd        DM/rd         DH/rd
   ------------------------------------------------------------------
@@ -738,7 +738,7 @@ ZUSAMMENFASSUNG ALLER MODELLE (volle Planck TT-Daten):
   QSO         1.484  ---          30.519+-0.758  12.816+-0.513
   Lya         2.330  ---          38.988+-0.531   8.632+-0.098
 
-  Praezision: 0.45% (LRG3+ELG1) bis 1.6% (QSO) — praeziseste BAO je gemessen
+  Präzision: 0.45% (LRG3+ELG1) bis 1.6% (QSO) — präziseste BAO je gemessen
 
   DESI w0-wa ERGEBNISSE (CPL-Parametrisierung):
   Kombination              w0             wa            vs LCDM
@@ -748,23 +748,23 @@ ZUSAMMENFASSUNG ALLER MODELLE (volle Planck TT-Daten):
   DESI+CMB+Union3         ---           ---            3.5 sigma
   DESI+CMB+DES-SN5YR      ---           ---            3.9 sigma
 
-  Bevorzugte Loesung:
+  Bevorzugte Lösung:
   - w0 > -1 (Quintessenz-artig HEUTE)
   - wa < 0 (war negativer in der Vergangenheit)
   - w(z) kreuzt -1 bei z ~ 0.5 ("Phantomkreuzung")
-  - Kann NICHT von einzelnem kanonischen Skalarfeld erklaert werden!
+  - Kann NICHT von einzelnem kanonischen Skalarfeld erklärt werden!
   - Erfordert: Multi-Feld, interagierende DE, oder modifizierte Gravitation
 
   DESI w(z) Verlauf:
-  w(z=0.0) ~ -0.42  (deutlich ueber -1)
+  w(z=0.0) ~ -0.42  (deutlich über -1)
   w(z=0.5) ~ -1.00  (kreuzt genau -1)
   w(z=1.0) ~ -1.30  (unter -1, Phantom)
   w(z=2.0) ~ -1.59  (tief im Phantom-Regime)
 
-  RELEVANZ FUER CFM:
+  RELEVANZ FÜR CFM:
   Das CFM-Modell sagt vorher:
   - w_eff(z=0) ~ -0.33 (deutlich > -1) [aus geometrischem Term]
-  - w_eff aendert sich mit z (aehnlich w0-wa Parametrisierung)
+  - w_eff ändert sich mit z (ähnlich w0-wa Parametrisierung)
   - Dies ist QUALITATIV KONSISTENT mit DESI DR2!
 
   QUANTITATIVER VERGLEICH:
@@ -772,27 +772,27 @@ ZUSAMMENFASSUNG ALLER MODELLE (volle Planck TT-Daten):
   -> CFM liegt INNERHALB 0.4 sigma der DESI w0-Messung!
   -> CFM sagt w > -1 bei z=0 vorher — GENAU was DESI sieht!
 
-  ABER: CFM-w(z) verlaeuft ANDERS als DESI w0-wa:
-  CFM: w(z) = (beta(z)-3)/3 -> naehert sich 0 (CDM) bei hohem z
+  ABER: CFM-w(z) verläuft ANDERS als DESI w0-wa:
+  CFM: w(z) = (beta(z)-3)/3 -> nähert sich 0 (CDM) bei hohem z
   DESI: w(z) wird NEGATIVER bei hohem z (Phantom)
   -> CFM hat KEINE Phantomkreuzung! w bleibt immer > -1
   -> Dies ist ein KLARER UNTERSCHIED zum DESI-Signal
 
-  MOEGLICHE INTERPRETATION:
-  Die DESI-Praeferenz fuer w0>-1 koennte vom CFM-artigen geometrischen
-  Term kommen, waehrend die Phantom-Kreuzung bei z~0.5 ein Artefakt
-  der CPL-Parametrisierung sein koennte (nicht-physikalisch).
-  Oder: Der CFM muesste erweitert werden um Phantom-Physik zu erlauben.
+  MÖGLICHE INTERPRETATION:
+  Die DESI-Präferenz für w0>-1 könnte vom CFM-artigen geometrischen
+  Term kommen, während die Phantom-Kreuzung bei z~0.5 ein Artefakt
+  der CPL-Parametrisierung sein könnte (nicht-physikalisch).
+  Oder: Der CFM müsste erweitert werden um Phantom-Physik zu erlauben.
 
   Schalchorizont: CFM r_d = 147-151 Mpc
   DESI: h*r_d = 101.54 +/- 0.73 Mpc
   -> Bei H0=67.4: r_d=150.7 Mpc, bei H0=68.2: r_d=148.9 Mpc
-  -> CFM r_d VOLLSTAENDIG KONSISTENT mit DESI!
+  -> CFM r_d VOLLSTÄNDIG KONSISTENT mit DESI!
 
   ACHTUNG: Beim CFM mit propto_omega/propto_scale verwenden wir
   expansion_model=lcdm (w=-1 Hintergrund). Das ist eine Vereinfachung!
   Der volle CFM hat einen modifizierten Hintergrund (w_eff != -1).
-  Fuer korrekten DESI-Vergleich muesste man CFM-Expansion in hi_class
+  Für korrekten DESI-Vergleich müsste man CFM-Expansion in hi_class
   implementieren (expansion_model=cfm mit beta(a)-Funktion).
 
   QUELLEN:
@@ -807,16 +807,16 @@ ZUSAMMENFASSUNG ALLER MODELLE (volle Planck TT-Daten):
 16. ZUSAMMENFASSUNG ALLER OFFENEN PUNKTE (Stand 2026-02-14-D)
 ======================================================================
 
-  #2 Lagrangian-Ableitung: GELOEST - beta(a) aus Skalaron-ODE, mu(a) aus 2-Feld-System
-  #3 sqrt(pi)-Conjecture: GELOEST - drei unabhaengige Ableitungen (geometrisch, thermodynamisch, dimensional)
-  #4 sigma8: GELOEST - sigma8=0.826 bei cM=0.0002 (nur +1.8%, S8=0.847)
-  #5 f*sigma8 (RSD): GELOEST - cM=0.0002 verbessert BOSS LOWZ leicht
+  #2 Lagrangian-Ableitung: GELÖST - beta(a) aus Skalaron-ODE, mu(a) aus 2-Feld-System
+  #3 sqrt(pi)-Conjecture: GELÖST - drei unabhängige Ableitungen (geometrisch, thermodynamisch, dimensional)
+  #4 sigma8: GELÖST - sigma8=0.826 bei cM=0.0002 (nur +1.8%, S8=0.847)
+  #5 f*sigma8 (RSD): GELÖST - cM=0.0002 verbessert BOSS LOWZ leicht
   #6 DESI DR2 BAO: TEILWEISE - qualitativ konsistent (w>-1), quantitativ offen
-  #7 Gravitationslinsen: GELOEST - konsistent mit KiDS/eROSITA, gespannt mit DES
-  #8 Geisteranalyse: GELOEST - R^2 geisterfrei bewiesen (konforme Aequivalenz)
-  #9 TT+TE+EE Polarisation: GELOEST - CFM besser als LCDM in allen Spektren
+  #7 Gravitationslinsen: GELÖST - konsistent mit KiDS/eROSITA, gespannt mit DES
+  #8 Geisteranalyse: GELÖST - R^2 geisterfrei bewiesen (konforme Äquivalenz)
+  #9 TT+TE+EE Polarisation: GELÖST - CFM besser als LCDM in allen Spektren
 
-  EMPFOHLENER BESTER PUNKT FUER DAS PAPER:
+  EMPFOHLENER BESTER PUNKT FÜR DAS PAPER:
   propto_omega, cM = 0.0002, omega_cdm = 0.1200, h = 0.6732
   A_s = 2.1e-9, n_s = 0.9649 (alle anderen Planck LCDM best-fit)
 
@@ -825,9 +825,9 @@ ZUSAMMENFASSUNG ALLER MODELLE (volle Planck TT-Daten):
   - CMB TT+TE+EE chi2: -0.2 vs LCDM (6405 Datenpunkte)
   - sigma8: 0.826 (+1.8%)
   - S8: 0.847 (zwischen Planck 0.836 und KiDS 0.815)
-  - f*sigma8: leicht verbessert gegenueber BOSS LOWZ
+  - f*sigma8: leicht verbessert gegenüber BOSS LOWZ
   - theta_s: 0.010417 (EXAKT Planck)
-  - 1 zusaetzlicher Parameter (cM)
+  - 1 zusätzlicher Parameter (cM)
   - Physikalisch motiviert: alpha_M proportional zu Omega_DE(a)
 
 ======================================================================
@@ -856,8 +856,8 @@ ERGEBNISSE:
 
 INTERPRETATION:
   1. ALLE erfolgreichen CFM-Modelle schlagen LCDM im TT+TE+EE chi2
-  2. Die Verbesserung kommt PRIMAER aus TT (Temperatur-Spektrum)
-  3. TE und EE aendern sich kaum (delta < 0.1)
+  2. Die Verbesserung kommt PRIMÄR aus TT (Temperatur-Spektrum)
+  3. TE und EE ändern sich kaum (delta < 0.1)
   4. Bester Gesamtwert: propto_scale cM=0.0005 mit delta_chi2 = -1.7
   5. propto_scale cM=0.0001 und 0.0003 SCHEITERTEN im Perturbations-Solver
   6. Der empfohlene Punkt cM=0.0002 (propto_omega): delta_chi2 = -0.2
@@ -882,7 +882,7 @@ FAZIT: Die Polarisationsdaten (TE, EE) sind KOMPATIBEL mit dem CFM.
   beta(a) entsteht aus der Skalaron-ODE:
     chi_ddot + 3H*chi_dot + m_s^2(a)*chi = (8piG/3)*rho_m
 
-  Die zeitabhaengige Skalaron-Masse:
+  Die zeitabhängige Skalaron-Masse:
     m_s^2(a) = 1/(24*gamma*F(a))
   wobei F(a) = 1/(1 + Omega_r/(Omega_b*a))
 
@@ -893,22 +893,22 @@ FAZIT: Die Polarisationsdaten (TE, EE) sind KOMPATIBEL mit dem CFM.
     beta(z=7) ~ 2.75  (Paper III: 2.78)
     beta(z=0) ~ 3.0   (Paper III: 2.02 + lim)
 
-  mu(a) entsteht aus ZWEI Beitraegen:
+  mu(a) entsteht aus ZWEI Beiträgen:
     (i)  Skalaron (R^2): maximal 4/3 = 1.333 (Sub-Compton)
-    (ii) Poeschl-Teller-Skalarfeld: sqrt(pi)/(4/3) = 1.329
+    (ii) Pöschl-Teller-Skalarfeld: sqrt(pi)/(4/3) = 1.329
     Gesamt: 4/3 * 1.329 = sqrt(pi) = 1.7725
 
 18b. SQRT(PI)-CONJECTURE [Punkt #3]
 ------------------------------------
-  STATUS: DREI UNABHAENGIGE ABLEITUNGEN
+  STATUS: DREI UNABHÄNGIGE ABLEITUNGEN
 
   (A) GEOMETRISCH: sqrt(V_2) = sqrt(pi) als Projektionsamplitude
-      der Gravitationsmoden auf der kosmologischen 2-Sphaere S^2.
+      der Gravitationsmoden auf der kosmologischen 2-Sphäre S^2.
 
-  (B) THERMODYNAMISCH (staerkste Ableitung):
+  (B) THERMODYNAMISCH (stärkste Ableitung):
       Im Pfadintegral-Formalismus:
         G_eff/G = Z_CFM/Z_GR = sqrt(det(S''_GR)/det(S''_CFM))
-      Fuer das Poeschl-Teller-Potential auf S^2 ergibt die
+      Für das Pöschl-Teller-Potential auf S^2 ergibt die
       Zeta-Funktions-Regularisierung (Camporesi & Higuchi 1994):
         zeta'(0) = -ln(pi)  =>  G_eff/G = exp(ln(pi)/2) = sqrt(pi)
 
@@ -923,17 +923,17 @@ FAZIT: Die Polarisationsdaten (TE, EE) sind KOMPATIBEL mit dem CFM.
   STATUS: GEISTERFREI BEWIESEN
 
   BEWEIS-KETTE:
-  (1) f(R) = R + eps*R^2 ist konform aequivalent zu
+  (1) f(R) = R + eps*R^2 ist konform äquivalent zu
       Einstein-Gravitation + massives Skalarfeld (Skalaron)
   (2) Kein Ostrogradsky-Geist: f_{RR} = 2*eps > 0 (gamma > 0)
   (3) Kein Tachyon: m_s^2 = 1/(6*eps) > 0
-  (4) Keine Gradient-Instabilitaet: c_s^2 = 1
+  (4) Keine Gradient-Instabilität: c_s^2 = 1
   (5) 2-Feld-System (chi, phi): positiv-definite kinetische Matrix
   (6) Trace-Kopplung F(T/rho) modifiziert nur die Masse, nicht die Kinematik
 
   Newtonscher Grenzfall:
     V(r) = -GM/r * (1 + exp(-m_s*r)/3)
-    Sonnensystem-Constraint: Chamaeleon-Mechanismus durch Trace-Kopplung
+    Sonnensystem-Constraint: Chamäleon-Mechanismus durch Trace-Kopplung
     m_eff(Sonne)/m_s ~ 4e14 => lambda_C(Sonne) ~ 20 m << 1 AU
 
   Skalaron-Masse:
@@ -944,22 +944,22 @@ FAZIT: Die Polarisationsdaten (TE, EE) sind KOMPATIBEL mit dem CFM.
 19. GESAMT-STATUS ALLER OFFENEN PUNKTE (aktualisiert 2026-02-14)
 ======================================================================
 
-  #1 hi_class Installation: GELOEST
-  #2 Lagrangian-Ableitung: GELOEST (Skalaron-ODE + 2-Feld-System)
-  #3 sqrt(pi)-Conjecture: GELOEST (3 Ableitungen + Gel'fand-Yaglom: det=1.677)
-  #4 sigma8: GELOEST (sigma8=0.826 bei cM=0.0002)
-  #5 f*sigma8 (RSD): GELOEST (BOSS LOWZ leicht verbessert)
+  #1 hi_class Installation: GELÖST
+  #2 Lagrangian-Ableitung: GELÖST (Skalaron-ODE + 2-Feld-System)
+  #3 sqrt(pi)-Conjecture: GELÖST (3 Ableitungen + Gel'fand-Yaglom: det=1.677)
+  #4 sigma8: GELÖST (sigma8=0.826 bei cM=0.0002)
+  #5 f*sigma8 (RSD): GELÖST (BOSS LOWZ leicht verbessert)
   #6 DESI DR2 BAO: TEILWEISE (qualitativ konsistent, quantitativ offen)
-  #7 Gravitationslinsen: GELOEST (konsistent mit KiDS/eROSITA)
-  #8 Geisteranalyse: GELOEST (geisterfrei bewiesen)
-  #9 TT+TE+EE: GELOEST (CFM besser als LCDM, delta_chi2 = -0.2 bis -1.7)
-  #10 theta_s: GELOEST (100*theta_s=1.04173 fuer ALLE alpha_M-Werte)
+  #7 Gravitationslinsen: GELÖST (konsistent mit KiDS/eROSITA)
+  #8 Geisteranalyse: GELÖST (geisterfrei bewiesen)
+  #9 TT+TE+EE: GELÖST (CFM besser als LCDM, delta_chi2 = -0.2 bis -1.7)
+  #10 theta_s: GELÖST (100*theta_s=1.04173 für ALLE alpha_M-Werte)
 
 ======================================================================
 20. THETA_S ANALYSE (Antwort auf Gemini-Review Step 1)
 ======================================================================
 
-  ERGEBNIS: theta_s ist IDENTISCH fuer alle alpha_M-Modelle!
+  ERGEBNIS: theta_s ist IDENTISCH für alle alpha_M-Modelle!
 
   Modell                  100*theta_s   r_s(Mpc)  sigma8
   LCDM                    1.04173       147.10    0.811
@@ -968,11 +968,11 @@ FAZIT: Die Polarisationsdaten (TE, EE) sind KOMPATIBEL mit dem CFM.
   pS cM=0.0005            1.04173       147.10    0.880
   pS cM=0.001             1.04173       147.10    0.960
 
-  PHYSIK: alpha_M aendert NUR Perturbationen (sigma8), NICHT Hintergrund (theta_s).
-  theta_s = r_s / D_A haengt nur vom Materiegehalt ab.
+  PHYSIK: alpha_M ändert NUR Perturbationen (sigma8), NICHT Hintergrund (theta_s).
+  theta_s = r_s / D_A hängt nur vom Materiegehalt ab.
 
   RESOLUTION: Der Skalaron aus dem R^2-Term hat w << 0.01 (nicht w=-0.06 wie
-  in Paper III's phaenomenologischem Modell). omega_cdm in hi_class REPRAESENTIERT
+  in Paper III's phänomenologischem Modell). omega_cdm in hi_class REPRÄSENTIERT
   korrekt die Skalaron-Energiedichte.
 
   Reduziertes omega_cdm Test:
@@ -981,7 +981,7 @@ FAZIT: Die Polarisationsdaten (TE, EE) sind KOMPATIBEL mit dem CFM.
   omega_cdm=0.06: theta_s=0.95277 (-8.49%)
   omega_cdm=0.04: theta_s=0.90339 (-13.2%)
   -> Ohne CDM bricht theta_s zusammen. alpha_M kompensiert NICHT.
-  -> Bestaetigt: Skalaron IST CDM auf Hintergrundebene.
+  -> Bestätigt: Skalaron IST CDM auf Hintergrundebene.
 
 ======================================================================
 21. SCALARON NATURAL PARAMETRIZATION
@@ -990,23 +990,23 @@ FAZIT: Die Polarisationsdaten (TE, EE) sind KOMPATIBEL mit dem CFM.
   Trace-Kopplung F(a) = 1/(1 + Omega_r/(Omega_b/h^2 * a))
   F(a_eq) = 0.14, F(a_rec) = 0.33, F(today) = 1.00
 
-  Fuer a << a_eq: F ~ (Omega_b/h^2)/Omega_r * a  (LINEAR in a!)
+  Für a << a_eq: F ~ (Omega_b/h^2)/Omega_r * a  (LINEAR in a!)
   -> alpha_M(a) ~ c_eff * a  = PROPTO_SCALE Parametrisierung!
 
-  propto_scale IST die natuerliche Skalaron-Parametrisierung.
+  propto_scale IST die natürliche Skalaron-Parametrisierung.
   Nicht ad hoc, sondern aus der Lagrange-Dynamik abgeleitet.
 
 ======================================================================
 22. SQRT(PI) PFADINTEGRAL (Gemini Step 2)
 ======================================================================
 
-  Gel'fand-Yaglom auf [0,L] fuer Poeschl-Teller:
+  Gel'fand-Yaglom auf [0,L] für Pöschl-Teller:
   lambda=0.5: sqrt(det)=1.250 (close to sqrt(pi/2))
   lambda=1.0: sqrt(det)=1.677 (close to sqrt(pi)=1.772)
   lambda=1.5: sqrt(det)=2.325
 
   Numerische Vorhersage: 3*sqrt(pi)*Omega_b = 0.261 vs Omega_CDM = 0.266
-  -> Uebereinstimmung auf 1.3%! (falsifizierbar, parameterfrei)
+  -> Übereinstimmung auf 1.3%! (falsifizierbar, parameterfrei)
 
   VERBLEIBEND:
   - DESI DR2 quantitativer Vergleich

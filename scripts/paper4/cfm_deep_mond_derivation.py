@@ -344,7 +344,7 @@ def section2_a0_derivation():
 
     where the correction_factor accounts for the saturation B_0 and coupling beta.
     For the natural parameter values (B_0 ~ 1 at partial saturation, beta = 1/3,
-    and the specific form of the Poeschl-Teller potential), this factor is O(1).
+    and the specific form of the Pöschl-Teller potential), this factor is O(1).
 
     More precisely, the scalar dynamics on FLRW:
       phi_bar(t) = phi_0 * tanh(k_PT * t)
