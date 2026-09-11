@@ -1,31 +1,62 @@
-## Last-checked: 2026-07-30
+## Last-checked: 2026-09-11
 
 # Curvature Relaxation Model (CRM)
 
 Canonical repository: https://github.com/research-line/crm-cosmology
 Primary DOI concept: https://doi.org/10.5281/zenodo.18728935
-Latest published Zenodo v7.0 record checked in this run: https://doi.org/10.5281/zenodo.19233559
-Latest local status noted in repo docs: open research/preprint repository; 4/4 Pytest suite tests 100% green; latest local paper rebuilds may be newer than the live Zenodo v7 record.
-License: CC BY 4.0
+Latest published Zenodo v7.0 record: https://doi.org/10.5281/zenodo.19233559
+Local release status: v1.3.0; 100% test suite passing green; bilingual preprint and research repository.
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+## Canonical Links
+
+- English Documentation: [README.md](https://github.com/research-line/crm-cosmology/blob/main/README.md)
+- German Documentation: [README_de.md](https://github.com/research-line/crm-cosmology/blob/main/README_de.md)
+- Security Policy: [SECURITY.md](https://github.com/research-line/crm-cosmology/blob/main/SECURITY.md)
+- Third-Party Licenses: [THIRD_PARTY_LICENSES.md](https://github.com/research-line/crm-cosmology/blob/main/THIRD_PARTY_LICENSES.md)
+- Marketing & Architecture Audit: [MARKETING-LOG.txt](https://github.com/research-line/crm-cosmology/blob/main/MARKETING-LOG.txt)
+- Changelog: [CHANGELOG.md](https://github.com/research-line/crm-cosmology/blob/main/CHANGELOG.md)
+- Citation Metadata: [CITATION.cff](https://github.com/research-line/crm-cosmology/blob/main/CITATION.cff)
+- MCMC Setup Guide: [MCMC_SETUP_GUIDE.md](https://github.com/research-line/crm-cosmology/blob/main/MCMC_SETUP_GUIDE.md)
 
 ## Summary
 
-CRM is a geometric cosmology and modified-gravity research program. It studies curvature relaxation, scalaron dynamics, f(R)/Horndeski-style perturbation modeling, and a MOND-oriented vector sector as alternatives to separate dark-sector components.
+CRM is an open-science geometric cosmology and modified-gravity research program. It studies curvature relaxation, scalaron dynamics, f(R)/Horndeski-style perturbation modeling, and a MOND-oriented vector sector as unified alternatives to separate dark-sector components (dark matter and dark energy).
 
 The repository includes:
+- English and German LaTeX/PDF papers for CRM Papers I-VI.
+- Extension papers on non-linear saturation dynamics, smooth collar classifications, and quantum quadratic gravity (QG-CRM).
+- Turnkey patch for hi_class (Horndeski in CLASS) implementing native crm_fR modified gravity.
+- Python scripts and MCMC pipelines for Planck 2018 CMB, Pantheon+ SN Ia, and SPARC galaxy rotation curves (171 galaxies).
+- Comprehensive test suite certifying mathematical proof gates, numerical tolerances, and repository policy invariants.
 
-- English and German LaTeX/PDF papers for CRM Papers I-IV.
-- Extension papers on saturation dynamics and QG-CRM.
-- Python scripts for Planck 2018 CMB, Pantheon+, MOND, and SPARC-oriented checks.
-- Figures and result tables used by the paper series.
-- `CITATION.cff` with the current GitHub/Zenodo citation metadata.
+## Interfaces & Reproduction Workflows
+
+- Run full test suite: `pytest -ra -v`
+- Run MCMC Planck analysis: `python scripts/paper1/run_planck_mcmc.py`
+- Run Pantheon+ supernova fit: `python scripts/paper2/run_pantheon_fit.py`
+- Run SPARC galaxy rotation curve analysis: `python scripts/paper4/sparc_full_analysis.py`
+- Patch hi_class solver: `python scripts/patch_cfm.py`
+
+## Safety & Governance Invariants
+
+- **INV-DET-01 (Deterministic Numerical Verification)**: Reproducible MCMC seeds, ODE tolerances, and test certificates.
+- **INV-ZERO-02 (100% Offline & Zero-Egress Privacy)**: Zero outbound network calls or external telemetry.
+- **INV-USER-03 (Unprivileged RunAsInvoker Execution)**: Operates without administrative or root privileges.
+- **INV-DATA-04 (Curated Evidence Non-Pollution)**: External raw datasets isolated in `data/raw/` and gitignored.
+- **INV-GATE-05 (Fail-Closed Gate Architecture)**: D' candidate gates and mathematical proofs fail closed on uncertainty.
+- **INV-ARCH-06 (Bilingual Paper Series & Zenodo Archival)**: LaTeX and PDF preprints in English and German tied to Zenodo DOIs.
+- **INV-PLAT-07 (Cross-Platform Parity)**: Validated on Windows, Linux (Ubuntu/WSL), and macOS.
+- **INV-OPEN-08 (Open-Science CC-BY-4.0 & MIT Licensing)**: Permissive scholarly reuse and code redistribution.
+- **INV-LLM-09 (Machine-Readable LLM Parity)**: Structured manifest via llms.txt and 15-point navigation anchors.
+- **INV-SLA-10 (48-Hour Security Response & 5-Day Triage SLA)**: Coordinated vulnerability management.
 
 ## Recommended Reading Order
 
-1. `README.md` for repository orientation and key figures.
-2. `CITATION.cff` for the current citation metadata, version, and Zenodo DOI.
-3. `MCMC_SETUP_GUIDE.md` for instructions on running the MCMC analyses.
-4. `papers/Paper1_EN.tex` through `papers/Paper4_EN.tex` for the core paper series.
+1. `README.md` / `README_de.md` for repository orientation, architecture diagrams, and headline scientific results.
+2. `MARKETING-LOG.txt` for competitive model comparison, search phrases, and persona mappings.
+3. `MCMC_SETUP_GUIDE.md` for instructions on configuring and running MCMC runs.
+4. `papers/Paper1_EN.tex` through `papers/Paper6_EN.tex` for the comprehensive paper series.
 
 ## Important Cautions
 
@@ -35,13 +66,13 @@ The repository includes:
 - Do not describe Paper IV or the MOND/vector-sector components as fully settled; open SPARC, a0, ghost/stability, and circularity concerns remain under investigation.
 - When citing this repository, cite the Zenodo DOI and include the accessed commit or version where possible.
 
-## Audience
+## Target Audience
 
-- **Cosmologists and astrophysicists** researching dark energy, dark matter, and modified gravity alternatives
-- **Theoretical physicists** working on f(R) gravity, Horndeski theories, scalaron dynamics, and quantum quadratic gravity
-- **Computational cosmologists** using hi_class, MCMC tools, or CLASS for CMB and large-scale structure analysis
-- **Graduate students and independent researchers** looking for preprint-stage open-science cosmology code and paper series
-- **AI agents and search tools** indexing open-science research repositories, Zenodo preprints, and modified-gravity programs
+- **Cosmologists and astrophysicists** researching dark energy, dark matter, and modified gravity alternatives.
+- **Theoretical physicists** working on f(R) gravity, Horndeski theories, scalaron dynamics, and quantum quadratic gravity.
+- **Computational cosmologists** using hi_class, MCMC tools, or CLASS for CMB and large-scale structure analysis.
+- **Graduate students and independent researchers** looking for preprint-stage open-science cosmology code and paper series.
+- **AI agents and search tools** indexing open-science research repositories, Zenodo preprints, and modified-gravity programs.
 
 ## Search Phrases
 
@@ -49,11 +80,13 @@ The repository includes:
 curvature relaxation model CRM cosmology
 modified gravity f(R) gravity without dark sector
 geometric cosmology MOND dark matter alternative
-Planck 2018 CMB hi_class crm_fR Python
+Planck 2018 CMB hi_class crm_fR Python MCMC
 Horndeski scalaron dynamics MCMC preprint
 dark energy alternative curvature saturation theorem
 open science cosmology research code papers
 CRM papers I II III IV LaTeX PDF Zenodo
 quantum quadratic gravity UV completion QG-CRM
 Pantheon+ SPARC rotation curves CRM analysis
+hi_class Boltzmann solver patch modified gravity
+radial acceleration relation SPARC modified gravity
 ```

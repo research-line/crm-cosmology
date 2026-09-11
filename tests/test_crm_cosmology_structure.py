@@ -1,5 +1,4 @@
 import os
-import pytest
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -7,12 +6,16 @@ def test_root_files_exist():
     """Verify that all standard root documents exist."""
     required_files = [
         "README.md",
+        "README_de.md",
         "LICENSE",
         "CITATION.cff",
         "CHANGELOG.md",
         "llms.txt",
         "pyproject.toml",
-        "requirements.txt"
+        "requirements.txt",
+        "SECURITY.md",
+        "THIRD_PARTY_LICENSES.md",
+        "MARKETING-LOG.txt"
     ]
     for filename in required_files:
         filepath = os.path.join(REPO_ROOT, filename)
@@ -24,7 +27,7 @@ def test_llms_txt_timestamp():
     llms_path = os.path.join(REPO_ROOT, "llms.txt")
     with open(llms_path, "r", encoding="utf-8") as f:
         content = f.read()
-    assert "Last-checked: 2026-07-30" in content, "llms.txt Last-checked date is not updated to 2026-07-30"
+    assert "Last-checked: 2026-09-11" in content, "llms.txt Last-checked date is not updated to 2026-09-11"
 
 def test_pyproject_metadata():
     """Verify that pyproject.toml contains required PEP 621 metadata."""
@@ -32,7 +35,7 @@ def test_pyproject_metadata():
     with open(pyproject_path, "r", encoding="utf-8") as f:
         content = f.read()
     assert 'name = "crm-cosmology"' in content
-    assert 'version = "1.2.4"' in content
+    assert 'version = "1.3.0"' in content
     assert 'testpaths = ["tests"]' in content
 
 def test_requirements_file():

@@ -1,0 +1,155 @@
+================================================================================
+crm-cosmology -- Marketing, Discoverability & Architecture Audit (Pfad B)
+================================================================================
+Datum: 2026-09-11
+Status: ACTIVE / HARDENED (Pfad B Discoverability & Architecture Verified)
+Repository: https://github.com/research-line/crm-cosmology
+Organization: research-line | Umbrella Ecosystem: open-bricks
+Canonical Clone: C:\_Local_DEV\repos\crm-cosmology
+Active Version: 1.3.0 | Language Stage: Bilingual Core (DE + EN)
+
+--------------------------------------------------------------------------------
+1. EXECUTIVE SUMMARY & VALUE PROPOSITION
+--------------------------------------------------------------------------------
+crm-cosmology (research-line/crm-cosmology) is an open-science research codebase
+and bilingual preprint series developing the Curvature Relaxation Model (CRM),
+a geometric modified-gravity cosmology program addressing dark-energy and
+dark-matter phenomenology through curvature relaxation, scalaron dynamics,
+and a MOND-oriented vector sector.
+
+Key Value Propositions:
+- Competitive Cosmological Fits: Native crm_fR model yields Delta chi2 = -3.7
+  relative to standard LCDM on Planck 2018 CMB TT+TE+EE data in MCMC best-fit runs.
+- Unified Geometric Alternative: Explores curvature relaxation as a unified
+  replacement for independent dark sectors (dark matter and dark energy).
+- Saturation Theorem Rigor: Rigorous mathematical classification of non-linear
+  tanh-type saturation dynamics, smooth collar classifications, and source-bound
+  projective D' candidate gates.
+- Boltzmann Code Integration: Turnkey patch for hi_class (Horndeski in CLASS)
+  implementing the native crm_fR gravity model with 3 physical parameters.
+- Multi-Epoch Observational Confrontation: Quantitative reproduction scripts
+  for Planck 2018 CMB, Pantheon+ SN Ia, and SPARC galaxy rotation curves (171 galaxies).
+- Zero-Egress Privacy & Open Reproducibility: 100% offline local-first execution,
+  unprivileged RunAsInvoker operation, zero telemetry, and permanent Zenodo anchors.
+- Bilingual Preprint Parity: Complete 15-point quick navigation, dual Mermaid
+  architecture diagrams, and synchronized documentation across English and German.
+
+--------------------------------------------------------------------------------
+2. TARGET AUDIENCES & PERSONAS
+--------------------------------------------------------------------------------
+1. Theoretical Cosmologists & Modified Gravity Researchers:
+   Physicists investigating f(R) gravity, Horndeski/EFT scalars, scalaron dynamics,
+   and quantum quadratic gravity seeking mathematically grounded field-theoretic actions.
+2. Computational Astrophysicists & MCMC Data Modelers:
+   Specialists utilizing CLASS, hi_class, and emcee for cosmological parameter estimation
+   who demand reproducible likelihood pipelines against Planck and Pantheon+ data.
+3. Open-Science & Mathematical Physics Peer Reviewers:
+   Reviewers auditing paper series (Papers I-VI), evaluating proof gates, verifying
+   boundary conditions, and confirming numerical stability certificates.
+4. AI Research Agents & Symbolic/Numerical Code Interpreters:
+   Autonomous reasoning models exploring scientific repositories via machine-readable
+   manifests (llms.txt), deterministic test harnesses, and explicit policy contracts.
+
+--------------------------------------------------------------------------------
+3. SEARCH PHRASES & DISCOVERABILITY KEYWORDS
+--------------------------------------------------------------------------------
+Primary Canonical ID:
+  research-line/crm-cosmology
+
+High-Intent Query Phrases (English):
+- curvature relaxation model CRM cosmology
+- modified gravity f(R) gravity without dark sector
+- geometric cosmology MOND dark matter alternative
+- Planck 2018 CMB hi_class crm_fR Python MCMC
+- Horndeski scalaron dynamics MCMC preprint
+- dark energy alternative curvature saturation theorem
+- open science cosmology research code papers
+- CRM papers I II III IV LaTeX PDF Zenodo
+- quantum quadratic gravity UV completion QG-CRM
+- Pantheon+ SPARC rotation curves CRM analysis
+- hi_class Boltzmann solver patch modified gravity
+- radial acceleration relation SPARC modified gravity
+
+High-Intent Suchbegriffe (Deutsch):
+- Modell der Krümmungsrelaxation geometrische Kosmologie
+- Modifizierte Gravitation f(R) ohne dunkle Materie
+- MOND Vereinheitlichung Baryonische Kosmologie
+- Planck 2018 Hintergrundstrahlung MCMC Python
+- Horndeski Skalarfeld Sättigungstheorem
+- Offene Wissenschaft Kosmologie Reproduzierbarkeit Zenodo
+
+Ecosystem & Topic Tags:
+- cosmology, modified-gravity, fR-gravity, horndeski, dark-matter-alternative,
+  mcmc, planck-cmb, sparc, open-science, research-line, open-bricks
+
+--------------------------------------------------------------------------------
+4. SIBLING ECOSYSTEM & PARTNER NETWORK MATRIX
+--------------------------------------------------------------------------------
+crm-cosmology integrates with the broader open-bricks and research-line ecosystem:
+
+1. research-line/abc-hct: Curated arithmetic geometry & modular symbol certifiers
+2. research-line/functional-stability-theory: Dynamical stability operator proofs
+3. research-line/fst-nash: Game-theoretic equilibrium & payoff vector stability
+4. research-line/prompt-archaeology-casestudy2: Open-science archaeological dataset
+5. research-line/connes-cvs: Connes spectral triple & noncommutative geometry proofs
+6. research-line/rh-even-dominance: Riemann Hypothesis operator parity verification
+7. research-line/economic-sanctions-coercive-diplomacy: Quantitative policy models
+8. open-bricks/open-bricks: Umbrella ecosystem registry and cross-project standards
+9. ellmos-ai/decision-clicker: Single-canon decision ledger & reversible undo engine
+10. ellmos-ai/clip-storyboard-director: Local-first continuous media scene synthesis
+11. ellmos-ai/system-auditor: Deterministic multi-host system diagnostic ledger
+12. dev-bricks/safe-start-for-codex: Sandboxed subagent launcher & isolation guards
+13. entertain-and-more/CultureEvolution: Turn-based tactical simulation & AI engine
+14. file-bricks/WinStorePackager: Deterministic MSIX packaging & manifest automation
+15. doc-bricks/DokuZen: Local-first Markdown documentation publishing engine
+16. doc-bricks/UniversalDocsGrabber: Offline scholarly document & PDF extraction
+
+--------------------------------------------------------------------------------
+5. COMPETITIVE & MODEL COMPARISON MATRIX
+--------------------------------------------------------------------------------
+| Dimension / Capability      | Standard LCDM    | Standard f(R)    | MOND / TeVeS     | CRM Cosmology    |
+|-----------------------------|------------------|------------------|------------------|------------------|
+| Dark Energy Mechanism       | Cosmological Cst | Scalaron / f(R)  | Empirical / Varies| Curvature Relax. |
+| Dark Matter Mechanism       | Cold Dark Matter | Incomplete       | Milgrom a0 Accel. | MOND Vector Gate |
+| Planck 2018 CMB Fit         | Baseline (Delta=0)| Mixed (fine-tuned)| Difficult (peaks)| Delta chi2 = -3.7|
+| GW170817 c_gw = c Invariant | Trivial (GR)     | Compliant        | Complex Disformal| Compliant (alphaT=0)|
+| Galactic RAR (SPARC 171)    | Requires Halo Fit| Requires Halo Fit| Natural Match    | Natural Match    |
+| Mathematical Saturation Law | N/A              | N/A              | Ad-hoc Interpol. | Saturation Thm V |
+| Execution Architecture      | Distributed C    | C / Fortran      | Varied           | Python + hi_class|
+| 100% Offline & Zero-Egress  | Research code    | Research code    | Research code    | Verified Contract|
+| Machine-Readable LLM Parity | Absent           | Absent           | Absent           | Full (llms.txt)  |
+| Permissive Open-Science     | Varied           | Varied           | Varied           | CC-BY-4.0 & MIT  |
+
+--------------------------------------------------------------------------------
+6. GOVERNANCE & RESEARCH INVARIANTS (INV-DET-01 to INV-SLA-10)
+--------------------------------------------------------------------------------
+INV-DET-01: Deterministic Numerical Verification
+  All statistical gates, MCMC seeds, and ODE solvers produce reproducible
+  numerical certificates matching machine-readable JSON/CSV ledgers.
+INV-ZERO-02: 100% Offline & Zero-Egress Privacy
+  Zero outbound network calls, zero telemetry, and zero third-party cloud dependencies
+  during computation, analysis, and test suite execution.
+INV-USER-03: Unprivileged Execution / RunAsInvoker
+  All code runs without root or administrative privileges, respecting standard
+  POSIX/Windows user-space isolation.
+INV-DATA-04: Curated Evidence Non-Pollution Boundary
+  Downloaded observational raw data (Planck, Pantheon, SPARC) remain isolated
+  under data/raw/ and are strictly gitignored to maintain a clean repository tree.
+INV-GATE-05: Fail-Closed Gate Architecture
+  Mathematical proof gates and D' candidate verifiers fail closed: incomplete
+  or non-conclusive results are transparently audited as open research gates.
+INV-ARCH-06: Dual-Format Bilingual Paper Series & Zenodo Archival
+  Preprint manuscripts are maintained in LaTeX source and compiled PDF across
+  both English and German, tied to immutable Zenodo DOI records.
+INV-PLAT-07: Cross-Platform Environment Parity
+  Verified seamless execution across Windows, Linux (Ubuntu/WSL), and macOS,
+  with normalized CRLF/LF handling and robust path abstractions.
+INV-OPEN-08: Permissive Open-Science CC-BY-4.0 & MIT Licensing
+  All original manuscripts, figures, and code are distributed under permissive
+  open-science terms ensuring unrestricted academic reproducibility.
+INV-LLM-09: Machine-Readable LLM Parity
+  Complete context indexing via standardized llms.txt, structured JSON schemas,
+  and comprehensive 15-point bidirectional quick navigation anchors.
+INV-SLA-10: 48-Hour Security Response & 5-Day Triage SLA
+  Coordinated vulnerability handling via GitHub Private Advisories and official
+  ecosystem contacts (security@open-bricks.org, open-science@research-line.org).

@@ -7,6 +7,21 @@ and this project adheres to open-science preprint versioning tied to Zenodo arch
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-09-11
+
+### Added
+- **Discoverability, Marketing & Architecture Audit (Pfad B 2026-09-11):**
+  - Created `README_de.md` providing complete bilingual documentation parity with identical 15-point quick navigation.
+  - Added dual Mermaid architecture diagrams: 4-tier simulation flowchart and 7-step sequence diagram for curated scientific verification lifecycle.
+  - Established Table of 10 Governance & Research Invariants (`INV-DET-01` to `INV-SLA-10`) in both English and German.
+  - Created `THIRD_PARTY_LICENSES.md` inventorying scientific stack (NumPy, SciPy, Matplotlib, emcee, CLASS/hi_class, pytest, Ruff) with zero-egress compliance assurances.
+  - Created `MARKETING-LOG.txt` detailing 4 target personas, high-intent query keywords (EN/DE), sibling ecosystem matrix (16 repositories), and competitive model comparison.
+  - Modernized `SECURITY.md` with bilingual policy, 48-hour acknowledgment SLA, 5-day triage commitment, and official `open-bricks.org` and `research-line.org` contacts.
+  - Added comprehensive metadata contract test suite (`tests/test_metadata.py`) verifying navigation parity, badges, invariants, and PEP 621 URLs.
+  - Bumped version to `1.3.0` across `pyproject.toml`, test suites, and documentation.
+  - Configured `[tool.ruff]` and `[tool.pytest.ini_options]` with `pythonpath = ["."]` in `pyproject.toml`.
+  - Updated `llms.txt` with `2026-09-11` timestamp, canonical links, and governance invariants.
+
 ## [1.2.4] - 2026-07-30
 
 ### Changed
