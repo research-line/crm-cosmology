@@ -65,7 +65,7 @@ def test_explicit_witness_violates_monotonicity_but_keeps_endpoint_limit():
     report = build_report()
     certificate = report["monotonicity_certificate"]
 
-    assert EPSILON == pytest.approx(1.0 / 50.0)
+    assert pytest.approx(1.0 / 50.0) == EPSILON
     assert response_derivative(WITNESS_G) == pytest.approx(expected)
     assert expected < 0.0
     assert certificate["negative_at_witness"] is True

@@ -27,7 +27,7 @@ def test_llms_txt_timestamp():
     llms_path = os.path.join(REPO_ROOT, "llms.txt")
     with open(llms_path, "r", encoding="utf-8") as f:
         content = f.read()
-    assert "Last-checked: 2026-09-11" in content, "llms.txt Last-checked date is not updated to 2026-09-11"
+    assert "Last-checked: 2026-09-12" in content, "llms.txt Last-checked date is not updated to 2026-09-12"
 
 def test_pyproject_metadata():
     """Verify that pyproject.toml contains required PEP 621 metadata."""
@@ -35,7 +35,7 @@ def test_pyproject_metadata():
     with open(pyproject_path, "r", encoding="utf-8") as f:
         content = f.read()
     assert 'name = "crm-cosmology"' in content
-    assert 'version = "1.3.0"' in content
+    assert 'version = "1.3.1"' in content
     assert 'testpaths = ["tests"]' in content
 
 def test_requirements_file():

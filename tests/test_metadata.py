@@ -15,10 +15,11 @@ def test_pyproject_toml_structure():
     assert "project" in data
     project = data["project"]
     assert project.get("name") == "crm-cosmology"
-    assert project.get("version") == "1.3.0"
+    assert project.get("version") == "1.3.1"
     assert "description" in project
     assert project.get("requires-python") == ">=3.10"
     assert "license" in project
+    assert project.get("license-files") == ["LICENSE", "NOTICE"]
 
     classifiers = project.get("classifiers", [])
     assert "Programming Language :: Python :: 3.12" in classifiers
@@ -63,7 +64,7 @@ def test_llms_txt_structure_and_timestamp():
     content = llms_path.read_text(encoding="utf-8")
 
     assert "# Curvature Relaxation Model (CRM)" in content
-    assert "## Last-checked: 2026-09-11" in content
+    assert "## Last-checked: 2026-09-12" in content
     assert "## Canonical Links" in content
     assert "SECURITY.md" in content
     assert "THIRD_PARTY_LICENSES.md" in content
@@ -98,10 +99,10 @@ def test_readme_and_readme_de_parity():
         assert doc in de_content, f"Missing {doc} in README_de.md"
 
     # Check status badges
-    assert "Version-1.3.0-blue.svg" in en_content
-    assert "Version-1.3.0-blue.svg" in de_content
-    assert "LLM--Ready-2026--09--11" in en_content
-    assert "LLM--Ready-2026--09--11" in de_content
+    assert "Version-1.3.1-blue.svg" in en_content
+    assert "Version-1.3.1-blue.svg" in de_content
+    assert "LLM--Ready-2026--09--12" in en_content
+    assert "LLM--Ready-2026--09--12" in de_content
     assert "Ecosystem-research--line-blue.svg" in en_content
     assert "Ecosystem-research--line-blue.svg" in de_content
     assert "Umbrella-open--bricks-purple.svg" in de_content
@@ -288,3 +289,54 @@ def test_changelog_recent_pfad_b_entry():
     assert "README_de.md" in content
     assert "THIRD_PARTY_LICENSES.md" in content
     assert "MARKETING-LOG.txt" in content
+
+
+def test_ci_workflow_hardening():
+    """Verify that CI workflow has timeout-minutes, concurrency, Python 3.13, and Ruff linting."""
+    ci_path = REPO_ROOT / ".github" / "workflows" / "ci.yml"
+    assert ci_path.exists(), "ci.yml must exist"
+    content = ci_path.read_text(encoding="utf-8")
+
+    assert "timeout-minutes: 15" in content
+    assert "concurrency:" in content
+    assert "cancel-in-progress: true" in content
+    assert '"3.13"' in content
+    assert "Lint with Ruff" in content
+    assert "python -m ruff check ." in content
+    assert "python -m pytest -ra -v" in content
+
+
+def test_pep621_license_files_and_ruff_rules():
+    """Verify PEP 621 license-files and comprehensive Ruff ruleset."""
+    pyproject_path = REPO_ROOT / "pyproject.toml"
+    data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
+
+    assert data.get("project", {}).get("license-files") == ["LICENSE", "NOTICE"]
+    ruff_select = data.get("tool", {}).get("ruff", {}).get("lint", {}).get("select", [])
+    for rule in ["E", "F", "W", "B", "SIM", "C4", "RUF"]:
+        assert rule in ruff_select, f"Missing {rule} in tool.ruff.lint.select"
+
+
+def test_gitignore_multi_host_defense():
+    """Verify that .gitignore guards against Workstation/Laptop conflict files, canonical locks, and build caches."""
+    gi_path = REPO_ROOT / ".gitignore"
+    content = gi_path.read_text(encoding="utf-8")
+
+    assert "*-WORKSTATION-LG*" in content
+    assert "*conflicted copy*" in content
+    assert "* (Kopie)*" in content
+    assert "* (Copy)*" in content
+    assert "*.orig" in content
+    assert "*.rej" in content
+    assert "!package-lock.json" in content
+    assert ".turbo/" in content
+    assert ".nyc_output/" in content
+
+
+def test_changelog_v131_pfad_a_entry():
+    """Verify that CHANGELOG.md contains release 1.3.1 with Pfad A technical hygiene."""
+    cl_path = REPO_ROOT / "CHANGELOG.md"
+    content = cl_path.read_text(encoding="utf-8")
+
+    assert "## [1.3.1] - 2026-09-12" in content
+    assert "Technical Hygiene, CI Hardening & Metadata Modernization" in content

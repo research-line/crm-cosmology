@@ -7,6 +7,17 @@ and this project adheres to open-science preprint versioning tied to Zenodo arch
 
 ## [Unreleased]
 
+## [1.3.1] - 2026-09-12
+
+### Changed
+- **Technical Hygiene, CI Hardening & Metadata Modernization (Pfad A 2026-09-12):**
+  - Hardened `.github/workflows/ci.yml` with concurrency control (`cancel-in-progress: true`), job-level `timeout-minutes: 15`, Python 3.13 matrix extension, automated `ruff check .` lint step, and standardized `python -m pytest -ra -v` execution.
+  - Hardened `pyproject.toml` PEP 621 compliance with explicit `license-files = ["LICENSE", "NOTICE"]` and expanded `[tool.ruff.lint]` rule sets (`E`, `F`, `W`, `B`, `SIM`, `C4`, `RUF`).
+  - Strengthened `.gitignore` defense against multi-host synchronization conflicts (`*-WORKSTATION-LG*`, `*conflicted copy*`, `* (Kopie)*`, `* (Copy)*`, `*.orig`, `*.rej`), canonical locks (`uv.lock`, `!package-lock.json`), and build caches (`.turbo/`, `.nyc_output/`).
+  - Cleaned up Python code hygiene across test suites with strict `zip(..., strict=True)` calls and simplified assertion comparisons.
+  - Synchronized documentation badges, `llms.txt` Last-checked timestamp (`2026-09-12`), and bilingual documentation parity.
+  - Expanded automated contract test suite (`tests/test_metadata.py`) with dedicated verification gates for CI hardening, PEP 621 license-files, Ruff rule expansion, and multi-host gitignore defense.
+
 ## [1.3.0] - 2026-09-11
 
 ### Added

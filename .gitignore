@@ -214,15 +214,23 @@ Plan.txt
 *.conflict
 *-CONFLIT-*
 *.sync-temp-*
+*conflicted copy*
 *-WORKSTATION*
+*-WORKSTATION-LG*
+*-ASUS*
 *-ASUS-GEI*
 * (kopie)*
+* (Kopie)*
 * (copy)*
+* (Copy)*
+*.orig
+*.rej
 LOCK
 LOCK.*
 *.lock
 LOCK*.txt
 uv.lock
+!package-lock.json
 LOCK.permissions.json
 
 # Build, test, and linting caches
@@ -235,7 +243,9 @@ htmlcov/
 wheelhouse/
 .wheel-smoke/
 .tox/
+.turbo/
 .mypy_cache/
+.nyc_output/
 
 # Temporary and backup files
 *.tmp

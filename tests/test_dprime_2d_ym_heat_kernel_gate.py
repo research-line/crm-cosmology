@@ -102,7 +102,7 @@ def test_artifacts_are_deterministic_and_machine_readable(tmp_path):
         f"{ARTIFACT_STEM}.csv",
         f"{ARTIFACT_STEM}.md",
     ]
-    for left, right in zip(first_paths, second_paths):
+    for left, right in zip(first_paths, second_paths, strict=True):
         assert left.read_bytes() == right.read_bytes()
 
     report = json.loads(first_paths[0].read_text(encoding="utf-8"))

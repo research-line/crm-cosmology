@@ -133,7 +133,7 @@ def test_artifacts_are_deterministic_and_csv_preserves_required_columns(tmp_path
         f"{ARTIFACT_STEM}.csv",
         f"{ARTIFACT_STEM}.md",
     ]
-    for left, right in zip(first, second):
+    for left, right in zip(first, second, strict=True):
         assert left.read_bytes() == right.read_bytes()
 
     with first[2].open(encoding="utf-8", newline="") as handle:

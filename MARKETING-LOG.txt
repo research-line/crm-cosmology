@@ -153,3 +153,20 @@ INV-LLM-09: Machine-Readable LLM Parity
 INV-SLA-10: 48-Hour Security Response & 5-Day Triage SLA
   Coordinated vulnerability handling via GitHub Private Advisories and official
   ecosystem contacts (security@open-bricks.org, open-science@research-line.org).
+
+--------------------------------------------------------------------------------
+7. TECHNICAL HYGIENE, CI MATRIX & PFAD A AUDIT (Stand: 2026-09-12)
+--------------------------------------------------------------------------------
+- Version Harmonization: v1.3.1 established across pyproject.toml, CHANGELOG.md,
+  README.md, README_de.md, llms.txt, and tests/test_metadata.py.
+- CI/CD Matrix Hardening: .github/workflows/ci.yml updated with concurrency group
+  (cancel-in-progress), job-level timeout-minutes: 15, Python 3.10-3.13 matrix,
+  and automated Ruff lint step.
+- Ruff Ruleset Expansion: pyproject.toml [tool.ruff.lint] upgraded to comprehensive
+  rule set (E, F, W, B, SIM, C4, RUF) with 0 errors across all source and test modules.
+- PEP 621 License Standards: license-files = ["LICENSE", "NOTICE"] declared.
+- Multi-Host Sync Defense: .gitignore strengthened against Workstation/Laptop
+  conflict copies (*-WORKSTATION-LG*, *conflicted copy*, * (Kopie)*), canonical locks
+  (uv.lock, !package-lock.json), and build caches (.turbo/, .nyc_output/).
+- Contract Test Coverage: tests/test_metadata.py expanded with automated contract
+  verification gates for CI hardening, PEP 621 license files, and sync defense.
