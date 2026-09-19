@@ -7,6 +7,19 @@ and this project adheres to open-science preprint versioning tied to Zenodo arch
 
 ## [Unreleased]
 
+## [1.3.2] - 2026-09-20
+
+### Changed
+- **Pfad B Discoverability, Visual Architecture & 18-Point Navigation Parity (2026-09-20):**
+  - Expanded bilingual navigation from 15 to 18 points across `README.md` and `README_de.md` with 100% reciprocal dual HTML anchors (`<a id="..."></a>`) and complete backwards-compatible preservation of all legacy 1.3.0 anchors.
+  - Formulated dedicated Section 3: **Target Personas & Discoverability** defining 4 researcher personas (`[PERSONA-01]` to `[PERSONA-04]`) with objective, core value, and high-intent discovery search queries in English and German.
+  - Formulated dedicated Section 4: **Comparative Matrix & Model Invariants** detailing a 10-dimension benchmark comparing CRM against Standard $\Lambda\text{CDM}$, Standard $f(R)$, MOND/TeVeS/RMOND, and General Scalar-Tensor theories, mapped to `INV-DET-01` through `INV-SLA-10`.
+  - Upgraded `THIRD_PARTY_LICENSES.md` with a formal **Level 1 Software Bill of Materials (SBOM)**, SPDX license identifiers, copyright holders, isolation boundaries, an Invariant Cross-Reference Matrix, and unprivileged `RunAsInvoker` non-elevation certification.
+  - Hardened packaging compliance in `pyproject.toml` by declaring `license-files = ["LICENSE", "NOTICE", "THIRD_PARTY_LICENSES.md"]`.
+  - Added explicit German statutory limitation of liability pursuant to Section 521 BGB (*Gefälligkeitsrecht*) in Section 18 of both `README.md` and `README_de.md`.
+  - Synchronized version `1.3.2` and `2026-09-20` timestamps across `pyproject.toml`, `README.md`, `README_de.md`, `llms.txt`, `THIRD_PARTY_LICENSES.md`, `MARKETING-LOG.txt`, and contract tests.
+  - Expanded automated test suite `tests/test_metadata.py` with 18-point dual navigation assertions, persona validations, 10-dimension comparative matrix checks, Level 1 SBOM audits, RunAsInvoker verification, and § 521 BGB statutory notice checks.
+
 ## [1.3.1] - 2026-09-12
 
 ### Changed

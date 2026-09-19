@@ -1,11 +1,11 @@
-## Last-checked: 2026-09-12
+## Last-checked: 2026-09-20
 
 # Curvature Relaxation Model (CRM)
 
 Canonical repository: https://github.com/research-line/crm-cosmology
 Primary DOI concept: https://doi.org/10.5281/zenodo.18728935
 Latest published Zenodo v7.0 record: https://doi.org/10.5281/zenodo.19233559
-Local release status: v1.3.1; 100% test suite passing green; bilingual preprint and research repository.
+Local release status: v1.3.2; 100% test suite passing green; bilingual preprint and research repository.
 License: Creative Commons Attribution 4.0 International (CC BY 4.0)
 
 ## Canonical Links
@@ -48,7 +48,7 @@ The repository includes:
 - **INV-ARCH-06 (Bilingual Paper Series & Zenodo Archival)**: LaTeX and PDF preprints in English and German tied to Zenodo DOIs.
 - **INV-PLAT-07 (Cross-Platform Parity)**: Validated on Windows, Linux (Ubuntu/WSL), and macOS.
 - **INV-OPEN-08 (Open-Science CC-BY-4.0 & MIT Licensing)**: Permissive scholarly reuse and code redistribution.
-- **INV-LLM-09 (Machine-Readable LLM Parity)**: Structured manifest via llms.txt and 15-point navigation anchors.
+- **INV-LLM-09 (Machine-Readable LLM Parity)**: Structured manifest via llms.txt and 18-point navigation anchors.
 - **INV-SLA-10 (48-Hour Security Response & 5-Day Triage SLA)**: Coordinated vulnerability management.
 
 ## Recommended Reading Order

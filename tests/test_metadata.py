@@ -15,11 +15,11 @@ def test_pyproject_toml_structure():
     assert "project" in data
     project = data["project"]
     assert project.get("name") == "crm-cosmology"
-    assert project.get("version") == "1.3.1"
+    assert project.get("version") == "1.3.2"
     assert "description" in project
     assert project.get("requires-python") == ">=3.10"
     assert "license" in project
-    assert project.get("license-files") == ["LICENSE", "NOTICE"]
+    assert project.get("license-files") == ["LICENSE", "NOTICE", "THIRD_PARTY_LICENSES.md"]
 
     classifiers = project.get("classifiers", [])
     assert "Programming Language :: Python :: 3.12" in classifiers
@@ -64,7 +64,8 @@ def test_llms_txt_structure_and_timestamp():
     content = llms_path.read_text(encoding="utf-8")
 
     assert "# Curvature Relaxation Model (CRM)" in content
-    assert "## Last-checked: 2026-09-12" in content
+    assert "## Last-checked: 2026-09-20" in content
+    assert "Local release status: v1.3.2" in content
     assert "## Canonical Links" in content
     assert "SECURITY.md" in content
     assert "THIRD_PARTY_LICENSES.md" in content
@@ -75,6 +76,7 @@ def test_llms_txt_structure_and_timestamp():
     assert "## Safety & Governance Invariants" in content
     assert "## Search Phrases" in content
     assert "INV-DET-01" in content
+    assert "INV-LLM-09 (Machine-Readable LLM Parity)**: Structured manifest via llms.txt and 18-point navigation anchors." in content
     assert "INV-SLA-10" in content
 
 
@@ -99,10 +101,10 @@ def test_readme_and_readme_de_parity():
         assert doc in de_content, f"Missing {doc} in README_de.md"
 
     # Check status badges
-    assert "Version-1.3.1-blue.svg" in en_content
-    assert "Version-1.3.1-blue.svg" in de_content
-    assert "LLM--Ready-2026--09--12" in en_content
-    assert "LLM--Ready-2026--09--12" in de_content
+    assert "Version-1.3.2-blue.svg" in en_content
+    assert "Version-1.3.2-blue.svg" in de_content
+    assert "LLM--Ready-2026--09--20" in en_content
+    assert "LLM--Ready-2026--09--20" in de_content
     assert "Ecosystem-research--line-blue.svg" in en_content
     assert "Ecosystem-research--line-blue.svg" in de_content
     assert "Umbrella-open--bricks-purple.svg" in de_content
@@ -110,14 +112,16 @@ def test_readme_and_readme_de_parity():
     assert "Security%20SLA-48h%20Response%20%7C%205d%20Triage" in en_content
 
 
-def test_readme_navigation_15_points_parity():
-    """Verify that both READMEs contain all 15 quick navigation points with identical anchors."""
+def test_readme_navigation_18_points_parity():
+    """Verify that both READMEs contain all 18 quick navigation points with reciprocal dual anchors."""
     en_content = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
     de_content = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
 
     expected_anchors = [
         "quick-reference",
         "headline-scientific-results",
+        "target-personas--discoverability",
+        "comparative-matrix--model-invariants",
         "system-architecture--pipeline",
         "curated-verification-lifecycle",
         "governance--research-invariants",
@@ -127,10 +131,11 @@ def test_readme_navigation_15_points_parity():
         "hi_class-patch-documentation",
         "sibling-research--ecosystem-matrix",
         "discovery--llm-context",
+        "level-1-sbom--third-party-licenses",
         "repository-structure",
         "testing--reproducibility",
-        "third-party-licenses",
-        "security--license",
+        "security-policy--coordinated-disclosure",
+        "license--statutory-liability-limitation",
     ]
 
     for anchor in expected_anchors:
@@ -138,6 +143,12 @@ def test_readme_navigation_15_points_parity():
         assert f"#{anchor}" in de_content, f"Missing anchor #{anchor} in README_de.md navigation"
         assert f'id="{anchor}"' in en_content, f"Missing anchor id='{anchor}' in README.md body"
         assert f'id="{anchor}"' in de_content, f"Missing anchor id='{anchor}' in README_de.md body"
+
+    # Verify legacy anchors are preserved for backwards compatibility
+    assert 'id="third-party-licenses"' in en_content
+    assert 'id="third-party-licenses"' in de_content
+    assert 'id="security--license"' in en_content
+    assert 'id="security--license"' in de_content
 
 
 def test_dual_mermaid_diagrams_parity():
@@ -258,6 +269,7 @@ def test_marketing_log_audit_and_personas():
     assert "4. SIBLING ECOSYSTEM & PARTNER NETWORK MATRIX" in content
     assert "5. COMPETITIVE & MODEL COMPARISON MATRIX" in content
     assert "6. GOVERNANCE & RESEARCH INVARIANTS" in content
+    assert "8. PFAD B DISCOVERABILITY, VISUAL ARCHITECTURE & 18-POINT NAV PARITY" in content
     assert "INV-DET-01" in content
     assert "INV-SLA-10" in content
 
@@ -311,7 +323,7 @@ def test_pep621_license_files_and_ruff_rules():
     pyproject_path = REPO_ROOT / "pyproject.toml"
     data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
 
-    assert data.get("project", {}).get("license-files") == ["LICENSE", "NOTICE"]
+    assert data.get("project", {}).get("license-files") == ["LICENSE", "NOTICE", "THIRD_PARTY_LICENSES.md"]
     ruff_select = data.get("tool", {}).get("ruff", {}).get("lint", {}).get("select", [])
     for rule in ["E", "F", "W", "B", "SIM", "C4", "RUF"]:
         assert rule in ruff_select, f"Missing {rule} in tool.ruff.lint.select"
@@ -340,3 +352,64 @@ def test_changelog_v131_pfad_a_entry():
 
     assert "## [1.3.1] - 2026-09-12" in content
     assert "Technical Hygiene, CI Hardening & Metadata Modernization" in content
+
+
+def test_target_personas_and_high_intent_queries():
+    """Verify that both READMEs contain the 4 personas and high-intent queries."""
+    en_content = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    de_content = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
+
+    for persona in ["[PERSONA-01]", "[PERSONA-02]", "[PERSONA-03]", "[PERSONA-04]"]:
+        assert persona in en_content, f"Missing {persona} in README.md"
+        assert persona in de_content, f"Missing {persona} in README_de.md"
+
+    assert "curvature relaxation model CRM cosmology" in en_content
+    assert "Modell der Krümmungsrelaxation geometrische Kosmologie" in de_content
+
+
+def test_comparative_matrix_ten_dimensions():
+    """Verify that both READMEs contain the 10-dimension comparative matrix."""
+    en_content = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    de_content = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
+
+    alternatives = ["Standard $\\Lambda\\text{CDM}$", "MOND / TeVeS / RMOND", "Curvature Relaxation Model (CRM)"]
+    for alt in alternatives:
+        assert alt in en_content, f"Missing {alt} in README.md comparative matrix"
+
+    for inv in ["INV-DET-01", "INV-ZERO-02", "INV-USER-03", "INV-DATA-04", "INV-GATE-05", "INV-ARCH-06", "INV-PLAT-07", "INV-OPEN-08", "INV-LLM-09", "INV-SLA-10"]:
+        assert inv in en_content, f"Missing {inv} in README.md comparative matrix"
+        assert inv in de_content, f"Missing {inv} in README_de.md comparative matrix"
+
+
+def test_third_party_licenses_sbom_and_run_as_invoker():
+    """Verify Level 1 SBOM, Invariant Cross-Reference Matrix, and RunAsInvoker guarantee in THIRD_PARTY_LICENSES.md."""
+    content = (REPO_ROOT / "THIRD_PARTY_LICENSES.md").read_text(encoding="utf-8")
+
+    assert "Level 1 Software Bill of Materials (SBOM)" in content
+    assert "Level 1 SBOM Invariant Cross-Reference Matrix" in content
+    assert "INV-DET-01" in content
+    assert "Unprivileged Non-Elevation (`RunAsInvoker`)" in content
+    assert "Zero-Copyleft Isolation Guarantee" in content
+
+
+def test_statutory_bgb_notice_in_readmes():
+    """Verify German statutory limitation of liability pursuant to Section 521 BGB in both READMEs."""
+    en_content = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    de_content = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
+
+    assert "§ 521 BGB" in en_content
+    assert "§ 521 BGB" in de_content
+    assert "Vorsatz und grobe Fahrlässigkeit" in en_content
+    assert "Vorsatz und grobe Fahrlässigkeit" in de_content
+
+
+def test_changelog_v132_pfad_b_entry():
+    """Verify that CHANGELOG.md contains release 1.3.2 with Pfad B additions."""
+    cl_path = REPO_ROOT / "CHANGELOG.md"
+    content = cl_path.read_text(encoding="utf-8")
+
+    assert "## [1.3.2] - 2026-09-20" in content
+    assert "Pfad B Discoverability, Visual Architecture & 18-Point Navigation Parity" in content
+    assert "Level 1 Software Bill of Materials (SBOM)" in content
+    assert "Target Personas & Discoverability" in content
+    assert "Comparative Matrix & Model Invariants" in content

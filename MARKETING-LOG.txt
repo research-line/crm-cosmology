@@ -149,7 +149,7 @@ INV-OPEN-08: Permissive Open-Science CC-BY-4.0 & MIT Licensing
   open-science terms ensuring unrestricted academic reproducibility.
 INV-LLM-09: Machine-Readable LLM Parity
   Complete context indexing via standardized llms.txt, structured JSON schemas,
-  and comprehensive 15-point bidirectional quick navigation anchors.
+  and comprehensive 18-point bidirectional quick navigation anchors.
 INV-SLA-10: 48-Hour Security Response & 5-Day Triage SLA
   Coordinated vulnerability handling via GitHub Private Advisories and official
   ecosystem contacts (security@open-bricks.org, open-science@research-line.org).
@@ -170,3 +170,31 @@ INV-SLA-10: 48-Hour Security Response & 5-Day Triage SLA
   (uv.lock, !package-lock.json), and build caches (.turbo/, .nyc_output/).
 - Contract Test Coverage: tests/test_metadata.py expanded with automated contract
   verification gates for CI hardening, PEP 621 license files, and sync defense.
+
+--------------------------------------------------------------------------------
+8. PFAD B DISCOVERABILITY, VISUAL ARCHITECTURE & 18-POINT NAV PARITY (Stand: 2026-09-20)
+--------------------------------------------------------------------------------
+- Version Harmonization: v1.3.2 synchronized across pyproject.toml, CHANGELOG.md,
+  README.md, README_de.md, llms.txt, THIRD_PARTY_LICENSES.md, and test_metadata.py.
+- 18-Point Bilingual Navigation Parity: Expanded from 15 to 18 points in README.md
+  and README_de.md with 100% reciprocal dual HTML anchors (<a id="..."></a>) and full
+  preservation of legacy anchors to prevent link rot.
+- Target Personas & High-Intent Discovery: Formulated 4 target personas:
+  * [PERSONA-01] Theoretical Cosmologists & Modified Gravity Researchers
+  * [PERSONA-02] Computational Astrophysicists & MCMC Data Modelers
+  * [PERSONA-03] Open-Science & Mathematical Physics Peer Reviewers
+  * [PERSONA-04] Autonomous AI Research Agents & Symbolic/Numerical Evaluators
+  Mapped to 16 high-intent English and German discovery search queries.
+- 10-Dimension Comparative Matrix: Formulated comparative benchmark matrix comparing
+  CRM against Standard LambdaCDM, Standard f(R), MOND/TeVeS/RMOND, and General
+  Scalar-Tensor theories across 10 invariants (INV-DET-01 to INV-SLA-10).
+- Level 1 SBOM Hardening: THIRD_PARTY_LICENSES.md expanded with formal Software Bill
+  of Materials (NumPy, SciPy, Matplotlib, emcee, CLASS/hi_class, pytest, Ruff),
+  SPDX identifiers, Invariant Cross-Reference Matrix, and RunAsInvoker non-elevation.
+- Packaging Compliance: pyproject.toml license-files upgraded to:
+  ["LICENSE", "NOTICE", "THIRD_PARTY_LICENSES.md"].
+- Statutory Liability Disclaimer: Integrated German statutory limitation of liability
+  pursuant to Section 521 BGB (Gefälligkeitsrecht) in Section 18 of both READMEs.
+- Contract Verification Suite: tests/test_metadata.py expanded with automated contract
+  tests for 18-point dual anchors, personas, comparative matrix, Level 1 SBOM,
+  RunAsInvoker declaration, and statutory liability disclaimers (131 tests green).

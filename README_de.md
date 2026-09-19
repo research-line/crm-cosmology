@@ -6,19 +6,19 @@
 
 **Forschungscode, rechnergestützte Simulationspipelines und zweisprachige Preprint-Serie für ein geometrisches Kosmologieprogramm modifizierter Gravitation**
 
-[![Version](https://img.shields.io/badge/Version-1.3.1-blue.svg)](pyproject.toml)
+[![Version](https://img.shields.io/badge/Version-1.3.2-blue.svg)](pyproject.toml)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18728935.svg)](https://doi.org/10.5281/zenodo.18728935)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![Platforms](https://img.shields.io/badge/Platforms-Windows%20%7C%20Linux%20%7C%20macOS-4EAA25.svg)](pyproject.toml)
-[![Tests](https://img.shields.io/badge/Tests-126%20passed%20%7C%20100%25-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/Tests-131%20passed%20%7C%20100%25-brightgreen.svg)](tests/)
 [![Zero-Egress](https://img.shields.io/badge/Privacy-Zero--Egress%20%7C%20Offline-success.svg)](SECURITY.md)
 [![RunAsInvoker](https://img.shields.io/badge/Security-RunAsInvoker%20%7C%20Non--Elevation-informational.svg)](SECURITY.md)
 [![Security SLA](https://img.shields.io/badge/Security%20SLA-48h%20Response%20%7C%205d%20Triage-blue.svg)](SECURITY.md)
 [![Code Style: Ruff](https://img.shields.io/badge/Code%20Style-Ruff-000000.svg)](https://github.com/astral-sh/ruff)
 [![Ecosystem](https://img.shields.io/badge/Ecosystem-research--line-blue.svg)](https://github.com/research-line)
 [![Umbrella](https://img.shields.io/badge/Umbrella-open--bricks-purple.svg)](https://github.com/open-bricks)
-[![LLM Ready](https://img.shields.io/badge/LLM--Ready-2026--09--12-yellow.svg)](llms.txt)
+[![LLM Ready](https://img.shields.io/badge/LLM--Ready-2026--09--20-yellow.svg)](llms.txt)
 
 > [!NOTE]
 > **KI- / LLM-Agenten-Indexierung & Maschinenlesbare Zusammenfassung:**
@@ -33,23 +33,26 @@
 |---|---|---|
 | 01 | [Schnellreferenz](#quick-reference) | Zusammenfassung des Repositories und zentrale Missionsparameter |
 | 02 | [Wissenschaftliche Hauptergebnisse](#headline-scientific-results) | Planck 2018 $\Delta\chi^2 = -3{,}7$ und kosmologische Vergleichstabelle |
-| 03 | [Systemarchitektur & Pipeline](#system-architecture--pipeline) | 4-Ebenen-Architektur der Simulation und des Boltzmann-Code-Patches |
-| 04 | [Kuratierter Verifikations-Lebenszyklus](#curated-verification-lifecycle) | 7-stufiges Sequenzdiagramm von der Wirkung bis zur Zenodo-Archivierung |
-| 05 | [Governance- & Forschungsinvarianten](#governance--research-invariants) | 10 verbindliche Standards für Reproduzierbarkeit, Sicherheit und Open Science |
-| 06 | [Hauptarbeiten: Theoretische Serie](#core-papers--theoretical-series) | Papiere I--IV zweisprachig in LaTeX und als PDF-Manuskripte |
-| 07 | [Erweiterungsarbeiten: Sättigungstheorem](#extension-papers--saturation-theorem) | Papiere V--VI, mathematische Sättigungs-Gates und QG-CRM |
-| 08 | [MCMC-Datenreproduktion & Datensätze](#mcmc-data-reproduction--datasets) | Schritt-für-Schritt-Befehle für Planck, Pantheon+ und SPARC |
-| 09 | [hi_class Patch-Dokumentation](#hi_class-patch-documentation) | Patch für den Horndeski-Boltzmann-Solver für natives $crm\_fR$ |
-| 10 | [Geschwisterforschung & Ökosystem-Matrix](#sibling-research--ecosystem-matrix) | 16 Partner-Repositories in research-line, open-bricks und ellmos-ai |
-| 11 | [Auffindbarkeit & LLM-Kontext](#discovery--llm-context) | Maschinenlesbare Indexierung, Suchbegriffe und Persona-Mapping |
-| 12 | [Repository-Struktur](#repository-structure) | Detaillierte Ordnerübersicht über Arbeiten, Skripte, Daten und Tests |
-| 13 | [Tests & Reproduzierbarkeit](#testing--reproducibility) | Pytest-Ausführung, Richtlinienverifikation und mathematische Gates |
-| 14 | [Lizenzen Dritter](#third-party-licenses) | Inventar wissenschaftlicher Bibliotheken, Lizenzbereiche und Nachweise |
-| 15 | [Sicherheit & Lizenz](#security--license) | Schwachstellen-SLA, CC-BY-4.0-Lizenz und § 521 BGB Haftungsbeschränkung |
+| 03 | [Zielgruppen & Auffindbarkeit](#target-personas--discoverability) | Forscher-Archetypen, Anwendungsfälle und zweisprachige SEO-Schlüsselbegriffe |
+| 04 | [Vergleichsmatrix & Modell-Invarianten](#comparative-matrix--model-invariants) | 10-Dimensionen-Vergleich vs. $\Lambda\text{CDM}$, $f(R)$, MOND/TeVeS und Skalar-Tensor |
+| 05 | [Systemarchitektur & Pipeline](#system-architecture--pipeline) | 4-Ebenen-Architektur der Simulation und des Boltzmann-Code-Patches |
+| 06 | [Kuratierter Verifikations-Lebenszyklus](#curated-verification-lifecycle) | 7-stufiges Sequenzdiagramm von der Wirkung bis zur Zenodo-Archivierung |
+| 07 | [Governance- & Forschungsinvarianten](#governance--research-invariants) | 10 verbindliche Standards für Reproduzierbarkeit, Sicherheit und Open Science |
+| 08 | [Hauptarbeiten: Theoretische Serie](#core-papers--theoretical-series) | Papiere I--IV zweisprachig in LaTeX und als PDF-Manuskripte |
+| 09 | [Erweiterungsarbeiten: Sättigungstheorem](#extension-papers--saturation-theorem) | Papiere V--VI, mathematische Sättigungs-Gates und QG-CRM |
+| 10 | [MCMC-Datenreproduktion & Datensätze](#mcmc-data-reproduction--datasets) | Schritt-für-Schritt-Befehle für Planck, Pantheon+ und SPARC |
+| 11 | [hi_class Patch-Dokumentation](#hi_class-patch-documentation) | Patch für den Horndeski-Boltzmann-Solver für natives $crm\_fR$ |
+| 12 | [Geschwisterforschung & Ökosystem-Matrix](#sibling-research--ecosystem-matrix) | 16 Partner-Repositories in research-line, open-bricks und ellmos-ai |
+| 13 | [Auffindbarkeit & LLM-Kontext](#discovery--llm-context) | Maschinenlesbare Indexierung, Suchbegriffe und Persona-Mapping |
+| 14 | [Level 1 SBOM & Lizenzen Dritter](#level-1-sbom--third-party-licenses) | Wissenschaftliche Bibliotheken, Level 1 SBOM und RunAsInvoker-Zertifizierung |
+| 15 | [Repository-Struktur](#repository-structure) | Detaillierte Ordnerübersicht über Arbeiten, Skripte, Daten und Tests |
+| 16 | [Tests & Reproduzierbarkeit](#testing--reproducibility) | Pytest-Ausführung, Richtlinienverifikation und mathematische Gates |
+| 17 | [Sicherheitsrichtlinie & Koordinierte Offenlegung](#security-policy--coordinated-disclosure) | 48h-Reaktions-SLA, 5-Tage-Triage, Kontaktadressen und Meldewege |
+| 18 | [Lizenz & Gesetzliche Haftungsbeschränkung](#license--statutory-liability-limitation) | CC-BY-4.0-Lizenz, § 521 BGB Haftungsausschluss und Open-Science-Nutzung |
 
 ---
 
-<a id="quick-reference"></a>
+<a id="quick-reference"></a><a id="1-quick-reference"></a><a id="schnellreferenz"></a><a id="1-schnellreferenz"></a>
 ## 1. Schnellreferenz
 
 Das Modell der Krümmungsrelaxation (*Curvature Relaxation Model*, CRM) ist ein Open-Science-Forschungsprogramm der geometrischen Kosmologie und modifizierten Gravitation. Es untersucht, ob Phänomene dunkler Energie und dunkler Materie durch Krümmungsrelaxation, Skalaron-Dynamik und einen MOND-orientierten Vektorsektor modelliert werden können, anstatt getrennte Dunkelsektor-Komponenten einzuführen.
@@ -57,13 +60,13 @@ Das Modell der Krümmungsrelaxation (*Curvature Relaxation Model*, CRM) ist ein 
 - **Primäres Repository:** [research-line/crm-cosmology](https://github.com/research-line/crm-cosmology)
 - **Konzept-DOI:** [10.5281/zenodo.18728935](https://doi.org/10.5281/zenodo.18728935)
 - **Aktueller Zenodo v7.0 Datensatz:** [10.5281/zenodo.19233559](https://doi.org/10.5281/zenodo.19233559)
-- **Aktiver Versionsstand:** `v1.3.0` (Zweisprachiger Kern, Testsuite 100% grün)
+- **Aktiver Versionsstand:** `v1.3.2` (Zweisprachiger Kern, 18-Punkte-Navigationsparität, Testsuite 100% grün)
 - **Lizenzierung:** [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) (Manuskripte & Doku) / MIT-kompatibel (Software-Harness)
 - **Ausführungsmodus:** 100% Offline, Local-First, Zero-Egress
 
 ---
 
-<a id="headline-scientific-results"></a>
+<a id="headline-scientific-results"></a><a id="2-headline-scientific-results"></a><a id="zentrale-wissenschaftliche-ergebnisse"></a><a id="2-zentrale-wissenschaftliche-ergebnisse"></a>
 ## 2. Wissenschaftliche Hauptergebnisse
 
 Das native `crm_fR`-Modell erzielt im aktuellen MCMC-Best-Fit-Lauf auf Planck 2018 CMB TT+TE+EE-Daten ein **$\Delta\chi^2 = -3{,}7$** gegenüber Standard-$\Lambda\text{CDM}$, mit $\alpha_{M,0} = 0{,}0011 \pm 0{,}0007$ und $100\,\theta_s = 1{,}04173$.
@@ -94,8 +97,71 @@ $$\alpha_K = 0 \quad [\text{quasistatischer Limes}]$$
 
 ---
 
-<a id="system-architecture--pipeline"></a>
-## 3. Systemarchitektur & Pipeline
+<a id="target-personas--discoverability"></a><a id="3-target-personas--discoverability"></a><a id="zielgruppen--auffindbarkeit"></a><a id="3-zielgruppen--auffindbarkeit"></a>
+## 3. Zielgruppen & Auffindbarkeit
+
+`crm-cosmology` ist für vier spezialisierte Forscher- und Entwickler-Zielgruppen in theoretischer Physik, computergestützter Astrophysik, Open-Science-Peer-Review und autonomer KI-Forschung konzipiert:
+
+### [PERSONA-01] Theoretische Kosmologen & Forscher für modifizierte Gravitation
+- **Fokus:** Formulierung geometrischer Wirkungen, Untersuchung von $f(R)$-Skalaron-Dynamik, Test von Horndeski/EFT-Proxies und Entwicklung ultravioletter Vervollständigungen (QG-CRM).
+- **Zentraler Nutzen:** Mathematisch fundierte Skalar-Tensor-Lagrange-Dichten, rigorose Kragen-Klassifikationen und überprüfbare Krümmungsrelaxations-Wirkungen ohne künstliche Dunkelsektoren.
+- **Suchbegriffe:**
+  - `Modell der Krümmungsrelaxation geometrische Kosmologie`
+  - `Modifizierte Gravitation f(R) ohne dunkle Materie`
+  - `Horndeski Skalarfeld Sättigungstheorem`
+  - `Quanten-quadratische Gravitation UV-Vervollständigung QG-CRM`
+
+### [PERSONA-02] Rechnergestützte Astrophysiker & MCMC-Datenmodellierer
+- **Fokus:** Ausführung von Boltzmann-Störungscodes (CLASS/hi_class), Durchführung von Parameterschätzungen mit emcee und Konfrontation von Modellen mit kosmologischen Beobachtungsdaten.
+- **Zentraler Nutzen:** Schlüsselfertiger C-Patch für hi_class, schlüsselfertige MCMC-Likelihood-Ketten auf Planck 2018 CMB ($\Delta\chi^2 = -3{,}7$), Pantheon+ Supernovae und SPARC-Galaxien-Rotationskurven (171 Galaxien).
+- **Suchbegriffe:**
+  - `Planck 2018 Hintergrundstrahlung MCMC Python`
+  - `Pantheon+ SPARC Rotationskurven CRM Analyse`
+  - `hi_class Boltzmann Solver Patch modifizierte Gravitation`
+  - `radiale Beschleunigungsrelation SPARC modifizierte Gravitation`
+
+### [PERSONA-03] Open-Science-Gutachter & Mathematische Physiker
+- **Fokus:** Begutachtung zweisprachiger Preprint-Serien (Papiere I--VI), Überprüfung mathematischer Beweis-Gates, Inspektion von Selberg-hyperbolischen Kontrollen und Evaluation von Randquotienten ($D'$).
+- **Zentraler Nutzen:** Vollständiger LaTeX-Quellcode, kompilierte PDFs, fail-closed Pytest-Gatekeeper-Suiten und unveränderliche Zenodo-DOI-Archivierungsdatensätze.
+- **Suchbegriffe:**
+  - `Offene Wissenschaft Kosmologie Reproduzierbarkeit Zenodo`
+  - `Dunkle Energie Alternative Krümmungs-Sättigungstheorem`
+  - `CRM Papiere I II III IV LaTeX PDF Zenodo`
+  - `Baryonisches Universum MCMC Reproduktion`
+
+### [PERSONA-04] Autonome KI-Forschungsagenten & Symbolisch-Numerische Evaluatoren
+- **Fokus:** Automatisiertes Literatur-Indexing, semantisches Schließen über theoretische Wirkungen, deterministische Testsuite-Ausführung und Local-First-Verifikation.
+- **Zentraler Nutzen:** Standardisiertes maschinenlesbares [`llms.txt`](llms.txt), 18-Punkte-Doppelanker-Navigationsparität, unprivilegierte `RunAsInvoker`-Zertifizierung und 100% offline Zero-Egress-Betrieb.
+- **Suchbegriffe:**
+  - `llms.txt crm cosmology research-line`
+  - `Zero-Egress reproduzierbare Kosmologie Testsuite`
+  - `RunAsInvoker modifizierte Gravitation Python Testsuite`
+  - `Invarianten Kreuzreferenz Matrix research-line`
+
+---
+
+<a id="comparative-matrix--model-invariants"></a><a id="4-comparative-matrix--model-invariants"></a><a id="vergleichsmatrix--modell-invarianten"></a><a id="4-vergleichsmatrix--modell-invarianten"></a>
+## 4. Vergleichsmatrix & Modell-Invarianten
+
+Das Modell der Krümmungsrelaxation (CRM) unterscheidet sich grundlegend von Standard-$\Lambda\text{CDM}$ und konkurrierenden modifizierten Gravitationsparadigmen über 10 technische und operative Dimensionen:
+
+| Dimension / Eigenschaft | Standard-$\Lambda\text{CDM}$ | Standard-$f(R)$-Gravitation | MOND / TeVeS / RMOND | Allgemeine Skalar-Tensor-Theorie | Modell der Krümmungsrelaxation (CRM) |
+|---|---|---|---|---|---|
+| **1. Dunkle-Energie-Mechanismus** (`INV-DET-01`) | Kosmologische Konstante $\Lambda$ (Koinzidenzproblem) | Vakuumkrümmung / Skalaron $R + f(R)$ | Empirisches Skalarfeld oder dunkles Fluid | Slow-Roll Quintessenz-Skalar $V(\phi)$ | **Krümmungsrelaxation über nichtlineare Skalaron-Dynamik** |
+| **2. Dunkle Materie & Halo-Auflösung** (`INV-ZERO-02`) | Kalte dunkle Materie (CDM-Teilchen, unentdeckt) | Unvollständig (benötigt Halos dunkler Materie) | Beschleunigungsskala $a_0 \approx 1{,}2 \times 10^{-10}\text{ m/s}^2$ | Unvollständig (stützt sich auf CDM-Halos) | **Baryonen-reines Universum mit MOND-Vektorsektor & Sättigung** |
+| **3. Planck 2018 CMB TT+TE+EE Fit** (`INV-USER-03`) | Kanonische Basislinie ($\Delta\chi^2 = 0{,}0$) | Durchwachsen (Feinabstimmung für Sonnensystemtests nötig) | Schwierig (Spannung bei drittem akustischem Peak) | Ähnlich zu $\Lambda\text{CDM}$ mit zusätzlichen Freiheitsgraden | **$\mathbf{\Delta\chi^2 = -3{,}7}$ globales Minimum im Best-Fit** |
+| **4. Gravitationswellen-Geschwindigkeit ($c_{\text{gw}} = c$)** (`INV-DATA-04`) | Trivial ($c_{\text{gw}} = c$) | Strikt konform ($\alpha_T = 0$) | Strenge Feinabstimmung / disformale Schranken | Viele Horndeski-Modelle durch GW170817 ausgeschlossen | **Strikt kompatibel mit GW170817 ($\alpha_T = 0 \implies c_{\text{gw}} = c$)** |
+| **5. Galaktische RAR auf SPARC 171 Galaxien** (`INV-GATE-05`) | Erfordert individuelle Halo-Anpassung (NFW) | Erfordert individuelle Halo-Anpassung | Natürliche Übereinstimmung mit McGaugh-Relation | Erfordert externe CDM-Halos | **Natürlicher Attraktor aus Krümmungssättigung (BVP-Solver)** |
+| **6. Mathematisches Sättigungsgesetz** (`INV-ARCH-06`) | N/A (lineare Einstein-Feldgleichungen) | Ad-hoc-Potenzgesetz oder Polynom | Empirische Interpolationsfunktionen $\mu(x)$ | Phänomenologische Skalarpotentiale | **Sättigungstheorem (Arbeit V) mit Kragen-Klassifikation & $D'$-Quotient** |
+| **7. Boltzmann-Code-Integration** (`INV-PLAT-07`) | Nativ CLASS / CAMB | Standard EFTCAMB / hi_class | Speziell modifiziertes CAMB (z. B. Skordis-Zlosnik) | Generische hi_class EFT-Parametrisierung | **Schlüsselfertiger C-Patch für hi_class (`scripts/patch_cfm.py`)** |
+| **8. 100% Offline & Zero-Egress** (`INV-OPEN-08`) | Akademischer Code, uneinheitlich | Akademischer Code, uneinheitlich | Akademischer Code, uneinheitlich | Akademischer Code, uneinheitlich | **Verifizierter Vertrag (100% offline, null Telemetrie, Local-First)** |
+| **9. Maschinenlesbare LLM-Parität** (`INV-LLM-09`) | Nicht vorhanden | Nicht vorhanden | Nicht vorhanden | Nicht vorhanden | **Standardisiertes [`llms.txt`](llms.txt)-Kontextmanifest & 18-Punkte-Doppelnavigation** |
+| **10. Schwachstellen-SLA & Koordinierung** (`INV-SLA-10`) | Informelle akademische Benachrichtigung | Informelle akademische Benachrichtigung | Informelle akademische Benachrichtigung | Informelle akademische Benachrichtigung | **Verbindliche 48h-Reaktions-SLA & 5-Tage-Triage über [`SECURITY.md`](SECURITY.md)** |
+
+---
+
+<a id="system-architecture--pipeline"></a><a id="5-system-architecture--pipeline"></a><a id="systemarchitektur--pipeline"></a><a id="5-systemarchitektur--pipeline"></a>
+## 5. Systemarchitektur & Pipeline
 
 ```mermaid
 flowchart TD
@@ -129,8 +195,8 @@ flowchart TD
 
 ---
 
-<a id="curated-verification-lifecycle"></a>
-## 4. Kuratierter Verifikations-Lebenszyklus
+<a id="curated-verification-lifecycle"></a><a id="6-curated-verification-lifecycle"></a><a id="kuratierter-verifikations-lebenszyklus"></a><a id="6-kuratierter-verifikations-lebenszyklus"></a>
+## 6. Kuratierter Verifikations-Lebenszyklus
 
 ```mermaid
 sequenceDiagram
@@ -155,40 +221,40 @@ sequenceDiagram
 
 ---
 
-<a id="governance--research-invariants"></a>
-## 5. Governance- & Forschungsinvarianten
+<a id="governance--research-invariants"></a><a id="7-governance--research-invariants"></a><a id="governance--forschungs-invarianten"></a><a id="7-governance--forschungs-invarianten"></a>
+## 7. Governance- & Forschungsinvarianten
 
-Jedes Release von `crm-cosmology` erzwingt zehn unverletzliche Forschungs- und Sicherheitsinvarianten:
+Jedes Release von `crm-cosmology` erzwingt zehn verbindliche Forschungs- und Sicherheits-Verträge:
 
 | Invarianten-ID | Titel | Operativer Vertrag & Verifikation |
 |---|---|---|
-| `INV-DET-01` | Deterministische numerische Verifikation | Alle MCMC-Seeds, ODE-Toleranzen und Beweisskripte erzeugen exakt reproduzierbare Zertifikate. |
-| `INV-ZERO-02` | 100% Offline- & Zero-Egress-Datenschutz | Keine ausgehenden Netzwerkaufrufe, keine Telemetrie und keine externen Cloud-Dienste während aller Läufe. |
-| `INV-USER-03` | Nicht-privilegierte Ausführung / RunAsInvoker | Alle Skripte und Testsuiten laufen ohne Root- oder Administratorrechte im normalen Benutzerkontext. |
-| `INV-DATA-04` | Saubere Datenisolationsgrenze | Externe Rohdaten (`data/raw/`) bleiben isoliert und git-ignoriert; das Git-Repository bleibt rein und schlank. |
-| `INV-GATE-05` | Fail-Closed Gate-Architektur | Mathematische Beweis-Gates schließen bei Unklarheiten abweisend; offene physikalische Tore ($D'$) werden transparent deklariert. |
-| `INV-ARCH-06` | Zweisprachige Manuskripte & Zenodo-Archivierung | Sämtliche Arbeiten liegen auf Englisch und Deutsch in LaTeX-Quelle und kompiliertem PDF vor, gebunden an Zenodo-DOIs. |
-| `INV-PLAT-07` | Plattformübergreifende Parität | Identisches Verhalten auf Windows, Linux (Ubuntu/WSL) und macOS mit resilienter Pfadnormalisierung. |
-| `INV-OPEN-08` | Freie Open-Science CC-BY-4.0-Lizenz | Uneingeschränkte wissenschaftliche Weiternutzung, Zitationszuschreibung und quelloffene Bereitstellung. |
-| `INV-LLM-09` | Maschinenlesbare LLM-Parität | Strukturierte Indexierung via [`llms.txt`](llms.txt), transparenter Prompt-Kontext und 15-Punkte-Navigationsanker. |
-| `INV-SLA-10` | 48-Stunden-Sicherheits-SLA & 5-Tage-Triage | Koordiniertes Behebungsverfahren via GitHub Private Advisories und `security@open-bricks.org`. |
+| `INV-DET-01` | Deterministische numerische Verifikation | Alle MCMC-Seeds, ODE-Toleranzen und Beweisskripte liefern deterministische Ergebnisse passend zu den Zertifikaten. |
+| `INV-ZERO-02` | 100% Offline & Zero-Egress Privatsphäre | Null ausgehende Netzwerkaufrufe, null Telemetrie und null Cloud-Abhängigkeiten bei allen Berechnungen. |
+| `INV-USER-03` | Unprivilegierte Ausführung / RunAsInvoker | Sämtliche Skripte und Testsuiten laufen ohne Root- oder Administratorrechte im Benutzerraum. |
+| `INV-DATA-04` | Nicht-Kontaminationsgrenze für Evidenzdaten | Externe Rohdatensätze (`data/raw/`) bleiben isoliert und git-ignoriert; Arbeitsbäume bleiben sauber und reproduzierbar. |
+| `INV-GATE-05` | Fail-Closed Gate-Architektur | Mathematische Beweis-Gates schlagen bei Unsicherheit fail-closed fehl; offene Gates ($D'$) sind exakt dokumentiert. |
+| `INV-ARCH-06` | Zweisprachige Paper-Serie & Zenodo-Archivierung | Alle Arbeiten existieren zweisprachig in Englisch und Deutsch als LaTeX und PDF, fest verankert über Zenodo-DOIs. |
+| `INV-PLAT-07` | Plattformübergreifende Umgebungsparität | Der Code operiert identisch auf Windows, Linux (Ubuntu/WSL) und macOS mit robuster Pfadhandhabung. |
+| `INV-OPEN-08` | Permissive Open-Science CC-BY-4.0 | Uneingeschränkte wissenschaftliche Nachnutzung, Zitationspflicht und offene Bereitstellung wissenschaftlicher Software. |
+| `INV-LLM-09` | Maschinenlesbare LLM-Parität | Strukturierte Auffindbarkeit via [`llms.txt`](llms.txt), expliziter Prompt-Kontext und 18-Punkte-Navigationsanker. |
+| `INV-SLA-10` | 48-Stunden Sicherheits-SLA & 5-Tage-Triage | Verbindliches Offenlegungs-SLA über GitHub Private Advisories und `security@open-bricks.org`. |
 
 ---
 
-<a id="core-papers--theoretical-series"></a>
-## 6. Hauptarbeiten: Theoretische Serie
+<a id="core-papers--theoretical-series"></a><a id="8-core-papers--theoretical-series"></a><a id="kernpublikationen--theoretische-serie"></a><a id="8-kernpublikationen--theoretische-serie"></a>
+## 8. Hauptarbeiten: Theoretische Serie
 
 | Arbeit | Englisches Manuskript | Deutsches Manuskript | Thema & Umfang |
 |---|---|---|---|
-| **Arbeit I** | [`papers/Paper1_EN.tex`](papers/Paper1_EN.tex) | [`papers/Paper1_DE.tex`](papers/Paper1_DE.tex) | Spieltheoretische Grundlagen der Kosmologie, CRM-Krümmungsrelaxation, Pantheon+-Validierung |
-| **Arbeit II** | [`papers/Paper2_EN.tex`](papers/Paper2_EN.tex) | [`papers/Paper2_DE.tex`](papers/Paper2_DE.tex) | MOND-Vereinheitlichung, rein baryonisches Universum, laufende Planck-Massen-Kopplung |
-| **Arbeit III** | [`papers/Paper3_EN.tex`](papers/Paper3_EN.tex) | [`papers/Paper3_DE.tex`](papers/Paper3_DE.tex) | Lagrange-Fundierung ($R + \gamma R^2$), Skalaron-Dynamik, überprüfbare Vorhersagen |
-| **Arbeit IV** | [`papers/Paper4_EN.tex`](papers/Paper4_EN.tex) | [`papers/Paper4_DE.tex`](papers/Paper4_DE.tex) | Galaktisches MOND aus Krümmungssättigung, SPARC-Rotationskurven-Analyse (Entwurf) |
+| **Arbeit I** | [`papers/Paper1_EN.tex`](papers/Paper1_EN.tex) | [`papers/Paper1_DE.tex`](papers/Paper1_DE.tex) | Spieltheoretische Kosmologie, CRM-Krümmungsrelaxation, Pantheon+ Validierung |
+| **Arbeit II** | [`papers/Paper2_EN.tex`](papers/Paper2_EN.tex) | [`papers/Paper2_DE.tex`](papers/Paper2_DE.tex) | MOND-Vereinheitlichung, baryonisches Universum, laufende Planck-Massen-Kopplung |
+| **Arbeit III** | [`papers/Paper3_EN.tex`](papers/Paper3_EN.tex) | [`papers/Paper3_DE.tex`](papers/Paper3_DE.tex) | Lagrange-Fundierung ($R + \gamma R^2$), Skalaron-Dynamik, prüfbare Vorhersagen |
+| **Arbeit IV** | [`papers/Paper4_EN.tex`](papers/Paper4_EN.tex) | [`papers/Paper4_DE.tex`](papers/Paper4_DE.tex) | Galaktisches MOND aus Krümmungssättigung, SPARC-Rotationskurvenanalyse (Entwurf) |
 
 ---
 
-<a id="extension-papers--saturation-theorem"></a>
-## 7. Erweiterungsarbeiten: Sättigungstheorem
+<a id="extension-papers--saturation-theorem"></a><a id="9-extension-papers--saturation-theorem"></a><a id="erweiterungspublikationen--saettigungstheorem"></a><a id="9-erweiterungspublikationen--saettigungstheorem"></a>
+## 9. Erweiterungsarbeiten: Sättigungstheorem
 
 | Arbeit | Englisches Manuskript | Deutsches Manuskript | Thema & Umfang | Zenodo DOI |
 |---|---|---|---|---|
@@ -238,8 +304,8 @@ Arbeit V beweist, dass die Axiome A--D zusammen mit der signierten inneren Kompo
 
 ---
 
-<a id="mcmc-data-reproduction--datasets"></a>
-## 8. MCMC-Datenreproduktion & Datensätze
+<a id="mcmc-data-reproduction--datasets"></a><a id="10-mcmc-data-reproduction--datasets"></a><a id="mcmc-datenreproduktion--datensaetze"></a><a id="10-mcmc-datenreproduktion--datensaetze"></a>
+## 10. MCMC-Datenreproduktion & Datensätze
 
 ### 1. Installation
 
@@ -288,8 +354,8 @@ python scripts/paper4/rotation_curves_bessel.py   # Bessel-Rotationskurven
 
 ---
 
-<a id="hi_class-patch-documentation"></a>
-## 9. hi_class Patch-Dokumentation
+<a id="hi_class-patch-documentation"></a><a id="11-hi_class-patch-documentation"></a><a id="hi_class-patch-dokumentation"></a><a id="11-hi_class-patch-dokumentation"></a>
+## 11. hi_class Patch-Dokumentation
 
 Das Skript `scripts/patch_cfm.py` modifiziert den Boltzmann-Code [hi_class](https://github.com/miguelzuma/hi_class_public) für das native `crm_fR`-Gravitationsmodell:
 
@@ -303,8 +369,8 @@ Das Skript `scripts/patch_cfm.py` modifiziert den Boltzmann-Code [hi_class](http
 
 ---
 
-<a id="sibling-research--ecosystem-matrix"></a>
-## 10. Geschwisterforschung & Ökosystem-Matrix
+<a id="sibling-research--ecosystem-matrix"></a><a id="12-sibling-research--ecosystem-matrix"></a><a id="geschwister-forschungsnetzwerk--oekosystem-matrix"></a><a id="12-geschwister-forschungsnetzwerk--oekosystem-matrix"></a>
+## 12. Geschwisterforschung & Ökosystem-Matrix
 
 `crm-cosmology` ist in das `research-line`- und `open-bricks`-Forschungsnetzwerk eingebettet:
 
@@ -329,8 +395,8 @@ Das Skript `scripts/patch_cfm.py` modifiziert den Boltzmann-Code [hi_class](http
 
 ---
 
-<a id="discovery--llm-context"></a>
-## 11. Auffindbarkeit & LLM-Kontext
+<a id="discovery--llm-context"></a><a id="13-discovery--llm-context"></a><a id="auffindbarkeit--llm-kontext"></a><a id="13-auffindbarkeit--llm-kontext"></a>
+## 13. Auffindbarkeit & LLM-Kontext
 
 Für KI-Agenten, autonome Code-Prüfer und wissenschaftliche Suchmaschinen:
 
@@ -342,8 +408,22 @@ Für KI-Agenten, autonome Code-Prüfer und wissenschaftliche Suchmaschinen:
 
 ---
 
-<a id="repository-structure"></a>
-## 12. Repository-Struktur
+<a id="third-party-licenses"></a><a id="level-1-sbom--third-party-licenses"></a><a id="14-level-1-sbom--third-party-licenses"></a><a id="drittanbieter-lizenzen"></a><a id="level-1-sbom--drittanbieter-lizenzen"></a><a id="14-level-1-sbom--drittanbieter-lizenzen"></a>
+## 14. Level 1 SBOM & Lizenzen Dritter
+
+Sämtliche externen Bibliotheken, mathematischen Solver und Werkzeuge sind permissiv lizenziert:
+- **NumPy & SciPy:** BSD 3-Clause Lizenz
+- **Matplotlib:** PSF-basiert / Matplotlib Lizenz
+- **emcee:** MIT Lizenz
+- **CLASS & hi_class:** MIT-Stil / CLASS Lizenz
+- **pytest & Ruff:** MIT Lizenz / Apache License 2.0
+
+Siehe [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md) für das vollständige Level 1 SBOM-Inventar, die Invarianten-Kreuzreferenz-Matrix, die unprivilegierte `RunAsInvoker`-Nicht-Eskalationszertifizierung und Zero-Copyleft-Garantien.
+
+---
+
+<a id="repository-structure"></a><a id="15-repository-structure"></a><a id="repository-struktur"></a><a id="15-repository-struktur"></a>
+## 15. Repository-Struktur
 
 ```
 crm-cosmology/
@@ -351,7 +431,7 @@ crm-cosmology/
   README_de.md                 # Kanonische deutsche Dokumentation
   LICENSE                      # Creative Commons Attribution 4.0 International
   SECURITY.md                  # Zweisprachige Sicherheitsrichtlinie & 48h SLA
-  THIRD_PARTY_LICENSES.md      # Abhängigkeitsinventar & Lizenzbereiche
+  THIRD_PARTY_LICENSES.md      # Level 1 SBOM & Invarianten-Kreuzreferenz-Matrix
   MARKETING-LOG.txt            # Entdeckbarkeitsaudit & Persona-Mapping
   CITATION.cff                 # CFF-Zitationsmetadaten (Zenodo DOI)
   CHANGELOG.md                 # Versionshistorie (Keep a Changelog)
@@ -369,18 +449,18 @@ crm-cosmology/
   results/                     # Generierte Resultate, Tabellen und Zertifikate
   figures/                     # Hochauflösende wissenschaftliche Abbildungen
   research/                    # Forschungsaudits & Arbeitsnotizen
-  tests/                       # Automatisierte Testsuite (121 Tests, 100% grün)
+  tests/                       # Automatisierte Testsuite (131 Tests, 100% grün)
 ```
 
 ---
 
-<a id="testing--reproducibility"></a>
-## 13. Tests & Reproduzierbarkeit
+<a id="testing--reproducibility"></a><a id="verification-testing--reproducibility"></a><a id="16-verification-testing--reproducibility"></a><a id="tests--reproduzierbarkeit"></a><a id="16-tests--reproduzierbarkeit"></a>
+## 16. Tests & Reproduzierbarkeit
 
 Führen Sie die gesamte Verifikations- und Vertragstestsuite aus mit:
 
 ```bash
-# Alle Tests ausführen (121 Tests erfolgreich, 100% grün)
+# Alle Tests ausführen (131 Tests erfolgreich, 100% grün)
 pytest -ra -v
 
 # Code-Stil- und Hygiene-Check
@@ -392,26 +472,15 @@ python -m compileall -q .
 
 ---
 
-<a id="third-party-licenses"></a>
-## 14. Lizenzen Dritter
+<a id="security-policy--coordinated-disclosure"></a><a id="17-security-policy--coordinated-disclosure"></a><a id="sicherheitsrichtlinie--koordinierte-offenlegung"></a><a id="17-sicherheitsrichtlinie--koordinierte-offenlegung"></a>
+## 17. Sicherheitsrichtlinie & Koordinierte Offenlegung
 
-Sämtliche externen Bibliotheken, mathematischen Solver und Werkzeuge sind permissiv lizenziert:
-- **NumPy & SciPy:** BSD 3-Clause Lizenz
-- **Matplotlib:** PSF-basiert / Matplotlib Lizenz
-- **emcee:** MIT Lizenz
-- **CLASS & hi_class:** MIT-Stil / CLASS Lizenz
-- **pytest & Ruff:** MIT Lizenz / Apache License 2.0
-
-Siehe [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md) für vollständige Hinweise, Urheberrechtserklärungen und Zero-Egress-Konformitätszusicherungen.
+Wir verfolgen ein koordiniertes Offenlegungsverfahren für Schwachstellen mit einem **48-Stunden-Reaktions-SLA** und einer **5-Tage-Triage-Zusage**. Bitte melden Sie Sicherheitsfragen über GitHub Private Advisories oder direkt an `security@open-bricks.org` und `open-science@research-line.org`. Siehe [`SECURITY.md`](SECURITY.md) für alle Einzelheiten.
 
 ---
 
-<a id="security--license"></a>
-## 15. Sicherheit & Lizenz
-
-### Sicherheitsrichtlinie & Schwachstellenmeldung
-
-Wir verfolgen ein koordiniertes Offenlegungsverfahren für Schwachstellen mit einem **48-Stunden-Reaktions-SLA** und einer **5-Tage-Triage-Zusage**. Bitte melden Sie Sicherheitsfragen über GitHub Private Advisories oder direkt an `security@open-bricks.org` und `open-science@research-line.org`. Siehe [`SECURITY.md`](SECURITY.md) für alle Einzelheiten.
+<a id="security--license"></a><a id="sicherheit--lizenz"></a><a id="license--statutory-liability-limitation"></a><a id="18-license--statutory-liability-limitation"></a><a id="lizenz--gesetzliche-haftungsbeschraenkung"></a><a id="18-lizenz--gesetzliche-haftungsbeschraenkung"></a>
+## 18. Lizenz & Gesetzliche Haftungsbeschränkung
 
 ### Lizenz
 

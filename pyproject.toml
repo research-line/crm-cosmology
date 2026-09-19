@@ -4,12 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "crm-cosmology"
-version = "1.3.1"
+version = "1.3.2"
 description = "Curvature Relaxation Model (CRM) - Geometric Cosmology & Modified Gravity Research Codebase"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "CC-BY-4.0"}
-license-files = ["LICENSE", "NOTICE"]
+license-files = ["LICENSE", "NOTICE", "THIRD_PARTY_LICENSES.md"]
 authors = [
     {name = "Research Line", email = "open-science@research-line.org"}
 ]
