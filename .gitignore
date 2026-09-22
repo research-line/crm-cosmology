@@ -229,6 +229,9 @@ LOCK
 LOCK.*
 *.lock
 LOCK*.txt
+LOCK.user.*
+LOCK.until.*
+LOCK.condition.*
 uv.lock
 !package-lock.json
 LOCK.permissions.json

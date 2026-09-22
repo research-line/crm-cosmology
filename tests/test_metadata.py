@@ -64,7 +64,7 @@ def test_llms_txt_structure_and_timestamp():
     content = llms_path.read_text(encoding="utf-8")
 
     assert "# Curvature Relaxation Model (CRM)" in content
-    assert "## Last-checked: 2026-09-20" in content
+    assert "## Last-checked: 2026-09-22" in content
     assert "Local release status: v1.3.2" in content
     assert "## Canonical Links" in content
     assert "SECURITY.md" in content
@@ -103,8 +103,8 @@ def test_readme_and_readme_de_parity():
     # Check status badges
     assert "Version-1.3.2-blue.svg" in en_content
     assert "Version-1.3.2-blue.svg" in de_content
-    assert "LLM--Ready-2026--09--20" in en_content
-    assert "LLM--Ready-2026--09--20" in de_content
+    assert "LLM--Ready-2026--09--22" in en_content
+    assert "LLM--Ready-2026--09--22" in de_content
     assert "Ecosystem-research--line-blue.svg" in en_content
     assert "Ecosystem-research--line-blue.svg" in de_content
     assert "Umbrella-open--bricks-purple.svg" in de_content
@@ -413,3 +413,63 @@ def test_changelog_v132_pfad_b_entry():
     assert "Level 1 Software Bill of Materials (SBOM)" in content
     assert "Target Personas & Discoverability" in content
     assert "Comparative Matrix & Model Invariants" in content
+
+
+def test_ci_bytecode_compilation_gate():
+    """Verify that CI workflow has an explicit bytecode compilation gate."""
+    ci_path = REPO_ROOT / ".github" / "workflows" / "ci.yml"
+    assert ci_path.exists(), "ci.yml must exist"
+    content = ci_path.read_text(encoding="utf-8")
+
+    assert "Bytecode compilation gate" in content
+    assert "python -m compileall -q scripts tests" in content
+
+
+def test_lifecycle_workflows_guardrails():
+    """Verify that lifecycle workflows (stale, welcome) have concurrency and bounded timeouts."""
+    stale_path = REPO_ROOT / ".github" / "workflows" / "stale.yml"
+    welcome_path = REPO_ROOT / ".github" / "workflows" / "welcome.yml"
+    assert stale_path.exists(), "stale.yml must exist"
+    assert welcome_path.exists(), "welcome.yml must exist"
+
+    stale_content = stale_path.read_text(encoding="utf-8")
+    welcome_content = welcome_path.read_text(encoding="utf-8")
+
+    assert "timeout-minutes: 10" in stale_content
+    assert "cancel-in-progress: true" in stale_content
+    assert "operations-per-run: 30" in stale_content
+
+    assert "timeout-minutes: 5" in welcome_content
+    assert "cancel-in-progress: true" in welcome_content
+
+
+def test_pyproject_pytest_norecursedirs():
+    """Verify that pyproject.toml defines pytest norecursedirs guardrails."""
+    pyproject_path = REPO_ROOT / "pyproject.toml"
+    data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
+
+    norecurse = data.get("tool", {}).get("pytest", {}).get("ini_options", {}).get("norecursedirs", [])
+    assert ".git" in norecurse
+    assert ".pytest_cache" in norecurse
+    assert ".ruff_cache" in norecurse
+    assert "data/raw" in norecurse
+
+
+def test_extended_canonical_lock_defense():
+    """Verify that .gitignore guards against canonical lock patterns."""
+    gi_path = REPO_ROOT / ".gitignore"
+    content = gi_path.read_text(encoding="utf-8")
+
+    assert "LOCK.user.*" in content
+    assert "LOCK.until.*" in content
+    assert "LOCK.condition.*" in content
+
+
+def test_changelog_unreleased_hygiene_entry():
+    """Verify that CHANGELOG.md contains Unreleased Pfad A hygiene documentation while keeping v1.3.2."""
+    cl_path = REPO_ROOT / "CHANGELOG.md"
+    content = cl_path.read_text(encoding="utf-8")
+
+    assert "## [Unreleased]" in content
+    assert "Technical Hygiene & Lifecycle Workflow Hardening" in content
+    assert "Pfad A 2026-09-22" in content

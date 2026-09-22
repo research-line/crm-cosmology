@@ -198,3 +198,25 @@ INV-SLA-10: 48-Hour Security Response & 5-Day Triage SLA
 - Contract Verification Suite: tests/test_metadata.py expanded with automated contract
   tests for 18-point dual anchors, personas, comparative matrix, Level 1 SBOM,
   RunAsInvoker declaration, and statutory liability disclaimers (131 tests green).
+
+--------------------------------------------------------------------------------
+9. TECHNICAL HYGIENE, WORKFLOW HARDENING & CI GATES (Pfad A: 2026-09-22)
+--------------------------------------------------------------------------------
+- Version Policy Compliance: Version remains strictly 1.3.2 under rule
+  T-20260920-167562623 (Pfad A hygiene never bumps version numbers; release tags
+  reserved for explicit user authorization).
+- CI/CD Bytecode Compilation Gate: .github/workflows/ci.yml hardened with an explicit
+  bytecode syntax gate (`python -m compileall -q scripts tests`).
+- Lifecycle Workflow Hardening: Added concurrency control (`cancel-in-progress: true`)
+  and bounded execution timeouts (`timeout-minutes: 10` for stale.yml, `timeout-minutes: 5`
+  for welcome.yml) to prevent runaway Actions billable minutes and runner hogging.
+- Pytest Discovery Guardrails: pyproject.toml [tool.pytest.ini_options] configured with
+  `norecursedirs` to isolate test discovery from VCS internals, build outputs, and caches.
+- Multi-Host & Canonical Lock Defense: .gitignore extended with canonical lock system patterns
+  (`LOCK.user.*`, `LOCK.until.*`, `LOCK.condition.*`).
+- Context & Verification Parity: llms.txt Last-checked timestamp updated to 2026-09-22;
+  README badges updated to 136 passed tests (100% green).
+- Contract Test Suite Expansion: tests/test_metadata.py extended with 5 automated contract
+  verification gates for CI bytecode compilation, lifecycle workflow bounds, pytest
+  norecursedirs, canonical lock defense, and unreleased changelog hygiene (136 tests green).
+

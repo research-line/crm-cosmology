@@ -67,6 +67,19 @@ addopts = "-ra -v"
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 pythonpath = ["."]
+norecursedirs = [
+    ".git",
+    ".pytest_cache",
+    ".ruff_cache",
+    "build",
+    "dist",
+    ".venv",
+    "venv",
+    ".eggs",
+    "*.egg-info",
+    "data/raw",
+    "_archive"
+]
 
 [tool.ruff]
 target-version = "py310"

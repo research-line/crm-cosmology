@@ -7,6 +7,15 @@ and this project adheres to open-science preprint versioning tied to Zenodo arch
 
 ## [Unreleased]
 
+### Changed
+- **Technical Hygiene & Lifecycle Workflow Hardening (Pfad A 2026-09-22):**
+  - Hardened `.github/workflows/ci.yml` with a bytecode compilation gate (`python -m compileall -q scripts tests`).
+  - Added bounded execution timeouts (`timeout-minutes: 10` for `stale.yml`, `timeout-minutes: 5` for `welcome.yml`) and concurrency cancellation (`cancel-in-progress: true`) across issue/PR lifecycle automation workflows.
+  - Configured `norecursedirs` under `[tool.pytest.ini_options]` in `pyproject.toml` to guard test discovery against caches, build outputs, and raw datasets.
+  - Strengthened `.gitignore` with canonical lock patterns (`LOCK.user.*`, `LOCK.until.*`, `LOCK.condition.*`).
+  - Synchronized `llms.txt` Last-checked timestamp (`2026-09-22`) and documentation test badges (`136 passed | 100%`). Version remains `1.3.2` pursuant to Pfad A immutability rule `T-20260920-167562623`.
+  - Expanded automated contract test suite in `tests/test_metadata.py` with 5 new verification gates covering bytecode compilation, lifecycle workflow limits, pytest discovery guardrails, canonical lock defense, and changelog hygiene (expanding suite from 131 to 136 tests | 100% green).
+
 ## [1.3.2] - 2026-09-20
 
 ### Changed
