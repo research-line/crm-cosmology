@@ -8,6 +8,9 @@ and this project adheres to open-science preprint versioning tied to Zenodo arch
 ## [Unreleased]
 
 ### Changed
+- **Cross-Platform Test Determinism & Zenodo v8.4 Metadata Sync (2026-09-23):**
+  - Synchronized `CITATION.cff` to published Zenodo v8.4 preprint series (`10.5281/zenodo.21946248`, released 2026-08-15).
+  - Hardened gate test assertions in `tests/test_dprime_integrable_defect_fusion_gate.py`, `tests/test_dprime_massless_rg_scattering_gate.py`, and `tests/test_smooth_collar_classification_gate.py` with `_assert_nested_approx_equal` to absorb cross-platform (glibc vs MSVCRT) 1-ULP transcendental floating-point precision differences.
 - **Technical Hygiene & Lifecycle Workflow Hardening (Pfad A 2026-09-22):**
   - Hardened `.github/workflows/ci.yml` with a bytecode compilation gate (`python -m compileall -q scripts tests`).
   - Added bounded execution timeouts (`timeout-minutes: 10` for `stale.yml`, `timeout-minutes: 5` for `welcome.yml`) and concurrency cancellation (`cancel-in-progress: true`) across issue/PR lifecycle automation workflows.

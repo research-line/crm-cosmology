@@ -84,6 +84,21 @@ def test_status_keeps_physical_dprime_open_without_claim_upgrade():
     assert report["summary"]["claim_upgrade_count"] == 0
 
 
+def _assert_nested_approx_equal(actual, expected, abs_tol=1e-12, rel_tol=1e-9):
+    if isinstance(actual, dict) and isinstance(expected, dict):
+        assert actual.keys() == expected.keys()
+        for k in actual:
+            _assert_nested_approx_equal(actual[k], expected[k], abs_tol=abs_tol, rel_tol=rel_tol)
+    elif isinstance(actual, list) and isinstance(expected, list):
+        assert len(actual) == len(expected)
+        for a, e in zip(actual, expected, strict=True):
+            _assert_nested_approx_equal(a, e, abs_tol=abs_tol, rel_tol=rel_tol)
+    elif isinstance(actual, float) and isinstance(expected, float):
+        assert math.isclose(actual, expected, abs_tol=abs_tol, rel_tol=rel_tol)
+    else:
+        assert actual == expected
+
+
 def test_cli_output_matches_committed_result(tmp_path):
     output = tmp_path / "massless-flow.json"
     completed = subprocess.run(
@@ -95,7 +110,10 @@ def test_cli_output_matches_committed_result(tmp_path):
     )
 
     assert STATUS in completed.stdout
-    assert output.read_bytes() == RESULT.read_bytes()
+    _assert_nested_approx_equal(
+        json.loads(output.read_text(encoding="utf-8")),
+        json.loads(RESULT.read_text(encoding="utf-8")),
+    )
     assert json.loads(output.read_text(encoding="utf-8")) == build_report()
 
 
