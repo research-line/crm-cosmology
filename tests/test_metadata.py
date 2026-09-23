@@ -1,7 +1,10 @@
 """Metadata, security, documentation, and Pfad B contract parity tests for crm-cosmology."""
 
 from pathlib import Path
-import tomllib
+try:
+    import tomllib
+except ModuleNotFoundError:
+    import tomli as tomllib
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
