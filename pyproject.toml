@@ -15,14 +15,25 @@ authors = [
 ]
 keywords = [
     "cosmology",
-    "modified-gravity",
-    "fR-gravity",
-    "horndeski",
-    "dark-matter-alternative",
+    "dark-energy",
     "mcmc",
-    "planck-cmb",
+    "mond",
+    "physics",
+    "python",
+    "research",
+    "cmb",
+    "modified-gravity",
+    "pantheon-plus",
+    "preprint",
+    "research-code",
     "sparc",
-    "open-science"
+    "f-r-gravity",
+    "planck-2018",
+    "open-science",
+    "reproducible-research",
+    "zenodo",
+    "horndeski",
+    "zero-egress",
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -54,6 +65,7 @@ Documentation = "https://github.com/research-line/crm-cosmology#readme"
 "Bug Tracker" = "https://github.com/research-line/crm-cosmology/issues"
 Changelog = "https://github.com/research-line/crm-cosmology/blob/main/CHANGELOG.md"
 Security = "https://github.com/research-line/crm-cosmology/blob/main/SECURITY.md"
+Notice = "https://github.com/research-line/crm-cosmology/blob/main/NOTICE"
 "Parent Organization" = "https://github.com/research-line"
 "Umbrella Ecosystem" = "https://github.com/open-bricks"
 "Third-Party Licenses" = "https://github.com/research-line/crm-cosmology/blob/main/THIRD_PARTY_LICENSES.md"
@@ -70,7 +82,9 @@ pythonpath = ["."]
 norecursedirs = [
     ".git",
     ".pytest_cache",
+    ".pytest_temp",
     ".ruff_cache",
+    ".hypothesis",
     "build",
     "dist",
     ".venv",

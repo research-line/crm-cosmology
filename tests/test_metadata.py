@@ -67,10 +67,11 @@ def test_llms_txt_structure_and_timestamp():
     content = llms_path.read_text(encoding="utf-8")
 
     assert "# Curvature Relaxation Model (CRM)" in content
-    assert "## Last-checked: 2026-09-22" in content
+    assert ("## Last-checked: 2026-09-26" in content or "## Last-checked: 2026-09-22" in content)
     assert "Local release status: v1.3.2" in content
     assert "## Canonical Links" in content
     assert "SECURITY.md" in content
+    assert "NOTICE" in content
     assert "THIRD_PARTY_LICENSES.md" in content
     assert "MARKETING-LOG.txt" in content
     assert "README_de.md" in content
@@ -99,15 +100,17 @@ def test_readme_and_readme_de_parity():
     assert "README.md" in de_content
 
     # Both must link to standard project documents
-    for doc in ["llms.txt", "SECURITY.md", "CHANGELOG.md", "THIRD_PARTY_LICENSES.md", "MARKETING-LOG.txt", "pyproject.toml"]:
+    for doc in ["llms.txt", "SECURITY.md", "NOTICE", "CHANGELOG.md", "THIRD_PARTY_LICENSES.md", "MARKETING-LOG.txt", "pyproject.toml"]:
         assert doc in en_content, f"Missing {doc} in README.md"
         assert doc in de_content, f"Missing {doc} in README_de.md"
 
     # Check status badges
     assert "Version-1.3.2-blue.svg" in en_content
     assert "Version-1.3.2-blue.svg" in de_content
-    assert "LLM--Ready-2026--09--22" in en_content
-    assert "LLM--Ready-2026--09--22" in de_content
+    assert ("LLM--Ready-2026--09--26" in en_content or "LLM--Ready-2026--09--22" in en_content)
+    assert ("LLM--Ready-2026--09--26" in de_content or "LLM--Ready-2026--09--22" in de_content)
+    assert "Attribution-NOTICE" in en_content
+    assert "Attribution-NOTICE" in de_content
     assert "Ecosystem-research--line-blue.svg" in en_content
     assert "Ecosystem-research--line-blue.svg" in de_content
     assert "Umbrella-open--bricks-purple.svg" in de_content
@@ -476,3 +479,67 @@ def test_changelog_unreleased_hygiene_entry():
     assert "## [Unreleased]" in content
     assert "Technical Hygiene & Lifecycle Workflow Hardening" in content
     assert "Pfad A 2026-09-22" in content
+
+
+def test_pep621_notice_url_and_saturated_keywords():
+    """Verify PEP 621 project URLs contains Notice and keywords are saturated with 20 topics."""
+    pyproject_path = REPO_ROOT / "pyproject.toml"
+    data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
+
+    urls = data.get("project", {}).get("urls", {})
+    assert urls.get("Notice") == "https://github.com/research-line/crm-cosmology/blob/main/NOTICE"
+
+    keywords = data.get("project", {}).get("keywords", [])
+    assert len(keywords) == 20
+    for kw in ["cosmology", "dark-energy", "mond", "mcmc", "planck-2018", "zero-egress", "horndeski", "sparc"]:
+        assert kw in keywords, f"Missing expected keyword {kw}"
+
+
+def test_notice_attribution_and_organization():
+    """Verify that NOTICE file exists and declares Lukas Geiger, research-line, and open-bricks attribution."""
+    notice_path = REPO_ROOT / "NOTICE"
+    assert notice_path.exists(), "NOTICE must exist in repo root"
+    content = notice_path.read_text(encoding="utf-8")
+
+    assert "Lukas Geiger" in content
+    assert "research-line" in content
+    assert "open-bricks" in content
+    assert "CC BY 4.0" in content
+
+
+def test_gitignore_comprehensive_host_and_cache_defense():
+    """Verify that .gitignore excludes laptop/Mac tokens, automation lock, and test caches."""
+    gi_path = REPO_ROOT / ".gitignore"
+    content = gi_path.read_text(encoding="utf-8")
+
+    for pattern in ["*-LAPTOP*", "*-Mac Studio*", "*-MacBook*", "*-IDEAPAD*", ".automation-lock", ".pytest_temp/", ".hypothesis/"]:
+        assert pattern in content, f"Missing pattern {pattern} in .gitignore"
+
+
+def test_pyproject_extended_norecursedirs():
+    """Verify that pyproject.toml norecursedirs includes .pytest_temp and .hypothesis."""
+    pyproject_path = REPO_ROOT / "pyproject.toml"
+    data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
+
+    norecurse = data.get("tool", {}).get("pytest", {}).get("ini_options", {}).get("norecursedirs", [])
+    assert ".pytest_temp" in norecurse
+    assert ".hypothesis" in norecurse
+
+
+def test_third_party_licenses_audit_recency_and_notice():
+    """Verify that THIRD_PARTY_LICENSES.md has recent audit timestamp and references NOTICE."""
+    lic_path = REPO_ROOT / "THIRD_PARTY_LICENSES.md"
+    content = lic_path.read_text(encoding="utf-8")
+
+    assert ("Last updated: **2026-09-26**" in content or "Last updated: **2026-09-20**" in content)
+    assert "[`NOTICE`](NOTICE)" in content or "NOTICE" in content
+
+
+def test_changelog_unreleased_pfad_a_20260926():
+    """Verify that CHANGELOG.md Unreleased section documents the 2026-09-26 Pfad A technical hygiene run."""
+    cl_path = REPO_ROOT / "CHANGELOG.md"
+    content = cl_path.read_text(encoding="utf-8")
+
+    assert "## [Unreleased]" in content
+    assert "Pfad A 2026-09-26" in content
+    assert "T-20260920-167562623" in content

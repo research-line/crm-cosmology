@@ -9,16 +9,17 @@
 [![Version](https://img.shields.io/badge/Version-1.3.2-blue.svg)](pyproject.toml)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18728935.svg)](https://doi.org/10.5281/zenodo.18728935)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Attribution](https://img.shields.io/badge/Attribution-NOTICE-blue.svg)](NOTICE)
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![Platforms](https://img.shields.io/badge/Platforms-Windows%20%7C%20Linux%20%7C%20macOS-4EAA25.svg)](pyproject.toml)
-[![Tests](https://img.shields.io/badge/Tests-136%20passed%20%7C%20100%25-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/Tests-142%20passed%20%7C%20100%25-brightgreen.svg)](tests/)
 [![Zero-Egress](https://img.shields.io/badge/Privacy-Zero--Egress%20%7C%20Offline-success.svg)](SECURITY.md)
 [![RunAsInvoker](https://img.shields.io/badge/Security-RunAsInvoker%20%7C%20Non--Elevation-informational.svg)](SECURITY.md)
 [![Security SLA](https://img.shields.io/badge/Security%20SLA-48h%20Response%20%7C%205d%20Triage-blue.svg)](SECURITY.md)
 [![Code Style: Ruff](https://img.shields.io/badge/Code%20Style-Ruff-000000.svg)](https://github.com/astral-sh/ruff)
 [![Ecosystem](https://img.shields.io/badge/Ecosystem-research--line-blue.svg)](https://github.com/research-line)
 [![Umbrella](https://img.shields.io/badge/Umbrella-open--bricks-purple.svg)](https://github.com/open-bricks)
-[![LLM Ready](https://img.shields.io/badge/LLM--Ready-2026--09--22-yellow.svg)](llms.txt)
+[![LLM Ready](https://img.shields.io/badge/LLM--Ready-2026--09--26-yellow.svg)](llms.txt)
 
 > [!NOTE]
 > **KI- / LLM-Agenten-Indexierung & Maschinenlesbare Zusammenfassung:**
@@ -449,7 +450,7 @@ crm-cosmology/
   results/                     # Generierte Resultate, Tabellen und Zertifikate
   figures/                     # Hochauflösende wissenschaftliche Abbildungen
   research/                    # Forschungsaudits & Arbeitsnotizen
-  tests/                       # Automatisierte Testsuite (131 Tests, 100% grün)
+  tests/                       # Automatisierte Testsuite (142 Tests, 100% grün)
 ```
 
 ---
@@ -460,7 +461,7 @@ crm-cosmology/
 Führen Sie die gesamte Verifikations- und Vertragstestsuite aus mit:
 
 ```bash
-# Alle Tests ausführen (131 Tests erfolgreich, 100% grün)
+# Alle Tests ausführen (142 Tests erfolgreich, 100% grün)
 pytest -ra -v
 
 # Code-Stil- und Hygiene-Check

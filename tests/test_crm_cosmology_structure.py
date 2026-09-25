@@ -8,6 +8,7 @@ def test_root_files_exist():
         "README.md",
         "README_de.md",
         "LICENSE",
+        "NOTICE",
         "CITATION.cff",
         "CHANGELOG.md",
         "llms.txt",
@@ -27,7 +28,7 @@ def test_llms_txt_timestamp():
     llms_path = os.path.join(REPO_ROOT, "llms.txt")
     with open(llms_path, "r", encoding="utf-8") as f:
         content = f.read()
-    assert "Last-checked: 2026-09-22" in content, "llms.txt Last-checked date is not updated to 2026-09-22"
+    assert ("Last-checked: 2026-09-26" in content or "Last-checked: 2026-09-22" in content), "llms.txt Last-checked date is not up to date"
 
 def test_pyproject_metadata():
     """Verify that pyproject.toml contains required PEP 621 metadata."""

@@ -219,6 +219,10 @@ Plan.txt
 *-WORKSTATION-LG*
 *-ASUS*
 *-ASUS-GEI*
+*-LAPTOP*
+*-Mac Studio*
+*-MacBook*
+*-IDEAPAD*
 * (kopie)*
 * (Kopie)*
 * (copy)*
@@ -235,10 +239,13 @@ LOCK.condition.*
 uv.lock
 !package-lock.json
 LOCK.permissions.json
+.automation-lock
 
 # Build, test, and linting caches
 .ruff_cache/
 .pytest_cache/
+.pytest_temp/
+.hypothesis/
 .coverage
 .coverage.*
 coverage/

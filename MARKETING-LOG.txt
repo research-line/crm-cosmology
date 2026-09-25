@@ -220,3 +220,27 @@ INV-SLA-10: 48-Hour Security Response & 5-Day Triage SLA
   verification gates for CI bytecode compilation, lifecycle workflow bounds, pytest
   norecursedirs, canonical lock defense, and unreleased changelog hygiene (136 tests green).
 
+--------------------------------------------------------------------------------
+10. TECHNICAL HYGIENE, WORKFLOW HARDENING & PEP 621 RE-AUDIT (Pfad A: 2026-09-26)
+--------------------------------------------------------------------------------
+- Version Policy Compliance: Version remains strictly 1.3.2 under rule
+  T-20260920-167562623 (Pfad A hygiene never bumps version numbers; release tags
+  reserved for explicit user authorization).
+- PEP 621 Standard Harmonization: Saturated pyproject.toml keywords with 20 curated
+  GitHub topics and registered canonical Notice URL in [project.urls].
+- Multi-Host Sync & Lock Defense: .gitignore extended with fleet host patterns
+  (*-LAPTOP*, *-Mac Studio*, *-MacBook*, *-IDEAPAD*), canonical lock defense (.automation-lock),
+  and test runner temporary caches (.pytest_temp/, .hypothesis/).
+- Open-Source NOTICE Attribution: Enriched root NOTICE file certifying Lukas Geiger,
+  the research-line organization, and open-bricks umbrella under CC-BY-4.0.
+- Governance & Level 1 SBOM Recency: THIRD_PARTY_LICENSES.md re-audited for 2026-09-26
+  with explicit cross-reference to canonical NOTICE and verification of INV-DET-01 to INV-SLA-10.
+- Pytest Discovery Guardrails: Configured pyproject.toml [tool.pytest.ini_options] norecursedirs
+  with .pytest_temp and .hypothesis.
+- Context & Verification Parity: llms.txt Last-checked timestamp updated to 2026-09-26;
+  README badges synchronized to 142 passed tests (100% green) and NOTICE attribution.
+- Contract Test Suite Expansion: tests/test_metadata.py extended with 6 automated contract
+  verification gates covering PEP 621 saturated keywords & Notice URL, enriched NOTICE attribution,
+  extended host/cache defense in .gitignore, SBOM recency & NOTICE cross-link, and unreleased
+  changelog hygiene (142 tests green).
+

@@ -2,7 +2,7 @@
 
 This document provides a comprehensive inventory of all third-party software libraries, mathematical engines, toolchains, and runtime environments utilized or referenced by **crm-cosmology** (`research-line/crm-cosmology`), including their respective licenses, copyright holders, and usage scopes.
 
-Last updated: **2026-09-20** (Release `v1.3.2`)
+Last updated: **2026-09-26** (Release `v1.3.2`)
 
 ---
 
@@ -123,3 +123,4 @@ All dependencies and runtime components are strictly audited against the reposit
 5. **Curated Boundary Discipline**: Internal working notes (`BEWEISNOTIZ*.md`, `PLAN*.txt`) and raw downloaded data snapshots (`data/raw/`) remain isolated by strict `.gitignore` rules, ensuring version control contains only vetted, reproducible certificates.
 6. **Zero-Copyleft Isolation Guarantee**: All software dependencies are distributed under permissive BSD-3-Clause, MIT, PSF, or Apache-2.0 licenses. There is zero viral copyleft contagion into the research codebase or derivative user workflows.
 7. **System & Research Invariant Verification**: Full architectural conformity is verified against all 10 governance invariants (`INV-DET-01` through `INV-SLA-10`).
+8. **Attribution & Notice**: Canonical copyright notices and institutional attribution are documented in [`NOTICE`](NOTICE).

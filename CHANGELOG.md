@@ -8,6 +8,14 @@ and this project adheres to open-science preprint versioning tied to Zenodo arch
 ## [Unreleased]
 
 ### Changed
+- **Technical Hygiene, Multi-Host Guardrails & Metadata Contract Expansion (Pfad A 2026-09-26):**
+  - Standardized PEP 621 project URLs in `pyproject.toml` with canonical `Notice` link and saturated `keywords` (20/20 topics aligned with GitHub metadata).
+  - Strengthened `.gitignore` multi-host protection against laptop and Apple silicon tokens (`*-LAPTOP*`, `*-Mac Studio*`, `*-MacBook*`, `*-IDEAPAD*`), canonical `.automation-lock`, and testing caches (`.pytest_temp/`, `.hypothesis/`).
+  - Added `.pytest_temp` and `.hypothesis` to `norecursedirs` under `[tool.pytest.ini_options]` in `pyproject.toml`.
+  - Enriched root `NOTICE` attribution file certifying copyright holder Lukas Geiger, research-line organization, and open-bricks umbrella.
+  - Re-audited `THIRD_PARTY_LICENSES.md` (Stand 2026-09-26) with Level 1 SBOM cross-referencing `NOTICE`.
+  - Synchronized documentation badges, `llms.txt` (`Last-checked: 2026-09-26`), and `MARKETING-LOG.txt` Section 10.
+  - Expanded `tests/test_metadata.py` with 6 automated contract tests verifying PEP 621 Notice URL, saturated keywords, formal NOTICE attribution, multi-host .gitignore patterns, SBOM recency, and unreleased changelog entry (expanding suite to 142 passed tests | 100% green). Version remains `1.3.2` pursuant to Pfad A immutability rule `T-20260920-167562623`.
 - **Cross-Platform Test Determinism & Zenodo v8.4 Metadata Sync (2026-09-23):**
   - Synchronized `CITATION.cff` to published Zenodo v8.4 preprint series (`10.5281/zenodo.21946248`, released 2026-08-15).
   - Hardened gate test assertions in `tests/test_dprime_integrable_defect_fusion_gate.py`, `tests/test_dprime_massless_rg_scattering_gate.py`, and `tests/test_smooth_collar_classification_gate.py` with `_assert_nested_approx_equal` to absorb cross-platform (glibc vs MSVCRT) 1-ULP transcendental floating-point precision differences.
