@@ -244,3 +244,35 @@ INV-SLA-10: 48-Hour Security Response & 5-Day Triage SLA
   extended host/cache defense in .gitignore, SBOM recency & NOTICE cross-link, and unreleased
   changelog hygiene (142 tests green).
 
+--------------------------------------------------------------------------------
+11. PFAD B DISCOVERABILITY, VISUAL ARCHITECTURE & LEVEL 1 SBOM PLAIN-TEXT COMPANION (Pfad B: 2026-09-29)
+--------------------------------------------------------------------------------
+- Version Policy Compliance: Version remains strictly 1.3.2 under rule
+  T-20260920-167562623 (Pfad B discoverability preserves existing release baseline;
+  no unauthorized version bumps).
+- 18-Point Bilingual Navigation Parity & Dual Anchors: Upgraded navigation tables in
+  both README.md and README_de.md with a dedicated "Nav Anchor" column linking to
+  standardized bilateral anchors (#sec-01 to #sec-18) while preserving all semantic
+  slug anchors (<a id="...">) for complete backwards compatibility.
+- Visual Architecture & Four-View ASCII Topology: Integrated comprehensive 4-view
+  architectural ASCII projection into Section 05 of both README.md and README_de.md:
+  * VIEW 1: Mathematical Layer Cake (Field equations, potential, cosmological background)
+  * VIEW 2: Dataflow & Verification Pipeline (Symbolic, numerical, validation, benchmarks)
+  * VIEW 3: Package Structure & Module Topology (core/, tests/, docs/, scripts/)
+  * VIEW 4: Runtime Constraints & Invariant Boundaries (INV-DET-01 to INV-SLA-10)
+- Level 1 SBOM Plain-Text Companion: Created canonical THIRD_PARTY_LICENSES.txt
+  conforming to unprivileged RunAsInvoker non-elevation standards (INV-USER-03),
+  zero-copyleft whitelist, SPDX identifiers, full runtime/dev inventory, and zero-egress
+  offline operation guarantees.
+- PEP 621 Standard Harmonization: Upgraded pyproject.toml license-files to include
+  THIRD_PARTY_LICENSES.txt and registered project URLs for Level 1 SBOM,
+  Third-Party Licenses (Text), and Plain-Text License.
+- Notice & Attribution Cross-Linking: Root NOTICE enriched with direct references
+  to both THIRD_PARTY_LICENSES.md and THIRD_PARTY_LICENSES.txt.
+- LLM Indexing Parity: llms.txt updated with 2026-09-29 audit timestamp, Level 1 SBOM
+  plain-text companion reference, and expanded test suite metrics.
+- Contract Verification Suite: tests/test_metadata.py extended with contract test
+  gates enforcing bilateral 18-point dual anchors (#sec-01 to #sec-18), Four-View ASCII
+  topology presence, Level 1 SBOM plain-text companion invariants, PEP 621 license-files
+  whitelisting, and companion URL declarations.
+

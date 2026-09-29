@@ -8,6 +8,13 @@ and this project adheres to open-science preprint versioning tied to Zenodo arch
 ## [Unreleased]
 
 ### Changed
+- **Pfad B Discoverability, Visual Architecture & Level 1 SBOM Plain-Text Companion (2026-09-29):**
+  - Upgraded 18-point quick navigation in `README.md` and `README_de.md` with explicit `Nav Anchor` table column linking to dual bilateral anchors (`#sec-01` to `#sec-18`) while preserving 100% backwards compatibility for semantic slug anchors (`<a id="...">`).
+  - Integrated comprehensive Four-View Architectural Topology ASCII projection (`VIEW 1` to `VIEW 4` / `SICHT 1` to `SICHT 4`) into Section 05 across both English and German documentation, mapping mathematical layers, dataflow verification, module topology, and invariant boundaries.
+  - Created canonical plain-text Level 1 SBOM companion `THIRD_PARTY_LICENSES.txt` certifying unprivileged `RunAsInvoker` non-elevation guarantees (`INV-USER-03`), zero-copyleft whitelist compliance, runtime/development dependency inventories, and zero-egress offline verification.
+  - Upgraded `pyproject.toml` PEP 621 packaging metadata to declare `THIRD_PARTY_LICENSES.txt` in `license-files` and registered canonical project URLs for `Level 1 SBOM`, `Third-Party Licenses (Text)`, and `Plain-Text License`.
+  - Enriched root `NOTICE` with reciprocal cross-references to both markdown and plain-text Level 1 SBOM artifacts.
+  - Re-audited `llms.txt` and documentation badges for `2026-09-29` and expanded test suite assertions. Version remains `1.3.2` pursuant to Pfad B immutability rule `T-20260920-167562623`.
 - **Technical Hygiene, Multi-Host Guardrails & Metadata Contract Expansion (Pfad A 2026-09-26):**
   - Standardized PEP 621 project URLs in `pyproject.toml` with canonical `Notice` link and saturated `keywords` (20/20 topics aligned with GitHub metadata).
   - Strengthened `.gitignore` multi-host protection against laptop and Apple silicon tokens (`*-LAPTOP*`, `*-Mac Studio*`, `*-MacBook*`, `*-IDEAPAD*`), canonical `.automation-lock`, and testing caches (`.pytest_temp/`, `.hypothesis/`).

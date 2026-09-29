@@ -1,0 +1,53 @@
+# Third-Party Licenses & Software Inventory
+
+Project: crm-cosmology
+Audited: 2026-09-20 (Re-audited: 2026-09-29 against Level 1 SBOM, plain-text companion invariants, and unprivileged execution).
+License: Creative Commons Attribution 4.0 International (CC BY 4.0; see LICENSE and NOTICE)
+Repository: https://github.com/research-line/crm-cosmology
+Parent Organization: research-line (https://github.com/research-line)
+Umbrella Ecosystem: open-bricks (https://github.com/open-bricks)
+
+## Project License
+
+crm-cosmology is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0) for manuscripts, data assets, and scientific documentation, with MIT-compatible terms for computational harnesses. See `LICENSE` and `NOTICE`.
+
+## Scientific Computing & MCMC Sampling Stack
+
+| Engine / Library | Scope | Version Spec | License | Source | Purpose |
+|---|---|---|---|---|---|
+| Python Standard Library | Runtime | >=3.10 | PSFL-2.0 | https://python.org/ | Core runtime, script execution, JSON serialization, path handling |
+| NumPy | Scientific Engine | >=1.24 | BSD-3-Clause | https://numpy.org/ | Multidimensional array arithmetic, vector field operations, numerical integration |
+| SciPy | Scientific Engine | >=1.10 | BSD-3-Clause | https://scipy.org/ | Numerical integration (quad, solve_bvp, odeint), spline interpolation, root-finding |
+| Matplotlib | Visualization | >=3.7 | PSF-based / Matplotlib License | https://matplotlib.org/ | Power spectra plots, MCMC posterior corner plots, SPARC rotation curve curves |
+| emcee | Sampling Engine | >=3.1 | MIT | https://emcee.readthedocs.io/ | Affine-invariant ensemble MCMC sampler for cosmological parameter estimation |
+| CLASS / hi_class | Boltzmann Solver | C Engine | MIT-style / CLASS License | https://github.com/miguelzuma/hi_class_public | Linear cosmological perturbation theory solver in Horndeski gravity |
+
+## Direct Build and Quality Assurance Tooling
+
+| Package | Declared Use | Constraint | License | Source |
+|---|---|---|---|---|
+| pytest | Automated test runner | >=7.0 | MIT | https://pytest.org/ |
+| ruff | Development linter | >=0.6 | MIT / Apache-2.0 | https://github.com/astral-sh/ruff |
+| setuptools | Build backend | >=61.0 | MIT | https://github.com/pypa/setuptools |
+
+## Zero-Copyleft Isolation & Unprivileged Execution Guarantee
+
+- Zero-Copyleft Isolation: All original research code, scripts, verification harnesses, and preprint manuscripts in this repository remain independent original works distributed under the CC-BY-4.0 / MIT-compatible terms. All external runtime dependencies utilize permissive open-source licenses (PSFL-2.0, BSD-3-Clause, MIT, Apache-2.0, Matplotlib License), guaranteeing zero viral copyleft contamination of the research codebase or derivative scientific workflows.
+- Zero-Egress Offline Guarantee: 100% offline, local-first execution with zero outbound network calls, telemetry, or third-party cloud data transmission.
+- Unprivileged User-Mode Operation (RunAsInvoker): All scripts, CLI harnesses, and automated verification suites operate strictly within non-elevated user-mode privilege boundaries (INV-USER-03 / RunAsInvoker) without requiring administrative or root elevation.
+
+## Governance & Runtime Invariants
+
+crm-cosmology strictly enforces ten foundational research and architectural invariants:
+- INV-DET-01: Deterministic Numerical Verification (deterministic seeds, ODE tolerances, and proof scripts matching stored certificates)
+- INV-ZERO-02: 100% Offline & Zero-Egress Privacy (complete offline execution with zero telemetry, background calls, or cloud APIs)
+- INV-USER-03: Unprivileged Execution / RunAsInvoker (strictly unprivileged user-mode execution without administrative elevation)
+- INV-DATA-04: Curated Evidence Non-Pollution Boundary (strict .gitignore boundaries isolating external raw datasets and working notes)
+- INV-GATE-05: Fail-Closed Gate Architecture (mathematical proof gates fail closed upon uncertainty; non-closed gates audited)
+- INV-ARCH-06: Bilingual Paper Series & Zenodo Archival (preprints maintained in LaTeX & PDF across EN/DE, anchored to Zenodo DOIs)
+- INV-PLAT-07: Cross-Platform Environment Parity (identical execution across Windows, Linux, and macOS)
+- INV-OPEN-08: Permissive Open-Science CC-BY-4.0 (unrestricted scholarly reproducibility and research code reuse)
+- INV-LLM-09: Machine-Readable LLM Parity (structured discovery via llms.txt and bilingual quick navigation)
+- INV-SLA-10: 48-Hour Security Response & 5-Day Triage (committed response window for vulnerability reporting in SECURITY.md)
+
+All 10 invariants: VERIFIED.

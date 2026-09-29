@@ -9,7 +9,7 @@ description = "Curvature Relaxation Model (CRM) - Geometric Cosmology & Modified
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "CC-BY-4.0"}
-license-files = ["LICENSE", "NOTICE", "THIRD_PARTY_LICENSES.md"]
+license-files = ["LICENSE", "NOTICE", "THIRD_PARTY_LICENSES.md", "THIRD_PARTY_LICENSES.txt"]
 authors = [
     {name = "Research Line", email = "open-science@research-line.org"}
 ]
@@ -69,6 +69,9 @@ Notice = "https://github.com/research-line/crm-cosmology/blob/main/NOTICE"
 "Parent Organization" = "https://github.com/research-line"
 "Umbrella Ecosystem" = "https://github.com/open-bricks"
 "Third-Party Licenses" = "https://github.com/research-line/crm-cosmology/blob/main/THIRD_PARTY_LICENSES.md"
+"Third-Party Licenses (Text)" = "https://github.com/research-line/crm-cosmology/blob/main/THIRD_PARTY_LICENSES.txt"
+"Level 1 SBOM" = "https://github.com/research-line/crm-cosmology/blob/main/THIRD_PARTY_LICENSES.md"
+"Plain-Text License" = "https://github.com/research-line/crm-cosmology/blob/main/LICENSE"
 "Marketing Log" = "https://github.com/research-line/crm-cosmology/blob/main/MARKETING-LOG.txt"
 "LLM Ready" = "https://github.com/research-line/crm-cosmology/blob/main/llms.txt"
 "Zenodo DOI" = "https://doi.org/10.5281/zenodo.19233559"

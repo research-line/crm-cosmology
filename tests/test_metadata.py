@@ -22,7 +22,7 @@ def test_pyproject_toml_structure():
     assert "description" in project
     assert project.get("requires-python") == ">=3.10"
     assert "license" in project
-    assert project.get("license-files") == ["LICENSE", "NOTICE", "THIRD_PARTY_LICENSES.md"]
+    assert project.get("license-files") == ["LICENSE", "NOTICE", "THIRD_PARTY_LICENSES.md", "THIRD_PARTY_LICENSES.txt"]
 
     classifiers = project.get("classifiers", [])
     assert "Programming Language :: Python :: 3.12" in classifiers
@@ -67,7 +67,7 @@ def test_llms_txt_structure_and_timestamp():
     content = llms_path.read_text(encoding="utf-8")
 
     assert "# Curvature Relaxation Model (CRM)" in content
-    assert ("## Last-checked: 2026-09-26" in content or "## Last-checked: 2026-09-22" in content)
+    assert ("## Last-checked: 2026-09-29" in content or "## Last-checked: 2026-09-26" in content or "## Last-checked: 2026-09-22" in content)
     assert "Local release status: v1.3.2" in content
     assert "## Canonical Links" in content
     assert "SECURITY.md" in content
@@ -107,8 +107,8 @@ def test_readme_and_readme_de_parity():
     # Check status badges
     assert "Version-1.3.2-blue.svg" in en_content
     assert "Version-1.3.2-blue.svg" in de_content
-    assert ("LLM--Ready-2026--09--26" in en_content or "LLM--Ready-2026--09--22" in en_content)
-    assert ("LLM--Ready-2026--09--26" in de_content or "LLM--Ready-2026--09--22" in de_content)
+    assert ("LLM--Ready-2026--09--29" in en_content or "LLM--Ready-2026--09--26" in en_content or "LLM--Ready-2026--09--22" in en_content)
+    assert ("LLM--Ready-2026--09--29" in de_content or "LLM--Ready-2026--09--26" in de_content or "LLM--Ready-2026--09--22" in de_content)
     assert "Attribution-NOTICE" in en_content
     assert "Attribution-NOTICE" in de_content
     assert "Ecosystem-research--line-blue.svg" in en_content
@@ -329,7 +329,7 @@ def test_pep621_license_files_and_ruff_rules():
     pyproject_path = REPO_ROOT / "pyproject.toml"
     data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
 
-    assert data.get("project", {}).get("license-files") == ["LICENSE", "NOTICE", "THIRD_PARTY_LICENSES.md"]
+    assert data.get("project", {}).get("license-files") == ["LICENSE", "NOTICE", "THIRD_PARTY_LICENSES.md", "THIRD_PARTY_LICENSES.txt"]
     ruff_select = data.get("tool", {}).get("ruff", {}).get("lint", {}).get("select", [])
     for rule in ["E", "F", "W", "B", "SIM", "C4", "RUF"]:
         assert rule in ruff_select, f"Missing {rule} in tool.ruff.lint.select"
@@ -531,7 +531,7 @@ def test_third_party_licenses_audit_recency_and_notice():
     lic_path = REPO_ROOT / "THIRD_PARTY_LICENSES.md"
     content = lic_path.read_text(encoding="utf-8")
 
-    assert ("Last updated: **2026-09-26**" in content or "Last updated: **2026-09-20**" in content)
+    assert ("Last updated: **2026-09-29**" in content or "Last updated: **2026-09-26**" in content or "Last updated: **2026-09-20**" in content)
     assert "[`NOTICE`](NOTICE)" in content or "NOTICE" in content
 
 
@@ -542,4 +542,102 @@ def test_changelog_unreleased_pfad_a_20260926():
 
     assert "## [Unreleased]" in content
     assert "Pfad A 2026-09-26" in content
+    assert "T-20260920-167562623" in content
+
+
+def test_bilateral_sec_navigation_anchors():
+    """Verify that both READMEs implement bilateral 18-point dual anchors (sec-01 to sec-18)."""
+    en_content = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    de_content = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
+
+    for i in range(1, 19):
+        sec_tag = f"sec-{i:02d}"
+        # Check anchor tag in section heading
+        assert f'<a id="{sec_tag}"></a>' in en_content, f"Missing <a id=\"{sec_tag}\"></a> in README.md"
+        assert f'<a id="{sec_tag}"></a>' in de_content, f"Missing <a id=\"{sec_tag}\"></a> in README_de.md"
+        # Check nav table link
+        assert f"[`#{sec_tag}`](#{sec_tag})" in en_content, f"Missing nav link [`#{sec_tag}`](#{sec_tag}) in README.md"
+        assert f"[`#{sec_tag}`](#{sec_tag})" in de_content, f"Missing nav link [`#{sec_tag}`](#{sec_tag}) in README_de.md"
+
+
+def test_ascii_four_view_topology_projection():
+    """Verify that Section 05 in both READMEs includes the 4-View Architectural ASCII Topology."""
+    en_content = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    de_content = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
+
+    # English README Four Views
+    assert "VIEW 1: CLI HARNESSES & REPRODUCIBILITY CONTROLS" in en_content
+    assert "VIEW 2: GEOMETRIC COSMOLOGY & BOLTZMANN INTEGRATION CORE" in en_content
+    assert "VIEW 3: MCMC CHAINS, OBSERVATIONAL DATA & NUMERICAL SENSITIVITY" in en_content
+    assert "VIEW 4: OPEN-SCIENCE LEDGER, PROOF GATES & CITATION ARCHIVE" in en_content
+
+    # German README Four Views
+    assert "SICHT 1: CLI-TREIBER & REPRODUZIERBARKEITS-STEUERUNG" in de_content
+    assert "SICHT 2: GEOMETRISCHE KOSMOLOGIE & BOLTZMANN-INTEGRATIONSKERN" in de_content
+    assert "SICHT 3: MCMC-KETTEN, BEOBACHTUNGSDATEN & NUMERISCHE SENSITIVITÄT" in de_content
+    assert "SICHT 4: OPEN-SCIENCE-PROOF-LEDGER, GATES & ZITATIONSARCHIV" in de_content
+
+    # Both must project the 10 invariants
+    for inv in [
+        "INV-DET-01", "INV-ZERO-02", "INV-USER-03", "INV-DATA-04", "INV-GATE-05",
+        "INV-ARCH-06", "INV-PLAT-07", "INV-OPEN-08", "INV-LLM-09", "INV-SLA-10"
+    ]:
+        assert inv in en_content, f"Missing invariant {inv} in README.md"
+        assert inv in de_content, f"Missing invariant {inv} in README_de.md"
+
+
+def test_level1_sbom_plaintext_companion_contract():
+    """Verify presence, format, and invariant adherence of THIRD_PARTY_LICENSES.txt companion."""
+    sbom_txt_path = REPO_ROOT / "THIRD_PARTY_LICENSES.txt"
+    assert sbom_txt_path.exists(), "THIRD_PARTY_LICENSES.txt must exist in repo root"
+    content = sbom_txt_path.read_text(encoding="utf-8")
+
+    assert "Third-Party Licenses & Software Inventory" in content
+    assert "Level 1 SBOM" in content
+    assert "INV-USER-03" in content
+    assert "RunAsInvoker" in content
+    assert "Zero-Copyleft Isolation" in content
+    assert "Zero-Egress Offline Guarantee" in content
+    for pkg in ["NumPy", "SciPy", "Matplotlib", "emcee", "CLASS / hi_class", "pytest", "ruff"]:
+        assert pkg in content, f"Missing package {pkg} in THIRD_PARTY_LICENSES.txt"
+    for inv in [
+        "INV-DET-01", "INV-ZERO-02", "INV-USER-03", "INV-DATA-04", "INV-GATE-05",
+        "INV-ARCH-06", "INV-PLAT-07", "INV-OPEN-08", "INV-LLM-09", "INV-SLA-10"
+    ]:
+        assert inv in content, f"Missing invariant {inv} in THIRD_PARTY_LICENSES.txt"
+    assert "All 10 invariants: VERIFIED." in content
+
+
+def test_pep621_extended_companion_urls():
+    """Verify that PEP 621 project URLs declare Level 1 SBOM and plain-text license companion links."""
+    pyproject_path = REPO_ROOT / "pyproject.toml"
+    data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
+    urls = data.get("project", {}).get("urls", {})
+
+    assert "Level 1 SBOM" in urls
+    assert urls["Level 1 SBOM"] == "https://github.com/research-line/crm-cosmology/blob/main/THIRD_PARTY_LICENSES.md"
+    assert "Third-Party Licenses (Text)" in urls
+    assert urls["Third-Party Licenses (Text)"] == "https://github.com/research-line/crm-cosmology/blob/main/THIRD_PARTY_LICENSES.txt"
+    assert "Plain-Text License" in urls
+    assert urls["Plain-Text License"] == "https://github.com/research-line/crm-cosmology/blob/main/LICENSE"
+
+
+def test_marketing_log_pfad_b_audit_20260929():
+    """Verify that MARKETING-LOG.txt documents the Pfad B 2026-09-29 discoverability and visual architecture run."""
+    log_path = REPO_ROOT / "MARKETING-LOG.txt"
+    content = log_path.read_text(encoding="utf-8")
+
+    assert "11. PFAD B DISCOVERABILITY, VISUAL ARCHITECTURE & LEVEL 1 SBOM PLAIN-TEXT COMPANION (Pfad B: 2026-09-29)" in content
+    assert "T-20260920-167562623" in content
+    assert "THIRD_PARTY_LICENSES.txt" in content
+    assert "Four-View Architectural Topology" in content or "Four-View ASCII Topology" in content
+
+
+def test_changelog_unreleased_pfad_b_20260929():
+    """Verify that CHANGELOG.md Unreleased section documents the 2026-09-29 Pfad B discoverability run."""
+    cl_path = REPO_ROOT / "CHANGELOG.md"
+    content = cl_path.read_text(encoding="utf-8")
+
+    assert "## [Unreleased]" in content
+    assert "Pfad B Discoverability, Visual Architecture & Level 1 SBOM Plain-Text Companion (2026-09-29)" in content
     assert "T-20260920-167562623" in content
