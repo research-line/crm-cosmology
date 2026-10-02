@@ -208,6 +208,13 @@ _archive/
 Plan.txt
 # <<< RESEARCH-PIPELINE MANAGED GITIGNORE <<<
 
+# Additional local agent states and private research items
+_codex/
+**/_codex/
+**/IDEENSPEICHER*.md
+**/PRE-REGISTRATION*.md
+**/prediction.lock.*
+
 # Synchronization conflict copies & temporary lockfiles
 *-conflict-*
 *.sync-conflict-*
