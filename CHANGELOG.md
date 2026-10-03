@@ -8,6 +8,14 @@ and this project adheres to open-science preprint versioning tied to Zenodo arch
 ## [Unreleased]
 
 ### Changed
+- **Repository Hygiene, CI Lifecycle Workflows, Bilingual CONTRIBUTING.md Guidelines & Contract Tests (Pfad A: 2026-10-03):**
+  - Added bilingual `CONTRIBUTING.md` guidelines (English / Deutsch) defining 10 core governance invariants (`INV-DET-01` to `INV-SLA-10`), unprivileged `RunAsInvoker` mode (`INV-USER-03`), Plan D local development workflow (`C:\_Local_DEV\repos\crm-cosmology`), strict version-freeze discipline (`1.3.2` frozen per `T-20260920-167562623`), local quality gates, § 521 BGB statutory disclaimer, and 48h security response SLA.
+  - Deployed GitHub Actions lifecycle workflows `.github/workflows/auto-assign.yml` (least-privilege `issues: write`, `pull-requests: write`, `timeout-minutes: 5`, `cancel-in-progress: true`) and `.github/workflows/label-sync.yml` (`EndBug/label-sync@v2`, `timeout-minutes: 5`) with canonical `.github/labels.yml` (11 standard governance labels per GOVERNANCE.md §4.2).
+  - Hardened multi-host cloud-sync and lock defense in `.gitignore` with `Desktop.ini`, `desktop.ini`, `ehthumbs.db`, `*.swp`, `*.swo`, `*~`, `TASKPLAN_*.md`, `*-TASKPLAN*`, `*-ASUS-GEI.*`, `*-IDEAPAD-GEI.*`, `*-WORKSTATION-LG.*`, `LOCK.dev.*`, `LOCK.antigravity.*`, `LOCK.bugsearch.*`.
+  - Standardized PEP 621 packaging metadata in `pyproject.toml` by registering `Contributing` URL in `[project.urls]`, adding `CONTRIBUTING.md` to `license-files` whitelist, and setting `addopts = "-ra -v --basetemp=.pytest_temp"` in pytest options.
+  - Re-audited Level 1 SBOM companion files `THIRD_PARTY_LICENSES.md` and `THIRD_PARTY_LICENSES.txt` (Stand: 2026-10-03) with invariant matrix cross-referencing `CONTRIBUTING.md`.
+  - Synchronized documentation badges, `llms.txt` (`Last-checked: 2026-10-03`, 153 tests baseline), and `MARKETING-LOG.txt` Section 12.
+  - Expanded automated test suite `tests/test_metadata.py` with 5 new contract tests (bilingual CONTRIBUTING.md guidelines & 10 invariants, CI lifecycle workflows & label sync, PEP 621 Contributing URL and license-files, multi-host lock defense, and Pfad A recency audit), bringing test coverage to 153 passed tests (100% green). Version remains `1.3.2` strictly frozen per `T-20260920-167562623`.
 - **Pfad B Discoverability, Visual Architecture & Level 1 SBOM Plain-Text Companion (2026-09-29):**
   - Upgraded 18-point quick navigation in `README.md` and `README_de.md` with explicit `Nav Anchor` table column linking to dual bilateral anchors (`#sec-01` to `#sec-18`) while preserving 100% backwards compatibility for semantic slug anchors (`<a id="...">`).
   - Integrated comprehensive Four-View Architectural Topology ASCII projection (`VIEW 1` to `VIEW 4` / `SICHT 1` to `SICHT 4`) into Section 05 across both English and German documentation, mapping mathematical layers, dataflow verification, module topology, and invariant boundaries.

@@ -224,12 +224,20 @@ _codex/
 *conflicted copy*
 *-WORKSTATION*
 *-WORKSTATION-LG*
+*-WORKSTATION-LG.*
 *-ASUS*
 *-ASUS-GEI*
+*-ASUS-GEI.*
 *-LAPTOP*
 *-Mac Studio*
 *-MacBook*
 *-IDEAPAD*
+*-IDEAPAD-GEI.*
+TASKPLAN_*.md
+*-TASKPLAN*
+Desktop.ini
+desktop.ini
+ehthumbs.db
 * (kopie)*
 * (Kopie)*
 * (copy)*
@@ -243,6 +251,9 @@ LOCK*.txt
 LOCK.user.*
 LOCK.until.*
 LOCK.condition.*
+LOCK.dev.*
+LOCK.antigravity.*
+LOCK.bugsearch.*
 uv.lock
 !package-lock.json
 LOCK.permissions.json
@@ -268,4 +279,5 @@ wheelhouse/
 *.tmp
 *.bak
 *.swp
+*.swo
 *~

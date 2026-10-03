@@ -9,7 +9,7 @@ description = "Curvature Relaxation Model (CRM) - Geometric Cosmology & Modified
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "CC-BY-4.0"}
-license-files = ["LICENSE", "NOTICE", "THIRD_PARTY_LICENSES.md", "THIRD_PARTY_LICENSES.txt"]
+license-files = ["LICENSE", "NOTICE", "THIRD_PARTY_LICENSES.md", "THIRD_PARTY_LICENSES.txt", "CONTRIBUTING.md"]
 authors = [
     {name = "Research Line", email = "open-science@research-line.org"}
 ]
@@ -63,6 +63,7 @@ Homepage = "https://github.com/research-line/crm-cosmology"
 Repository = "https://github.com/research-line/crm-cosmology.git"
 Documentation = "https://github.com/research-line/crm-cosmology#readme"
 "Bug Tracker" = "https://github.com/research-line/crm-cosmology/issues"
+Contributing = "https://github.com/research-line/crm-cosmology/blob/main/CONTRIBUTING.md"
 Changelog = "https://github.com/research-line/crm-cosmology/blob/main/CHANGELOG.md"
 Security = "https://github.com/research-line/crm-cosmology/blob/main/SECURITY.md"
 Notice = "https://github.com/research-line/crm-cosmology/blob/main/NOTICE"
@@ -78,7 +79,7 @@ Notice = "https://github.com/research-line/crm-cosmology/blob/main/NOTICE"
 
 [tool.pytest.ini_options]
 minversion = "7.0"
-addopts = "-ra -v"
+addopts = "-ra -v --basetemp=.pytest_temp"
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 pythonpath = ["."]

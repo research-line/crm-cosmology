@@ -2,7 +2,7 @@
 
 This document provides a comprehensive inventory of all third-party software libraries, mathematical engines, toolchains, and runtime environments utilized or referenced by **crm-cosmology** (`research-line/crm-cosmology`), including their respective licenses, copyright holders, and usage scopes.
 
-Last updated: **2026-09-29** (Release `v1.3.2`)
+Last updated: **2026-10-03** (Release `v1.3.2`)
 
 ---
 
@@ -125,3 +125,4 @@ All dependencies and runtime components are strictly audited against the reposit
 7. **System & Research Invariant Verification**: Full architectural conformity is verified against all 10 governance invariants (`INV-DET-01` through `INV-SLA-10`).
 8. **Attribution & Notice**: Canonical copyright notices and institutional attribution are documented in [`NOTICE`](NOTICE).
 9. **Plain-Text Level 1 SBOM Companion**: A machine-readable, zero-copyleft plain-text companion inventory is provided in [`THIRD_PARTY_LICENSES.txt`](THIRD_PARTY_LICENSES.txt), mapping all runtime dependencies, tooling components, and verified invariants (`INV-DET-01` through `INV-SLA-10`).
+10. **Contribution & Governance Guidelines**: Complete bilingual contribution guidelines, quality gates, and invariant contracts are documented in [`CONTRIBUTING.md`](CONTRIBUTING.md).

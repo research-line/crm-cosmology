@@ -29,7 +29,7 @@ def test_llms_txt_timestamp():
     llms_path = os.path.join(REPO_ROOT, "llms.txt")
     with open(llms_path, "r", encoding="utf-8") as f:
         content = f.read()
-    assert ("Last-checked: 2026-09-29" in content or "Last-checked: 2026-09-26" in content or "Last-checked: 2026-09-22" in content), "llms.txt Last-checked date is not up to date"
+    assert ("Last-checked: 2026-10-03" in content or "Last-checked: 2026-09-29" in content or "Last-checked: 2026-09-26" in content or "Last-checked: 2026-09-22" in content), "llms.txt Last-checked date is not up to date"
 
 def test_pyproject_metadata():
     """Verify that pyproject.toml contains required PEP 621 metadata."""

@@ -276,3 +276,37 @@ INV-SLA-10: 48-Hour Security Response & 5-Day Triage SLA
   topology presence, Level 1 SBOM plain-text companion invariants, PEP 621 license-files
   whitelisting, and companion URL declarations.
 
+--------------------------------------------------------------------------------
+12. REPOSITORY HYGIENE, CI WORKFLOWS, CONTRIBUTING GUIDELINES & CONTRACT SUITE (Pfad A: 2026-10-03)
+--------------------------------------------------------------------------------
+- Version Policy Compliance: Version remains strictly 1.3.2 under rule
+  T-20260920-167562623 (Pfad A hygiene preserves release baseline; version freeze
+  strictly maintained; updates tracked under [Unreleased] in CHANGELOG.md).
+- Bilingual CONTRIBUTING Guidelines: Established comprehensive CONTRIBUTING.md in
+  English and German specifying the 10 foundational governance and runtime invariants
+  (INV-DET-01 to INV-SLA-10), unprivileged RunAsInvoker non-elevation mode (INV-USER-03),
+  Plan D local-first development workflow (Source of Truth C:\_Local_DEV\repos\crm-cosmology),
+  quality gates, statutory liability disclaimer under § 521 BGB, and 48h security response SLA.
+- CI/CD Lifecycle Automation: Deployed GitHub Actions lifecycle workflows
+  .github/workflows/auto-assign.yml (actions/github-script@v7, timeout-minutes: 5,
+  cancel-in-progress: true, least-privilege permissions issues: write, pull-requests: write)
+  and .github/workflows/label-sync.yml (EndBug/label-sync@v2, timeout-minutes: 5)
+  with canonical governance label set in .github/labels.yml (11 standard labels per GOVERNANCE.md §4.2).
+- Multi-Host Cloud-Sync & Lock Defense: Hardened .gitignore rules against host tokens
+  (*-ASUS-GEI.*, *-IDEAPAD-GEI.*, *-WORKSTATION-LG.*), taskplan drafts (TASKPLAN_*.md, *-TASKPLAN*),
+  desktop artifacts (Desktop.ini, desktop.ini, ehthumbs.db), editor swap files (*.swo),
+  and canonical lockfiles (LOCK.dev.*, LOCK.antigravity.*, LOCK.bugsearch.*).
+- PEP 621 Standard Harmonization: Standardized pyproject.toml packaging metadata by registering
+  Contributing URL in [project.urls], adding CONTRIBUTING.md to license-files whitelist,
+  and configuring addopts = "-ra -v --basetemp=.pytest_temp" in [tool.pytest.ini_options].
+- Level 1 SBOM Re-Audit & Recency: Re-audited THIRD_PARTY_LICENSES.md and plain-text companion
+  THIRD_PARTY_LICENSES.txt for 2026-10-03, cross-referencing CONTRIBUTING.md and certifying
+  permissive stack compliance, zero-copyleft isolation, and unprivileged user-mode execution.
+- Documentation & LLM Parity: Synchronized README.md and README_de.md badges (tests 153 passed | 100% green,
+  Verified-2026-10-03, LLM-Ready-2026-10-03), updated repository structure trees, and updated llms.txt
+  Last-checked timestamp to 2026-10-03 with 153 baseline test metric.
+- Automated Contract Test Expansion: Expanded tests/test_metadata.py with 5 new contract
+  verification gates covering bilingual CONTRIBUTING.md guidelines and invariants, CI lifecycle
+  workflows and labels, PEP 621 Contributing URL and license-files, multi-host lock defense,
+  and Pfad A recency audit (suite passing 153/153 green).
+

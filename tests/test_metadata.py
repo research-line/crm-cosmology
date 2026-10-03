@@ -22,7 +22,7 @@ def test_pyproject_toml_structure():
     assert "description" in project
     assert project.get("requires-python") == ">=3.10"
     assert "license" in project
-    assert project.get("license-files") == ["LICENSE", "NOTICE", "THIRD_PARTY_LICENSES.md", "THIRD_PARTY_LICENSES.txt"]
+    assert project.get("license-files") == ["LICENSE", "NOTICE", "THIRD_PARTY_LICENSES.md", "THIRD_PARTY_LICENSES.txt", "CONTRIBUTING.md"]
 
     classifiers = project.get("classifiers", [])
     assert "Programming Language :: Python :: 3.12" in classifiers
@@ -36,6 +36,7 @@ def test_pyproject_toml_structure():
     assert "Repository" in urls
     assert "Documentation" in urls
     assert "Bug Tracker" in urls
+    assert "Contributing" in urls
     assert "Changelog" in urls
     assert "Security" in urls
     assert "Parent Organization" in urls
@@ -67,7 +68,7 @@ def test_llms_txt_structure_and_timestamp():
     content = llms_path.read_text(encoding="utf-8")
 
     assert "# Curvature Relaxation Model (CRM)" in content
-    assert ("## Last-checked: 2026-09-29" in content or "## Last-checked: 2026-09-26" in content or "## Last-checked: 2026-09-22" in content)
+    assert ("## Last-checked: 2026-10-03" in content or "## Last-checked: 2026-09-29" in content or "## Last-checked: 2026-09-26" in content or "## Last-checked: 2026-09-22" in content)
     assert "Local release status: v1.3.2" in content
     assert "## Canonical Links" in content
     assert "SECURITY.md" in content
@@ -107,8 +108,8 @@ def test_readme_and_readme_de_parity():
     # Check status badges
     assert "Version-1.3.2-blue.svg" in en_content
     assert "Version-1.3.2-blue.svg" in de_content
-    assert ("LLM--Ready-2026--09--29" in en_content or "LLM--Ready-2026--09--26" in en_content or "LLM--Ready-2026--09--22" in en_content)
-    assert ("LLM--Ready-2026--09--29" in de_content or "LLM--Ready-2026--09--26" in de_content or "LLM--Ready-2026--09--22" in de_content)
+    assert ("LLM--Ready-2026--10--03" in en_content or "LLM--Ready-2026--09--29" in en_content or "LLM--Ready-2026--09--26" in en_content or "LLM--Ready-2026--09--22" in en_content)
+    assert ("LLM--Ready-2026--10--03" in de_content or "LLM--Ready-2026--09--29" in de_content or "LLM--Ready-2026--09--26" in de_content or "LLM--Ready-2026--09--22" in de_content)
     assert "Attribution-NOTICE" in en_content
     assert "Attribution-NOTICE" in de_content
     assert "Ecosystem-research--line-blue.svg" in en_content
@@ -329,7 +330,7 @@ def test_pep621_license_files_and_ruff_rules():
     pyproject_path = REPO_ROOT / "pyproject.toml"
     data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
 
-    assert data.get("project", {}).get("license-files") == ["LICENSE", "NOTICE", "THIRD_PARTY_LICENSES.md", "THIRD_PARTY_LICENSES.txt"]
+    assert data.get("project", {}).get("license-files") == ["LICENSE", "NOTICE", "THIRD_PARTY_LICENSES.md", "THIRD_PARTY_LICENSES.txt", "CONTRIBUTING.md"]
     ruff_select = data.get("tool", {}).get("ruff", {}).get("lint", {}).get("select", [])
     for rule in ["E", "F", "W", "B", "SIM", "C4", "RUF"]:
         assert rule in ruff_select, f"Missing {rule} in tool.ruff.lint.select"
@@ -531,7 +532,7 @@ def test_third_party_licenses_audit_recency_and_notice():
     lic_path = REPO_ROOT / "THIRD_PARTY_LICENSES.md"
     content = lic_path.read_text(encoding="utf-8")
 
-    assert ("Last updated: **2026-09-29**" in content or "Last updated: **2026-09-26**" in content or "Last updated: **2026-09-20**" in content)
+    assert ("Last updated: **2026-10-03**" in content or "Last updated: **2026-09-29**" in content or "Last updated: **2026-09-26**" in content or "Last updated: **2026-09-20**" in content)
     assert "[`NOTICE`](NOTICE)" in content or "NOTICE" in content
 
 
@@ -641,3 +642,101 @@ def test_changelog_unreleased_pfad_b_20260929():
     assert "## [Unreleased]" in content
     assert "Pfad B Discoverability, Visual Architecture & Level 1 SBOM Plain-Text Companion (2026-09-29)" in content
     assert "T-20260920-167562623" in content
+
+
+def test_contributing_bilingual_guidelines_and_invariants():
+    """Verify that CONTRIBUTING.md exists with bilingual sections, 10 invariants, RunAsInvoker, Plan D, § 521 BGB, and 48h SLA."""
+    contrib_path = REPO_ROOT / "CONTRIBUTING.md"
+    assert contrib_path.exists(), "CONTRIBUTING.md must exist in repo root"
+    content = contrib_path.read_text(encoding="utf-8")
+
+    assert "# Contributing to crm-cosmology / Mitwirken an crm-cosmology" in content
+    assert '<a id="english"></a>' in content
+    assert '<a id="deutsch"></a>' in content
+    assert "Plan D Local Development Workflow" in content
+    assert "C:\\_Local_DEV\\repos\\crm-cosmology" in content
+    assert "RunAsInvoker" in content
+    assert "INV-USER-03" in content
+    assert "T-20260920-167562623" in content
+    assert "1.3.2" in content
+    assert "§ 521 BGB" in content
+    assert "48-Hour Security Response" in content or "48-Hour" in content or "48 hours" in content
+    assert "open-science@research-line.org" in content
+
+    # All 10 invariants must be present in CONTRIBUTING.md
+    for inv in [
+        "INV-DET-01", "INV-ZERO-02", "INV-USER-03", "INV-DATA-04", "INV-GATE-05",
+        "INV-ARCH-06", "INV-PLAT-07", "INV-OPEN-08", "INV-LLM-09", "INV-SLA-10"
+    ]:
+        assert inv in content, f"Missing invariant {inv} in CONTRIBUTING.md"
+
+
+def test_ci_lifecycle_workflows_and_labels_hygiene():
+    """Verify presence and configuration of CI auto-assign, label-sync, and standard governance labels."""
+    workflows_dir = REPO_ROOT / ".github" / "workflows"
+    auto_assign = workflows_dir / "auto-assign.yml"
+    label_sync = workflows_dir / "label-sync.yml"
+    labels_file = REPO_ROOT / ".github" / "labels.yml"
+
+    assert auto_assign.exists(), ".github/workflows/auto-assign.yml must exist"
+    assert label_sync.exists(), ".github/workflows/label-sync.yml must exist"
+    assert labels_file.exists(), ".github/labels.yml must exist"
+
+    auto_content = auto_assign.read_text(encoding="utf-8")
+    assert "actions/github-script@v7" in auto_content
+    assert "timeout-minutes: 5" in auto_content
+    assert "cancel-in-progress: true" in auto_content
+    assert "pull_request_target" in auto_content
+
+    sync_content = label_sync.read_text(encoding="utf-8")
+    assert "EndBug/label-sync@v2" in sync_content
+    assert "timeout-minutes: 5" in sync_content
+    assert ".github/labels.yml" in sync_content
+
+    labels_content = labels_file.read_text(encoding="utf-8")
+    for lbl in ["bug", "enhancement", "good first issue", "help wanted", "documentation",
+                "duplicate", "wontfix", "priority: high", "priority: low", "needs-triage", "stale"]:
+        assert f"name: {lbl}" in labels_content or f"name: '{lbl}'" in labels_content, f"Missing label {lbl}"
+
+
+def test_pep621_contributing_url_and_license_files():
+    """Verify that pyproject.toml registers Contributing URL and includes CONTRIBUTING.md in license-files."""
+    pyproject_path = REPO_ROOT / "pyproject.toml"
+    data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
+
+    license_files = data.get("project", {}).get("license-files", [])
+    assert "CONTRIBUTING.md" in license_files
+    assert "THIRD_PARTY_LICENSES.txt" in license_files
+
+    urls = data.get("project", {}).get("urls", {})
+    assert "Contributing" in urls
+    assert urls["Contributing"] == "https://github.com/research-line/crm-cosmology/blob/main/CONTRIBUTING.md"
+
+    addopts = data.get("tool", {}).get("pytest", {}).get("ini_options", {}).get("addopts", "")
+    assert "--basetemp=.pytest_temp" in addopts
+
+
+def test_extended_lock_and_host_gitignore_defense():
+    """Verify that .gitignore defends against host tokens, desktop artifacts, taskplans, and canonical locks."""
+    gi_path = REPO_ROOT / ".gitignore"
+    content = gi_path.read_text(encoding="utf-8")
+
+    for pattern in [
+        "*-ASUS-GEI.*", "*-IDEAPAD-GEI.*", "*-WORKSTATION-LG.*",
+        "TASKPLAN_*.md", "*-TASKPLAN*", "Desktop.ini", "desktop.ini", "ehthumbs.db",
+        "*.swo", "LOCK.dev.*", "LOCK.antigravity.*", "LOCK.bugsearch.*"
+    ]:
+        assert pattern in content, f"Missing pattern {pattern} in .gitignore"
+
+
+def test_changelog_and_marketing_log_pfad_a_recency_20261003():
+    """Verify that CHANGELOG.md and MARKETING-LOG.txt record the 2026-10-03 Pfad A repository hygiene run."""
+    cl_content = (REPO_ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+    assert "## [Unreleased]" in cl_content
+    assert "Pfad A: 2026-10-03" in cl_content
+    assert "T-20260920-167562623" in cl_content
+
+    ml_content = (REPO_ROOT / "MARKETING-LOG.txt").read_text(encoding="utf-8")
+    assert "12. REPOSITORY HYGIENE, CI WORKFLOWS, CONTRIBUTING GUIDELINES & CONTRACT SUITE (Pfad A: 2026-10-03)" in ml_content
+    assert "T-20260920-167562623" in ml_content
+    assert "CONTRIBUTING.md" in ml_content
