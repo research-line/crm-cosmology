@@ -68,7 +68,7 @@ def test_llms_txt_structure_and_timestamp():
     content = llms_path.read_text(encoding="utf-8")
 
     assert "# Curvature Relaxation Model (CRM)" in content
-    assert ("## Last-checked: 2026-10-03" in content or "## Last-checked: 2026-09-29" in content or "## Last-checked: 2026-09-26" in content or "## Last-checked: 2026-09-22" in content)
+    assert ("## Last-checked: 2026-10-30" in content or "## Last-checked: 2026-10-03" in content or "## Last-checked: 2026-09-29" in content or "## Last-checked: 2026-09-26" in content or "## Last-checked: 2026-09-22" in content)
     assert "Local release status: v1.3.2" in content
     assert "## Canonical Links" in content
     assert "SECURITY.md" in content
@@ -108,8 +108,8 @@ def test_readme_and_readme_de_parity():
     # Check status badges
     assert "Version-1.3.2-blue.svg" in en_content
     assert "Version-1.3.2-blue.svg" in de_content
-    assert ("LLM--Ready-2026--10--03" in en_content or "LLM--Ready-2026--09--29" in en_content or "LLM--Ready-2026--09--26" in en_content or "LLM--Ready-2026--09--22" in en_content)
-    assert ("LLM--Ready-2026--10--03" in de_content or "LLM--Ready-2026--09--29" in de_content or "LLM--Ready-2026--09--26" in de_content or "LLM--Ready-2026--09--22" in de_content)
+    assert ("LLM--Ready-2026--10--30" in en_content or "LLM--Ready-2026--10--03" in en_content or "LLM--Ready-2026--09--29" in en_content or "LLM--Ready-2026--09--26" in en_content or "LLM--Ready-2026--09--22" in en_content)
+    assert ("LLM--Ready-2026--10--30" in de_content or "LLM--Ready-2026--10--03" in de_content or "LLM--Ready-2026--09--29" in de_content or "LLM--Ready-2026--09--26" in de_content or "LLM--Ready-2026--09--22" in de_content)
     assert "Attribution-NOTICE" in en_content
     assert "Attribution-NOTICE" in de_content
     assert "Ecosystem-research--line-blue.svg" in en_content
@@ -532,7 +532,7 @@ def test_third_party_licenses_audit_recency_and_notice():
     lic_path = REPO_ROOT / "THIRD_PARTY_LICENSES.md"
     content = lic_path.read_text(encoding="utf-8")
 
-    assert ("Last updated: **2026-10-03**" in content or "Last updated: **2026-09-29**" in content or "Last updated: **2026-09-26**" in content or "Last updated: **2026-09-20**" in content)
+    assert ("Last updated: **2026-10-30**" in content or "Last updated: **2026-10-03**" in content or "Last updated: **2026-09-29**" in content or "Last updated: **2026-09-26**" in content or "Last updated: **2026-09-20**" in content)
     assert "[`NOTICE`](NOTICE)" in content or "NOTICE" in content
 
 
@@ -740,3 +740,24 @@ def test_changelog_and_marketing_log_pfad_a_recency_20261003():
     assert "12. REPOSITORY HYGIENE, CI WORKFLOWS, CONTRIBUTING GUIDELINES & CONTRACT SUITE (Pfad A: 2026-10-03)" in ml_content
     assert "T-20260920-167562623" in ml_content
     assert "CONTRIBUTING.md" in ml_content
+
+def test_changelog_and_marketing_log_pfad_b_recency_20261030():
+    """Verify that CHANGELOG.md and MARKETING-LOG.txt record the 2026-10-30 Pfad B discoverability run."""
+    cl_content = (REPO_ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+    assert "## [Unreleased]" in cl_content
+    assert "Pfad B: 2026-10-30" in cl_content
+    assert "T-20260920-167562623" in cl_content
+
+    ml_content = (REPO_ROOT / "MARKETING-LOG.txt").read_text(encoding="utf-8")
+    assert "13. PFAD B DISCOVERABILITY, VISUAL ARCHITECTURE & LLM PARITY AUDIT (Pfad B: 2026-10-30)" in ml_content
+    assert "T-20260920-167562623" in ml_content
+
+    # Check sequence diagram boundary notes parity in READMEs
+    en_readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    de_readme = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
+    assert "INV-ZERO-02" in en_readme
+    assert "INV-ZERO-02" in de_readme
+    assert "INV-USER-03" in en_readme
+    assert "INV-USER-03" in de_readme
+    assert "Verified-2026--10--30" in en_readme
+    assert "Verified-2026--10--30" in de_readme

@@ -309,4 +309,25 @@ INV-SLA-10: 48-Hour Security Response & 5-Day Triage SLA
   verification gates covering bilingual CONTRIBUTING.md guidelines and invariants, CI lifecycle
   workflows and labels, PEP 621 Contributing URL and license-files, multi-host lock defense,
   and Pfad A recency audit (suite passing 153/153 green).
-
+--------------------------------------------------------------------------------
+13. PFAD B DISCOVERABILITY, VISUAL ARCHITECTURE & LLM PARITY AUDIT (Pfad B: 2026-10-30)
+--------------------------------------------------------------------------------
+- Version Policy Compliance: Version remains strictly 1.3.2 under rule
+  T-20260920-167562623 (Pfad B discoverability preserves existing release baseline;
+  no unauthorized version bumps).
+- Visual Simulation & Patch Pipeline Expansion: Enriched Section 05 flowchart with
+  dedicated Verification Gatekeeper subgraph certifying 154 contract and mathematical
+  proof tests (100% green), zero-egress offline boundaries, and unprivileged user-mode execution.
+- Sequence Diagram Lifecycle Enrichment: Enhanced Section 06 sequence diagram in both
+  README.md and README_de.md with explicit boundary notes highlighting 100% offline
+  Zero-Egress execution (INV-ZERO-02), unprivileged RunAsInvoker non-elevation (INV-USER-03),
+  and fail-closed mathematical gatekeepers (INV-GATE-05).
+- Documentation Recency & Verification Parity: Synchronized documentation badges in
+  README.md and README_de.md (Verified-2026-10-30, LLM-Ready-2026-10-30), re-audited
+  llms.txt Last-checked timestamp to 2026-10-30, and verified Level 1 SBOM companions
+  THIRD_PARTY_LICENSES.md and THIRD_PARTY_LICENSES.txt (Stand 2026-10-30).
+- Mermaid Syntax Validation: Verified 100% compliance across all 33 markdown documents
+  and 2 diagrams via _tools/lint_mermaid.py (zero parse errors, quote-safe labels).
+- Automated Contract Test Expansion: Expanded tests/test_metadata.py with contract
+  verification gates for 2026-10-30 recency across llms.txt, SBOM files, CHANGELOG.md,
+  and MARKETING-LOG.txt (suite passing 154/154 green).

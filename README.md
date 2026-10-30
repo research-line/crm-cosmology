@@ -12,16 +12,16 @@
 [![Attribution](https://img.shields.io/badge/Attribution-NOTICE-blue.svg)](NOTICE)
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![Platforms](https://img.shields.io/badge/Platforms-Windows%20%7C%20Linux%20%7C%20macOS-4EAA25.svg)](pyproject.toml)
-[![Tests](https://img.shields.io/badge/Tests-153%20passed%20%7C%20100%25-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/Tests-154%20passed%20%7C%20100%25-brightgreen.svg)](tests/)
 [![Level 1 SBOM](https://img.shields.io/badge/Level%201%20SBOM-Plain%20Text-blue.svg)](THIRD_PARTY_LICENSES.txt)
 [![Zero-Egress](https://img.shields.io/badge/Privacy-Zero--Egress%20%7C%20Offline-success.svg)](SECURITY.md)
 [![RunAsInvoker](https://img.shields.io/badge/Security-RunAsInvoker%20%7C%20Non--Elevation-informational.svg)](SECURITY.md)
 [![Security SLA](https://img.shields.io/badge/Security%20SLA-48h%20Response%20%7C%205d%20Triage-blue.svg)](SECURITY.md)
-[![Verified](https://img.shields.io/badge/Verified-2026--10--03-success.svg)](CHANGELOG.md)
+[![Verified](https://img.shields.io/badge/Verified-2026--10--30-success.svg)](CHANGELOG.md)
 [![Code Style: Ruff](https://img.shields.io/badge/Code%20Style-Ruff-000000.svg)](https://github.com/astral-sh/ruff)
 [![Ecosystem](https://img.shields.io/badge/Ecosystem-research--line-blue.svg)](https://github.com/research-line)
 [![Umbrella](https://img.shields.io/badge/Umbrella-open--bricks-purple.svg)](https://github.com/open-bricks)
-[![LLM Ready](https://img.shields.io/badge/LLM--Ready-2026--10--03-yellow.svg)](llms.txt)
+[![LLM Ready](https://img.shields.io/badge/LLM--Ready-2026--10--30-yellow.svg)](llms.txt)
 
 > [!NOTE]
 > **AI / LLM Agent Indexing & Machine-Readable Summary:**
@@ -225,6 +225,11 @@ flowchart TD
         D3["SPARC Galaxy Rotation Curves & MOND"]
     end
 
+    subgraph Verification ["Deterministic Gatekeeper (INV-GATE-05)"]
+        V1["154 Contract & Proof Tests (100% Green)"]
+        V2["Zero-Egress & RunAsInvoker Boundary"]
+    end
+
     subgraph Outputs ["Reproducible Artifacts"]
         O1["Power Spectra & Δχ² Best-Fit Posterior Plots"]
         O2["Bilingual Paper Series (EN & DE PDFs)"]
@@ -233,7 +238,8 @@ flowchart TD
 
     Theory --> Infrastructure
     Infrastructure --> Datasets
-    Datasets --> Outputs
+    Datasets --> Verification
+    Verification --> Outputs
 ```
 
 ---
@@ -255,9 +261,11 @@ sequenceDiagram
     Theorist->>Repo: Define Lagrangian / Curvature Action (crm_fR)
     Repo->>Solver: Apply native C patch (scripts/patch_cfm.py)
     Data-->>Repo: Supply observational likelihood data (CMB/SN/SPARC)
+    Note over Repo,Sampler: Zero-Egress Offline Boundary (INV-ZERO-02) & RunAsInvoker Non-Elevation (INV-USER-03)
     Repo->>Sampler: Execute parameter estimation & MCMC sampling
     Sampler-->>Repo: Generate posterior chains & Delta chi2 (-3.7 on CMB)
     Repo->>Gates: Run deterministic proof gates & contract tests (pytest)
+    Note over Gates,Theorist: Deterministic Proof Gates (INV-GATE-05) & 154 Tests Passing Green
     Gates-->>Theorist: 100% green verification certificate & LaTeX preprints
     Theorist->>Zenodo: Permanent archival deposit (DOI 10.5281/zenodo.19233559)
 ```

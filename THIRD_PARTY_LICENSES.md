@@ -2,7 +2,7 @@
 
 This document provides a comprehensive inventory of all third-party software libraries, mathematical engines, toolchains, and runtime environments utilized or referenced by **crm-cosmology** (`research-line/crm-cosmology`), including their respective licenses, copyright holders, and usage scopes.
 
-Last updated: **2026-10-03** (Release `v1.3.2`)
+Last updated: **2026-10-30** (Release `v1.3.2`)
 
 ---
 

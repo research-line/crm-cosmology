@@ -12,16 +12,16 @@
 [![Attribution](https://img.shields.io/badge/Attribution-NOTICE-blue.svg)](NOTICE)
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![Platforms](https://img.shields.io/badge/Platforms-Windows%20%7C%20Linux%20%7C%20macOS-4EAA25.svg)](pyproject.toml)
-[![Tests](https://img.shields.io/badge/Tests-153%20passed%20%7C%20100%25-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/Tests-154%20passed%20%7C%20100%25-brightgreen.svg)](tests/)
 [![Level 1 SBOM](https://img.shields.io/badge/Level%201%20SBOM-Plain%20Text-blue.svg)](THIRD_PARTY_LICENSES.txt)
 [![Zero-Egress](https://img.shields.io/badge/Privacy-Zero--Egress%20%7C%20Offline-success.svg)](SECURITY.md)
 [![RunAsInvoker](https://img.shields.io/badge/Security-RunAsInvoker%20%7C%20Non--Elevation-informational.svg)](SECURITY.md)
 [![Security SLA](https://img.shields.io/badge/Security%20SLA-48h%20Response%20%7C%205d%20Triage-blue.svg)](SECURITY.md)
-[![Verified](https://img.shields.io/badge/Verified-2026--10--03-success.svg)](CHANGELOG.md)
+[![Verified](https://img.shields.io/badge/Verified-2026--10--30-success.svg)](CHANGELOG.md)
 [![Code Style: Ruff](https://img.shields.io/badge/Code%20Style-Ruff-000000.svg)](https://github.com/astral-sh/ruff)
 [![Ecosystem](https://img.shields.io/badge/Ecosystem-research--line-blue.svg)](https://github.com/research-line)
 [![Umbrella](https://img.shields.io/badge/Umbrella-open--bricks-purple.svg)](https://github.com/open-bricks)
-[![LLM Ready](https://img.shields.io/badge/LLM--Ready-2026--10--03-yellow.svg)](llms.txt)
+[![LLM Ready](https://img.shields.io/badge/LLM--Ready-2026--10--30-yellow.svg)](llms.txt)
 
 > [!NOTE]
 > **KI- / LLM-Agenten-Indexierung & Maschinenlesbare Zusammenfassung:**
@@ -225,6 +225,11 @@ flowchart TD
         D3["SPARC Galaxien-Rotationskurven & MOND"]
     end
 
+    subgraph Verification ["Deterministischer Gatekeeper (INV-GATE-05)"]
+        V1["154 Vertrags- & Beweistests (100% bestanden)"]
+        V2["Zero-Egress- & RunAsInvoker-Grenze"]
+    end
+
     subgraph Outputs ["Reproduzierbare Artefakte"]
         O1["Leistungsspektren & Δχ² Best-Fit-Posterior-Plots"]
         O2["Zweisprachige Manuskript-Serie (EN & DE PDFs)"]
@@ -233,7 +238,8 @@ flowchart TD
 
     Theory --> Infrastructure
     Infrastructure --> Datasets
-    Datasets --> Outputs
+    Datasets --> Verification
+    Verification --> Outputs
 ```
 
 ---
@@ -255,9 +261,11 @@ sequenceDiagram
     Theorist->>Repo: Definiere Lagrange-Dichte / Krümmungswirkung (crm_fR)
     Repo->>Solver: Wende nativen C-Patch an (scripts/patch_cfm.py)
     Data-->>Repo: Stelle Beobachtungsdaten bereit (CMB/SN/SPARC)
+    Note over Repo,Sampler: Zero-Egress Offline-Grenze (INV-ZERO-02) & RunAsInvoker unprivilegierte Ausführung (INV-USER-03)
     Repo->>Sampler: Führe Parameterschätzung & MCMC-Sampling aus
     Sampler-->>Repo: Generiere Posterior-Ketten & Delta chi2 (-3,7 bei CMB)
     Repo->>Gates: Führe deterministische Beweis-Gates & Vertragstests aus (pytest)
+    Note over Gates,Theorist: Deterministische Beweis-Gates (INV-GATE-05) & 154 Tests bestanden (100% grün)
     Gates-->>Theorist: 100% grünes Verifikationszertifikat & LaTeX-Preprints
     Theorist->>Zenodo: Permanente Archivierung und Registrierung (DOI 10.5281/zenodo.19233559)
 ```

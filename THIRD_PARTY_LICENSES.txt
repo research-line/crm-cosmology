@@ -1,7 +1,7 @@
 # Third-Party Licenses & Software Inventory
 
 Project: crm-cosmology
-Audited: 2026-09-20 (Re-audited: 2026-10-03 against Level 1 SBOM, plain-text companion invariants, CONTRIBUTING.md guidelines, and unprivileged execution).
+Audited: 2026-09-20 (Re-audited: 2026-10-30 against Level 1 SBOM, plain-text companion invariants, CONTRIBUTING.md guidelines, and unprivileged execution).
 License: Creative Commons Attribution 4.0 International (CC BY 4.0; see LICENSE and NOTICE)
 Repository: https://github.com/research-line/crm-cosmology
 Parent Organization: research-line (https://github.com/research-line)

@@ -8,6 +8,11 @@ and this project adheres to open-science preprint versioning tied to Zenodo arch
 ## [Unreleased]
 
 ### Changed
+- **Pfad B Discoverability, Interactive Sequence & Flowchart Enhancement & Verification Recency (Pfad B: 2026-10-30):**
+  - Enhanced visual flowchart and sequence diagrams in Section 05 and Section 06 across both `README.md` and `README_de.md` by integrating the Deterministic Verification Gatekeeper (`INV-GATE-05`) into the computational dataflow and explicit zero-egress (`INV-ZERO-02`) / unprivileged `RunAsInvoker` (`INV-USER-03`) notes into the lifecycle sequence diagram.
+  - Re-audited and synchronized recency timestamps to `2026-10-30` across `README.md`, `README_de.md`, `llms.txt` (`Last-checked: 2026-10-30`), `THIRD_PARTY_LICENSES.md`, `THIRD_PARTY_LICENSES.txt`, and `MARKETING-LOG.txt` Section 13.
+  - Updated documentation badges to reflect 154 passing tests (100% green) and verified release status.
+  - Added new automated contract verification test in `tests/test_metadata.py` validating Pfad B 2026-10-30 verification recency, sequence diagram boundary annotations, and Level 1 SBOM recency (bringing test suite to 154 passed tests | 100% green). Version remains strictly `1.3.2` frozen pursuant to Pfad B immutability rule `T-20260920-167562623`.
 - **Repository Hygiene, CI Lifecycle Workflows, Bilingual CONTRIBUTING.md Guidelines & Contract Tests (Pfad A: 2026-10-03):**
   - Added bilingual `CONTRIBUTING.md` guidelines (English / Deutsch) defining 10 core governance invariants (`INV-DET-01` to `INV-SLA-10`), unprivileged `RunAsInvoker` mode (`INV-USER-03`), Plan D local development workflow (`C:\_Local_DEV\repos\crm-cosmology`), strict version-freeze discipline (`1.3.2` frozen per `T-20260920-167562623`), local quality gates, § 521 BGB statutory disclaimer, and 48h security response SLA.
   - Deployed GitHub Actions lifecycle workflows `.github/workflows/auto-assign.yml` (least-privilege `issues: write`, `pull-requests: write`, `timeout-minutes: 5`, `cancel-in-progress: true`) and `.github/workflows/label-sync.yml` (`EndBug/label-sync@v2`, `timeout-minutes: 5`) with canonical `.github/labels.yml` (11 standard governance labels per GOVERNANCE.md §4.2).
