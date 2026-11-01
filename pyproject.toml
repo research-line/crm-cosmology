@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,7 +8,7 @@ version = "1.3.2"
 description = "Curvature Relaxation Model (CRM) - Geometric Cosmology & Modified Gravity Research Codebase"
 readme = "README.md"
 requires-python = ">=3.10"
-license = {text = "CC-BY-4.0"}
+license = "CC-BY-4.0"
 license-files = ["LICENSE", "NOTICE", "THIRD_PARTY_LICENSES.md", "THIRD_PARTY_LICENSES.txt", "CONTRIBUTING.md"]
 authors = [
     {name = "Research Line", email = "open-science@research-line.org"}
@@ -40,7 +40,6 @@ classifiers = [
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering :: Physics",
     "Topic :: Scientific/Engineering :: Astronomy",
-    "License :: OSI Approved :: Creative Commons Attribution 4.0 International License (CC BY 4.0)",
     "Operating System :: OS Independent",
     "Operating System :: POSIX :: Linux",
     "Operating System :: Microsoft :: Windows",
@@ -77,6 +76,11 @@ Notice = "https://github.com/research-line/crm-cosmology/blob/main/NOTICE"
 "LLM Ready" = "https://github.com/research-line/crm-cosmology/blob/main/llms.txt"
 "Zenodo DOI" = "https://doi.org/10.5281/zenodo.19233559"
 
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["scripts*"]
+exclude = ["data*", "papers*", "figures*", "results*", "research*", "tests*"]
+
 [tool.pytest.ini_options]
 minversion = "7.0"
 addopts = "-ra -v --basetemp=.pytest_temp"
@@ -96,6 +100,7 @@ norecursedirs = [
     ".eggs",
     "*.egg-info",
     "data/raw",
+    "scripts",
     "_archive"
 ]
 

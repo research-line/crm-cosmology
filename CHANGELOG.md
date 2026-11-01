@@ -8,6 +8,14 @@ and this project adheres to open-science preprint versioning tied to Zenodo arch
 ## [Unreleased]
 
 ### Changed
+- **Repository Hygiene, PEP 639 License Standardization, Pytest Discovery Isolation & Packaging Contract Tests (Pfad A: 2026-11-01):**
+  - Upgraded packaging configuration in `pyproject.toml` to comply with modern setuptools (`>=77`) and PEP 639 SPDX string format (`license = "CC-BY-4.0"` replacing legacy `{ text = "CC-BY-4.0" }` table format that caused build failures under modern setuptools).
+  - Removed superseded license classifier from `classifiers` pursuant to PEP 639 strict disambiguation rules (preventing setuptools `InvalidConfigError`).
+  - Configured explicit package discovery via `[tool.setuptools.packages.find]` with `include = ["scripts*"]` and exclusions for documentation/data trees to ensure clean flat-layout wheel building.
+  - Added `"scripts"` to `norecursedirs` under `[tool.pytest.ini_options]` in `pyproject.toml` to isolate test discovery against external/optional Boltzmann solver scripts (`scripts/test_cfm_fR_native.py`) when pytest is called with explicit directory targets.
+  - Hardened `.gitignore` with Python packaging build artifacts (`build/`, `dist/`, `*.egg-info/`, `*.egg`).
+  - Extended contract verification suite in `tests/test_metadata.py` with tests for PEP 639 packaging compliance and pytest discovery guardrails.
+  - Version remains strictly `1.3.2` frozen pursuant to Pfad A immutability rule `T-20260920-167562623`.
 - **Pfad B Discoverability, Interactive Sequence & Flowchart Enhancement & Verification Recency (Pfad B: 2026-10-30):**
   - Enhanced visual flowchart and sequence diagrams in Section 05 and Section 06 across both `README.md` and `README_de.md` by integrating the Deterministic Verification Gatekeeper (`INV-GATE-05`) into the computational dataflow and explicit zero-egress (`INV-ZERO-02`) / unprivileged `RunAsInvoker` (`INV-USER-03`) notes into the lifecycle sequence diagram.
   - Re-audited and synchronized recency timestamps to `2026-10-30` across `README.md`, `README_de.md`, `llms.txt` (`Last-checked: 2026-10-30`), `THIRD_PARTY_LICENSES.md`, `THIRD_PARTY_LICENSES.txt`, and `MARKETING-LOG.txt` Section 13.

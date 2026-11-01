@@ -295,6 +295,8 @@ def test_gitignore_hygiene_patterns():
     assert "LOCK" in content
     assert ".ruff_cache/" in content
     assert ".pytest_cache/" in content
+    assert "build/" in content
+    assert "*.egg-info/" in content
 
 
 def test_changelog_recent_pfad_b_entry():
@@ -460,6 +462,7 @@ def test_pyproject_pytest_norecursedirs():
     assert ".pytest_cache" in norecurse
     assert ".ruff_cache" in norecurse
     assert "data/raw" in norecurse
+    assert "scripts" in norecurse
 
 
 def test_extended_canonical_lock_defense():
@@ -761,3 +764,31 @@ def test_changelog_and_marketing_log_pfad_b_recency_20261030():
     assert "INV-USER-03" in de_readme
     assert "Verified-2026--10--30" in en_readme
     assert "Verified-2026--10--30" in de_readme
+
+def test_pyproject_pep639_packaging_contract():
+    """Verify PEP 639 license standardization, build backend requirements, and package discovery."""
+    pyproject_path = REPO_ROOT / "pyproject.toml"
+    data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
+
+    project = data["project"]
+    # PEP 639 packaging contract: SPDX license string
+    assert project.get("license") == "CC-BY-4.0"
+    assert "setuptools>=77" in data["build-system"]["requires"]
+
+    # Obsolete classifier removed per PEP 639
+    classifiers = project.get("classifiers", [])
+    assert not any(c.startswith("License ::") for c in classifiers)
+
+    # Package discovery configured for flat layout
+    setuptools_find = data.get("tool", {}).get("setuptools", {}).get("packages", {}).get("find", {})
+    assert setuptools_find.get("where") == ["."]
+    assert setuptools_find.get("include") == ["scripts*"]
+
+
+def test_changelog_unreleased_pfad_a_20261101():
+    """Verify that CHANGELOG.md records the 2026-11-01 Pfad A technical hygiene run."""
+    cl_content = (REPO_ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+    assert "## [Unreleased]" in cl_content
+    assert "Pfad A: 2026-11-01" in cl_content
+    assert "T-20260920-167562623" in cl_content
+    assert "PEP 639" in cl_content
