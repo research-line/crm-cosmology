@@ -8,6 +8,14 @@ and this project adheres to open-science preprint versioning tied to Zenodo arch
 ## [Unreleased]
 
 ### Changed
+- **Manuscript & Publication Artifact Synchronization, PyMuPDF Text-Layer Verification & Automated Contract Testing (RESEARCH_GITHUB_CHECK: 2026-11-07):**
+  - Synchronized all 8 canonical manuscript TeX files and publication PDFs (Paper1_DE, Paper1_EN, Paper2_DE, Paper2_EN, Paper3_DE, Paper3_EN, Paper4_DE, Paper4_EN) from the OneDrive research workspace into papers/.
+  - Integrated the complete Paper II German translation (1,398 lines, 21 pages, 90,681 characters), fully harmonized with the live Zenodo v8.4 release record (10.5281/zenodo.21946248).
+  - Incorporated literature audit corrections and UTF-8 claim hardening across Paper 1, Paper 3, and Paper 4.
+  - Cleaned trailing whitespace on table formatting in Paper2_DE.tex and Paper2_EN.tex, ensuring 100% clean git diff --check validation.
+  - Executed PyMuPDF text-layer verification across all 167 publication pages (664,432 text-layer characters) confirming exactly 0 mojibake (\ufffd) characters, 0 broken citations ([?]), and 0 unresolved cross-references (??).
+  - Added automated contract test module 	ests/test_manuscript_integrity.py with 3 test functions (artifact presence & sizes, page counts & textlayer verification, zero sensitive leaks), expanding test suite coverage to 159 passed tests (100% green).
+  - Version remains strictly 1.3.2 frozen pursuant to Pfad A/B immutability rule T-20260920-167562623.
 - **Repository Hygiene, PEP 639 License Standardization, Pytest Discovery Isolation & Packaging Contract Tests (Pfad A: 2026-11-01):**
   - Upgraded packaging configuration in `pyproject.toml` to comply with modern setuptools (`>=77`) and PEP 639 SPDX string format (`license = "CC-BY-4.0"` replacing legacy `{ text = "CC-BY-4.0" }` table format that caused build failures under modern setuptools).
   - Removed superseded license classifier from `classifiers` pursuant to PEP 639 strict disambiguation rules (preventing setuptools `InvalidConfigError`).
