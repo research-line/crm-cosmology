@@ -151,7 +151,7 @@ The Curvature Relaxation Model (CRM) contrasts fundamentally with standard $\Lam
 | Dimension / Capability | Standard $\Lambda\text{CDM}$ | Standard $f(R)$ Gravity | MOND / TeVeS / RMOND | General Scalar-Tensor | Curvature Relaxation Model (CRM) |
 |---|---|---|---|---|---|
 | **1. Dark Energy Mechanism** (`INV-DET-01`) | Cosmological Constant $\Lambda$ (coincidence problem) | Vacuum curvature / Scalaron $R + f(R)$ | Empirical scalar or dark fluid | Slow-roll quintessence scalar $V(\phi)$ | **Curvature relaxation via non-linear scalaron dynamics** |
-| **2. Dark Matter & Halo Resolution** (`INV-ZERO-02`) | Cold Dark Matter (CDM) particles (undetected) | Incomplete (requires dark matter halos) | Acceleration scale $a_0 \approx 1.2 \times 10^{-10}\text{ m/s}^2$ | Incomplete (relies on CDM particle halos) | **Baryon-only universe with MOND vector sector & saturation** |
+| **2. Dark Matter & Halo Resolution** (`INV-ZERO-02`) | Cold Dark Matter (CDM) particles (undetected) | Incomplete (requires dark matter halos) | Acceleration scale $a_0 \approx 1.2 \times 10^{-10}\text{ m/s}^2$ | Incomplete (relies on CDM particle halos) | **No particle dark matter (candidate): baryons plus a geometric background component (Paper II: $a^{-\beta}$ term; Paper IV: Route-3 shift-charge dust). The galactic (SPARC) and Bullet-Cluster gates are currently not passed by the pure branch; the original vector sector was withdrawn after its failure audit.** |
 | **3. Planck 2018 CMB TT+TE+EE Fit** (`INV-USER-03`) | Canonical Baseline ($\Delta\chi^2 = 0.0$) | Mixed (fine-tuning needed to evade solar tests) | Difficult (third acoustic peak tension) | Similar to $\Lambda\text{CDM}$ with extra degrees of freedom | **$\mathbf{\Delta\chi^2 = -3.7}$ best-fit global minimum** |
 | **4. GW Speed Compliance ($c_{\text{gw}} = c$)** (`INV-DATA-04`) | Trivial ($c_{\text{gw}} = c$) | Strictly compliant ($\alpha_T = 0$) | Severe fine-tuning / disformal constraints | Many Horndeski models ruled out by GW170817 | **Strictly compliant with GW170817 ($\alpha_T = 0 \implies c_{\text{gw}} = c$)** |
 | **5. Galactic RAR on SPARC 171 Galaxies** (`INV-GATE-05`) | Requires individual halo profile tuning | Requires individual halo tuning | Natural match to empirical McGaugh relation | Requires external CDM halos | **Natural attractor match from curvature saturation (BVP solver)** |
@@ -298,7 +298,7 @@ Every release of `crm-cosmology` enforces ten invariant research and security co
 | Paper | English Manuscript | German Manuscript | Topic & Scope |
 |---|---|---|---|
 | **Paper I** | [`papers/Paper1_EN.tex`](papers/Paper1_EN.tex) | [`papers/Paper1_DE.tex`](papers/Paper1_DE.tex) | Game-theoretic cosmology foundation, CRM curvature relaxation, Pantheon+ validation |
-| **Paper II** | [`papers/Paper2_EN.tex`](papers/Paper2_EN.tex) | [`papers/Paper2_DE.tex`](papers/Paper2_DE.tex) | MOND unification, baryon-only universe, running Planck mass coupling |
+| **Paper II** | [`papers/Paper2_EN.tex`](papers/Paper2_EN.tex) | [`papers/Paper2_DE.tex`](papers/Paper2_DE.tex) | MOND unification, no particle dark matter (baryons plus a geometric $a^{-\beta}$ term), running Planck mass coupling |
 | **Paper III** | [`papers/Paper3_EN.tex`](papers/Paper3_EN.tex) | [`papers/Paper3_DE.tex`](papers/Paper3_DE.tex) | Lagrangian foundation ($R + \gamma R^2$), scalaron dynamics, testable predictions |
 | **Paper IV** | [`papers/Paper4_EN.tex`](papers/Paper4_EN.tex) | [`papers/Paper4_DE.tex`](papers/Paper4_DE.tex) | Galactic MOND from curvature saturation, SPARC rotation curve analysis (Draft) |
 
