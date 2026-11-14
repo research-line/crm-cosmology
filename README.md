@@ -62,7 +62,7 @@ The Curvature Relaxation Model (CRM) is an open-science research program in geom
 
 - **Primary Repository:** [research-line/crm-cosmology](https://github.com/research-line/crm-cosmology)
 - **Concept DOI:** [10.5281/zenodo.18728935](https://doi.org/10.5281/zenodo.18728935)
-- **Latest Zenodo v7.0 Record:** [10.5281/zenodo.19233559](https://doi.org/10.5281/zenodo.19233559)
+- **Latest Zenodo v8.4 Record:** [10.5281/zenodo.21946248](https://doi.org/10.5281/zenodo.21946248)
 - **Active Release:** `v1.3.2` (Bilingual Core, 18-Point Navigation Parity, 100% test suite green)
 - **Licensing:** [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) (Manuskripte & Doku) / MIT-kompatibel (Software-Harness)
 - **Execution Mode:** 100% Offline, Local-First, Zero-Egress
@@ -267,7 +267,7 @@ sequenceDiagram
     Repo->>Gates: Run deterministic proof gates & contract tests (pytest)
     Note over Gates,Theorist: Deterministic Proof Gates (INV-GATE-05) & 154 Tests Passing Green
     Gates-->>Theorist: 100% green verification certificate & LaTeX preprints
-    Theorist->>Zenodo: Permanent archival deposit (DOI 10.5281/zenodo.19233559)
+    Theorist->>Zenodo: Permanent archival deposit (concept DOI 10.5281/zenodo.18728935)
 ```
 
 ---
