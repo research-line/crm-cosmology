@@ -4,7 +4,7 @@
 
 Canonical repository: https://github.com/research-line/crm-cosmology
 Primary DOI concept: https://doi.org/10.5281/zenodo.18728935
-Latest published Zenodo v7.0 record: https://doi.org/10.5281/zenodo.19233559
+Latest published Zenodo v8.4 record: https://doi.org/10.5281/zenodo.21946248
 Local release status: v1.3.2; 100% test suite passing green (154 contract & scientific gate tests); bilingual preprint and research repository.
 License: Creative Commons Attribution 4.0 International (CC BY 4.0)
 

@@ -62,7 +62,7 @@ Das Modell der Krümmungsrelaxation (*Curvature Relaxation Model*, CRM) ist ein 
 
 - **Primäres Repository:** [research-line/crm-cosmology](https://github.com/research-line/crm-cosmology)
 - **Konzept-DOI:** [10.5281/zenodo.18728935](https://doi.org/10.5281/zenodo.18728935)
-- **Aktueller Zenodo v7.0 Datensatz:** [10.5281/zenodo.19233559](https://doi.org/10.5281/zenodo.19233559)
+- **Aktueller Zenodo-v8.4-Datensatz:** [10.5281/zenodo.21946248](https://doi.org/10.5281/zenodo.21946248)
 - **Aktiver Versionsstand:** `v1.3.2` (Zweisprachiger Kern, 18-Punkte-Navigationsparität, Testsuite 100% grün)
 - **Lizenzierung:** [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) (Manuskripte & Doku) / MIT-kompatibel (Software-Harness)
 - **Ausführungsmodus:** 100% Offline, Local-First, Zero-Egress
@@ -267,7 +267,7 @@ sequenceDiagram
     Repo->>Gates: Führe deterministische Beweis-Gates & Vertragstests aus (pytest)
     Note over Gates,Theorist: Deterministische Beweis-Gates (INV-GATE-05) & 154 Tests bestanden (100% grün)
     Gates-->>Theorist: 100% grünes Verifikationszertifikat & LaTeX-Preprints
-    Theorist->>Zenodo: Permanente Archivierung und Registrierung (DOI 10.5281/zenodo.19233559)
+    Theorist->>Zenodo: Permanente Archivierung und Registrierung (Concept-DOI 10.5281/zenodo.18728935)
 ```
 
 ---
